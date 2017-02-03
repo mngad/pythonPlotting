@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}}
 \usepackage[latin1]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -27,11 +27,32 @@
 \usepackage{array}
 \counterwithin{table}{section}
 \counterwithin{figure}{section}
-\usepackage[margin=1cm]{geometry}
+\usepackage[margin=2.5cm]{geometry}
+
+\title{Transfer Report}
+\author{Gavin Day}
+\date{July 2016}
+
 
 \begin{document}
 
-\begin{section}
+
+\include{Title}
 
 
-\end{document}
+%\include{Chapter1}
+
+\include{Chapter_HT_Methods}
+
+
+\pagebreak
+
+
+\bibliographystyle{unsrt}
+\bibliography{library}
+
+
+
+
+\end{document}	
+
