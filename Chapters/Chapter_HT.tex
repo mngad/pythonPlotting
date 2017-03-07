@@ -14,7 +14,7 @@ This means that much more of the posterior elements are constrained, therefore r
 In addition to this the larger posterior elements which are captured within the PMMA end-caps will transmit load and take a greater share of the load when compared to the bovine tail vertebrae.
 Given that vertebroplasty attempts to restore the stiffness of the vertebral body and that there is no understanding of specifically how the loads are shared between the vertebral body and posterior element, this presents a problem.
 
-A solution to this is to remove the posterior elements, following such methods as \cite{Wijayathunga2008,RobsonBrown2014}, where only the vertebral body is modelled.  
+A solution to this is to remove the posterior elements, following such methods as \cite{Wijayathunga2008,RobsonBrown2014}, where only the vertebral body is modelled.
 This allows the stiffness of the vertebral body alone to be captured and modelled.
 The posterior elements were removed by cutting through the pedicles at the narrowest part, limiting damage to the region.
 
@@ -28,9 +28,35 @@ A spirit level ensured parallel end-caps.
 \subsection{Loading}
 
 Following previous studies \cite{Wijayathunga2008}, the vertebrae were loaded with an initial maximum load of 800 N for similarly osteoporotic vertebrae.
-However, after loading two of the initial set of vertebrae the stiffness continued to increase up to maximum 800 N. 
-Following loads up to 2000 N showed that the stiffness reached a maximum between 1300 and 1500 N, after which the stiffness decreased indicating the start of damage to the vertebra.
+However, after loading two of the initial set of vertebrae the stiffness continued to increase up to maximum 800 N.
+Following loads up to 2000 N showed that the stiffness reached a maximum between 1300 and 2000 N, with three of the initial four specimens showing some degree of failure in the final 400 N of loading.
 
+\subsubsection{Repeated Loading}
+
+\subsubsection{Maximum Stiffness Measurement}
+
+The maximum stiffness of the vertebra was found in the same fashion as with the bovine tail vertebrae - measuring the stiffness of segments at increments over the length of the curve.
+Given that damage, especially for the intact specimens, needs to be avoided the maximum loads used are on the conservative side.
+This can mean that the maximum stiffness is potentially at the end of the dataset or that the stiffness is still increasing at the load cut off.
+The solution to the latter would require a prediction of the yield point prior to experimental loading (discussed in Section \ref{predYield}), while the former could potentially be solved by using smaller segment sizes when measuring the stiffness from load - displacement results.
+
+To allow the effect of segment size (the length of each section from which the stiffness is found) and increment size (the size of each increment defining the start point of each segment), the maximum stiffness finding Matlab code was rewritten in Python.
+This function could then be iterated over, reporting the maximum stiffness when using an increment size of between 1 and 100 data points (the distance between two data points corresponds to 0.0017 mm).
+Changing the increment size becomes a verification of the results using an increment size of 1 data point, given that the only negative of using the smallest possible increment size is computational cost, which is negligible here.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_1incr.png}
+\caption{The effect of reducing the segment size on the maximum stiffness reported from four human vertebrae loaded to 2000 N pre and post augmentation. Using an increment size of 1 data point (0.0017 mm) and segment sizes of 100 to 1 data point (0.17 mm to 0.0017 mm).}
+\label{fig:exp_flowchart}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_20incr.png}
+\caption{The effect of reducing the segment size on the maximum stiffness reported from four human vertebrae loaded to 2000 N pre and post augmentation. Using an increment size of 20 data points (0.0037 mm) and segment sizes of 100 to 1 data point (0.17 mm to 0.0017 mm).}
+\label{fig:exp_flowchart}
+\end{figure}
 
 \subsection{Vertebroplasty}
 
@@ -49,6 +75,13 @@ Quantity?
 
 
 \subsection{Modelling}
+
+\subsubsection{Predicting Vertebral Yield Point}\label{predYield}
+
+\subsubsection{Load Position Sensitivity}
+
+
+\subsubsection{
 
 \section{Results}
 
