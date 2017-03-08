@@ -31,8 +31,6 @@ Following previous studies \cite{Wijayathunga2008}, the vertebrae were loaded wi
 However, after loading two of the initial set of vertebrae the stiffness continued to increase up to maximum 800 N.
 Following loads up to 2000 N showed that the stiffness reached a maximum between 1300 and 2000 N, with three of the initial four specimens showing some degree of failure in the final 400 N of loading.
 
-\subsubsection{Repeated Loading}
-
 \subsubsection{Maximum Stiffness Measurement}
 
 The maximum stiffness of the vertebra was found in the same fashion as with the bovine tail vertebrae - measuring the stiffness of segments at increments over the length of the curve.
@@ -48,15 +46,84 @@ Changing the increment size becomes a verification of the results using an incre
 \centering
 \includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_1incr.png}
 \caption{The effect of reducing the segment size on the maximum stiffness reported from four human vertebrae loaded to 2000 N pre and post augmentation. Using an increment size of 1 data point (0.0017 mm) and segment sizes of 100 to 1 data point (0.17 mm to 0.0017 mm).}
-\label{fig:exp_flowchart}
+\label{fig:findStiffness_1incr}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_20incr.png}
 \caption{The effect of reducing the segment size on the maximum stiffness reported from four human vertebrae loaded to 2000 N pre and post augmentation. Using an increment size of 20 data points (0.0037 mm) and segment sizes of 100 to 1 data point (0.17 mm to 0.0017 mm).}
-\label{fig:exp_flowchart}
+\label{fig:findStiffness_20incr}
 \end{figure}
+
+Using an increment size of 1 data points width, as shown in Figure \ref{fig:findStiffness_1incr} shows a smaller variation across the range of segment sizes compared to using 20 points in Figure \ref{fig:findStiffness_20incr}.
+The effect of both segment size and increment size is especially evident for the two G19-11 L1 vertebrae both intact and post augmentation where the stiffness continues to increase until the end of the test at 2000 N.
+Meaning that there is a much smaller linear region for these two specimens, hence requiring a smaller segment size to measure the largest gradient.
+
+Choosing values for the segment size to use moving forwards becomes difficult given the large effect it can have on the measured maximum stiffness (a range of over 1000 N/mm in the case the two G19-11 L1 tests).
+The segment size needs to be small enough to capture the maximum stiffness while avoiding the noise when using a segment size below 18 data points.
+Hence, a value of 20 data points was chosen, a value that avoids the noise while being on the plateau of the lines.
+
+
+\subsubsection{Repeated Loading}
+
+Given the nature of the test, attempting to limit damage to the vertebrae, especially during their initial intact load, the ability to derive errors becomes difficult especially from a single load.
+To attempt to understand this error four vertebrae having undergone augmentation were tested three more times in an iterative fashion, removing each from the load testing machine, testing the next specimen in the set and repeating.
+Removing the vertebrae from their steel housing (instead of three tests while seated in the steel housing) allowed the error in loading position and setup to be tested along with repeated loading of the vertebrae to be tested.
+
+The results of repeated loading can be seen in Figure \ref{fig:exp_repeats}.
+All four specimens show a reduced stiffness for the repeated loads following the initial load, for which there are two possible reasons.
+One possibility for the reduction in stiffness is that it is a consequence of the freeze thaw cycle that occurred between these tests.
+The second possibility is that the vertebrae were still partially frozen while the testing took place.
+The frozen bar in Figure \ref{fig:exp_repeats} shows how the stiffness increases when the vertebrae are completely frozen, potentially helping to explain the drop in stiffness found in the repeats.
+Further tests will be carried out with three more repeats following another freeze thaw cycle to attempt to answer this.
+
+The iterative reduction in stiffness for the G21-11 L2 vertebrae can be explained as damage being caused after each iteration.
+This can be seen in Figure \ref{fig:G21-11_L2}, with the three repeats each showing a yielding before the 1600 N limit and a smaller maximum load and stiffness after each repeat.
+
+Figures \ref{fig:G19-11_L1} through to \ref{fig:G21-11_L3} show the data for the loading, from which the maximum stiffness values are found.
+This excludes the initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/experimental_repeats.png}
+\caption{The stiffness of four augmented vertebral specimens over the course of an initial load, three repeated loads and a load while frozen. The intact specimen was loaded until 2000 N while the remaining four were loaded until 1600 N.}
+\label{fig:exp_repeats}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/G19-11_L1.pdf}
+\caption{The load - displacement results for the G19-11 L1 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
+\label{fig:G19-11_L1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L1.pdf}
+\caption{The load - displacement results for the G21-11 L1 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
+\label{fig:G21-11_L1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L2.pdf}
+\caption{The load - displacement results for the G21-11 L2 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
+\label{fig:G21-11_L2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L3.pdf}
+\caption{The load - displacement results for the G21-11 L3 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
+\label{fig:G21-11_L3}
+\end{figure}
+
+
+
+
+
 
 \subsection{Vertebroplasty}
 
