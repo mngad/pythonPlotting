@@ -72,16 +72,17 @@ To attempt to understand this error four vertebrae having undergone augmentation
 Removing the vertebrae from their steel housing (instead of three tests while seated in the steel housing) allowed the error in loading position and setup to be tested along with repeated loading of the vertebrae to be tested.
 
 The results of repeated loading can be seen in Figure \ref{fig:exp_repeats}.
-All four specimens show a reduced stiffness for the repeated loads following the initial load, for which there are two possible reasons.
+All four specimens show a reduced stiffness for the repeated loads following the initial load, for which there are a few possible reasons.
 One possibility for the reduction in stiffness is that it is a consequence of the freeze thaw cycle that occurred between these tests.
 The second possibility is that the vertebrae were still partially frozen while the testing took place.
+Finally, it could be due to damage being caused during the initial load to 2000 N, shown in Figures \ref{fig:G19-11_L1} to \ref{fig:G21-11_L3} it is possible to see slight failure in the three G21-11 vertebrae, although failure cannot be seen in the G19-11 L1 vertebrae.
 The frozen bar in Figure \ref{fig:exp_repeats} shows how the stiffness increases when the vertebrae are completely frozen, potentially helping to explain the drop in stiffness found in the repeats.
 Further tests will be carried out with three more repeats following another freeze thaw cycle to attempt to answer this.
 
 The iterative reduction in stiffness for the G21-11 L2 vertebrae can be explained as damage being caused after each iteration.
 This can be seen in Figure \ref{fig:G21-11_L2}, with the three repeats each showing a yielding before the 1600 N limit and a smaller maximum load and stiffness after each repeat.
 
-Figures \ref{fig:G19-11_L1} through to \ref{fig:G21-11_L3} show the data for the loading, from which the maximum stiffness values are found.
+Figures \ref{fig:G19-11_L1} through \ref{fig:G21-11_L3} show the data for the loading, from which the maximum stiffness values are found.
 This excludes the initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[!h]
@@ -142,6 +143,32 @@ Quantity?
 
 
 \subsection{Modelling}
+
+Given the aims of the project - to include the models generated here into a larger set of vertebral models for use in statistical shape modelling, it is useful to model the vertebrae in a scanner independent method.
+A method for doing this (BV/TV modelling method) uses a full resolution scan with the bone regions segmented using a threshold.
+This full resolution segmented scan is then downsampled to voxels with edge length of 1 mm, meaning that each voxel has a greyscale value proportional to the BV/TV value for the region captured by that voxel.
+Areas that contain more bone will therefore have a higher greyscale value.
+This method is purely dependant on the threshold selected defining the bone and hence, given that threshold values can be repeatedly and correctly selected, is scanner independent.
+
+\subsubsection{BV/TV Modelling Method}
+
+The method follows that found in a study by Robson Brown et al. \cite{RobsonBrown2014} with a few minor changes.
+The scans are converted into a stack of TIFF files using an in house Matlab script, which in addition reduces the 16 bit file to 8 bit images.
+The full resolution scan is then imported into imageJ where the vertebra is thresholded and segmented.
+This is carried out using the BoneJ plugin for imageJ, specifically the optimise threshold module.
+In order to use this a region of interest was selected for each vertebrae, capturing the greatest possible volume within the cortical shell, without capturing any of the shell or osteophytes.
+
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
+\caption{The stiffness results of three different FE methods for four intact human vertebrae compared to the experimental stiffness results.
+	Interest should be drawn to the ratio between specimen models rather than the values themselves, given that the conversion factors between greyscale values and Young's modulus have not been optimised at this stage.
+Results show the difference between the currently used method of modelling the vertebrae and the BV/TV based methods (both with uniform thresholds and different thresholds for each specimen).}
+\label{fig:diffModellingMethods}
+\end{figure}
 
 \subsubsection{Predicting Vertebral Yield Point}\label{predYield}
 
