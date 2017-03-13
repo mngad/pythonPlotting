@@ -157,7 +157,47 @@ The scans are converted into a stack of TIFF files using an in house Matlab scri
 The full resolution scan is then imported into imageJ where the vertebra is thresholded and segmented.
 This is carried out using the BoneJ plugin for imageJ, specifically the optimise threshold module.
 In order to use this a region of interest was selected for each vertebrae, capturing the greatest possible volume within the cortical shell, without capturing any of the shell or osteophytes.
+Due to the nature of the plugin the region of interest must first be inverted so that the connectivity is based on the trabecular bone and not the intertrabecular spaces.
+The plugin is then run on the region of interest using the default settings for the connectivity options seen in Table \ref{tab:bonej}
 
+\begin{table}[ht!]
+	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
+	\label{tab:bonej}
+	\centering
+	\begin{tabular}{c|c}
+	Options & Values \\
+	\hline
+	\hline
+	Tests & 11  \\
+	Range & 0.2 \\
+	Subvolume Size & 256 \\
+	Erosian Cycles & 0 \\
+	Dilation Cycles & 0 \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+	\caption{Threshold and BV/TV values found using the ImageJ plugin BoneJ tools optimise Threshold and Volume Fraction respecively.}
+	\label{tab:th_bv_tv}
+	\centering
+	\begin{tabular}{c|c|c}
+		Vertebra & Threshold & BV/TV \\
+	\hline
+	\hline
+	G19-11 L1 & 25 & 0.244\\
+	G21-11 L1 & 22 & 0.133\\
+	G21-11 L2 & 21 & 0.107\\
+	G21-11 L3 & 21 & 0.109\\
+	\hline
+	\end{tabular}
+\end{table}
+
+Following this the threshold value reported must be inverted (eg. 255 - 234 gives a threshold value of 21). 
+These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable difference between the both specimens and especially spine.
+
+The set of vertebral specimens were split at this stage into two sets, allowing an understanding of the effect of specimen specific thresholds for the vertebral models, these sets used a threshold of 21 for the Uniform test and their BoneJ predicted value for the Different Threshold Set.
+Following the application of the threshold a gaussian filter with $ \sigma_{x,y,z} = 1 $ was applied in order to remove speckling found surrounding the end-caps.
 
 
 
@@ -169,6 +209,10 @@ In order to use this a region of interest was selected for each vertebrae, captu
 Results show the difference between the currently used method of modelling the vertebrae and the BV/TV based methods (both with uniform thresholds and different thresholds for each specimen).}
 \label{fig:diffModellingMethods}
 \end{figure}
+
+
+Difference in TH due to diff spine diff level of degen.
+
 
 \subsubsection{Predicting Vertebral Yield Point}\label{predYield}
 
