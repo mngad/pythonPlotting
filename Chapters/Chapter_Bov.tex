@@ -16,7 +16,7 @@ Specimen preparation, fracture generation and initial $\mu$CT scan was undertake
 \label{fig:exp_flowchart}
 \end{figure}
 
-\subsection{Specimen Preparation}\label{specimen-preparation}
+\subsection{Specimen Preparation}\label{specimen-preparation-bov}
 
 Bovine tails were acquired from a local abattoir and frozen to -20$^\circ$C prior to use.
 They were defrosted
@@ -109,7 +109,7 @@ clear decrease in load was observed. Both scenarios can be seen in Fig. \ref{fig
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=17cm]{images/comparing_failureand_nonfailure.png}
+\includegraphics[width=16cm]{images/comparing_failureand_nonfailure.png}
 \caption{The difference between failure (A) and non-failure (B) for bovine tail vertebra compressed to a maximum load of 9500 N or until a peak was observed.}
 \label{fig:failure_non_failure}
 \end{figure}
@@ -173,7 +173,7 @@ If the load-displacement curves were perfectly linear within the ``linear region
 \end{figure}
 
 
-\subsection{Vertebroplasty }\label{vertebroplasty}
+\subsection{Vertebroplasty }\label{vertebroplasty-bov}
 The procedure was developed in collaboration with two clinicians (Dr Peter Loughenbury \& Dr Vishal Borse) from the Leeds General Infirmary. Subsequent tests of the procedure were undertaken with the aid of Dr Sebastien Sikora, Dr Fernando Zapata Cornelio \& Ruth Coe (Research Fellow, Research Fellow \& PhD student respectively), while specimens with results presented here were augmented solely by the author.
 Due to the differences between human and bovine vertebrae it was not possible to perform bi-pedicular vertebroplasty on the bovine specimens using the methodologies established for human vertebra.
 The main difficulty was the greatly increased density of the bovine vertebra bone, meaning that rather than pushing the vertebroplasty needle into the vertebra by hand, a mallet and vice to hold the vertebra were required. In addition to this, the force required to inject cement into the vertebral body was greatly increased.
@@ -229,7 +229,7 @@ Preventing the cement from exiting the vertebrae from vascular channels while in
 % add figure of scan to make clear what the right hand pic is
 
 
-\subsection{$\mu$CT Scanning}
+\subsection{MicroCT Scanning}
 
 $\mu$CT scans were taken at three occasions during the experimental process. These scans occur before and after the initial load to failure, then following the augmentation of the specimens. The process requires the vertebrae to be defrosted and at room temperature, given that the radio-opacity of water differs between solid and liquid states, hence vertebrae were usually defrosted overnight in a 4$^\circ$C fridge. Vertebrae were loaded two at a time in a carbon fibre loading cradle designed for the HR-pQCT (XtremeCT, Scanco Medical AG, Switzerland) scanner. The settings used for the scans were: an isotropic voxel size of 82 $\mu$m, energy settings 900 $\mu$A, 60 kVp and 300 ms exposure time.
 
@@ -295,7 +295,7 @@ The two plots in Fig. \ref{fig:deltaStiffness_Vs_intact} show a lack of correlat
 \label{fig:deltaStiffness_Vs_intact}
 \end{figure}
 
-\subsection{Discussion}\label{discussion}
+\subsection{Discussion}\label{discussion-bov}
 
 The experimental work carried out so far provides a good basis for both the continued modelling of vertebroplasty (especially modelling the cement - trabecular interface which is discussed in later sections) and to continue the experimental work using human tissue. Understanding the challenges of vertebroplasty (those discussed above), will be invaluable when transitioning onto the much more limited sou nrce of human vertebrae.
 
@@ -314,8 +314,6 @@ The experimental methods currently developed will be of great value when startin
 
 
 %Talk about extra plots in results - deltaStiffness and cement fill.
-
-
 
 \pagebreak
 
@@ -397,7 +395,8 @@ removed with the use of the morphological close and cavity fill tools within Sca
 The following parts of the method were carried out manually, following the completion of the automatic segmentation python script. The two end-caps were separated into two
 separate masks by first duplicating the mask and then flood filling each end-cap to form separate masks.
 
-An FE model was created using the previously generated masks and properties for the volume meshing, materials and contacts were set. The grid size for the model was set to 1 $\times$ 1 $\times$ 1 using the FE grid algorithm which uses a mix of tetrahedral and hexahedral elements. Material properties were set to homogenous with a density = 1, Young's modulus = 2.45 (GPa) and Poisson's ratio = 0.3 for the end-caps and when appropriate, were set to the internal cement volume. The material properties for the vertebral volume were set to a greyscale based material type using the greyscale background information. The coefficients were set so that both the density and Young's modulus were equal to the greyscale value for that element, allowing the Young's modulus to be set correctly in following steps and as described in Section \ref{material-properties}.
+An FE model was created using the previously generated masks and properties for the volume meshing, materials and contacts were set. The grid size for the model was set to 1 $\times$ 1 $\times$ 1 using the FE grid algorithm which uses a mix of tetrahedral and hexahedral elements. Material properties were set to homogenous with a density = 1, Young's modulus = 2.45 (GPa) and Poisson's ratio = 0.3 for the end-caps and when appropriate, were set to the internal cement volume. The material
+properties for the vertebral volume were set to a greyscale based material type using the greyscale background information. The coefficients were set so that both the density and Young's modulus were equal to the greyscale value for that element, allowing the Young's modulus to be set correctly in following steps and as described in Section \ref{material-properties-bov}.
 
 Contacts were set as placeholders to be edited in Abaqus in the steps following. These were contact pairs between each component and another between the superior end-cap and the upper boundary on the Z-axis. The second contact type was a node set between the inferior end-cap and the lower boundary on the Z-axis.
 
@@ -412,9 +411,7 @@ Contacts were set as placeholders to be edited in Abaqus in the steps following.
 
 Following this, the FE model was meshed, then exported into an INP file format. The model was then imported into Abaqus where the following configuration was completed by a second python script. An analytical rigid plate was created to represent the upper loading platen of the materials testing machine and was centred at the loading point previously found from the marker, this can be seen in Fig. \ref{fig:abaqus_top_view}. Once aligned any previous placeholder interactions were removed and a tied interaction was created between the rigid plate and the superior end-cap, along with tied interactions between the vertebra and both end-caps and, if appropriate, to the internal cement volume. An encastre boundary condition was created at the bottom surface of the inferior end-cap removing all rotational and translational movement and therefore mimicking the experimental setup. A displacement boundary condition was applied to a reference node at the centre of the rigid plate and therefore loading position, the properties were set such that 1 mm of displacement occurs in the negative Z direction; lateral motion in the X and Y planes was restricted, while rotation about the loading point was allowed - again mimicking the experimental setup.
 
-
-
-The python script was written to set the material properties of the greyscale dependant vertebral elements by setting the Young's modulus to the greyscale value multiplied by a conversion factor (which is discussed in section \ref{material-properties}). The script allowed Abaqus to solve the models and outputs the stiffness for each model. This was calculated by the dividing the reaction force at the reference point by the displacement at 1 mm of displacement.
+The python script was written to set the material properties of the greyscale dependant vertebral elements by setting the Young's modulus to the greyscale value multiplied by a conversion factor (which is discussed in section \ref{material-properties-bov}). The script allowed Abaqus to solve the models and outputs the stiffness for each model. This was calculated by the dividing the reaction force at the reference point by the displacement at 1 mm of displacement.
 
 \subsubsection{Augmented Model Generation}
 
@@ -432,7 +429,7 @@ the cement mask in red.}
 \end{figure}
 
 
-\subsection{Material Properties}\label{material-properties}
+\subsection{Material Properties}\label{material-properties-bov}
 
 Material properties for the bone tissue were modelled elastically using a
 bone element-specific elastic modulus (\(E_{\text{ele}})\) that is
@@ -561,7 +558,7 @@ T4 CC3 &	 6059 &	 6059 &	 0.0005\\ \hline
 The optimisation process gave a value for the conversion factor of 0.012529, allowing conversion between greyscale values for elements and their elastic modulus. This value was used for the bone constituents of the intact and augmented vertebrae presented in Fig. \ref{fig:compvexpscatter}, which shows the agreement between the \textit{in vitro} and \textit{in silico} results for the specimen specific models. The agreement of intact vertebrae was considerably better, with a concordance
 correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented vertebrae (Table \ref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{images/exp_vs_comp_both.png}
 \caption{\textit{in silico} compared with \textit{in vitro} stiffness for intact specimens (triangles) and augmented specimens (circles). The dotted line shows a one-to-one correspondence.}

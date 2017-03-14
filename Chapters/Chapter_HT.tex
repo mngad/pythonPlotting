@@ -93,28 +93,28 @@ This excludes the initial cyclic loading, starts the loading at 50 N and displac
 \end{figure}
 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G19-11_L1.pdf}
 \caption{The load - displacement results for the G19-11 L1 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
 \label{fig:G19-11_L1}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L1.pdf}
 \caption{The load - displacement results for the G21-11 L1 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
 \label{fig:G21-11_L1}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L2.pdf}
 \caption{The load - displacement results for the G21-11 L2 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
 \label{fig:G21-11_L2}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L3.pdf}
 \caption{The load - displacement results for the G21-11 L3 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
@@ -158,7 +158,10 @@ The full resolution scan is then imported into imageJ where the vertebra is thre
 This is carried out using the BoneJ plugin for imageJ, specifically the optimise threshold module.
 In order to use this a region of interest was selected for each vertebrae, capturing the greatest possible volume within the cortical shell, without capturing any of the shell or osteophytes.
 Due to the nature of the plugin the region of interest must first be inverted so that the connectivity is based on the trabecular bone and not the intertrabecular spaces.
-The plugin is then run on the region of interest using the default settings for the connectivity options seen in Table \ref{tab:bonej}
+The plugin is then run on the region of interest using the default settings for the connectivity options seen in Table \ref{tab:bonej}.
+This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
+This reported value must then be inverted (eg. 255 - 234 gives a threshold value of 21).
+These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable difference between the both specimens and especially spine.
 
 \begin{table}[ht!]
 	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
@@ -193,15 +196,14 @@ The plugin is then run on the region of interest using the default settings for 
 	\end{tabular}
 \end{table}
 
-Following this the threshold value reported must be inverted (eg. 255 - 234 gives a threshold value of 21).
-These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable difference between the both specimens and especially spine.
 
 The set of vertebral specimens were split at this stage into two sets, allowing an understanding of the effect of specimen specific thresholds for the vertebral models, these sets used a threshold of 21 for the Uniform test and their BoneJ predicted value for the Different Threshold Set.
 Following the application of the threshold (creating a binary image stack) a Gaussian filter with $ \sigma_{x,y,z} = 1 $ was applied in order to remove speckling found surrounding the end-caps.
 The two stacks of images are then imported into ScanIP; carried out by opening one stack of images (the original stack) and then importing a second background (the binary image stack).
-Both backgrounds are downsampled to voxel sizes of 1 mm$^3$
+Both backgrounds are downsampled to voxel sizes of 1 mm$^3$, with the (originally) binary stack being used to create the mask for the vertebrae and the original stack being used for the end-caps.
+Greyscale material properties for the vertebral mask are taken from the binary stack, while the remainder of the methods follow the same process as the original method.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
 \caption{The stiffness results of three different FE methods for four intact human vertebrae compared to the experimental stiffness results.
@@ -217,9 +219,6 @@ Difference in TH due to diff spine diff level of degen.
 \subsubsection{Predicting Vertebral Yield Point}\label{predYield}
 
 \subsubsection{Load Position Sensitivity}
-
-
-\subsubsection{--}
 
 \section{Results}
 
