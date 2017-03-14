@@ -193,14 +193,13 @@ The plugin is then run on the region of interest using the default settings for 
 	\end{tabular}
 \end{table}
 
-Following this the threshold value reported must be inverted (eg. 255 - 234 gives a threshold value of 21). 
+Following this the threshold value reported must be inverted (eg. 255 - 234 gives a threshold value of 21).
 These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable difference between the both specimens and especially spine.
 
 The set of vertebral specimens were split at this stage into two sets, allowing an understanding of the effect of specimen specific thresholds for the vertebral models, these sets used a threshold of 21 for the Uniform test and their BoneJ predicted value for the Different Threshold Set.
-Following the application of the threshold a gaussian filter with $ \sigma_{x,y,z} = 1 $ was applied in order to remove speckling found surrounding the end-caps.
-
-
-
+Following the application of the threshold (creating a binary image stack) a Gaussian filter with $ \sigma_{x,y,z} = 1 $ was applied in order to remove speckling found surrounding the end-caps.
+The two stacks of images are then imported into ScanIP; carried out by opening one stack of images (the original stack) and then importing a second background (the binary image stack).
+Both backgrounds are downsampled to voxel sizes of 1 mm$^3$
 \begin{figure}[h]
 \centering
 \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
