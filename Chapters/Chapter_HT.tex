@@ -132,7 +132,8 @@ Despite the development of methods for the augmentation of bovine tail vertebrae
 The human vertebrae, being much less dense, did not require the vertebroplasty needle to be inserted with the aid of a mallet.
 Instead the needle could be pushed by hand through the cortical shell and into the vertebral body.
 
-An additional difference was the approach with the needle, instead of entering the vertebrae through their pedicles an oblique approach was adopted.
+An additional difference was the approach with the needle, instead of entering
+the vertebrae through their pedicles an oblique approach was adopted.
 This was due to variation in pedicle diameter between the L1 - L5 lumbar levels and therefore the potential to damage the region and its load sharing capabilities.
 The oblique approach therefore avoided creating this damage to the pedicle-canal region, especially for the vertebrae with narrower pedicles and instead created much less damage to the vertebral body.
 
@@ -141,27 +142,65 @@ Here, a side opening needle was used, allowing the cement to be directed into th
 
 Quantity?
 
+\subsection{Vertebrae Characteristics}
 
-\subsection{Modelling}
+Identifying the different characteristics for the set of lumbar vertebrae has
+importance in understanding trends and relationships between the experimental and
+computational results.
+For example a larger degree of anisotropy and hence more directionally aligned
+trabeculae would potentially give a more experimentally stiff vertebra, despite
+otherwise similar charactoristics.
+Given that much of the vertebral characteristics depend on the trabecular
+structure it is important to understand how this varies between specimens.
+Furthermore, any calculations originating from a description of the trabecular
+structure require a correct threshold to be applied to the $/mu$CT scan.
+This threshold descibes the limit of the trabecular bone and hence the start of
+either marrow or empty space.
+To enable a fair comparison between vertebrae a region of interest was selected
+from the vertebral body.
+Given the large variation in cortical shell thickness, along with certain
+vertebrae containing large osteophytes and other extra bone growth, the region of
+interest (ROI) was selected to be the largest cylinder that could fit within the
+vertebral body while not capturing any of the cortical shell.
 
-Given the aims of the project - to include the models generated here into a larger set of vertebral models for use in statistical shape modelling, it is useful to model the vertebrae in a scanner independent method.
-A method for doing this (BV/TV modelling method) uses a full resolution scan with the bone regions segmented using a threshold.
-This full resolution segmented scan is then downsampled to voxels with edge length of 1 mm, meaning that each voxel has a greyscale value proportional to the BV/TV value for the region captured by that voxel.
-Areas that contain more bone will therefore have a higher greyscale value.
-This method is purely dependant on the threshold selected defining the bone and hence, given that threshold values can be repeatedly and correctly selected, is scanner independent.
+\subsubsection{Histograms}
 
-\subsubsection{BV/TV Modelling Method}
+In order to understand the spread of brightness' from the set of lumbar the
+histograms of the ROIs were plotted (Figure \ref{fig:normalisedhistogram}).
 
-The method follows that found in a study by Robson Brown et al. \cite{RobsonBrown2014} with a few minor changes.
-The scans are converted into a stack of TIFF files using an in house Matlab script, which in addition reduces the 16 bit file to 8 bit images.
-The full resolution scan is then imported into imageJ where the vertebra is thresholded and segmented.
-This is carried out using the BoneJ plugin for imageJ, specifically the optimise threshold module.
-In order to use this a region of interest was selected for each vertebrae, capturing the greatest possible volume within the cortical shell, without capturing any of the shell or osteophytes.
-Due to the nature of the plugin the region of interest must first be inverted so that the connectivity is based on the trabecular bone and not the intertrabecular spaces.
-The plugin is then run on the region of interest using the default settings for the connectivity options seen in Table \ref{tab:bonej}.
-This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
-This reported value must then be inverted (eg. 255 - 234 gives a threshold value of 21).
-These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable difference between the both specimens and especially spine.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/Normalised_Histogram.png}
+\caption{The normalised (with respect to the volume of the ROI) histogram data
+  for the 14 lumbar vertebrae.}
+\label{fig:normalisedhistogram}
+\end{figure}
+
+The lower greyscale values represent the empty space within the ROI which
+translates to regions where the bone marrow has exited the region, most likely
+during the freeze thaw cycles.
+The peak in the histogram at an approximate grescale value of 16 is due to the
+bone marrow.
+The remaining portion of the histogram represents bone, where variation is due
+to the differences in the mineral content of the bone, with more mineralised
+bone appearing brighter on $/mu$CT scans.
+The specimens ROIs that contain the brighter values are those that contain
+osteophytes that contain more dense bone than the other cortical shell, for
+example G19-11 L1.
+
+\subsubsection{Threshold Optimisation}
+
+
+The full resolution scan is imported into imageJ where the threshold
+optimisation is carried out.
+The BoneJ plugin for imageJ is used for all of the trabecular structure metrics,
+with the optimise threshold tool being the focus here.
+This tool is run on the region of interest using the default settings for the
+connectivity options seen in Table \ref{tab:bonej}.
+This chooses a threshold based on the peak in a connectivity against threshold
+plot and reports that value.
+These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable
+difference between the both specimens and especially spine.
 
 \begin{table}[ht!]
 	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
@@ -181,20 +220,76 @@ These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable diff
 \end{table}
 
 \begin{table}[ht!]
-	\caption{Threshold and BV/TV values found using the ImageJ plugin BoneJ tools optimise Threshold and Volume Fraction respecively.}
+	\caption{The suggested threshold from the optimise threshold BoneJ tool for
+    the 14 lumbar vertebrae in the set.}
 	\label{tab:th_bv_tv}
 	\centering
-	\begin{tabular}{c|c|c}
-		Vertebra & Threshold & BV/TV \\
-	\hline
-	\hline
-	G19-11 L1 & 25 & 0.244\\
-	G21-11 L1 & 22 & 0.133\\
-	G21-11 L2 & 21 & 0.107\\
-	G21-11 L3 & 21 & 0.109\\
+	\begin{tabular}{c|c}
+    Specimen    & Suggested Threshold   \\
+G17-11\_L1 & 17 \\
+G17-11\_L2 & 16\\
+G17-11\_L3 & 16\\
+G17-11\_L4 & 15\\
+G17-11\_L5 & 16\\
+G19-11\_L1 & 23\\
+G21-11\_L1 & 18\\
+G21-11\_L2 & 19\\
+G21-11\_L3 & 19\\
+G41-11\_L1 & 20\\
+G41-11\_L2 & 19\\
+G41-11\_L3 & 18\\
+G41-11\_L4 & 19\\
+G41-11\_L5 & 18\\
 	\hline
 	\end{tabular}
 \end{table}
+
+\begin{table}[ht!]
+	\caption{BV/TV and degree of anisotropy (DA)values found using the ImageJ
+    plugin BoneJ tools Volume Fraction and Annisotropy respecively using a
+    threshold of 18.}
+	\label{tab:th_bv_tv}
+	\centering
+	\begin{tabular}{c|c|c}
+    Specimen                       & BV/TV & DA\\
+G17-11\_L1  & 0.174 & 0.387 \\
+G17-11\_L2  & 0.17  & 0.364\\
+G17-11\_L3  & 0.137 & 0.359\\
+G17-11\_L4  & 0.127 & 0.418\\
+G17-11\_L5  & 0.187 & 0.341\\
+G19-11\_L1  & 0.391 & 0.199\\
+G21-11\_L1  & 0.255 & 0.327\\
+G21-11\_L2  & 0.267 & 0.231\\
+G21-11\_L3  & 0.281 & 0.301\\
+G41-11\_L1  & 0.257 & 0.239\\
+G41-11\_L2  & 0.241 & 0.338\\
+G41-11\_L3  & 0.244 & 0.348\\
+G41-11\_L4  & 0.247 & 0.371\\
+G41-11\_L5  & 0.249 & 0.186\\
+	\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Modelling}
+
+Given the aims of the project - to include the models generated here into a
+larger set of vertebral models for use in statistical shape modelling, it is
+useful to model the vertebrae in a scanner independent method.
+A method for doing this (BV/TV modelling method) uses a full resolution scan
+with the bone regions segmented using a threshold.
+This full resolution segmented scan is then downsampled to voxels with edge
+length of 1 mm, meaning that each voxel has a greyscale value proportional to
+the BV/TV value for the region captured by that voxel.
+Areas that contain more bone will therefore have a higher greyscale value.
+This method is purely dependant on the threshold selected defining the bone and
+hence, given that threshold values can be repeatedly and correctly selected, is
+scanner independent.
+
+\subsubsection{BV/TV Modelling Method}
+
+The method follows that found in a study by Robson Brown et al. \cite{RobsonBrown2014} with a few minor changes.
+The scans are converted into a stack of TIFF files using an in house Matlab script, which in addition reduces the 16 bit file to 8 bit images.
+
 
 
 The set of vertebral specimens were split at this stage into two sets, allowing an understanding of the effect of specimen specific thresholds for the vertebral models, these sets used a threshold of 21 for the Uniform test and their BoneJ predicted value for the Different Threshold Set.
