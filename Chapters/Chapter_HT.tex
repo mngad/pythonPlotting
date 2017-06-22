@@ -93,28 +93,28 @@ This excludes the initial cyclic loading, starts the loading at 50 N and displac
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G19-11_L1.pdf}
 \caption{The load - displacement results for the G19-11 L1 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
 \label{fig:G19-11_L1}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L1.pdf}
 \caption{The load - displacement results for the G21-11 L1 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
 \label{fig:G21-11_L1}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L2.pdf}
 \caption{The load - displacement results for the G21-11 L2 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
 \label{fig:G21-11_L2}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L3.pdf}
 \caption{The load - displacement results for the G21-11 L3 vertebra. Showing results of the intact load and post augmentation load up to 2000 N and the repeats and frozen load up to 1600 N.}
@@ -155,7 +155,7 @@ otherwise similar charactoristics.
 Given that much of the vertebral characteristics depend on the trabecular
 structure it is important to understand how this varies between specimens.
 Furthermore, any calculations originating from a description of the trabecular
-structure require a correct threshold to be applied to the $/mu$CT scan.
+structure require a correct threshold to be applied to the $\mu$CT scan.
 This threshold descibes the limit of the trabecular bone and hence the start of
 either marrow or empty space.
 To enable a fair comparison between vertebrae a region of interest was selected
@@ -170,7 +170,7 @@ vertebral body while not capturing any of the cortical shell.
 In order to understand the spread of brightness' from the set of lumbar the
 histograms of the ROIs were plotted (Figure \ref{fig:normalisedhistogram}).
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=4in]{Chapters/Chapter_HT_images/Normalised_Histogram.png}
 \caption{The normalised (with respect to the volume of the ROI) histogram data
@@ -185,7 +185,7 @@ The peak in the histogram at an approximate grescale value of 16 is due to the
 bone marrow.
 The remaining portion of the histogram represents bone, where variation is due
 to the differences in the mineral content of the bone, with more mineralised
-bone appearing brighter on $/mu$CT scans.
+bone appearing brighter on $\mu$CT scans.
 The specimens ROIs that contain the brighter values are those that contain
 osteophytes that contain more dense bone than the other cortical shell, for
 example G19-11 L1.
@@ -202,7 +202,11 @@ connectivity options seen in Table \ref{tab:bonej}.
 This chooses a threshold based on the peak in a connectivity against threshold
 plot and reports that value.
 These values can be seen in Figure \ref{tab:th_bv_tv}, showing considerable
-difference between the both specimens and especially spine.
+across the range of vertebrae.
+However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has an range between 18 to 20.
+This promotes the idea that these differences are due to the bone mineralisation of the bone, especially given that the G17 spine is from a Female and G41 from a male.
+
+chose val of 18 as mean
 
 \begin{table}[ht!]
 	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
