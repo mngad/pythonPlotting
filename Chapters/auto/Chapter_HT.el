@@ -11,7 +11,8 @@
     "fig:G21-11_L3"
     "fig:normalisedhistogram"
     "tab:bonej"
-    "tab:th_bv_tv"
+    "tab:optTH"
+    "tab:bv_tv_anis"
     "fig:diffModellingMethods"
     "predYield"))
  :latex)
