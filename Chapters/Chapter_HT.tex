@@ -10,9 +10,7 @@ Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the de
 \centering
   \caption{Details of the lumbar sections used from four cadaveric spines.}
   \label{tab:vertebrae}
-  
   \begin{tabular}{c|c|c|c}
-  
     Spine Name & Vertebrae & Sex & Age \\ \hline \hline
     G17-11& L1, L2, L3, L4, L5 & F & 90\\ \hline
     G19-11& L1 & F & 94\\ \hline
@@ -451,29 +449,25 @@ original method.
 \subsubsection{End-cap Depth \& Contact sensitivity}
 
 The stress distribution at the surface of the vertebral body shows high stress at the edges of the cement endcaps, at both the top and bottom of these regions.
-Experimentally the endcaps are merely moulded to the shape of the top and bottom of the vertebral body, however, previous work and other studies have used tied contact between the bone and endcaps, removing any motion between the two and locking neighbouring nodes together. 
+Experimentally the endcaps are merely moulded to the shape of the top and bottom of the vertebral body, however, previous work and other studies have used tied contact between the bone and endcaps, removing any motion between the two and locking neighbouring nodes together.
 Additionally, the depth of these endcaps varies between 5 and 20 mm depending on the shape of the vertebral endplates.
 The more concave the vertebral endcap was the more cement was required to fill the space forming a flat cement surface.
 
-Given this variation, tests identifying the effect of changing the endcap depth were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and $\pm$ 3 mm for the top and bottom endcaps independently and together. 
+Given this variation, tests identifying the effect of changing the endcap depth were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and $\pm$ 3 mm for the top and bottom endcaps independently and together.
+Additionally, different interactions between the bone and cement endcaps were tested.
+This included the current standard method of a tied interaction and replacing this with a frictionless contact between the two materials.
+Finally the effect of changing the cement endcap depth with the frictionless contact was also investigated.
+
 
 \subsubsection{Modelling Augmentation}
 
-Artificial brightening of regions surrounding the internal cement, specifically
-concentrated areas of barium sulphate and the
-artefacts this can cause affect the material properties that are applied to the
-material.
-To bypass this effect the two models, intact and post-augmentation models can be
-registered - translating them into the same spacial location.
-This allows the cement to be defined, masked and modelled based on the
-post-augmentation scan and the remaining vertebra to be defined from the intact
-scan, the same background used for the intact models.
-While the shape of the vertebra may have been changed over the course of its
-two loads, this change is less than what can be seen at 1 mm resolution.
-Additionally regions that have experienced damage through the insertion of the
-needle, yet do not contain cement will also be neglected using this method.
-However, the same justification can be made, where this is unlikely to have any
-affect at 1 mm resolution.
+Artificial brightening of regions surrounding the internal cement, specifically concentrated areas of barium sulphate and the
+artefacts this can cause affect the material properties that are applied to the material.
+To bypass this effect the two models, intact and post-augmentation models can be registered - translating them into the same spacial location.
+This allows the cement to be defined, masked and modelled based on the post-augmentation scan and the remaining vertebra to be defined from the intact scan, the same background used for the intact models.
+While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution.
+Additionally regions that have experienced damage through the insertion of the needle, yet do not contain cement will also be neglected using this method.
+However, the same justification can be made, where this is unlikely to have any affect at 1 mm resolution.
 
 
 \section{Results}
