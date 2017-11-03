@@ -132,7 +132,7 @@ chosen, a value that avoids the noise while being on the plateau of the lines.
 
 \subsubsection{Repeated Loading}
 
-Given the nature of the test, attempting to limit damage to the vertebrae,
+Given the nature of the test (attempting to limit damage to the vertebrae)
 especially during their initial intact load, the ability to derive errors
 becomes difficult especially from a single load. To attempt to understand this
 error four vertebrae having undergone augmentation were tested three more times
@@ -389,7 +389,7 @@ spines evident.
 
 
 
-\subsection{Modelling}
+\subsection{Intact Vertebrae Modelling Sensitivity Tests}
 
 Given the aims of the project - to include the models generated here into a
 larger set of vertebral models for use in statistical shape modelling, it is
@@ -458,8 +458,14 @@ Additionally, different interactions between the bone and cement endcaps were te
 This included the current standard method of a tied interaction and replacing this with a frictionless contact between the two materials.
 Finally the effect of changing the cement endcap depth with the frictionless contact was also investigated.
 
+\subsection{Modelling Augmentation}
 
-\subsubsection{Modelling Augmentation}
+Given the limited validation of models achieved using bovine tail vertebrae due to the reasons discussed in Section \ref{bov:results}, a range of different material properties and approaches to modelling the bone-cement interface were investigated.
+In addition to varying the material properties of the injected volumes of cement, the effect of using a combination of scans from before and after augmentation has been experimented with.
+To achieve this scans of pre/post augmentation were required to be registered.
+
+
+\subsubsection{Registration of $\mu$CT Scans}
 
 Artificial brightening of regions surrounding the internal cement, specifically concentrated areas of barium sulphate and the
 artefacts this can cause affect the material properties that are applied to the material.
@@ -468,6 +474,29 @@ This allows the cement to be defined, masked and modelled based on the post-augm
 While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution.
 Additionally regions that have experienced damage through the insertion of the needle, yet do not contain cement will also be neglected using this method.
 However, the same justification can be made, where this is unlikely to have any affect at 1 mm resolution.
+
+Registration of the images was carried out in 3D Slicer, using scans of the segmented, full-resolution, non-augmented vertebrae and the full-resolution augmented vertebral scans.
+The method of registration was a landmark based approach using three landmarks for each vertebra, translating the scan of the augmented vertebrae.
+These points were selected at superior of one pedicle, the inferior of the other pedicle and the inferior anterior of the vertebral body.
+The selection of these points proved to provide a repeatable registration of the vertebrae, without selecting superfluous landmarks.
+Once registered the resulting translated augmented vertebrae scan was cropped with respect to the non-augmented scan to proved an aligned and registered pair of scans.
+
+\subsubsection{Registered Scan Model Generation}
+
+The augmented models using the registered scans were created in ScanIP.
+The initial step was to import the registered augmented scan and applying an initial downsample to a resolution of 0.5 mm$^3$
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Results}
