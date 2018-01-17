@@ -292,30 +292,18 @@ shell, for example G19-11 L1.
 \subsubsection{Threshold Optimisation}
 
 
-The full resolution scan is imported into imageJ where the threshold
-optimisation is carried out. The BoneJ plugin for imageJ is used for all of the
-trabecular structure metrics, with the optimise threshold tool being the focus
-here. This tool is run on the region of interest using the default settings for
-the connectivity options seen in Table \ref{tab:bonej}. This chooses a threshold
-based on the peak in a connectivity against threshold plot and reports that
-value. These values can be seen in Table \ref{tab:optTH}, showing considerable
-across the range of vertebrae. However, the differences in these suggested
-thresholds can grouped with the spine, for example: the G17 spine has a range
-between 15 to 17, while the G41 spine has an range between 18 to 20. This
-promotes the idea that these differences are due to the bone mineralisation of
-the bone, especially given that the G17 spine is from a Female and G41 from a
-male.
+The full resolution scan is imported into imageJ where the threshold optimisation is carried out.
+The BoneJ plugin for imageJ is used for all of the trabecular structure metrics, with the optimise threshold tool being the focus here.
+This tool is run on the region of interest using the default settings for the connectivity options seen in Table \ref{tab:bonej}.
+This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
+These values can be seen in Table \ref{tab:optTH}, showing considerable across the range of vertebrae.
+However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has an range between 18 to 20.
+This promotes the idea that these differences are due to the bone mineralisation of the bone, especially given that the G17 spine is from a Female and G41 from a male.
 
-However, given that the chosen value for the threshold will directly impact the
-reported metrics, a consistent value was chosen of 18. Using lower or
-higher values for the threshold usually results in the trabeculae being
-described as thicker or thinner respectively. Hence, the difference in the
-mineralisation between specimens will still be captured when using a fixed
-threshold, given that the binary image will be down sampled before material
-properties are acquired. The results in Table \ref{tab:bv_tv_anis} show the BV /
-TV data and degree of anisotropy values for the 14 specimens using the fixed
-threshold of 18. Similar trends to what could be seen from the optimise
-threshold results can be seen in the BV/TV data, with grouping between the
+However, given that the chosen value for the threshold will directly impact the reported metrics, a consistent value was chosen of 18. Using lower or higher values for the threshold usually results in the trabeculae being described as thicker or thinner respectively.
+Hence, the difference in the mineralisation between specimens will still be captured when using a fixed threshold, given that the binary image will be down sampled before material properties are acquired.
+The results in Table \ref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
+Similar trends to what could be seen from the optimise threshold results can be seen in the BV/TV data, with grouping between the
 spines evident.
 
 \begin{table}[ht!]
