@@ -86,7 +86,7 @@ The plugin for ScanIP that allows principal component analysis and the generatio
 The first of these steps is a pre-processing step, converting the masks and backgrounds into nessessary formats (.mha \& .mhd) for use with the ITK toolkit.
 
 The following step carries out rigid registration of the models, aligning the masks and backgrounds to a shared coordinate system.
-This is carried out using the ITK library with the registration being measured according to a mean squared image-to-image metric using a gradient descent optimiser. 
+This is carried out using the ITK library with the registration being measured according to a mean squared image-to-image metric using a gradient descent optimiser.
 A limit to the number of attempts or steps allowed can be set; the default value of 100 steps for each input model was used.
 
 The geometry of each input specimen was described in a deformable registration step, measuring the transform required to morph the mean of the input vertebrae onto each of the input vertebrae.
@@ -96,9 +96,17 @@ Penultimately, the transforms between the mean and each of the input vertebrae w
 Here the outputs of the step include the principal components, their eigenvalue, percentage of variation captured in that component and the cumulative percentage variation captured.
 
 Finally, the SSAM produced can be used with the ITK Image Warp filter to generate new mask and background combinations from within the envelope of geometric and material property variation created by the input set, according to the principal components.
-The plugin allows for the first five principal components to be used for as variables for model generation, altering the value of the principal components by up to three standard deviations away from the mean in both positive and negative directions.
+The plugin allows for the first five principal components (PC1, PC2, PC3, PC4 \& PC5) to be used for as variables for model generation, altering the value of the principal components by up to three standard deviations away from the mean in both positive and negative directions.
 
 \subsection{Generating Vertebrae Models}
+
+To attempt to understand what each of the princpal components represented in terms of the variation captured by it, models were created at $\pm$1, $\pm$2 and $\pm$3 standard deviations away from the mean for the first three principal components independantly.
+In addition to these, the mean model was generated, allowing comparisons of the other generated models against it.
+
+Finally, in order to know whether the range of geometries, material properties and resultant stiffnesses found in the input set was repressented in the SSAM within the first three principal components, models were generated which incorperated the variation found in PC1, PC2 \& PC3.
+These models would represent the corners of a cube whos axis would be PC1, 2 \& 3 and whos origin would be the mean vertebra. 
+If the majority of input models (68 \%, representing the quantity of the population expected to fit within $\pm$1 SD of the mean for a normally distributed input set) fit within the limits created by a cube with side length from +1 to -1 SD along each axis for geometric measurements, greyscale background and resultant stiffness, then the variation of the input set will have been captured and repressented by the SSAM.
+
 
 
 
