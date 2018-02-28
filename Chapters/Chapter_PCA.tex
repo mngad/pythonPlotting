@@ -100,13 +100,31 @@ The plugin allows for the first five principal components (PC1, PC2, PC3, PC4 \&
 
 \subsection{Generating Vertebrae Models}
 
-To attempt to understand what each of the princpal components represented in terms of the variation captured by it, models were created at $\pm$1, $\pm$2 and $\pm$3 standard deviations away from the mean for the first three principal components independantly.
+\subsubsection{Range of Shapes Generated}
+
+To attempt to understand what each of the principal components represented in terms of the variation captured by it, models were created at $\pm$1, $\pm$2 and $\pm$3 standard deviations away from the mean for the first three principal components independently.
 In addition to these, the mean model was generated, allowing comparisons of the other generated models against it.
 
-Finally, in order to know whether the range of geometries, material properties and resultant stiffnesses found in the input set was repressented in the SSAM within the first three principal components, models were generated which incorperated the variation found in PC1, PC2 \& PC3.
-These models would represent the corners of a cube whos axis would be PC1, 2 \& 3 and whos origin would be the mean vertebra. 
-If the majority of input models (68 \%, representing the quantity of the population expected to fit within $\pm$1 SD of the mean for a normally distributed input set) fit within the limits created by a cube with side length from +1 to -1 SD along each axis for geometric measurements, greyscale background and resultant stiffness, then the variation of the input set will have been captured and repressented by the SSAM.
+Finally, in order to know whether the range of geometries, material properties and resultant stiffnesses found in the input set was represented in the SSAM within the first three principal components, models were generated which incorporated the variation found in PC1, PC2 \& PC3.
+These models would represent the corners of a cube who's axis would be PC1, 2 \& 3 and who's origin would be the mean vertebra.
+If the majority of input models (68 \%, representing the quantity of the population expected to fit within $\pm$1 SD of the mean for a normally distributed input set) fit within the limits created by a cube with side length from +1 to -1 SD along each axis for geometric measurements, greyscale background and resultant stiffness, then the variation of the input set will have been captured and represented by the SSAM.
 
+\subsubsection{FE Model Setup}
+
+Once the vertebrae were generated using the plugin the rest of the FE model was set up.
+This included forming endcaps to mimic the experimental setup and how the input set was loaded.
+Endcaps were created programmaticaly within the ScanIP python scripting environment with a diameter of 90 mm, approximately equal to the diameter of the experimental endcaps, with a depth of 6 mm ensuring the superior and inferior tips of the vertebrae were captured with a minimum of 1 mm between the vertebra and end of the cement.
+The remaining properties for the FE model are identical to those used for the models of the human vertebra which became the inputs to the PCA plugin.
+This includes a tied interaction between the vertebrae and endcaps and material properties for the endcaps being: Young's modulus 2.45 GPa and Poissons's ratio of 0.3.
+Material properties for the vertebra used the same greyscale approach as in previous chapters with the Young's modulus for each element being:
+\[ E = GS \times \alpha \]
+Where, $GS$ is the greyscale value for the current element (between 0 and 255) and $\alpha$ is the conversion factor.
+The conversion factor used has the same value used previously for the non-augmented set of vertebrae: $\alpha = 0.0008184$.
+Applying load to the models is carried out as in the previous chapter, with 1 mm of displacement applied to a loading point, with the reaction force being measured to obtain the stiffness.
+The loading point is found by finding the centre of the vertebral body in the middle slice axially and translating the point axially to the maximum height of the model, including endcaps.
+The load is then applied through a plate which is tied to the superior endcap.
+
+\subsubsection{Augmentation in Generated Models}
 
 
 
