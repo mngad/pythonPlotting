@@ -413,7 +413,7 @@ Greyscale material properties for the vertebral mask are taken from the binary
 stack, while the remainder of the methods follow the same process as the
 original method.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
   \centering
   \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
   \caption{The stiffness results of three different FE methods for four intact
@@ -434,6 +434,31 @@ original method.
 
 \subsubsection{Load Position Sensitivity}
 
+In order to understand how the vertebrae respond to different loading positions, eight different positions were tested, shown in Figure \ref{fig:loading_pos}. The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=6cm]{Chapters/Chapter_HT_images/Loading_positions.png}
+\caption{The loading positions used for the load variation tests. Position 0 is the original, central loading position, with 1 - 4 being 1 mm away from the centre and 5 - 8 being 2 mm away from the centre.}
+\label{fig:loading_pos}
+\end{figure}
+
+
+The results of the load position sensitivity tests (Figure \ref{fig:hum_load}) show that more posterior loads (above denser bone) result in higher stiffnesses while anterior loads result in a reduced stiffness. Loads lateral to the central loading point resulted in smaller reductions in the stiffness of models.
+
+It also shows that the effect of movements of 1 mm away from the experimental loading position only changes the stiffness by approximately 5 \%.
+Given the resolution of the models is limited to 1 mm, the accuracy of the selection of the experimental loading positions is also limited to 1 mm.
+The maximum 5 \% change to the stiffness when posterior or anterior may describe some of the error seen when comparing the experimental and computational results.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/human_fossil_loading.png}
+\caption{The effect of the loading position for the human lumbar vertebrae, shown as a percentage change compared to a central loading position.}
+\label{fig:hum_load}
+\end{figure}
+
+
+
 \subsubsection{End-cap Depth \& Contact sensitivity}
 
 The stress distribution at the surface of the vertebral body shows high stress at the edges of the cement endcaps, at both the top and bottom of these regions.
@@ -446,7 +471,7 @@ Additionally, different interactions between the bone and cement endcaps were te
 This included the current standard method of a tied interaction and replacing this with a frictionless contact between the two materials.
 Finally the effect of changing the cement endcap depth with the frictionless contact was also investigated.
 
-\subsection{Modelling Augmentation}
+\subsection{Modelling Augmentation}
 
 Given the limited validation of models achieved using bovine tail vertebrae due to the reasons discussed in Section \ref{bov:results}, a range of different material properties and approaches to modelling the bone-cement interface were investigated.
 In addition to varying the material properties of the injected volumes of cement, the effect of using a combination of scans from before and after augmentation has been experimented with.
@@ -472,18 +497,7 @@ Once registered the resulting translated augmented vertebrae scan was cropped wi
 \subsubsection{Registered Scan Model Generation}
 
 The augmented models using the registered scans were created in ScanIP.
-The initial step was to import the registered augmented scan and applying an initial downsample to a resolution of 0.5 mm$^3$
-
-
-
-
-
-
-
-
-
-
-
+The initial step was to import the registered augmented scan and applying an initial downsample to a resolution of 0.5 mm$^3$.
 
 
 
