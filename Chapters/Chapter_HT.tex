@@ -399,9 +399,9 @@ The method follows that found in a study by Robson Brown et al.
 \cite{RobsonBrown2014} with a few minor changes. The scans are converted from the ScanCo proprietary ISQ format into a stack of TIFF files using an in house Matlab script, which in additionally reduces reduces the 16 bit data to 8 bit images.
 
 The set of vertebral specimens were split at this stage into two sets, allowing
-an understanding of how the bone volume fraction method affects the results compared to the method described in Section \ref{finite-element-modelling-methods}.
+an understanding of how the bone volume fraction method affects the results compared to the method described in Section~\ref{finite-element-modelling-methods}.
 To the set using the bone volume fraction method a threshold was applied at the full 82 $\mu$m resolution.
-This threshold was chosen to be a greyscale value of 18, the mean of the values described in section Section \ref{th_opt} and was applied to the scan stacks in imageJ.
+This threshold was chosen to be a greyscale value of 18, the mean of the values described in section Section~\ref{th_opt} and was applied to the scan stacks in imageJ.
 Once the binary stack was created a Gaussian filter was applied, also within imageJ, with $
 \sigma_{x,y,z} = 1 $.
 This was applied in order to remove speckling found surrounding the end-caps and some of the other noise visible in the scans.
@@ -414,19 +414,19 @@ Greyscale material properties for the vertebral mask are taken from the binary
 stack, while the remainder of the methods follow the same process as the
 original method.
 
-\begin{figure}[ht!]
-  \centering
-  \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
-  \caption{The stiffness results of three different FE methods for four intact
-    human vertebrae compared to the experimental stiffness results. Interest
-    should be drawn to the ratio between specimen models rather than the values
-    themselves, given that the conversion factors between greyscale values and
-    Young's modulus have not been optimised at this stage. Results show the
-    difference between the currently used method of modelling the vertebrae and
-    the BV/TV based methods (both with uniform thresholds and different
-    thresholds for each specimen).}
-  \label{fig:diffModellingMethods}
-\end{figure}
+%\begin{figure}[ht!]
+%  \centering
+%  \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
+%  \caption{The stiffness results of three different FE methods for four intact
+%    human vertebrae compared to the experimental stiffness results. Interest
+%    should be drawn to the ratio between specimen models rather than the values
+%    themselves, given that the conversion factors between greyscale values and
+%    Young's modulus have not been optimised at this stage. Results show the
+%    difference between the currently used method of modelling the vertebrae and
+%    the BV/TV based methods (both with uniform thresholds and different
+%    thresholds for each specimen).}
+%  \label{fig:diffModellingMethods}
+%\end{figure}
 
 
 
@@ -480,12 +480,12 @@ This was carried out given that, experimentally, there is no tied contact betwee
 Given the limited validation of models achieved using bovine tail vertebrae due to the reasons discussed in Section \ref{bov:results}, a range of different material properties and approaches to modelling the bone-cement interface were investigated.
 In addition to varying the material properties of the injected volumes of cement, the effect of using a combination of scans from before and after augmentation has been experimented with.
 To achieve this scans of pre/post augmentation were required to be registered.
-
+This method utilised the BV/TV method described earlier, where the non-augmented full resolution thresholded scan is registered to the full resolution augmented scan.
 
 \subsubsection{Registration of $\mu$CT Scans}
 
 Artificial brightening of regions surrounding the internal cement, specifically concentrated areas of barium sulphate and the
-artefacts this can cause affect the material properties that are applied to the material.
+artefacts this can cause affect the material properties that are applied to the material, seen in the right-hand image in Figure \ref{fig:reg_demo}.
 To bypass this effect the two models, intact and post-augmentation models can be registered - translating them into the same spacial location.
 This allows the cement to be defined, masked and modelled based on the post-augmentation scan and the remaining vertebra to be defined from the intact scan, the same background used for the intact models.
 While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution.
@@ -498,12 +498,27 @@ These points were selected at superior of one pedicle, the inferior of the other
 The selection of these points proved to provide a repeatable registration of the vertebrae, without selecting superfluous landmarks.
 Once registered the resulting translated augmented vertebrae scan was cropped with respect to the non-augmented scan to proved an aligned and registered pair of scans.
 
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/reg_demo.png}
+  \caption{An illustration of the registration process, registering the non-augmented scan (left) with the augmented scan (right). The images are at 1 mm resolution, showing the artifacts created by the barium sulphate when viewed at this resolution, while to increase accuracy the registration carried out in Slicer 3D was at the full 82 $\mu$m resolution.}
+  \label{fig:reg_demo}
+\end{figure}
+
 \subsubsection{Registered Scan Model Generation}
 
 The augmented models using the registered scans were created in ScanIP.
 The initial step was to import the registered augmented scan and applying an initial downsample to a resolution of 0.5 mm$^3$.
 
 
+The origin of the masks coming from the two backgrounds can be seen in Figure \ref{fig:mask_demo}.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/mask_demo.png}
+  \caption{An illustration showing the origin of the masks from the non-augmented scan (left) and the augmented scan (right).}
+  \label{fig:mask_demo}
+\end{figure}
 
 \section{Results}
 
