@@ -289,7 +289,7 @@ $\mu$CT scans. The specimens ROIs that contain the brighter values are those
 that contain osteophytes that contain more dense bone than the other cortical
 shell, for example G19-11 L1.
 
-\subsubsection{Threshold Optimisation}
+\subsubsection{Threshold Optimisation}\label{th_opt}
 
 
 The full resolution scan is imported into imageJ where the threshold optimisation is carried out.
@@ -325,8 +325,7 @@ The G17-11 spine has a much lower bone volume fraction compared to the other spi
 \end{table}
 
 \begin{table}[ht!]
-	\caption{The suggested threshold from the optimise threshold BoneJ tool for
-    the 14 lumbar vertebrae in the set.}
+	\caption{The suggested threshold from the optimise threshold BoneJ tool for the 14 lumbar vertebrae in the set.}
 	\label{tab:optTH}
 	\centering
 	\begin{tabular}{c|c}
@@ -390,22 +389,23 @@ greyscale value proportional to the BV/TV value for the region captured by that
 voxel. Areas that contain more bone will therefore have a higher greyscale
 value. This method is purely dependant on the threshold selected defining the
 bone and hence, given that threshold values can be repeatedly and correctly
-selected, is scanner independent.
+selected with the methods shown in Section \ref{th_opt}, it is scanner independent.
 
 \subsubsection{BV/TV Modelling Method}
 
+This method gives the opportunity to keep much of the detail that is often lost when downsampling image data.
+Specifically, the method described gives the vertebral models much more definition of the cortical shell and internal trabecular structure while maintaining the 1 mm cubed resolution and the computational cost benefits associated with that.
 The method follows that found in a study by Robson Brown et al.
-\cite{RobsonBrown2014} with a few minor changes. The scans are converted into a
-stack of TIFF files using an in house Matlab script, which in addition reduces
-the 16 bit file to 8 bit images.
+\cite{RobsonBrown2014} with a few minor changes. The scans are converted from the ScanCo proprietary ISQ format into a stack of TIFF files using an in house Matlab script, which in additionally reduces reduces the 16 bit data to 8 bit images.
 
 The set of vertebral specimens were split at this stage into two sets, allowing
-an understanding of the effect of specimen specific thresholds for the vertebral
-models, these sets used a threshold of 21 for the Uniform test and their BoneJ
-predicted value for the Different Threshold Set. Following the application of
-the threshold (creating a binary image stack) a Gaussian filter with $
-\sigma_{x,y,z} = 1 $ was applied in order to remove speckling found surrounding
-the end-caps. The two stacks of images are then imported into ScanIP; carried
+an understanding of how the bone volume fraction method affects the results compared to the method described in Section \ref{finite-element-modelling-methods}.
+To the set using the bone volume fraction method a threshold was applied at the full 82 $\mu$m resolution.
+This threshold was chosen to be a greyscale value of 18, the mean of the values described in section Section \ref{th_opt} and was applied to the scan stacks in imageJ.
+Once the binary stack was created a Gaussian filter was applied, also within imageJ, with $
+\sigma_{x,y,z} = 1 $.
+This was applied in order to remove speckling found surrounding the end-caps and some of the other noise visible in the scans.
+The two stacks of images are then imported into ScanIP; carried
 out by opening one stack of images (the original stack) and then importing a
 second background (the binary image stack). Both backgrounds are downsampled to
 voxel sizes of 1 mm$^3$, with the (originally) binary stack being used to create
