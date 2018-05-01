@@ -531,7 +531,24 @@ The origin of the masks coming from the two backgrounds can be seen in Figure~\r
 
 \subsection{Measuring the Vertebral Body \& Augmentation Volume}
 
+While the volume of the vertebral mask can be measured directly within ScanIP or Abaqus, this volume includes the remainder of the pedicles.
+The size of the pedicles that remain after their removal during dissection varies between level and spine and is especially different with the level five vertebra, where the shape and size varies dramatically.
+To account for this variation and to get a more accurate cement fill percentage for the augmented models elliptic cylinders were fitted to the vertebral body as shown in 
 
+%TODO add images of cyl fit.
+This was carried out using a set of scripts written in python and rely of having stl files describing the vertebral geometry.
+The scripts work by finding the middle slice of a set of nodes that describe the vertebra.
+From the middle slice the shape of the ellipse is formed.
+Given that the alignment of the vertebrae is uniform, the mid point on the $y$ axis is found by searching for the node furthest away from the weighted center, $\pm$ 2 mm of the weighted centre.
+This gives the $a$ measure of the ellipse description.
+The $b$ measure is found by using a similar process - searching for the node furthest away from the centre on the $x$ axis, within $\pm$ 2 mm.
+The $a$ and $b$ measures gave the shape of the ellipse and the height of the elliptic cylinder was found by raising and lowering the ellipse until a node in the middle $\pm$ 5 mm intersected the ellipse.
+This defined the height of the ellipse.
+The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume. 
+%TODO add table of vertebral volumes.
+
+The effect of this change on the relationship between cement fill and change in augmentation stiffness was identified and is shown in Figure %TODO add image of with without cyl fit data
+While there was a change in the relationship, a clear trend between the cement fill percentage and change in stiffness for the majority of the vertebrae is still not evident without including other factors (described in Section ).%TODO percentage fill vs change in stiffness
 
 \section{Results}
 
