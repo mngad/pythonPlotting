@@ -6,56 +6,43 @@ import pandas as pd
 n_groups = 8
 mpl.rcParams.update({'font.size': 26})
 df = pd.read_csv(
-        'human_load_pos.csv',
+        'fossilav.csv',
         header=0,
         sep=',')
 # create plot
 
-VB0 = df['G17-11_L1']
-VB1 = df['G17-11_L2']
-VB2 = df['G17-11_L3']
-VB3 = df['G17-11_L4']
-VB4 = df['G17-11_L5']
-VB5 = df['G19-11_L1']
-VB6 = df['G21-11_L1']
-VB7 = df['G21-11_L2']
-VB8 = df['G21-11_L3']
-VB9 = df['G41-11_L1']
-VB10 = df['G41-11_L2']
-VB11 = df['G41-11_L3']
-VB12 = df['G41-11_L4']
-VB13 = df['G41-11_L5']
+VB0 = df['Average']
 
 fig, ax = plt.subplots()
 index = np.arange(n_groups)
-novb = 6.0
+novb = 1.0
 bar_width = 0.8/novb
 opacity = 0.8
 
 rects1 = plt.bar(index, VB0, bar_width,
                  alpha=opacity,
                  color='b',
-                 label='Spine 1 L1')
-rects2 = plt.bar(index + (bar_width) , VB1, bar_width,
-                 alpha=opacity,
-                 color='g',
-                 label='Spine 1 L2')
-rects3 = plt.bar(index+ (bar_width *2), VB2, bar_width,
-                 alpha=opacity,
-                 color='r',
-                 label='Spine 1 L3')
-rects4 = plt.bar(index + (bar_width *3), VB3, bar_width,
-                 alpha=opacity,
-                 color='c',
-                 label='Spine 1 L4')
-rects5 = plt.bar(index + (bar_width *4), VB4, bar_width,
-                 alpha=opacity,
-                 color='m',
-                 label='Spine 1 L5')
-rects6 = plt.bar(index+ (bar_width *5), VB5, bar_width,
-                 alpha=opacity,
-                 color='y',
-                 label='Spine 2 L1')
+                 label='Mean')
+#rects2 = plt.bar(index + (bar_width) , VB1, bar_width,
+#                 alpha=opacity,
+#                 color='g',
+#                 label='Spine 1 L2')
+#rects3 = plt.bar(index+ (bar_width *2), VB2, bar_width,
+#                 alpha=opacity,
+#                 color='r',
+#                 label='Spine 1 L3')
+#rects4 = plt.bar(index + (bar_width *3), VB3, bar_width,
+#                 alpha=opacity,
+#                 color='c',
+#                 label='Spine 1 L4')
+#rects5 = plt.bar(index + (bar_width *4), VB4, bar_width,
+#                 alpha=opacity,
+#                 color='m',
+#                 label='Spine 1 L5')
+#rects6 = plt.bar(index+ (bar_width *5), VB5, bar_width,
+#                 alpha=opacity,
+#                 color='y',
+#                 label='Spine 2 L1')
 #rects7 = plt.bar(index + (bar_width*6) , VB6, bar_width,
 #                 alpha=opacity,
 #                 color='k',

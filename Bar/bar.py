@@ -18,7 +18,9 @@ VB4 = df['STS14I']
 
 fig, ax = plt.subplots()
 index = np.arange(n_groups)
-bar_width = 0.15
+novb = 5.0
+bar_width = 0.8/novb
+print(bar_width)
 opacity = 0.8
 
 rects1 = plt.bar(index, VB0, bar_width,
