@@ -22,9 +22,9 @@ Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the de
 \end{table}
 
 
-\section{Methods}
+\section{Experimental Methods}
 
-\subsection{Potting}
+\subsection{Dissection \& Potting}
 
 The geometry of human lumbar vertebrae varies considerably to that of the bovine
 tail vertebrae from which this methodology is based. This is characterised by
@@ -375,7 +375,10 @@ The G17-11 spine has a much lower bone volume fraction compared to the other spi
 \end{table}
 
 
+\section{Computational Methods}
 
+The split between different modelling methods, computational and experimental is not terribly clear, given that computational methods are employed in the scanning and material property analysis described above.
+However, the methods described in this section describe the process used to model non-augmented and augmented vertebrae, with associated sensitivity tests to understand the most appropriate approach to various aspects of the modelling process.
 
 \subsection{Intact Vertebrae Modelling Sensitivity Tests}
 
@@ -389,7 +392,7 @@ greyscale value proportional to the BV/TV value for the region captured by that
 voxel. Areas that contain more bone will therefore have a higher greyscale
 value. This method is purely dependant on the threshold selected defining the
 bone and hence, given that threshold values can be repeatedly and correctly
-selected with the methods shown in Section \ref{th_opt}, it is scanner independent.
+selected with the methods shown in Section~\ref{th_opt}, it is scanner independent.
 
 \subsubsection{BV/TV Modelling Method}\label{bvtv_method}
 
@@ -431,11 +434,11 @@ original method.
 
 
 
-\subsubsection{Predicting Vertebral Yield Point}\label{predYield}
+%\subsubsection{Predicting Vertebral Yield Point}\label{predYield}
 
 \subsubsection{Load Position Sensitivity}
 
-In order to understand how the vertebrae respond to different loading positions, eight different positions were tested, shown in Figure \ref{fig:loading_pos}. The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
+In order to understand how the vertebrae respond to different loading positions, eight different positions were tested, shown in Figure~\ref{fig:loading_pos}. The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
 
 \begin{figure}[ht!]
 \centering
@@ -445,7 +448,7 @@ In order to understand how the vertebrae respond to different loading positions,
 \end{figure}
 
 
-The results of the load position sensitivity tests (Figure \ref{fig:hum_load}) show that more posterior loads (above denser bone) result in higher stiffnesses while anterior loads result in a reduced stiffness. Loads lateral to the central loading point resulted in smaller reductions in the stiffness of models.
+The results of the load position sensitivity tests (Figure~\ref{fig:hum_load}) show that more posterior loads (above denser bone) result in higher stiffness's while anterior loads result in a reduced stiffness. Loads lateral to the central loading point resulted in smaller reductions in the stiffness of models.
 
 It also shows that the effect of movements of 1 mm away from the experimental loading position only changes the stiffness by approximately 5 \%.
 Given the resolution of the models is limited to 1 mm, the accuracy of the selection of the experimental loading positions is also limited to 1 mm.
@@ -464,7 +467,7 @@ The maximum 5 \% change to the stiffness when posterior or anterior may describe
 
 The stress distribution at the surface of the vertebral body shows high stress at the edges of the cement endcaps, at both the top and bottom of these regions.
 Experimentally the endcaps are merely moulded to the shape of the top and bottom of the vertebral body, however, previous work and other studies have used tied contact between the bone and endcaps, removing any motion between the two and locking neighbouring nodes together.
-Additionally, the depth of these endcaps varies between 5 and 20 mm depending on the shape of the vertebral endplates.
+Additionally, the depth of these endcaps varies between 5 mm and 20 mm depending on the shape of the vertebral endplates.
 The more concave the vertebral endcap was the more cement was required to fill the space forming a flat cement surface.
 
 Given this variation, tests identifying the effect of changing the endcap depth were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and $\pm$ 3 mm for the top and bottom endcaps independently and together.
@@ -477,26 +480,25 @@ This was carried out given that, experimentally, there is no tied contact betwee
 
 \subsection{Modelling Augmentation}
 
-Given the limited validation of models achieved using bovine tail vertebrae due to the reasons discussed in Section \ref{bov:results}, a range of different material properties and approaches to modelling the bone-cement interface were investigated.
+Given the limited validation of models achieved using bovine tail vertebrae (due to the reasons discussed in Section~\ref{bov:results}), a range of different material properties and approaches to modelling the bone-cement interface were investigated.
 In addition to varying the material properties of the injected volumes of cement, the effect of using a combination of scans from before and after augmentation has been experimented with.
-To achieve this scans of pre/post augmentation were required to be registered.
+To achieve this scans of pre/post augmentation were registered.
 This method utilised the BV/TV method described earlier, where the non-augmented full resolution thresholded scan is registered to the full resolution augmented scan.
 
 \subsubsection{Registration of $\mu$CT Scans}
 
-Artificial brightening of regions surrounding the internal cement, specifically concentrated areas of barium sulphate and the
-artefacts this can cause affect the material properties that are applied to the material, seen in the right-hand image in Figure \ref{fig:reg_demo}.
+Artificial brightening of regions surrounding the internal cement (specifically the concentrated volumes of barium sulphate and the artefacts associated) affect the material properties that are applied to the material, seen in the right-hand image in Figure~\ref{fig:reg_demo}.
 To bypass this effect the two models, intact and post-augmentation models can be registered - translating them into the same spacial location.
 This allows the cement to be defined, masked and modelled based on the post-augmentation scan and the remaining vertebra to be defined from the intact scan, the same background used for the intact models.
-While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution.
-Additionally regions that have experienced damage through the insertion of the needle, yet do not contain cement will also be neglected using this method.
+While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution and is not apparent during the registration process carried out at 82 $\mu$m resolution.
+Additionally regions that have experienced damage through the insertion of the needle, yet do not contain cement, will also be neglected using this method.
 However, the same justification can be made, where this is unlikely to have any affect at 1 mm resolution.
 
 Registration of the images was carried out in 3D Slicer, using scans of the segmented, full-resolution, non-augmented vertebrae and the full-resolution augmented vertebral scans.
 The method of registration was a landmark based approach using three landmarks for each vertebra, translating the scan of the augmented vertebrae.
 These points were selected at superior of one pedicle, the inferior of the other pedicle and the inferior anterior of the vertebral body.
 The selection of these points proved to provide a repeatable registration of the vertebrae, without selecting superfluous landmarks.
-Once registered the resulting translated augmented vertebrae scan was cropped with respect to the non-augmented scan to provid an aligned and registered pair of scans.
+Once registered the resulting translated augmented vertebrae scan was cropped with respect to the non-augmented scan to provide an aligned and registered pair of scans.
 
 \begin{figure}[ht!]
   \centering
@@ -517,7 +519,7 @@ In this case searching for three clusters or masks separated by different thresh
 From this only the cement mask was retained and underwent a flood fill filter, removing empty voxels found within the description of the mask.
 The mask and background were then downsampled to 1 mm resolution and cropped to the same dimensions as the non-augmented model.
 From the non-augmented model, the masked describing the vertebra, the endcaps and the background of the vertebra where imported.
-The origin of the masks coming from the two backgrounds can be seen in Figure ~\ref{fig:mask_demo}.
+The origin of the masks coming from the two backgrounds can be seen in Figure~\ref{fig:mask_demo}.
 
 \begin{figure}[ht!]
   \centering
@@ -525,6 +527,11 @@ The origin of the masks coming from the two backgrounds can be seen in Figure ~\
   \caption{An illustration showing the origin of the masks from the non-augmented scan (left) and the augmented scan (right).}
   \label{fig:mask_demo}
 \end{figure}
+
+
+\subsection{Measuring the Vertebral Body \& Augmentation Volume}
+
+
 
 \section{Results}
 
