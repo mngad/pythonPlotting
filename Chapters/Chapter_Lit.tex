@@ -1254,20 +1254,16 @@ for ethical reasons among others \cite{Grassi2014} and current FE studies
 usually
 do not attempt to model population variation and instead use vertebrae
 specific models from a limited selection of experimental specimens
-\cite{Buckley2006, Kinzl2012, Wijayathunga2008, Chevalier2008}. The
-alternative to
-requiring
-cadaveric specimen or clinical scans is to generate large datasets of
-vertebral models statistically.
+\cite{Buckley2006, Kinzl2012, Wijayathunga2008, Chevalier2008}. 
 
-Such statistically generated model studies have been carried out
-previously for the femur \cite{Grassi2014, Vaananen2015} and for the
-knee joint
-\cite{Rao2013, Fitzpatrick2011}. Such studies rely on large databases of
-CT scans and
-PCA statistical modelling to represent the shape and BMD distribution of bones.
+Parameterised finite element models are often used to understand the effect of variables on a system, however, understanding which variables are important and how to set the limits of these variables becomes difficult with the increasing complexity of the system.
+Statistical approaches that are able to determine the main modes of variation and therefore reduce the number of variation types to those that have the greatest impact can aid such parameterised approaches.
+
+Statistical shape modelling (SSM) and statistical shape and appearance modelling (SSAM) approaches describe the geometric variation and the material property variation across an input set of models that describe the population \cite{clogenson2015statistical}. Such models usually describe a mean shape and the main modes of variation found within the population.
 
 \subsection{Principal Component Analysis Methods}\label{pca-methods}
+
+% TODO add the clogenson vb paper
 
 The purpose of Principal Component Analysis (PCA) is to capture the variation within a given dataset.
 It allows an understanding of how different variables interact and what variables control the greatest variation.
