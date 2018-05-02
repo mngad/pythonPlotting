@@ -394,6 +394,11 @@ value. This method is purely dependant on the threshold selected defining the
 bone and hence, given that threshold values can be repeatedly and correctly
 selected with the methods shown in Section~\ref{th_opt}, it is scanner independent.
 
+Other sensitivity studies present difficulties due to the models reliance on the underlying greyscale background.
+This is due to the greyscale optimisation process required to obtain a new conversion factor between the greyscale values and the Young's modulus for every change made to the material properties or boundary conditions of the models.
+This is in order to understand the effect the change has on the agreement between experimental and computational results, and because a change to the material properties or boundary conditions may not have a systematic or uniform effect on the results.
+Due to this, simple sensitivity tests become difficult, including common convergence studies.
+
 \subsubsection{BV/TV Modelling Method}\label{bvtv_method}
 
 This method gives the opportunity to keep much of the detail that is often lost when downsampling image data.
@@ -473,10 +478,29 @@ The more concave the vertebral endcap was the more cement was required to fill t
 Given this variation, tests identifying the effect of changing the endcap depth were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and $\pm$ 3 mm for the top and bottom endcaps independently and together.
 Additionally, different interactions between the bone and cement endcaps were tested.
 This included the current standard method of a tied interaction and replacing this with a frictionless contact between the two materials.
-Finally the effect of changing the cement endcap depth with the frictionless contact was also investigated.
+Finally, the effect of changing the cement endcap depth with the frictionless contact was also investigated, along with variations to the properties of the frictionless contacts.
 This was carried out given that, experimentally, there is no tied contact between the PMMA and the bone due to the lack of adhesive properties for the PMMA.
 
+The endcap depth was altered by adding and removing layers within the model file in ScanIP, re-meshing the model and running the files using the same Abaqus python scripts.
+Endcap contacts were changed within the Abaqus python scripts, by firstly removing the ties between the endcap and the vertebra.
+An interaction property was created with tangential behaviour set to frictionless and normal behavior with properties: \mintinline{python}{pressureOverclosure=HARD, constraintEnforcementMethod=Default} and the final option was experimented with, \mintinline{python}{allowSeperation=ON/OFF}.
+The \mintinline{python}{allowSeperation} variable determines whether separation is permitted once contact is established and models ran correctly with it set to its default of \mintinline{python}{ON}.
+However, when experimenting with the effect of loading position, especially with loads applied far from the vertebral centre, the solver struggled to converge.
+Disallowing separation after contact was shown to have a small effect on the results (the outputted stiffness) and allowed the models to run to the completion of the job.
+The remaining settings were set to the default for a generic contact: 
+\begin{minted}{c}
+	initialClearance=OMIT, 
+	adjustMethod=NONE, 
+	sliding=SMALL, 
+	enforcement=NODE_TO_SURFACE, 
+	thickness=ON, 
+	supplementaryContact=SELECTIVE, 
+	interactionProperty=contactName, 
+	smooth=0.2, 
+	bondingSet=None
+\end{minted}
 
+Further tuning of these variables to see if an improved agreement could be achieve would be a simple, though time consuming addition to this sensitivity test due to the greyscale conversion factor optimisation process required to test each option.
 
 \subsection{Modelling Augmentation}
 
