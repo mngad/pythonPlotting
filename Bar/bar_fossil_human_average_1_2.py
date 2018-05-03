@@ -4,19 +4,19 @@ import matplotlib.pyplot as plt
 import pandas as pd
 # data to plot
 n_groups = 8
-mpl.rcParams.update({'font.size': 26})
+mpl.rcParams.update({'font.size': 16})
 df = pd.read_csv(
-        'fossilav.csv',
+        'new_data/fossil_05_1.csv',
         header=0,
         sep=',')
 df2 = pd.read_csv(
-        'humanav.csv',
+        'new_data/human_1_2.csv',
         header=0,
         sep=',')
 # create plot
 
-VB0 = df['Average']
-VB1 = df2['Average']
+VB0 = df['Mean']
+VB1 = df2['Mean']
 fig, ax = plt.subplots()
 index = np.arange(n_groups)
 novb = 2.0
@@ -81,10 +81,14 @@ rects2 = plt.bar(index + (bar_width) , VB1, bar_width,
 #                 label='Spine 4 L5')
 
 plt.xlabel('Loading Position')
-plt.ylabel('Change in Stiffness Compared to Centre (%)')
+plt.ylabel('Change in Stiffness (%)')
 plt.xticks(index + bar_width)
 ax.set_xticklabels( df['Position'])
 plt.legend(fontsize=10)
 
-#plt.tight_layout()
-plt.show()
+plt.tight_layout()
+#plt.show()
+plt.savefig('hum_foss_av_1_2.png', dpi=None, facecolor='w', edgecolor='w',
+        orientation='landscape', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=1,
+        frameon=None)
