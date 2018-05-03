@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 # data to plot
 n_groups = 8
-mpl.rcParams.update({'font.size': 26})
+mpl.rcParams.update({'font.size': 16})
 df = pd.read_csv(
-        'foss_load_point.csv',
+        'new_data/fossil_10_20.csv',
         header=0,
         sep=',')
 # create plot
@@ -46,10 +46,14 @@ rects5 = plt.bar(index + (bar_width *4), VB4, bar_width,
                  label='I')
 
 plt.xlabel('Loading Position')
-plt.ylabel('Change in Stiffness Compared to Centre (%)')
+plt.ylabel('Change in Stiffness (%)')
 plt.xticks(index + bar_width)
 ax.set_xticklabels( df['Position'])
-plt.legend()
+plt.legend(fontsize=6)
 
-#plt.tight_layout()
-plt.show()
+plt.tight_layout()
+#plt.show()
+plt.savefig('foss_5_10.png', dpi=None, facecolor='w', edgecolor='w',
+        orientation='landscape', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=1,
+        frameon=None)
