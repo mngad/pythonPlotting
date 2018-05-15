@@ -17,6 +17,8 @@ df2 = pd.read_csv(
 
 VB0 = df['Mean']
 VB1 = df2['Mean']
+errorVB0 = df['SD']
+errorVB1 = df2['SD']
 fig, ax = plt.subplots()
 index = np.arange(n_groups)
 novb = 2.0
@@ -26,11 +28,11 @@ opacity = 0.8
 rects1 = plt.bar(index, VB0, bar_width,
                  alpha=opacity,
                  color='b',
-                 label='Fossil - Mean')
+                 label='Fossil - Mean', yerr=errorVB0, align='center', ecolor='black', capsize=5)
 rects2 = plt.bar(index + (bar_width) , VB1, bar_width,
                  alpha=opacity,
                  color='g',
-                 label='Human - Mean')
+                 label='Human - Mean', yerr=errorVB1, align='center', ecolor='black', capsize=5)
 #rects3 = plt.bar(index+ (bar_width *2), VB2, bar_width,
 #                 alpha=opacity,
 #                 color='r',
