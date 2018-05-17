@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,draft]{report}
+\documentclass[11pt,a4paper]{report}
 \usepackage[latin1]{inputenc}
 \usepackage{pythontex}
 \usepackage{minted}
@@ -28,6 +28,7 @@
 \usepackage{chngcntr}%per section figure numbers
 \usepackage{array}
 \usepackage{setspace}
+\usepackage{fancyhdr}
 \setstretch{1.5}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \counterwithin{table}{section}
@@ -50,7 +51,7 @@
 \listoffigures
 \listoftables
 
-
+\pagestyle{fancy}  
 \include{Chapters/Chapter_Lit}
 \include{Chapters/Chapter_Bov}
 \include{Chapters/Chapter_HT}

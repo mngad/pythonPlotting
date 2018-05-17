@@ -4,7 +4,7 @@
 
 Previous studies and earlier chapters have used a range of vertebrae, including bovine, ovine and porcine among others. While all of these vertebrae have important uses for developing methodology and understanding certain characteristics, none share the trabecular structure, thickness of cortical shell, axial strength of stiffness. Hence, in order to understand the mechanical effects of vertebroplasty, human tissue is required.
 
-Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the details shown in table \ref{tab:vertebrae}.
+Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the details shown in table~\ref{tab:vertebrae}.
 
 \begin{table}[ht!]
 \centering
@@ -78,7 +78,7 @@ needs to be avoided the maximum loads used are on the conservative side. This
 can mean that the maximum stiffness is potentially at the end of the data set or
 that the stiffness is still increasing at the load cut off. The solution to the
 latter would require a prediction of the yield point prior to experimental
-loading (discussed in Section \ref{predYield}), while the former could
+loading (discussed in Section~\ref{predYield}), while the former could
 potentially be solved by using smaller segment sizes when measuring the
 stiffness from load - displacement results.
 
@@ -112,10 +112,8 @@ increment size is computational cost, which is negligible here.
   \label{fig:findStiffness_20incr}
 \end{figure}
 
-Using an increment size of 1 data points width, as shown in Figure
-\ref{fig:findStiffness_1incr} shows a smaller variation across the range of
-segment sizes compared to using 20 points in Figure
-\ref{fig:findStiffness_20incr}. The effect of both segment size and increment
+Using an increment size of 1 data points width, as shown in Figure~\ref{fig:findStiffness_1incr} shows a smaller variation across the range of
+segment sizes compared to using 20 points in Figure~\ref{fig:findStiffness_20incr}. The effect of both segment size and increment
 size is especially evident for the two G19-11 L1 vertebrae both intact and post
 augmentation where the stiffness continues to increase until the end of the test
 at 2000 N. Meaning that there is a much smaller linear region for these two
@@ -142,16 +140,15 @@ steel housing (instead of three tests while seated in the steel housing) allowed
 the error in loading position and setup to be tested along with repeated loading
 of the vertebrae to be tested.
 
-The results of repeated loading can be seen in Figure \ref{fig:exp_repeats}. All
+The results of repeated loading can be seen in Figure~\ref{fig:exp_repeats}. All
 four specimens show a reduced stiffness for the repeated loads following the
 initial load, for which there are a few possible reasons. One possibility for
 the reduction in stiffness is that it is a consequence of the freeze thaw cycle
 that occurred between these tests. The second possibility is that the vertebrae
 were still partially frozen while the testing took place. Finally, it could be
-due to damage being caused during the initial load to 2000 N, shown in Figures
-\ref{fig:G19-11_L1} to \ref{fig:G21-11_L3} it is possible to see slight failure
+due to damage being caused during the initial load to 2000 N, shown in Figures~\ref{fig:G19-11_L1} to~\ref{fig:G21-11_L3} it is possible to see slight failure
 in the three G21-11 vertebrae, although failure cannot be seen in the G19-11 L1
-vertebrae. The frozen bar in Figure \ref{fig:exp_repeats} shows how the
+vertebrae. The frozen bar in Figure~\ref{fig:exp_repeats} shows how the
 stiffness increases when the vertebrae are completely frozen, potentially
 helping to explain the drop in stiffness found in the repeats. Further tests
 will be carried out with three more repeats following another freeze thaw cycle
@@ -159,11 +156,11 @@ to attempt to answer this.
 
 The iterative reduction in stiffness for the G21-11 L2 vertebrae can be
 explained as damage being caused after each iteration. This can be seen in
-Figure \ref{fig:G21-11_L2}, with the three repeats each showing a yielding
+Figure~\ref{fig:G21-11_L2}, with the three repeats each showing a yielding
 before the 1600 N limit and a smaller maximum load and stiffness after each
 repeat.
 
-Figures \ref{fig:G19-11_L1} through \ref{fig:G21-11_L3} show the data for the
+Figures~\ref{fig:G19-11_L1} through~\ref{fig:G21-11_L3} show the data for the
 loading, from which the maximum stiffness values are found. This excludes the
 initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
@@ -269,7 +266,7 @@ cortical shell.
 \subsubsection{Histograms}
 
 In order to understand the spread of brightness' from the set of lumbar the
-histograms of the ROIs were plotted (Figure \ref{fig:normalisedhistogram}).
+histograms of the ROIs were plotted (Figure~\ref{fig:normalisedhistogram}).
 
 \begin{figure}[ht!]
   \centering
@@ -294,15 +291,15 @@ shell, for example G19-11 L1.
 
 The full resolution scan is imported into imageJ where the threshold optimisation is carried out.
 The BoneJ plugin for imageJ is used for all of the trabecular structure metrics, with the optimise threshold tool being the focus here.
-This tool is run on the region of interest using the default settings for the connectivity options seen in Table \ref{tab:bonej}.
+This tool is run on the region of interest using the default settings for the connectivity options seen in Table~\ref{tab:bonej}.
 This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
-These values can be seen in Table \ref{tab:optTH}, showing considerable across the range of vertebrae.
+These values can be seen in Table~\ref{tab:optTH}, showing considerable across the range of vertebrae.
 However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has an range between 18 to 20.
 This promotes the idea that these differences are due to the bone mineralisation of the bone, especially given that the G17 spine is from a Female and G41 from a male.
 
 However, given that the chosen value for the threshold will directly impact the reported metrics, a consistent value was chosen of 18. Using lower or higher values for the threshold usually results in the trabeculae being described as thicker or thinner respectively.
 Hence, the difference in the mineralisation between specimens will still be captured when using a fixed threshold, given that the binary image will be down sampled before material properties are acquired.
-The results in Table \ref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
+The results in Table~\ref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
 Similar trends to what could be seen from the optimise threshold results can be seen in the BV/TV data, with grouping between the
 spines evident.
 The G17-11 spine has a much lower bone volume fraction compared to the other spines, which suggests a more osteoporotic spine, most likely resulting in less stiff vertebra.
@@ -537,7 +534,7 @@ The augmented models using the registered scans were created in ScanIP, followin
 The initial step was to import the registered augmented scans and apply an initial downsample to a resolution of 0.5 mm$^3$.
 This resolution provided enough detail to capture the detail of the injected cement volume without increasing the computational difficulty and therefore time to segment the scans.
 
-To segment the three regions (background, bone and endcaps, and injected cement) it was found that the most reproducible and accurate method was to use the Otsu thresholding process \cite{sezgin2004survey}, a filter that is built in to ScanIP.
+To segment the three regions (background, bone and endcaps, and injected cement) it was found that the most reproducible and accurate method was to use the Otsu thresholding process \cite{sezgin2004survey}, a filter that is built in to ScanIP\@.
 It was used to find three masks in the scan and works on a threshold clustering method.
 In this case searching for three clusters or masks separated by different thresholds and returning a mask that described the background, the bone and endcaps and the cement region.
 From this only the cement mask was retained and underwent a flood fill filter, removing empty voxels found within the description of the mask.
@@ -557,9 +554,30 @@ The origin of the masks coming from the two backgrounds can be seen in Figure~\r
 
 While the volume of the vertebral mask can be measured directly within ScanIP or Abaqus, this volume includes the remainder of the pedicles.
 The size of the pedicles that remain after their removal during dissection varies between level and spine and is especially different with the level five vertebra, where the shape and size varies dramatically.
-To account for this variation and to get a more accurate cement fill percentage for the augmented models elliptic cylinders were fitted to the vertebral body as shown in 
+To account for this variation and to get a more accurate cement fill percentage for the augmented models elliptic cylinders were fitted to the vertebral body as shown in figure~\ref{fig:cyl_fit}
 
-%TODO add images of cyl fit.
+
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=5in]{Chapters/Chapter_HT_images/cyl_fit_ful_iso_both.png}
+  \caption{A diagram showing the fitting of the cylinders to the vertebral body, where the point cloud describing the vertebra comes from an STL file, the red ring shows the points included in the mid-slice and the central red dot indicates the center of the mid-slice.}
+  \label{fig:cyl_fit}
+\end{figure}
+
+Vertebrae that contained a vascular channel, seen in figure~\ref{fig:cyl_channel}, had the channel removed by filling the space in ScanIP.
+This was carried out for two main reasons: the first was to allow accurate fitting of the cylinder into the vertebral (to avoid the problems shown in figure~\ref{fig:cyl_channel}) and to remove problems with the cement being exposed when modelling augmentation and the extra contacts / interfaces that are created.
+Models with the vascular channel removed were compared to the original models and it was found that there was less than 0.5 \% difference for the set.
+This was due to the elements used to fill the channel having material properties based on the greyscale, which had values of approximately zero, given the nature of the channel.
+Due to the lack of any effect in removing the channel the vertebra models of augmentation did not include the vascular channel.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=5in]{Chapters/Chapter_HT_images/cyl_fit_channel_both.png}
+  \caption{An illustration showing the problems that occur with vertebrae that have a distinctive vascular channel and the false cylinder fit that occurs.}
+  \label{fig:cyl_channel}
+\end{figure}
+
 This was carried out using a set of scripts written in python and rely of having stl files describing the vertebral geometry.
 The scripts work by finding the middle slice of a set of nodes that describe the vertebra.
 From the middle slice the shape of the ellipse is formed.
@@ -568,13 +586,53 @@ This gives the $a$ measure of the ellipse description.
 The $b$ measure is found by using a similar process - searching for the node furthest away from the centre on the $x$ axis, within $\pm$ 2 mm.
 The $a$ and $b$ measures gave the shape of the ellipse and the height of the elliptic cylinder was found by raising and lowering the ellipse until a node in the middle $\pm$ 5 mm intersected the ellipse.
 This defined the height of the ellipse.
-The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume. 
-%TODO add table of vertebral volumes.
+The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume, shown in table~\ref{tab:vertebrae_vol_cyl}.
+The percentage reduction in vertebral body volume, from total vertebral body volume to the fitted cylinder volume, varies significantly and is due to changes to the vertebral shape outside of the main vertebral body portion.
+For example, G19-11 L1 was a degenerate vertebrae with extra bone growth at the anterior limits of the vertebral body.
+Other large changes were due to the size of the pedicles, where larger vertebrae (G41-11) had proportionally larger pedicles.
+
+\begin{table}[ht!]
+\centering
+  \caption{Vertebral body volume compared to the volume of the fitted cylinder.}
+	\label{tab:vertebrae_vol_cyl}
+  \begin{tabular}{c |c|c|c}
+	  Specimen & Total Vertebral  & Fitted Cylinder & Change in Volume\\ 
+	  &Body Volume (mm$^3$)&Volume (mm$^3$) &(\%)\\ \hline \hline
+	  G17-11\_L1  & 31229 & 17490 & -44\\
+	  G17-11\_L2  & 31789 & 20551 & -35\\
+	  G17-11\_L3  & 33519 & 22014 & -34\\
+	  G17-11\_L4  & 35123 & 22796 & -35\\
+	  G17-11\_L5  & 31189 & 22254 & -28\\
+	  G19-11\_L1  & 33835 & 17420 & -48\\
+	  G21-11\_L1  & 45866 & 31073 & -32\\
+	  G21-11\_L2  & 53695 & 34470 & -36\\
+	  G21-11\_L3  & 56003 & 36750 & -34\\
+	  G41-11\_L1  & 35137 & 22231 & -37\\
+	  G41-11\_L2  & 36791 & 23837 & -35\\
+	  G41-11\_L3  & 39909 & 26036 & -35\\
+	  G41-11\_L4  & 43357 & 25612 & -41\\
+	  G41-11\_L5  & 45606 & 26936 & -41\\
+	  \hline
+  \end{tabular}
+
+\end{table}
 
 The effect of this change on the relationship between cement fill and change in augmentation stiffness was identified and is shown in Figure %TODO add image of with without cyl fit data
 While there was a change in the relationship, a clear trend between the cement fill percentage and change in stiffness for the majority of the vertebrae is still not evident without including other factors (described in Section ).%TODO percentage fill vs change in stiffness
 
 \section{Results}
+
+\subsection{Experimental Loading Results}
+
+\subsubsection{Non-augmented Stiffness Results}
+
+\subsubsection{Augmented Stiffness Results}
+
+\subsection{Computational Results}
+
+\subsubsection{Non-augmented Model Results}
+
+\subsubsection{Augmented Model Results}
 
 \section{Discussion}
 
@@ -591,7 +649,7 @@ Experimentally there was large variation seen in the results, in terms of materi
 One of the main limitations to the study is the numbers of vertebrae included in in the set.
 Having four human spines with a limited number of lumbar vertebrae available from each spine, meant that only 14 out of a possible 20 vertebrae were able to be tested.
 This meant that there was a skew towards the top of the lumbar section with limited numbers of L4 and L5 vertebrae.
-Such skews to the data set have effects to any statistics applied to the data set and will be discussed more thoroughly in the PCA discussion chapter in Section \ref{pca_disc}.
+Such skews to the data set have effects to any statistics applied to the data set and will be discussed more thoroughly in the PCA discussion chapter in Section~\ref{pca_disc}.
 More relevant to modelling the vertebrae is the effect this has on the determination and optimisation of the greyscale conversion factor.
 The large change in geometry from L4 to L5, rather that the gradual change between L1 to L4, introduces questions about the response to loading (and augmentation) for this vertebra in particular and how it differs from other levels.
 A resolution to this limitation would be to increase the specimen numbers and look at vertebral levels in isolation; identifying level specific differences and properties.
