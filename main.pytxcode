@@ -1,7 +1,8 @@
 =>PYTHONTEX:SETTINGS#
-version=v0.12
+version=0.16
 outputdir=pythontex-files-main
-workingdir=pythontex-files-main
+workingdir=.
+workingdirset=false
 gobble=none
 rerun=default
 hashdependencies=default
