@@ -1,4 +1,3 @@
-% Encoding: UTF-8
 %% This BibTeX bibliography file was created using BibDesk.
 %% http://bibdesk.sourceforge.net/
 
@@ -998,10 +997,9 @@
 	Year = {1985},
 	Bdsk-Url-1 = {http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2621.1985.tb13433.x/pdf}}
 
-@Misc{,
-  title        = {{Phagocytosis}},
-  howpublished = {$\backslash$url{\{}http://www.cliffsnotes.com/sciences/biology/microbiology/nonspecific-body-defense/phagocytosis{\}}},
-}
+@misc{phag,
+	Howpublished = {$\backslash$url{\{}http://www.cliffsnotes.com/sciences/biology/microbiology/nonspecific-body-defense/phagocytosis{\}}},
+	Title = {{Phagocytosis}}}
 
 @article{Zhou2000,
 	Abstract = {The precise dimensions of the lumbar vertebrae and discs are critical for the production of appropriate spinal implants. Unfortunately, existing databases of vertebral and intervertebral dimensions are limited either in accuracy, study population or parameters recorded. The objective of this study is to provide a large and accurate database of lumbar spinal characteristics from 126 digitised computed tomographic (CT) images, reviewed using the Picture Archiving Communication System (PACS) coupled with its internal measuring instrumentation. These CT images were obtained from patients with low back pain attending the spinal clinic at the Hammersmith Hospitals NHS Trust. Measurements of various aspects of vertebral dimensions and geometry were recorded, including vertebral and intervertebral disc height. The results from this study indicated that the depth and width of the vertebral endplate increased from the third to the fifth lumbar vertebra. Anterior vertebral height remained the same from the third to the fifth vertebra, but the posterior vertebral height decreased. Mean disc height in the lower lumbar segments was 11.6 +/- 1.8 mm for the L3/4 disc, 11.3 +/- 2.1 mm for the L4/5, and 10.7 +/- 2.1 mm for the L5/S1 level. The average circumference of the lower endplate of the fourth lumbar vertebra was 141 mm and the average surface area was 1,492 mm2. An increasing pedicle width from a mean of 9.6 +/- 2.2 mm at L3 through to 16.2 +/- 2.8 mm at L5 was noted. A comprehensive database of vertebral and intervertebral dimensions was generated from 378 lumbar vertebrae from 126 patients measured with a precise digital technique. These results are invaluable in establishing an anthropometric model of the human lumbar spine, and provide useful data for anatomical research. In addition this is important information for the scientific planning of spinal surgery and for the design of spinal implants.},
@@ -3105,16 +3103,3 @@ CONCLUSIONS: The problem with stating definitely that vertebroplasty and kyphopl
 	Year = {2011},
 	Bdsk-Url-1 = {http://bonej.org/images/Doube%7B%5C_%7D2010UKPMC.pdf},
 	Bdsk-Url-2 = {https://doi.org/10.1016/j.bone.2010.08.023.BoneJ}}
-
-@Article{zapata2017methodology,
-  author    = {Zapata-Cornelio, Fernando Y and Day, Gavin A and Coe, Ruth H and Sikora, Sebastien NF and Wijayathunga, Vithanage N and Tarsuslugil, Sami M and Mengoni, Marl{\`e}ne and Wilcox, Ruth K},
-  title     = {Methodology to Produce Specimen-Specific Models of Vertebrae: Application to Different Species},
-  journal   = {Annals of biomedical engineering},
-  year      = {2017},
-  volume    = {45},
-  number    = {10},
-  pages     = {2451--2460},
-  publisher = {Springer},
-}
-
-@Comment{jabref-meta: databaseType:bibtex;}

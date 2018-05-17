@@ -483,14 +483,14 @@ This was carried out given that, experimentally, there is no tied contact betwee
 
 The endcap depth was altered by adding and removing layers within the model file in ScanIP, re-meshing the model and running the files using the same Abaqus python scripts.
 Endcap contacts were changed within the Abaqus python scripts, by firstly removing the ties between the endcap and the vertebra.
-An interaction property was created with tangential behaviour set to frictionless and normal behavior with properties: \mintinline{python}{pressureOverclosure=HARD, constraintEnforcementMethod=Default} and the final option was experimented with, \mintinline{python}{allowSeperation=ON/OFF}.
-The \mintinline{python}{allowSeperation} variable determines whether separation is permitted once contact is established and models ran correctly with it set to its default of \mintinline{python}{ON}.
+An interaction property was created with tangential behaviour set to frictionless and normal behavior with properties: $pressureOverclosure=HARD,  constraintEnforcementMethod=Default$ and the final option was experimented with, $allowSeperation=ON/OFF$.
+The $allowSeperation$ variable determines whether separation is permitted once contact is established and models ran correctly with it set to its default of $ON$.
 However, when experimenting with the effect of loading position, especially with loads applied far from the vertebral centre, the solver struggled to converge.
 Disallowing separation after contact was shown to have a small effect on the results (the outputted stiffness) and allowed the models to run to the completion of the job.
 The remaining settings were set to the default for a generic contact: 
-\begin{minted}{c}
+\begin{minted}{python}
 	initialClearance=OMIT, 
-	adjustMethod=NONE, 
+	adjustMethod=None, 
 	sliding=SMALL, 
 	enforcement=NODE_TO_SURFACE, 
 	thickness=ON, 
@@ -577,6 +577,39 @@ While there was a change in the relationship, a clear trend between the cement f
 \section{Results}
 
 \section{Discussion}
+
+
+
+
+
+\subsection{Experimental Results}
+
+Experimentally there was large variation seen in the results, in terms of material properties (BV/TV values), geometry and response to loading.
+
+\subsection{Limitations Regarding Specimen Numbers \& Vertebral Features}
+
+One of the main limitations to the study is the numbers of vertebrae included in in the set.
+Having four human spines with a limited number of lumbar vertebrae available from each spine, meant that only 14 out of a possible 20 vertebrae were able to be tested.
+This meant that there was a skew towards the top of the lumbar section with limited numbers of L4 and L5 vertebrae.
+Such skews to the data set have effects to any statistics applied to the data set and will be discussed more thoroughly in the PCA discussion chapter in Section \ref{pca_disc}.
+More relevant to modelling the vertebrae is the effect this has on the determination and optimisation of the greyscale conversion factor.
+The large change in geometry from L4 to L5, rather that the gradual change between L1 to L4, introduces questions about the response to loading (and augmentation) for this vertebra in particular and how it differs from other levels.
+A resolution to this limitation would be to increase the specimen numbers and look at vertebral levels in isolation; identifying level specific differences and properties.
+Variation at different vertebral levels may require level specific greyscale conversion factors, such as those required when modelling different animal species \cite{zapata2017methodology}.
+However, within the current set of vertebrae greater variation was found between spine rather than level (for BV/TV, stiffness and vertebral body volume), even when including L5 vertebrae.
+Suggesting that segregation of vertebral levels is unnecessary for the current specimen set. 
+
+Another limitation of the study is the age range and limited information regarding vertebral health.
+
+
+
+
+\subsubsection{Sensitivity Test Significance}
+
+\subsubsection{Computational Method Significance}
+
+\subsection{Augmented Modelling}
+
 
 \section{Conclusion}
 
