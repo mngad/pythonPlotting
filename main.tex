@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{report}
+\documentclass[11pt,a4paper,twoside]{report}
 \usepackage[latin1]{inputenc}
 \usepackage{pythontex}
 \usepackage{minted}
@@ -33,7 +33,7 @@
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \counterwithin{table}{section}
 \counterwithin{figure}{section}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage[inner=4cm,outer=2cm,top=2cm,bottom=2cm]{geometry}
 
 \title{Thesis}
 \author{Gavin Day}
@@ -45,13 +45,20 @@
 
 \include{Title}
 
-\newgeometry{top=2cm,bottom=2cm,right=2cm,left=4cm}
+%\newgeometry{top=2cm,bottom=2cm,right=2cm,left=4cm}
 
 \tableofcontents
 \listoffigures
 \listoftables
 
-\pagestyle{fancy}  
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\renewcommand{\sectionmark}[1]{ \markright{#1} }
+
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{ \nouppercase{\leftmark}} }
+\fancyhead[LO,RE]{\textit{ \nouppercase{\rightmark}} }
 \include{Chapters/Chapter_Lit}
 \include{Chapters/Chapter_Bov}
 \include{Chapters/Chapter_HT}
