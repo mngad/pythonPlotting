@@ -4,19 +4,21 @@ import matplotlib.pyplot as plt
 import pandas as pd
 # data to plot
 n_groups = 8
-mpl.rcParams.update({'font.size': 16})
+mpl.rcParams.update({'font.size': 10})
 df = pd.read_csv(
-        'new_data/fossil_05_1.csv',
+        '../new_data/fossil_all_lr.csv',
         header=0,
         sep=',')
 df2 = pd.read_csv(
-        'new_data/human_1_2.csv',
+        '../new_data/human_all_lr.csv',
         header=0,
         sep=',')
 # create plot
 
 VB0 = df['Mean']
 VB1 = df2['Mean']
+errorVB0 = df['SD']
+errorVB1 = df2['SD']
 fig, ax = plt.subplots()
 index = np.arange(n_groups)
 novb = 2.0
@@ -26,11 +28,11 @@ opacity = 0.8
 rects1 = plt.bar(index, VB0, bar_width,
                  alpha=opacity,
                  color='b',
-                 label='Fossil - Mean')
+                 label='Fossil - Mean', yerr=errorVB0, align='center', ecolor='black', capsize=5)
 rects2 = plt.bar(index + (bar_width) , VB1, bar_width,
                  alpha=opacity,
                  color='g',
-                 label='Human - Mean')
+                 label='Human - Mean', yerr=errorVB1, align='center', ecolor='black', capsize=5)
 #rects3 = plt.bar(index+ (bar_width *2), VB2, bar_width,
 #                 alpha=opacity,
 #                 color='r',
@@ -88,7 +90,7 @@ plt.legend(fontsize=10)
 
 plt.tight_layout()
 #plt.show()
-plt.savefig('hum_foss_av_1_2.png', dpi=None, facecolor='w', edgecolor='w',
+plt.savefig('hum_foss_av_lr.png', dpi=320, facecolor='w', edgecolor='w',
         orientation='landscape', papertype=None, format=None,
         transparent=False, bbox_inches=None, pad_inches=1,
         frameon=None)

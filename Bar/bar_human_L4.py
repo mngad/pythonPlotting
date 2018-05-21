@@ -4,27 +4,27 @@ import matplotlib.pyplot as plt
 import pandas as pd
 # data to plot
 n_groups = 8
-mpl.rcParams.update({'font.size': 26})
+mpl.rcParams.update({'font.size': 16})
 df = pd.read_csv(
-        'human_load_pos.csv',
+        'new_data/human_1_2.csv',
         header=0,
         sep=',')
 # create plot
 
-VB0 = df['G17-11_L1']
-VB1 = df['G17-11_L2']
-VB2 = df['G17-11_L3']
-VB3 = df['G17-11_L4']
-VB4 = df['G17-11_L5']
-VB5 = df['G19-11_L1']
-VB6 = df['G21-11_L1']
-VB7 = df['G21-11_L2']
-VB8 = df['G21-11_L3']
-VB9 = df['G41-11_L1']
-VB10 = df['G41-11_L2']
-VB11 = df['G41-11_L3']
-VB12 = df['G41-11_L4']
-VB13 = df['G41-11_L5']
+VB0 = df['G17-11 L1']
+VB1 = df['G17-11 L2']
+VB2 = df['G17-11 L3']
+VB3 = df['G17-11 L4']
+VB4 = df['G17-11 L5']
+VB5 = df['G19-11 L1']
+VB6 = df['G21-11 L1']
+VB7 = df['G21-11 L2']
+VB8 = df['G21-11 L3']
+VB9 = df['G41-11 L1']
+VB10 = df['G41-11 L2']
+VB11 = df['G41-11 L3']
+VB12 = df['G41-11 L4']
+VB13 = df['G41-11 L5']
 
 fig, ax = plt.subplots()
 index = np.arange(n_groups)
@@ -90,10 +90,14 @@ rects13 = plt.bar(index+ (bar_width *1), VB12, bar_width,
 #                 label='Spine 4 L5')
 
 plt.xlabel('Loading Position')
-plt.ylabel('Change in Stiffness Compared to Centre (%)')
+plt.ylabel('Change in Stiffness (%)')
 plt.xticks(index + bar_width)
 ax.set_xticklabels( df['Position'])
 plt.legend(fontsize=10)
 
-#plt.tight_layout()
-plt.show()
+plt.tight_layout()
+#plt.show()
+plt.savefig('hum_L4_1_2.png', dpi=None, facecolor='w', edgecolor='w',
+        orientation='landscape', papertype=None, format=None,
+        transparent=False, bbox_inches=None, pad_inches=1,
+        frameon=None)

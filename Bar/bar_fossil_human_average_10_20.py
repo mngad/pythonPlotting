@@ -88,7 +88,7 @@ plt.legend(fontsize=10)
 
 plt.tight_layout()
 #plt.show()
-plt.savefig('hum_10_20.png', dpi=None, facecolor='w', edgecolor='w',
+plt.savefig('hum_foss_av_10_20.png', dpi=None, facecolor='w', edgecolor='w',
         orientation='landscape', papertype=None, format=None,
         transparent=False, bbox_inches=None, pad_inches=1,
         frameon=None)
