@@ -627,6 +627,17 @@ While there was a change in the relationship, a clear trend between the cement f
   \label{fig:cyl_fit_comparison}
 \end{figure}
 
+
+
+
+
+%TODO Other Methods - imageJ for images and 3d projections
+
+
+
+
+
+
 \section{Results}
 
 
@@ -650,7 +661,7 @@ There was not a clear relationship found between the cement fill of the total ve
 However, trends could be seen when splitting vertebrae into groups with: \textit{a)} dispersed volumes of injected cement and \textit{b)} concentrated volumes of cement.
 This can be seen in figure~\ref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83$) can be seen between the percentage fill of the total vertebral volume and the percentage change in stiffness for those vertebrae with concentrated volumes of cement.
 
-\begin{figure}[ht!]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/Aug_cmt_fill_vs_ch_stiff.png}
 	\caption{The relationship between the percentage fill of the total vertebral volume and the percentage change in the vertebral stiffness following augmentation. The line and \textit{r} value are for the red points where the cement volume was characterised as concentrated. The remaining blue points indicated the vertebra where the cement volume was characterised as dispersed.}
@@ -659,34 +670,68 @@ This can be seen in figure~\ref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83
 
 \subsection{Experimental Augmentation}
 
+The cement distributions following augmentation can be seen in \cref{fig:G17-11_projection,fig:G19-11_projection,fig:G21-11_projection,fig:G41-11_projection}.
+From the 3D projection images and slices from $\mu$CT stack it was determined which vertebrae contained dispersed and which vertebrae contained concentrated volumes of cement, this characterisation can be seen in table~\ref{tab:conc_disp}.
 
-\begin{figure}[ht!]
+
+
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/G17-11_projections.eps}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G17-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the G17-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes of cement.}
   \label{fig:G17-11_projection}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/G19-11_projections.eps}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G19-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the G19-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The vertebra is defined as having a dispersed volume of cement.}
   \label{fig:G19-11_projection}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/G21-11_projections.eps}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G21-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the G21-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2 and L3 vertebrae have concentrated volumes of cement.}
   \label{fig:G21-11_projection}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/G41-11_projections.eps}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G41-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the G41-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1, L2 and L5 vertebrae are defined as having a dispersed volume of cement while the remaining L3 and L4 vertebrae have concentrated volumes of cement.}
-  \label{fig:G17-11_projection}
+  \label{fig:G41-11_projection}
 \end{figure}
+
+
+\begin{table}[h!]
+	\caption{The characterisation of the augmented vertebrae into vertebrae with dispersed and concentrated volumes of cement.}
+	\label{tab:conc_disp}
+	\centering
+	\begin{tabular}{c|c}
+    Vertebra & Cement Distribution \\
+    \hline
+    \hline
+
+    G17-11\_L1 & Dispersed \\
+    G17-11\_L2 & Concentrated\\
+    G17-11\_L3 & Concentrated\\
+    G17-11\_L4 & Concentrated\\
+    G17-11\_L5 & Concentrated\\
+    G19-11\_L1 & Dispersed \\
+    G21-11\_L1 & Dispersed \\
+    G21-11\_L2 & Concentrated\\
+    G21-11\_L3 & Concentrated\\
+    G41-11\_L1 & Dispersed \\
+    G41-11\_L2 & Dispersed \\
+    G41-11\_L3 & Concentrated\\
+    G41-11\_L4 & Concentrated\\
+    G41-11\_L5 & Dispersed \\
+    \hline
+	\end{tabular}
+\end{table}
+
+
 
 \subsection{Computational Results}
 

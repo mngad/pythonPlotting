@@ -28,7 +28,10 @@
 \usepackage{chngcntr}%per section figure numbers
 \usepackage{array}
 \usepackage{setspace}
-\usepackage{fancyhdr}
+\usepackage{fancyhdr} % header
+\usepackage{epstopdf} %eps to pdf conversion
+\epstopdfsetup{outdir=./conv_pics/}
+\usepackage{cleveref}
 \setstretch{1.5}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \counterwithin{table}{section}
