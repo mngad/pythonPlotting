@@ -12,10 +12,10 @@ Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the de
   \label{tab:vertebrae}
   \begin{tabular}{c|c|c|c}
     Spine Name & Vertebrae & Sex & Age \\ \hline \hline
-    G17-11& L1, L2, L3, L4, L5 & F & 90\\ \hline
-    G19-11& L1 & F & 94\\ \hline
-    G21-11& L1, L2, L3 & M & 86\\ \hline
-    G41-11& L1, L2, L3, L4, L5 & M & 83\\ \hline
+    Spine 1& L1, L2, L3, L4, L5 & F & 90\\ \hline
+    Spine 2& L1 & F & 94\\ \hline
+    Spine 3& L1, L2, L3 & M & 86\\ \hline
+    Spine 4& L1, L2, L3, L4, L5 & M & 83\\ \hline
 
   \end{tabular}
 
@@ -114,7 +114,7 @@ increment size is computational cost, which is negligible here.
 
 Using an increment size of 1 data points width, as shown in Figure~\ref{fig:findStiffness_1incr} shows a smaller variation across the range of
 segment sizes compared to using 20 points in Figure~\ref{fig:findStiffness_20incr}. The effect of both segment size and increment
-size is especially evident for the two G19-11 L1 vertebrae both intact and post
+size is especially evident for the two Spine 2 L1 vertebrae both intact and post
 augmentation where the stiffness continues to increase until the end of the test
 at 2000 N. Meaning that there is a much smaller linear region for these two
 specimens, hence requiring a smaller segment size to measure the largest
@@ -122,7 +122,7 @@ gradient.
 
 Choosing values for the segment size to use moving forwards becomes difficult
 given the large effect it can have on the measured maximum stiffness (a range of
-over 1000 N/mm in the case the two G19-11 L1 tests). The segment size needs to
+over 1000 N/mm in the case the two Spine 2 L1 tests). The segment size needs to
 be small enough to capture the maximum stiffness while avoiding the noise when
 using a segment size below 18 data points. Hence, a value of 20 data points was
 chosen, a value that avoids the noise while being on the plateau of the lines.
@@ -146,21 +146,21 @@ initial load, for which there are a few possible reasons. One possibility for
 the reduction in stiffness is that it is a consequence of the freeze thaw cycle
 that occurred between these tests. The second possibility is that the vertebrae
 were still partially frozen while the testing took place. Finally, it could be
-due to damage being caused during the initial load to 2000 N, shown in Figures~\ref{fig:G19-11_L1} to~\ref{fig:G21-11_L3} it is possible to see slight failure
-in the three G21-11 vertebrae, although failure cannot be seen in the G19-11 L1
+due to damage being caused during the initial load to 2000 N, shown in Figures~\ref{fig:Spine 2_L1} to~\ref{fig:Spine 3_L3} it is possible to see slight failure
+in the three Spine 3 vertebrae, although failure cannot be seen in the Spine 2 L1
 vertebrae. The frozen bar in Figure~\ref{fig:exp_repeats} shows how the
 stiffness increases when the vertebrae are completely frozen, potentially
 helping to explain the drop in stiffness found in the repeats. Further tests
 will be carried out with three more repeats following another freeze thaw cycle
 to attempt to answer this.
 
-The iterative reduction in stiffness for the G21-11 L2 vertebrae can be
+The iterative reduction in stiffness for the Spine 3 L2 vertebrae can be
 explained as damage being caused after each iteration. This can be seen in
-Figure~\ref{fig:G21-11_L2}, with the three repeats each showing a yielding
+Figure~\ref{fig:Spine 3_L2}, with the three repeats each showing a yielding
 before the 1600 N limit and a smaller maximum load and stiffness after each
 repeat.
 
-Figures~\ref{fig:G19-11_L1} through~\ref{fig:G21-11_L3} show the data for the
+Figures~\ref{fig:Spine 2_L1} through~\ref{fig:Spine 3_L3} show the data for the
 loading, from which the maximum stiffness values are found. This excludes the
 initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
@@ -177,38 +177,38 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G19-11_L1.pdf}
-  \caption{The load - displacement results for the G19-11 L1 vertebra. Showing
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 2_L1.pdf}
+  \caption{The load - displacement results for the Spine 2 L1 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:G19-11_L1}
+  \label{fig:Spine 2_L1}
 \end{figure}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L1.pdf}
-  \caption{The load - displacement results for the G21-11 L1 vertebra. Showing
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 3_L1.pdf}
+  \caption{The load - displacement results for the Spine 3 L1 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:G21-11_L1}
+  \label{fig:Spine 3_L1}
 \end{figure}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L2.pdf}
-  \caption{The load - displacement results for the G21-11 L2 vertebra. Showing
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 3_L2.pdf}
+  \caption{The load - displacement results for the Spine 3 L2 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:G21-11_L2}
+  \label{fig:Spine 3_L2}
 \end{figure}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L3.pdf}
-  \caption{The load - displacement results for the G21-11 L3 vertebra. Showing
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 3_L3.pdf}
+  \caption{The load - displacement results for the Spine 3 L3 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:G21-11_L3}
+  \label{fig:Spine 3_L3}
 \end{figure}
 
 
@@ -284,7 +284,7 @@ histogram represents bone, where variation is due to the differences in the
 mineral content of the bone, with more mineralised bone appearing brighter on
 $\mu$CT scans. The specimens ROIs that contain the brighter values are those
 that contain osteophytes that contain more dense bone than the other cortical
-shell, for example G19-11 L1.
+shell, for example Spine 2 L1.
 
 \subsubsection{Threshold Optimisation}\label{th_opt}
 
@@ -302,7 +302,7 @@ Hence, the difference in the mineralisation between specimens will still be capt
 The results in Table~\ref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
 Similar trends to what could be seen from the optimise threshold results can be seen in the BV/TV data, with grouping between the
 spines evident.
-The G17-11 spine has a much lower bone volume fraction compared to the other spines, which suggests a more osteoporotic spine, most likely resulting in less stiff vertebra.
+The Spine 1 spine has a much lower bone volume fraction compared to the other spines, which suggests a more osteoporotic spine, most likely resulting in less stiff vertebra.
 
 \begin{table}[ht!]
 	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
@@ -327,20 +327,20 @@ The G17-11 spine has a much lower bone volume fraction compared to the other spi
 	\centering
 	\begin{tabular}{c|c}
     Specimen    & Suggested Threshold   \\ \hline \hline
-    G17-11\_L1 & 17 \\
-    G17-11\_L2 & 16\\
-    G17-11\_L3 & 16\\
-    G17-11\_L4 & 15\\
-    G17-11\_L5 & 16\\
-    G19-11\_L1 & 23\\
-    G21-11\_L1 & 18\\
-    G21-11\_L2 & 19\\
-    G21-11\_L3 & 19\\
-    G41-11\_L1 & 20\\
-    G41-11\_L2 & 19\\
-    G41-11\_L3 & 18\\
-    G41-11\_L4 & 19\\
-    G41-11\_L5 & 18\\
+    Spine 1 L1 & 17 \\
+    Spine 1 L2 & 16\\
+    Spine 1 L3 & 16\\
+    Spine 1 L4 & 15\\
+    Spine 1 L5 & 16\\
+    Spine 2 L1 & 23\\
+    Spine 3 L1 & 18\\
+    Spine 3 L2 & 19\\
+    Spine 3 L3 & 19\\
+    Spine 4 L1 & 20\\
+    Spine 4 L2 & 19\\
+    Spine 4 L3 & 18\\
+    Spine 4 L4 & 19\\
+    Spine 4 L5 & 18\\
     \hline
 	\end{tabular}
 \end{table}
@@ -353,20 +353,20 @@ The G17-11 spine has a much lower bone volume fraction compared to the other spi
 	\centering
 	\begin{tabular}{c|c|c}
     Specimen                       & BV/TV & DA\\ \hline \hline
-    G17-11\_L1  & 0.174 & 0.387 \\
-    G17-11\_L2  & 0.17  & 0.364\\
-    G17-11\_L3  & 0.137 & 0.359\\
-    G17-11\_L4  & 0.127 & 0.418\\
-    G17-11\_L5  & 0.187 & 0.341\\
-    G19-11\_L1  & 0.391 & 0.199\\
-    G21-11\_L1  & 0.255 & 0.327\\
-    G21-11\_L2  & 0.267 & 0.231\\
-    G21-11\_L3  & 0.281 & 0.301\\
-    G41-11\_L1  & 0.257 & 0.239\\
-    G41-11\_L2  & 0.241 & 0.338\\
-    G41-11\_L3  & 0.244 & 0.348\\
-    G41-11\_L4  & 0.247 & 0.371\\
-    G41-11\_L5  & 0.249 & 0.186\\
+    Spine 1 L1  & 0.174 & 0.387 \\
+    Spine 1 L2  & 0.17  & 0.364\\
+    Spine 1 L3  & 0.137 & 0.359\\
+    Spine 1 L4  & 0.127 & 0.418\\
+    Spine 1 L5  & 0.187 & 0.341\\
+    Spine 2 L1  & 0.391 & 0.199\\
+    Spine 3 L1  & 0.255 & 0.327\\
+    Spine 3 L2  & 0.267 & 0.231\\
+    Spine 3 L3  & 0.281 & 0.301\\
+    Spine 4 L1  & 0.257 & 0.239\\
+    Spine 4 L2  & 0.241 & 0.338\\
+    Spine 4 L3  & 0.244 & 0.348\\
+    Spine 4 L4  & 0.247 & 0.371\\
+    Spine 4 L5  & 0.249 & 0.186\\
     \hline
 	\end{tabular}
 \end{table}
@@ -588,8 +588,8 @@ The $a$ and $b$ measures gave the shape of the ellipse and the height of the ell
 This defined the height of the ellipse.
 The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume, shown in table~\ref{tab:vertebrae_vol_cyl}.
 The percentage reduction in vertebral body volume, from total vertebral body volume to the fitted cylinder volume, varies significantly and is due to changes to the vertebral shape outside of the main vertebral body portion.
-For example, G19-11 L1 was a degenerate vertebrae with extra bone growth at the anterior limits of the vertebral body.
-Other large changes were due to the size of the pedicles, where larger vertebrae (G41-11) had proportionally larger pedicles.
+For example, Spine 2 L1 was a degenerate vertebrae with extra bone growth at the anterior limits of the vertebral body.
+Other large changes were due to the size of the pedicles, where larger vertebrae (Spine 4) had proportionally larger pedicles.
 
 \begin{table}[ht!]
 \centering
@@ -598,20 +598,20 @@ Other large changes were due to the size of the pedicles, where larger vertebrae
   \begin{tabular}{c |c|c|c}
 	  Specimen & Total Vertebral  & Fitted Cylinder & Change in Volume\\ 
 	  &Body Volume (mm$^3$)&Volume (mm$^3$) &(\%)\\ \hline \hline
-	  G17-11\_L1  & 31229 & 17490 & -44\\
-	  G17-11\_L2  & 31789 & 20551 & -35\\
-	  G17-11\_L3  & 33519 & 22014 & -34\\
-	  G17-11\_L4  & 35123 & 22796 & -35\\
-	  G17-11\_L5  & 31189 & 22254 & -28\\
-	  G19-11\_L1  & 33835 & 17420 & -48\\
-	  G21-11\_L1  & 45866 & 31073 & -32\\
-	  G21-11\_L2  & 53695 & 34470 & -36\\
-	  G21-11\_L3  & 56003 & 36750 & -34\\
-	  G41-11\_L1  & 35137 & 22231 & -37\\
-	  G41-11\_L2  & 36791 & 23837 & -35\\
-	  G41-11\_L3  & 39909 & 26036 & -35\\
-	  G41-11\_L4  & 43357 & 25612 & -41\\
-	  G41-11\_L5  & 45606 & 26936 & -41\\
+	  Spine 1\_L1  & 31229 & 17490 & -44\\
+	  Spine 1\_L2  & 31789 & 20551 & -35\\
+	  Spine 1\_L3  & 33519 & 22014 & -34\\
+	  Spine 1\_L4  & 35123 & 22796 & -35\\
+	  Spine 1\_L5  & 31189 & 22254 & -28\\
+	  Spine 2\_L1  & 33835 & 17420 & -48\\
+	  Spine 3\_L1  & 45866 & 31073 & -32\\
+	  Spine 3\_L2  & 53695 & 34470 & -36\\
+	  Spine 3\_L3  & 56003 & 36750 & -34\\
+	  Spine 4\_L1  & 35137 & 22231 & -37\\
+	  Spine 4\_L2  & 36791 & 23837 & -35\\
+	  Spine 4\_L3  & 39909 & 26036 & -35\\
+	  Spine 4\_L4  & 43357 & 25612 & -41\\
+	  Spine 4\_L5  & 45606 & 26936 & -41\\
 	  \hline
   \end{tabular}
 
@@ -647,6 +647,41 @@ While there was a change in the relationship, a clear trend between the cement f
 
 \subsubsection{Augmented Stiffness Results}\label{sec:aug_stiffness_res}
 
+The vertebral stiffness following experimental loading can be seen in \cref{tab:aug_non_aug_stiff} for the non-augmented vertebrae and following vertebral augmentation.
+The change in stiffness can be seen in \cref{fig:aug_non_aug_stiffness} where an increase in stiffness was seen Spine 1 L2-L5 and Spine 2 L1, while the remaining vertebrae presented a reduction in stiffness following augmentation.
+
+\begin{table}[h!]
+\centering
+\caption{The experimental stiffness results for pre and post augmentation.}
+\label{tab:aug_non_aug_stiff}
+\begin{tabular}{c|c|c|c}
+    Specimen  & Non-augmented Stiffness & Augmented Stiffness & Change in stiffness \\
+              & (N/mm) & (N/mm) & (N/mm) \hline \hline \\
+Spine 1 L1 & 2991          & 2339      & -652  \\
+Spine 1 L2 & 3456          & 3980      & 523   \\
+Spine 1 L3 & 3244          & 4152      & 907   \\
+Spine 1 L4 & 3223          & 4744      & 1521  \\
+Spine 1 L5 & 2891          & 4273      & 1382  \\
+Spine 2 L1 & 6149          & 7119      & 969   \\
+Spine 3 L1 & 5153          & 4444      & -709  \\
+Spine 3 L2 & 5357          & 4848      & -510  \\
+Spine 3 L3 & 5338          & 4779      & -559  \\
+Spine 4 L1 & 3277          & 3231      & -46   \\
+Spine 4 L2 & 5064          & 5042      & -22   \\
+Spine 4 L3 & 6098          & 5749      & -349  \\
+Spine 4 L4 & 4957          & 4488      & -468  \\
+Spine 4 L5 & 7185          & 4403      & -2782 \hline
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/aug_non_aug_stiffness}
+	\caption{The experimental stiffness of the vertebrae pre and post augmentation. Showing that 5 of the 14 vertebrae showed an increase in stiffness following augmentation.}
+  \label{fig:aug_non_aug_stiffness}
+\end{figure}
+
 A strong relationship was found between the percentage fill achieved and the bone volume fraction of the vertebra, where a reduced density of bone resulted in larger quantities of cement being injected into the vertebra before cement leakage occurred.
 This relationship can be seen in figure~\ref{fig:cmt_fill_vs_bvtv}.
 
@@ -670,37 +705,37 @@ This can be seen in figure~\ref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83
 
 \subsection{Experimental Augmentation}
 
-The cement distributions following augmentation can be seen in \cref{fig:G17-11_projection,fig:G19-11_projection,fig:G21-11_projection,fig:G41-11_projection}.
+The cement distributions following augmentation can be seen in \cref{fig:Spine 1_projection,fig:Spine 2_projection,fig:Spine 3_projection,fig:Spine 4_projection}.
 From the 3D projection images and slices from $\mu$CT stack it was determined which vertebrae contained dispersed and which vertebrae contained concentrated volumes of cement, this characterisation can be seen in table~\ref{tab:conc_disp}.
 
 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G17-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the G17-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes of cement.}
-  \label{fig:G17-11_projection}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 1_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 1 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes of cement.}
+  \label{fig:Spine 1_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G19-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the G19-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The vertebra is defined as having a dispersed volume of cement.}
-  \label{fig:G19-11_projection}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 2_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 2 spine following augmentation, with the cement region being the brighter material in the vertebral body. The vertebra is defined as having a dispersed volume of cement.}
+  \label{fig:Spine 2_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G21-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the G21-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2 and L3 vertebrae have concentrated volumes of cement.}
-  \label{fig:G21-11_projection}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 3_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 3 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2 and L3 vertebrae have concentrated volumes of cement.}
+  \label{fig:Spine 3_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G41-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the G41-11 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1, L2 and L5 vertebrae are defined as having a dispersed volume of cement while the remaining L3 and L4 vertebrae have concentrated volumes of cement.}
-  \label{fig:G41-11_projection}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 4_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 4 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1, L2 and L5 vertebrae are defined as having a dispersed volume of cement while the remaining L3 and L4 vertebrae have concentrated volumes of cement.}
+  \label{fig:Spine 4_projection}
 \end{figure}
 
 
@@ -713,20 +748,20 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
     \hline
     \hline
 
-    G17-11\_L1 & Dispersed \\
-    G17-11\_L2 & Concentrated\\
-    G17-11\_L3 & Concentrated\\
-    G17-11\_L4 & Concentrated\\
-    G17-11\_L5 & Concentrated\\
-    G19-11\_L1 & Dispersed \\
-    G21-11\_L1 & Dispersed \\
-    G21-11\_L2 & Concentrated\\
-    G21-11\_L3 & Concentrated\\
-    G41-11\_L1 & Dispersed \\
-    G41-11\_L2 & Dispersed \\
-    G41-11\_L3 & Concentrated\\
-    G41-11\_L4 & Concentrated\\
-    G41-11\_L5 & Dispersed \\
+    Spine 1\_L1 & Dispersed \\
+    Spine 1\_L2 & Concentrated\\
+    Spine 1\_L3 & Concentrated\\
+    Spine 1\_L4 & Concentrated\\
+    Spine 1\_L5 & Concentrated\\
+    Spine 2\_L1 & Dispersed \\
+    Spine 3\_L1 & Dispersed \\
+    Spine 3\_L2 & Concentrated\\
+    Spine 3\_L3 & Concentrated\\
+    Spine 4\_L1 & Dispersed \\
+    Spine 4\_L2 & Dispersed \\
+    Spine 4\_L3 & Concentrated\\
+    Spine 4\_L4 & Concentrated\\
+    Spine 4\_L5 & Dispersed \\
     \hline
 	\end{tabular}
 \end{table}
@@ -739,6 +774,23 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 
 \subsubsection{Augmented Model Results}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Discussion}
 
 
@@ -748,7 +800,12 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 \subsection{Experimental Results}
 
 Experimentally there was large variation seen in the results, in terms of material properties (BV/TV values), geometry and response to loading.
+The experimental response to loading showed a large range in the stiffness of the vertebrae, even for vertebrae with similar volumes and for vertebrae originating from the same spine.
+This wide range of stiffness' extends to the augmented vertebral stiffness, although the range does decrease following augmentation.
+The variation seen in the intact vertebrae aids the justification for the study, if such a wide range of vertebral properties exists within such a small data set then it explains why such variation is found clinically when identifying the response to vertebroplasty.
 
+Following augmentation five of the 14 vertebrae showed an increase in the stiffness following augmentation, which, given the stiffness of the injected cement compared to that of trabecular bone, is an unexpectedly small number.
+Four of the vertebrae that showed an increase in stiffness were from the same spine (Spine 1) 
 \subsection{Limitations Regarding Specimen Numbers \& Vertebral Features}
 
 One of the main limitations to the study is the numbers of vertebrae included in in the set.
