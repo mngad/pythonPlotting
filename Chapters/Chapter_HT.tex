@@ -345,31 +345,6 @@ The Spine 1 spine has a much lower bone volume fraction compared to the other sp
 	\end{tabular}
 \end{table}
 
-\begin{table}[ht!]
-	\caption{BV/TV and degree of anisotropy (DA) values found using the ImageJ
-    plugin BoneJ tools Volume Fraction and Annisotropy respectively using a
-    threshold of 18.}
-	\label{tab:bv_tv_anis}
-	\centering
-	\begin{tabular}{c|c|c}
-    Specimen                       & BV/TV & DA\\ \hline \hline
-    Spine 1 L1  & 0.174 & 0.387 \\
-    Spine 1 L2  & 0.17  & 0.364\\
-    Spine 1 L3  & 0.137 & 0.359\\
-    Spine 1 L4  & 0.127 & 0.418\\
-    Spine 1 L5  & 0.187 & 0.341\\
-    Spine 2 L1  & 0.391 & 0.199\\
-    Spine 3 L1  & 0.255 & 0.327\\
-    Spine 3 L2  & 0.267 & 0.231\\
-    Spine 3 L3  & 0.281 & 0.301\\
-    Spine 4 L1  & 0.257 & 0.239\\
-    Spine 4 L2  & 0.241 & 0.338\\
-    Spine 4 L3  & 0.244 & 0.348\\
-    Spine 4 L4  & 0.247 & 0.371\\
-    Spine 4 L5  & 0.249 & 0.186\\
-    \hline
-	\end{tabular}
-\end{table}
 
 
 \section{Computational Methods}
@@ -618,7 +593,7 @@ Other large changes were due to the size of the pedicles, where larger vertebrae
 \end{table}
 
 The effect of this change on the relationship between cement fill and change in augmentation stiffness was identified and is shown in figure~\ref{fig:cyl_fit_comparison}.
-While there was a change in the relationship, a clear trend between the cement fill percentage and change in stiffness for the majority of the vertebrae is still not evident without including other factors (described in Section~\ref{sec:aug_stiffness_res}).
+While there was a change in the relationship, a clear trend between the cement fill percentage and change in stiffness for the majority of the vertebrae is still not evident without including other factors (described in \cref{sec:aug_stiffness_res}).
 
 \begin{figure}[ht!]
   \centering
@@ -641,14 +616,41 @@ While there was a change in the relationship, a clear trend between the cement f
 \section{Results}
 
 
-\subsection{Experimental Loading Results}
+\subsection{Experimental Properties}\label{sec:aug_stiffness_res}
 
-\subsubsection{Non-augmented Stiffness Results}
-
-\subsubsection{Augmented Stiffness Results}\label{sec:aug_stiffness_res}
+Material properties for the vertebrae can be seen in \cref{tab:bv_tv_anis}, with grouping evident for the bone volume fraction measurements.
+For example the mean BV/TV value for Spine 1 was $0.159 \pm 0.026$, while the mean for Spine 4 was $0.248 \pm 0.022$ with similar results for the other two spines (although with less vertebra).
+Less grouping could be seen between the degree of anisotropy for the vertebrae.
 
 The vertebral stiffness following experimental loading can be seen in \cref{tab:aug_non_aug_stiff} for the non-augmented vertebrae and following vertebral augmentation.
 The change in stiffness can be seen in \cref{fig:aug_non_aug_stiffness} where an increase in stiffness was seen Spine 1 L2-L5 and Spine 2 L1, while the remaining vertebrae presented a reduction in stiffness following augmentation.
+
+
+\begin{table}[ht!]
+	\caption{BV/TV and degree of anisotropy (DA) values found using the ImageJ
+    plugin BoneJ tools Volume Fraction and Annisotropy respectively using a
+    threshold of 18.}
+	\label{tab:bv_tv_anis}
+	\centering
+	\begin{tabular}{c|c|c}
+    Specimen                       & BV/TV & DA\\ \hline \hline
+    Spine 1 L1  & 0.174 & 0.387 \\
+    Spine 1 L2  & 0.17  & 0.364\\
+    Spine 1 L3  & 0.137 & 0.359\\
+    Spine 1 L4  & 0.127 & 0.418\\
+    Spine 1 L5  & 0.187 & 0.341\\
+    Spine 2 L1  & 0.391 & 0.199\\
+    Spine 3 L1  & 0.255 & 0.327\\
+    Spine 3 L2  & 0.267 & 0.231\\
+    Spine 3 L3  & 0.281 & 0.301\\
+    Spine 4 L1  & 0.257 & 0.239\\
+    Spine 4 L2  & 0.241 & 0.338\\
+    Spine 4 L3  & 0.244 & 0.348\\
+    Spine 4 L4  & 0.247 & 0.371\\
+    Spine 4 L5  & 0.249 & 0.186\\
+    \hline
+	\end{tabular}
+\end{table}
 
 \begin{table}[h!]
 \centering
@@ -805,7 +807,19 @@ This wide range of stiffness' extends to the augmented vertebral stiffness, alth
 The variation seen in the intact vertebrae aids the justification for the study, if such a wide range of vertebral properties exists within such a small data set then it explains why such variation is found clinically when identifying the response to vertebroplasty.
 
 Following augmentation five of the 14 vertebrae showed an increase in the stiffness following augmentation, which, given the stiffness of the injected cement compared to that of trabecular bone, is an unexpectedly small number.
-Four of the vertebrae that showed an increase in stiffness were from the same spine (Spine 1) 
+Four of the vertebrae that showed an increase in stiffness were from the same spine (Spine 1), which is the spine that had a considerably smaller bone volume fraction compared to the other vertebra from other spines.
+Given that this spine had the smallest bone volume fraction it also received the largest quantity of cement, given the relationship between the percentage fill achieved and the bone volume fraction.
+This relationship is most likely due to the ease of cement injection before leakage, with more dense vertebrae failing to receive large volumes of cement before the cement found one of the vascular channels (upon which injection was stopped) and less dense vertebrae having more space to receive cement.
+
+To summarise the change in stiffness following augmentation based on the material properties of the vertebrae, the following features have the greatest effect:
+\begin{enumerate}
+    \item A smaller bone volume fraction results in larger quantities of cement being injected before leakage occurs.
+    \item If the volume of cement is contained in a concentrated volume then the greater the volume of cement then the larger the increase in stiffness following augmentation.
+    \item If the volume of cement is dispersed through the vertebral body then there is no relationship between the volume of cement injected and its effect of the vertebral stiffness.
+    \item Concentrated volumes of cement are more likely if the bone volume fraction of the vertebra is smaller.
+\end{enumerate}
+
+
 \subsection{Limitations Regarding Specimen Numbers \& Vertebral Features}
 
 One of the main limitations to the study is the numbers of vertebrae included in in the set.
