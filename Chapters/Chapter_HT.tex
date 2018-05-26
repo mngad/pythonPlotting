@@ -4,7 +4,7 @@
 
 Previous studies and earlier chapters have used a range of vertebrae, including bovine, ovine and porcine among others. While all of these vertebrae have important uses for developing methodology and understanding certain characteristics, none share the trabecular structure, thickness of cortical shell, axial strength of stiffness. Hence, in order to understand the mechanical effects of vertebroplasty, human tissue is required.
 
-Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the details shown in table~\ref{tab:vertebrae}.
+Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the details shown in \cref{tab:vertebrae}.
 
 \begin{table}[ht!]
 \centering
@@ -112,8 +112,8 @@ increment size is computational cost, which is negligible here.
   \label{fig:findStiffness_20incr}
 \end{figure}
 
-Using an increment size of 1 data points width, as shown in Figure~\ref{fig:findStiffness_1incr} shows a smaller variation across the range of
-segment sizes compared to using 20 points in Figure~\ref{fig:findStiffness_20incr}. The effect of both segment size and increment
+Using an increment size of 1 data points width, as shown in \cref{fig:findStiffness_1incr} shows a smaller variation across the range of
+segment sizes compared to using 20 points in \cref{fig:findStiffness_20incr}. The effect of both segment size and increment
 size is especially evident for the two Spine 2 L1 vertebrae both intact and post
 augmentation where the stiffness continues to increase until the end of the test
 at 2000 N. Meaning that there is a much smaller linear region for these two
@@ -140,15 +140,15 @@ steel housing (instead of three tests while seated in the steel housing) allowed
 the error in loading position and setup to be tested along with repeated loading
 of the vertebrae to be tested.
 
-The results of repeated loading can be seen in Figure~\ref{fig:exp_repeats}. All
+The results of repeated loading can be seen in \cref{fig:exp_repeats}. All
 four specimens show a reduced stiffness for the repeated loads following the
 initial load, for which there are a few possible reasons. One possibility for
 the reduction in stiffness is that it is a consequence of the freeze thaw cycle
 that occurred between these tests. The second possibility is that the vertebrae
 were still partially frozen while the testing took place. Finally, it could be
-due to damage being caused during the initial load to 2000 N, shown in Figures~\ref{fig:Spine 2_L1} to~\ref{fig:Spine 3_L3} it is possible to see slight failure
+due to damage being caused during the initial load to 2000 N, shown in \cref{fig:Spine 2_L1,fig:Spine 3_L3} it is possible to see slight failure
 in the three Spine 3 vertebrae, although failure cannot be seen in the Spine 2 L1
-vertebrae. The frozen bar in Figure~\ref{fig:exp_repeats} shows how the
+vertebrae. The frozen bar in \cref{fig:exp_repeats} shows how the
 stiffness increases when the vertebrae are completely frozen, potentially
 helping to explain the drop in stiffness found in the repeats. Further tests
 will be carried out with three more repeats following another freeze thaw cycle
@@ -156,7 +156,7 @@ to attempt to answer this.
 
 The iterative reduction in stiffness for the Spine 3 L2 vertebrae can be
 explained as damage being caused after each iteration. This can be seen in
-Figure~\ref{fig:Spine 3_L2}, with the three repeats each showing a yielding
+\cref{fig:Spine 3_L2}, with the three repeats each showing a yielding
 before the 1600 N limit and a smaller maximum load and stiffness after each
 repeat.
 
@@ -177,7 +177,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 2_L1.pdf}
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G19-11_L1.pdf}
   \caption{The load - displacement results for the Spine 2 L1 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
@@ -186,7 +186,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 3_L1.pdf}
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L1.pdf}
   \caption{The load - displacement results for the Spine 3 L1 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
@@ -195,7 +195,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 3_L2.pdf}
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L2.pdf}
   \caption{The load - displacement results for the Spine 3 L2 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
@@ -204,7 +204,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Spine 3_L3.pdf}
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L3.pdf}
   \caption{The load - displacement results for the Spine 3 L3 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
@@ -266,7 +266,7 @@ cortical shell.
 \subsubsection{Histograms}
 
 In order to understand the spread of brightness' from the set of lumbar the
-histograms of the ROIs were plotted (Figure~\ref{fig:normalisedhistogram}).
+histograms of the ROIs were plotted (\cref{fig:normalisedhistogram}).
 
 \begin{figure}[ht!]
   \centering
@@ -291,15 +291,15 @@ shell, for example Spine 2 L1.
 
 The full resolution scan is imported into imageJ where the threshold optimisation is carried out.
 The BoneJ plugin for imageJ is used for all of the trabecular structure metrics, with the optimise threshold tool being the focus here.
-This tool is run on the region of interest using the default settings for the connectivity options seen in Table~\ref{tab:bonej}.
+This tool is run on the region of interest using the default settings for the connectivity options seen in \cref{tab:bonej}.
 This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
-These values can be seen in Table~\ref{tab:optTH}, showing considerable across the range of vertebrae.
+These values can be seen in \cref{tab:optTH}, showing considerable across the range of vertebrae.
 However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has an range between 18 to 20.
 This promotes the idea that these differences are due to the bone mineralisation of the bone, especially given that the G17 spine is from a Female and G41 from a male.
 
 However, given that the chosen value for the threshold will directly impact the reported metrics, a consistent value was chosen of 18. Using lower or higher values for the threshold usually results in the trabeculae being described as thicker or thinner respectively.
 Hence, the difference in the mineralisation between specimens will still be captured when using a fixed threshold, given that the binary image will be down sampled before material properties are acquired.
-The results in Table~\ref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
+The results in \cref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
 Similar trends to what could be seen from the optimise threshold results can be seen in the BV/TV data, with grouping between the
 spines evident.
 The Spine 1 spine has a much lower bone volume fraction compared to the other spines, which suggests a more osteoporotic spine, most likely resulting in less stiff vertebra.
@@ -415,7 +415,7 @@ original method.
 
 \subsubsection{Load Position Sensitivity}
 
-In order to understand how the vertebrae respond to different loading positions, eight different positions were tested, shown in Figure~\ref{fig:loading_pos}. The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
+In order to understand how the vertebrae respond to different loading positions, eight different positions were tested, shown in \cref{fig:loading_pos}. The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
 
 \begin{figure}[ht!]
 \centering
@@ -425,7 +425,7 @@ In order to understand how the vertebrae respond to different loading positions,
 \end{figure}
 
 
-The results of the load position sensitivity tests (Figure~\ref{fig:hum_load}) show that more posterior loads (above denser bone) result in higher stiffness's while anterior loads result in a reduced stiffness. Loads lateral to the central loading point resulted in smaller reductions in the stiffness of models.
+The results of the load position sensitivity tests (\cref{fig:hum_load}) show that more posterior loads (above denser bone) result in higher stiffness's while anterior loads result in a reduced stiffness. Loads lateral to the central loading point resulted in smaller reductions in the stiffness of models.
 
 It also shows that the effect of movements of 1 mm away from the experimental loading position only changes the stiffness by approximately 5 \%.
 Given the resolution of the models is limited to 1 mm, the accuracy of the selection of the experimental loading positions is also limited to 1 mm.
@@ -483,7 +483,7 @@ This method utilised the BV/TV method described earlier, where the non-augmented
 
 \subsubsection{Registration of $\mu$CT Scans}
 
-Artificial brightening of regions surrounding the internal cement (specifically the concentrated volumes of barium sulphate and the artefacts associated) affect the material properties that are applied to the material, seen in the right-hand image in Figure~\ref{fig:reg_demo}.
+Artificial brightening of regions surrounding the internal cement (specifically the concentrated volumes of barium sulphate and the artefacts associated) affect the material properties that are applied to the material, seen in the right-hand image in \cref{fig:reg_demo}.
 To bypass this effect the two models, intact and post-augmentation models can be registered - translating them into the same spacial location.
 This allows the cement to be defined, masked and modelled based on the post-augmentation scan and the remaining vertebra to be defined from the intact scan, the same background used for the intact models.
 While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution and is not apparent during the registration process carried out at 82 $\mu$m resolution.
@@ -515,7 +515,7 @@ In this case searching for three clusters or masks separated by different thresh
 From this only the cement mask was retained and underwent a flood fill filter, removing empty voxels found within the description of the mask.
 The mask and background were then downsampled to 1 mm resolution and cropped to the same dimensions as the non-augmented model.
 From the non-augmented model, the masked describing the vertebra, the endcaps and the background of the vertebra where imported.
-The origin of the masks coming from the two backgrounds can be seen in Figure~\ref{fig:mask_demo}.
+The origin of the masks coming from the two backgrounds can be seen in \cref{fig:mask_demo}.
 
 \begin{figure}[ht!]
   \centering
@@ -529,7 +529,7 @@ The origin of the masks coming from the two backgrounds can be seen in Figure~\r
 
 While the volume of the vertebral mask can be measured directly within ScanIP or Abaqus, this volume includes the remainder of the pedicles.
 The size of the pedicles that remain after their removal during dissection varies between level and spine and is especially different with the level five vertebra, where the shape and size varies dramatically.
-To account for this variation and to get a more accurate cement fill percentage for the augmented models elliptic cylinders were fitted to the vertebral body as shown in figure~\ref{fig:cyl_fit}
+To account for this variation and to get a more accurate cement fill percentage for the augmented models elliptic cylinders were fitted to the vertebral body as shown in \cref{fig:cyl_fit}
 
 
 
@@ -540,8 +540,8 @@ To account for this variation and to get a more accurate cement fill percentage 
   \label{fig:cyl_fit}
 \end{figure}
 
-Vertebrae that contained a vascular channel, seen in figure~\ref{fig:cyl_channel}, had the channel removed by filling the space in ScanIP.
-This was carried out for two main reasons: the first was to allow accurate fitting of the cylinder into the vertebral (to avoid the problems shown in figure~\ref{fig:cyl_channel}) and to remove problems with the cement being exposed when modelling augmentation and the extra contacts / interfaces that are created.
+Vertebrae that contained a vascular channel, seen in \cref{fig:cyl_channel}, had the channel removed by filling the space in ScanIP.
+This was carried out for two main reasons: the first was to allow accurate fitting of the cylinder into the vertebral (to avoid the problems shown in \cref{fig:cyl_channel}) and to remove problems with the cement being exposed when modelling augmentation and the extra contacts / interfaces that are created.
 Models with the vascular channel removed were compared to the original models and it was found that there was less than 0.5 \% difference for the set.
 This was due to the elements used to fill the channel having material properties based on the greyscale, which had values of approximately zero, given the nature of the channel.
 Due to the lack of any effect in removing the channel the vertebra models of augmentation did not include the vascular channel.
@@ -561,7 +561,7 @@ This gives the $a$ measure of the ellipse description.
 The $b$ measure is found by using a similar process - searching for the node furthest away from the centre on the $x$ axis, within $\pm$ 2 mm.
 The $a$ and $b$ measures gave the shape of the ellipse and the height of the elliptic cylinder was found by raising and lowering the ellipse until a node in the middle $\pm$ 5 mm intersected the ellipse.
 This defined the height of the ellipse.
-The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume, shown in table~\ref{tab:vertebrae_vol_cyl}.
+The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume, shown in \cref{tab:vertebrae_vol_cyl}.
 The percentage reduction in vertebral body volume, from total vertebral body volume to the fitted cylinder volume, varies significantly and is due to changes to the vertebral shape outside of the main vertebral body portion.
 For example, Spine 2 L1 was a degenerate vertebrae with extra bone growth at the anterior limits of the vertebral body.
 Other large changes were due to the size of the pedicles, where larger vertebrae (Spine 4) had proportionally larger pedicles.
@@ -592,7 +592,7 @@ Other large changes were due to the size of the pedicles, where larger vertebrae
 
 \end{table}
 
-The effect of this change on the relationship between cement fill and change in augmentation stiffness was identified and is shown in figure~\ref{fig:cyl_fit_comparison}.
+The effect of this change on the relationship between cement fill and change in augmentation stiffness was identified and is shown in \cref{fig:cyl_fit_comparison}.
 While there was a change in the relationship, a clear trend between the cement fill percentage and change in stiffness for the majority of the vertebrae is still not evident without including other factors (described in \cref{sec:aug_stiffness_res}).
 
 \begin{figure}[ht!]
@@ -658,7 +658,7 @@ The change in stiffness can be seen in \cref{fig:aug_non_aug_stiffness} where an
 \label{tab:aug_non_aug_stiff}
 \begin{tabular}{c|c|c|c}
     Specimen  & Non-augmented Stiffness & Augmented Stiffness & Change in stiffness \\
-              & (N/mm) & (N/mm) & (N/mm) \hline \hline \\
+              & (N/mm) & (N/mm) & (N/mm) \\ \hline \hline 
 Spine 1 L1 & 2991          & 2339      & -652  \\
 Spine 1 L2 & 3456          & 3980      & 523   \\
 Spine 1 L3 & 3244          & 4152      & 907   \\
@@ -672,20 +672,20 @@ Spine 4 L1 & 3277          & 3231      & -46   \\
 Spine 4 L2 & 5064          & 5042      & -22   \\
 Spine 4 L3 & 6098          & 5749      & -349  \\
 Spine 4 L4 & 4957          & 4488      & -468  \\
-Spine 4 L5 & 7185          & 4403      & -2782 \hline
+Spine 4 L5 & 7185          & 4403      & -2782 \\ \hline
 \end{tabular}
 \end{table}
 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/aug_non_aug_stiffness}
+  \includegraphics[width=.7\textwidth,angle=270]{Chapters/Chapter_HT_images/aug_non_aug_stiffness}
 	\caption{The experimental stiffness of the vertebrae pre and post augmentation. Showing that 5 of the 14 vertebrae showed an increase in stiffness following augmentation.}
   \label{fig:aug_non_aug_stiffness}
 \end{figure}
 
 A strong relationship was found between the percentage fill achieved and the bone volume fraction of the vertebra, where a reduced density of bone resulted in larger quantities of cement being injected into the vertebra before cement leakage occurred.
-This relationship can be seen in figure~\ref{fig:cmt_fill_vs_bvtv}.
+This relationship can be seen in \cref{fig:cmt_fill_vs_bvtv}.
 
 \begin{figure}[ht!]
   \centering
@@ -696,7 +696,7 @@ This relationship can be seen in figure~\ref{fig:cmt_fill_vs_bvtv}.
 
 There was not a clear relationship found between the cement fill of the total vertebral volume and the resulting change in stiffness following augmentation for the set of vertebrae on the whole.
 However, trends could be seen when splitting vertebrae into groups with: \textit{a)} dispersed volumes of injected cement and \textit{b)} concentrated volumes of cement.
-This can be seen in figure~\ref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83$) can be seen between the percentage fill of the total vertebral volume and the percentage change in stiffness for those vertebrae with concentrated volumes of cement.
+This can be seen in \cref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83$) can be seen between the percentage fill of the total vertebral volume and the percentage change in stiffness for those vertebrae with concentrated volumes of cement.
 
 \begin{figure}[h!]
   \centering
@@ -708,34 +708,34 @@ This can be seen in figure~\ref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83
 \subsection{Experimental Augmentation}
 
 The cement distributions following augmentation can be seen in \cref{fig:Spine 1_projection,fig:Spine 2_projection,fig:Spine 3_projection,fig:Spine 4_projection}.
-From the 3D projection images and slices from $\mu$CT stack it was determined which vertebrae contained dispersed and which vertebrae contained concentrated volumes of cement, this characterisation can be seen in table~\ref{tab:conc_disp}.
+From the 3D projection images and slices from $\mu$CT stack it was determined which vertebrae contained dispersed and which vertebrae contained concentrated volumes of cement, this characterisation can be seen in \cref{tab:conc_disp}.
 
 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 1_projections}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G17-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the Spine 1 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes of cement.}
   \label{fig:Spine 1_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 2_projections}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G19-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the Spine 2 spine following augmentation, with the cement region being the brighter material in the vertebral body. The vertebra is defined as having a dispersed volume of cement.}
   \label{fig:Spine 2_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 3_projections}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G21-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the Spine 3 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2 and L3 vertebrae have concentrated volumes of cement.}
   \label{fig:Spine 3_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/Spine 4_projections}
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G41-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the Spine 4 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1, L2 and L5 vertebrae are defined as having a dispersed volume of cement while the remaining L3 and L4 vertebrae have concentrated volumes of cement.}
   \label{fig:Spine 4_projection}
 \end{figure}
@@ -772,7 +772,15 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 
 \subsection{Computational Results}
 
+
 \subsubsection{Non-augmented Model Results}
+
+Sensitivity tests
+
+
+
+
+
 
 \subsubsection{Augmented Model Results}
 
@@ -811,6 +819,13 @@ Four of the vertebrae that showed an increase in stiffness were from the same sp
 Given that this spine had the smallest bone volume fraction it also received the largest quantity of cement, given the relationship between the percentage fill achieved and the bone volume fraction.
 This relationship is most likely due to the ease of cement injection before leakage, with more dense vertebrae failing to receive large volumes of cement before the cement found one of the vascular channels (upon which injection was stopped) and less dense vertebrae having more space to receive cement.
 
+Cement volume positions were generally to the anterior of the vertebrae and to the middle of the inferior-superior plane, matching the desired position achieved through the insertion of the needle and angling of the side opening needle tip.
+Given the lack of obvious variation in cement positions and shapes it was difficult to characterise the cement distributions, hence, a simplified description of the cement was used.
+This simplified description of the cement described whether the cement was in a concentrated volume or dispersed in a larger region or whole vertebra.
+Following this characterisation strong relationships were found between the change in stiffness and percentage fill, if only those vertebrae with a concentrated volume of cement were included.
+Suggesting that distributed volumes of cement are difficult to predict and should be avoided when carrying out the procedure using fluoroscopy, especially with more dense vertebrae where the likelihood or disperse volumes of cement increased.
+
+
 To summarise the change in stiffness following augmentation based on the material properties of the vertebrae, the following features have the greatest effect:
 \begin{enumerate}
     \item A smaller bone volume fraction results in larger quantities of cement being injected before leakage occurs.
@@ -819,6 +834,7 @@ To summarise the change in stiffness following augmentation based on the materia
     \item Concentrated volumes of cement are more likely if the bone volume fraction of the vertebra is smaller.
 \end{enumerate}
 
+The effects of vertebral geometry and material properties on the response to augmentation will be investigated further using statistical shape modelling in \cref{PCA_CHAP}
 
 \subsection{Limitations Regarding Specimen Numbers \& Vertebral Features}
 

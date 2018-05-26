@@ -54,13 +54,12 @@
 \listoftables
 
 \pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
-\renewcommand{\sectionmark}[1]{ \markright{#1} }
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+%\renewcommand{\chaptermark}[1]{ \markright{#1} }
 
 \fancyhf{}
 \fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\textit{ \nouppercase{\leftmark}} }
-\fancyhead[LO,RE]{\textit{ \nouppercase{\rightmark}} }
+\fancyhead[LO,RE]{\chaptermark }
 \include{Chapters/Chapter_Lit}
 \include{Chapters/Chapter_Bov}
 \include{Chapters/Chapter_HT}
