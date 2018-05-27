@@ -6,7 +6,7 @@
 
 The experimental methods that have been developed and the early results acquired in this sections allow easier transition to using human tissue  and provide valuable results for the development of specimen specific finite element models. Currently, experimental work is limited to bovine tail vertebrae due to their plentiful nature and relatively similar geometry to human vertebrae. Studying these vertebrae allow the development of methods for material testing, acquiring $\mu$CT scans of the specimens and carrying out vertebroplasty on the specimens. The following section will detail the development of various aspects of the experimental procedure, difficulties encountered and traversed, initial experimental results and finally a discussion of the methods, results and future work.
 
-The steps involved in the developed methods involve dissection of the soft tissue from the vertebrae, potting in PMMA end-caps, scanning using a $\mu$CT scanner, compression testing and augmentation, the order of which can be seen in Fig. \ref{fig:exp_flowchart}.
+The steps involved in the developed methods involve dissection of the soft tissue from the vertebrae, potting in PMMA end-caps, scanning using a $\mu$CT scanner, compression testing and augmentation, the order of which can be seen in \cref{fig:exp_flowchart}.
 Specimen preparation, fracture generation and initial $\mu$CT scan was undertaken jointly with Ruth Coe (PhD student, University of Leeds). Vertebroplasty (following initial training attempts) and subsequent loading and scanning was carried out solely by the author.
 
 \begin{figure}[ht!]
@@ -47,7 +47,7 @@ vertebrae were wrapped in phosphate buffered solution (PBS) soaked
 tissue, in an attempt to limit the vertebrae from drying.
 The specimens were potted in PMMA end-caps to allow repeated loading of the vertebrae with
 the same orientation and positioning, while constraining the vertebrae
-as little as possible and allowing flexion of the upper endplate. The setup for potting the vertebrae can be seen in Fig. \ref{fig:potting_vertebra}.
+as little as possible and allowing flexion of the upper endplate. The setup for potting the vertebrae can be seen in \cref{fig:potting_vertebra}.
 Vertebrae were held using retort stands and clamps holding a rod placed
 through the spinal canal. Depending on the level of the vertebrae the
 spinal canal was packed with foam around the rod forming a snug fit
@@ -56,7 +56,7 @@ lubricated metal surface. Also, depending on the level of the vertebrae,
 any pedicles that protruded past the limits of the metal cylinders were
 removed with a hacksaw at their base to prevent issues with the loading
 and scanning tests which followed, most often this was limited to the
-most caudal vertebrae and can be seen in Fig. \ref{fig:potting_vertebra}. Lubricated hollow metal cylinders of \(\sim\)10
+most caudal vertebrae and can be seen in \cref{fig:potting_vertebra}. Lubricated hollow metal cylinders of \(\sim\)10
 cm diameter were used to form the endplate when the 2:1 powder to liquid
 component PMMA mixture was added. PMMA was added until the endplate of
 the vertebral body was covered up to the point where the body becomes
@@ -86,7 +86,7 @@ the head of the testing machine using the marker located above the centre of the
 the free to rotate upper end-cap. This permitted rotation mimics natural
 loading of the vertebrae and increases the likelihood of physiological
 anterior wedge fractures. Details of the setup can be seen in
-Figure \ref{fig:expsetup}.
+\cref{fig:expsetup}.
 
 \begin{figure}[ht!]
 
@@ -103,7 +103,7 @@ tissue. Following the preload, displacement was increased by 1 mm/minute
 until either the load reached 9500 N (due to the 10 kN load cell limit)
 or a visible failure occurred on the real-time load-displacement plot during compression.
 This failure was observed as a peak in load with the compression being stopped once
-clear decrease in load was observed. Both scenarios can be seen in Fig. \ref{fig:failure_non_failure}.
+clear decrease in load was observed. Both scenarios can be seen in \cref{fig:failure_non_failure}.
 
 
 
@@ -150,7 +150,7 @@ Matlab (Mathworks) script on the raw data from the materials testing machine. Th
 allowed the limits of the range of interest to be set and, using a defined
 segment size, incremented over the data reporting the greatest stiffness found
 in a segment. The segment size was set to 0.3 mm. The script iterated over the
-data in overlapping increments of 0.1 mm and the range of interest was set to 0 - 5000 N, this can be seen in Fig. \ref{fig:load_disp_incr}.
+data in overlapping increments of 0.1 mm and the range of interest was set to 0 - 5000 N, this can be seen in \cref{fig:load_disp_incr}.
 
 \begin{figure}[ht!]
 
@@ -160,8 +160,8 @@ data in overlapping increments of 0.1 mm and the range of interest was set to 0 
 \label{fig:load_disp_incr}
 \end{figure}
 
-If the load-displacement curves were perfectly linear within the ``linear region" the stiffness in the three ranges of interest in Fig. \ref{fig:barchartcompgrads} would give an equal value for the stiffness or maximum gradient. However, given that these values were found to differ for the three ranges it suggested non-linear behaviour.
- As shown in Fig. \ref{fig:barchartcompgrads} the recorded maximum stiffness varies greatly depending on what portion of the load displacement graph was being examined. The average difference between the 0 - 5000 N section and the 0 - 9500 N section was much smaller compared to the 0 - 1500 N section, hence 5000 N was used as the limit on the already fractured vertebrae tests. Due to the slight convergence towards 5000 N, this value was seen as a compromise between the risk of further damage whilst still obtaining a genuine value for the stiffness.
+If the load-displacement curves were perfectly linear within the ``linear region" the stiffness in the three ranges of interest in \cref{fig:barchartcompgrads} would give an equal value for the stiffness or maximum gradient. However, given that these values were found to differ for the three ranges it suggested non-linear behaviour.
+ As shown in \cref{fig:barchartcompgrads} the recorded maximum stiffness varies greatly depending on what portion of the load displacement graph was being examined. The average difference between the 0 - 5000 N section and the 0 - 9500 N section was much smaller compared to the 0 - 1500 N section, hence 5000 N was used as the limit on the already fractured vertebrae tests. Due to the slight convergence towards 5000 N, this value was seen as a compromise between the risk of further damage whilst still obtaining a genuine value for the stiffness.
 
 
 \begin{figure}[ht!]
@@ -202,7 +202,7 @@ Various problems were encountered while carrying out the procedure that required
 The first of these was the difficulty found injecting any cement into the vertebra. With the initial specimens, cement was injected but it was mainly reserved to the needle tracks rather than the vertebral body. To counter this the vertebrae were warmed to 37$^\circ$C for an hour or until the internal temperature of the vertebrae had reached this temperature (using a temperature probe in the vertebroplasty needle hole). This meant that the bone marrow inside the vertebrae was no longer solid and therefore could be displaced by the cement making the injection much easier.
 
 \paragraph{Radio-opacity of Cement}
-A second problem was the opacity of the cement on $\mu$CT scans, which proved difficult to segment and separate it from the trabeculae in the vertebral body as can be seen in Fig. \ref{fig:withWithoutBaSO4}:A. Here, the cement was indistinguishable from the bone marrow and can only be seen in the needle channel. The solution to this was to mix barium sulphate (BaSO$_4$) with the PMMA to achieve the radio opacity seen in Fig. \ref{fig:withWithoutBaSO4}:B, where the bright area in the centre of the vertebral body is the injected cement and BaSO$_4$ combined. Due to the hydrophilic nature of the BaSO$_4$ powder it was important to use a completely dry beaker when thoroughly mixing it with the PMMA powder to limit aggregation of the BaSO$_4$, which can be seen in the bright spots in Fig. \ref{fig:withWithoutBaSO4}:B. The two components were used in a 1:4 BaSO$_4$ to PMMA powder ratio, mixed 1:1 with the liquid PMMA component.
+A second problem was the opacity of the cement on $\mu$CT scans, which proved difficult to segment and separate it from the trabeculae in the vertebral body as can be seen in \cref{fig:withWithoutBaSO4}:A. Here, the cement was indistinguishable from the bone marrow and can only be seen in the needle channel. The solution to this was to mix barium sulphate (BaSO$_4$) with the PMMA to achieve the radio opacity seen in \cref{fig:withWithoutBaSO4}:B, where the bright area in the centre of the vertebral body is the injected cement and BaSO$_4$ combined. Due to the hydrophilic nature of the BaSO$_4$ powder it was important to use a completely dry beaker when thoroughly mixing it with the PMMA powder to limit aggregation of the BaSO$_4$, which can be seen in the bright spots in \cref{fig:withWithoutBaSO4}:B. The two components were used in a 1:4 BaSO$_4$ to PMMA powder ratio, mixed 1:1 with the liquid PMMA component.
 
 \begin{figure}[ht!]
 \centering
@@ -211,7 +211,7 @@ A second problem was the opacity of the cement on $\mu$CT scans, which proved di
 \label{fig:withWithoutBaSO4}
 \end{figure}
 \paragraph{Cement Leaking from Vascular Channels}
-Preventing the cement from exiting the vertebrae from vascular channels while injecting the cement proved to be another obstacle to achieving a physiologic fill volume for the vertebrae. These channels lead both out the anterior face and from the vertebral body into the spinal canal, this can be seen in Fig. \ref{fig:cementleakage} and \ref{fig:2vertWithoutBluTac}. In the body these channels would be filled with vasculature preventing the cement leaking through them. Two main methods were used to stop cement leaking while carrying out the procedure on the bovine tail vertebra. The first was to use the same rod used for mounting the vertebrae in their end-caps to limit the passage of cement into the spinal canal. The second was to use blu-tac to cover the external vascular channels, wrapped with cling-film to hold it in place. This allowed any bone marrow free passage out of the vertebrae, but enough resistance to limit the flow of cement.
+Preventing the cement from exiting the vertebrae from vascular channels while injecting the cement proved to be another obstacle to achieving a physiologic fill volume for the vertebrae. These channels lead both out the anterior face and from the vertebral body into the spinal canal, this can be seen in \cref{fig:cementleakage} and \ref{fig:2vertWithoutBluTac}. In the body these channels would be filled with vasculature preventing the cement leaking through them. Two main methods were used to stop cement leaking while carrying out the procedure on the bovine tail vertebra. The first was to use the same rod used for mounting the vertebrae in their end-caps to limit the passage of cement into the spinal canal. The second was to use blu-tac to cover the external vascular channels, wrapped with cling-film to hold it in place. This allowed any bone marrow free passage out of the vertebrae, but enough resistance to limit the flow of cement.
 
 \begin{figure}[ht!]
 \centering
@@ -235,7 +235,7 @@ $\mu$CT scans were taken at three occasions during the experimental process. The
 
 \subsection{Results}\label{results}
 
-The stiffness values for 12 bovine tail vertebra from the first to third vertebra down, shown in Fig. \ref{fig:allexpData}. Of the twelve vertebra only two, the first and second tail vertebra of the second tail (T2 CC1 \& T2 CC2), were fractured. The remaining nine (excluding T1 CC3, the control) reached 9500 N and therefore did not fail. It is also difficult to see whether the initial load to failure had any effect on the subsequent loads. This is mainly due to the lack of control specimens and the large variation of results in general following the first load.
+The stiffness values for 12 bovine tail vertebra from the first to third vertebra down, shown in \cref{fig:allexpData}. Of the twelve vertebra only two, the first and second tail vertebra of the second tail (T2 CC1 \& T2 CC2), were fractured. The remaining nine (excluding T1 CC3, the control) reached 9500 N and therefore did not fail. It is also difficult to see whether the initial load to failure had any effect on the subsequent loads. This is mainly due to the lack of control specimens and the large variation of results in general following the first load.
 
 \begin{figure}[ht!]
 \centering
@@ -244,7 +244,7 @@ The stiffness values for 12 bovine tail vertebra from the first to third vertebr
 \label{fig:allexpData}
 \end{figure}
 
-The results for the fill volume of cement in the augmented specimens is presented in Table \ref{tab:cementVol} and was acquired from the down-sampled, segmented models generated from $\mu$CT scans. It shows that fill volume varies between 3\% and 17\% fill and in addition shows a lack of a correlation between fill volume and increase in augmented specimen stiffness over fractured stiffness. Figure \ref{fig:t2CC2vsT8CC2} shows the extent of the cement fill for the two vertebrae with the largest fill volume.
+The results for the fill volume of cement in the augmented specimens is presented in \cref{tab:cementVol} and was acquired from the down-sampled, segmented models generated from $\mu$CT scans. It shows that fill volume varies between 3\% and 17\% fill and in addition shows a lack of a correlation between fill volume and increase in augmented specimen stiffness over fractured stiffness. \cref{fig:t2CC2vsT8CC2} shows the extent of the cement fill for the two vertebrae with the largest fill volume.
 
 \begin{table}[ht]
 \centering
@@ -276,7 +276,7 @@ T9 CC3 & 2437 & 35840 & 6.80 & * \\ \hline
 \label{fig:t2CC2vsT8CC2}
 \end{figure}
 
-The attempt to reduce cement leaking through vasculature during the vertebroplasty procedure can be seen in Figure \ref{fig:4vert_withBlutac}. The methods employed greatly reduced the the quantity of cement observed in both the spinal canal and around vascular channels at the vertebral body surface when compared to scans in Fig. \ref{fig:2vertWithoutBluTac}.
+The attempt to reduce cement leaking through vasculature during the vertebroplasty procedure can be seen in \cref{fig:4vert_withBlutac}. The methods employed greatly reduced the the quantity of cement observed in both the spinal canal and around vascular channels at the vertebral body surface when compared to scans in \cref{fig:2vertWithoutBluTac}.
 
 \begin{figure}[ht!]
 \centering
@@ -286,7 +286,7 @@ The attempt to reduce cement leaking through vasculature during the vertebroplas
 \end{figure}
 
 
-The two plots in Fig. \ref{fig:deltaStiffness_Vs_intact} show a lack of correlation between the difference in stiffness after augmentation when compared to both the fractured and intact specimen stiffness and the intact stiffness. Showing that magnitude of any increase or decrease in the vertebral stiffness following augmentation is not caused, or a feature of the initial, intact vertebral stiffness.
+The two plots in \cref{fig:deltaStiffness_Vs_intact} show a lack of correlation between the difference in stiffness after augmentation when compared to both the fractured and intact specimen stiffness and the intact stiffness. Showing that magnitude of any increase or decrease in the vertebral stiffness following augmentation is not caused, or a feature of the initial, intact vertebral stiffness.
 
 \begin{figure}[ht!]
 \centering
@@ -302,7 +302,7 @@ The experimental work carried out so far provides a good basis for both the cont
 %^ reiterate aims of exp work
 
 Regarding the results of stiffness at the intact, fractured and augmented stages, the expected trends were not always clear. Most commonly the intact vertebrae have the greatest stiffness with the fractured stiffness showing a reduced value following the damage created with the initial load to failure. The variation of the decrease (and increase) in stiffness for the fractured vertebrae may have a variety of reasons, although the most likely cause is level of damage caused in the initial ``load
-to failure''. These tests varied between the typical load displacement that includes a failure (Fig. \ref{fig:failure_non_failure}:A) and those that show no sign of failure up to the limit of the load cell (Fig. \ref{fig:failure_non_failure}:B). It is difficult to observe any correlation between these vertebra that showed clear failure (T2-CC1 and T2-CC2), those that reached 9500 N and a reduction in the fractured stiffness. It is not to say that the vertebra that reached 9500 N experienced no damage, with the gradient of the load displacement curve often reducing and plateauing as the 9500 N limit approached. The interesting increase in the fractured stiffness for T1-CC1 compared to the intact stiffness may be explained if it is assumed that the compacted trabeculae following the first load to 9500 N result in a stiffer material for the following tests.
+to failure''. These tests varied between the typical load displacement that includes a failure (\cref{fig:failure_non_failure}:A) and those that show no sign of failure up to the limit of the load cell (\cref{fig:failure_non_failure}:B). It is difficult to observe any correlation between these vertebra that showed clear failure (T2-CC1 and T2-CC2), those that reached 9500 N and a reduction in the fractured stiffness. It is not to say that the vertebra that reached 9500 N experienced no damage, with the gradient of the load displacement curve often reducing and plateauing as the 9500 N limit approached. The interesting increase in the fractured stiffness for T1-CC1 compared to the intact stiffness may be explained if it is assumed that the compacted trabeculae following the first load to 9500 N result in a stiffer material for the following tests.
 
 The cement fill volume information shows that a small percentage of cement is injected into the vertebrae on average, with only two vertebrae approaching the clinically relevant 20\% fill. Unexpectedly, only one of these two vertebrae showed an increase in augmented stiffness over the fractured stiffness. A possible explanation is that it is not only the fill volume that is important in restoring the vertebral stiffness but the placement too. This is shown when comparing the segmented scans of the the two vertebrae with the greatest fill volume with the T2-CC2 specimen showing cement extending to the anterior wall of the vertebral body, while the cement is limited to the posterior and centre of the vertebral body for T8-CC2. This may help to explain why the stiffness of T8-CC2 did not increase following augmentation. The reduction in stiffness following augmentation for seven of the twelve vertebrae may be due to damage caused by the insertion of vertebroplasty needles. Clinically this damage left behind from the needle channels would heal, most likely restoring the stiffness of the vertebrae back to its intact properties.
 
@@ -337,7 +337,7 @@ additionally converts the greyscale of the scan into 256 bins. This conversion f
 scan has been pre-processed it was imported into ScanIP ensuring
 that the spacing of voxels was correctly set - in this case 82 \(\mu\)m.
 Once imported, the location of the loading point was identified to
-simulate the correct experimental load within ABAQUS; the marker (see Fig. \ref{fig:expsetup})
+simulate the correct experimental load within ABAQUS; the marker (see \cref{fig:expsetup})
 appears bright on the scan and its centre was taken as the load point,
 calculated by converting the position into mm. This was achieved by
 multiplying by the native resolution of 82 \(\mu\)m.
@@ -356,11 +356,11 @@ The following parts of model creation were carried out using a Python script fro
 
 It was easier to down-sample the image stack prior to
 segmentation, due to the time required for the software to generate
-high resolution masks and increased memory usage at higher resolution. The effect of down-sampling can be seen in Fig. \ref{fig:compofDownsample}. However, in certain cases, for example when
+high resolution masks and increased memory usage at higher resolution. The effect of down-sampling can be seen in \cref{fig:compofDownsample}. However, in certain cases, for example when
 modelling vertebral augmentation, in order to attempt to capture the
 intricacies of the structure and the boundaries between cement and
 trabecular bone it was favourable to generate the mask prior to down
-sampling, Fig. \ref{fig:fullressVPseg}. The image stack was down-sampled to voxels 1 mm cubed, due to
+sampling, \cref{fig:fullressVPseg}. The image stack was down-sampled to voxels 1 mm cubed, due to
 previous studies producing sensitivity to mesh size results that showed
 a good trade off between computational cost and model accuracy \cite{Jones2007}.
 
@@ -382,11 +382,11 @@ selected volumes of the image stack between two bounds. For the end-caps
 these bounds were usually between greyscale values of 12-22 and, if the
 specimen was not augmented, the vertebrae between 23-255. For augmented
 specimens these limits change to 23-65 for the vertebrae and 66-255 for
-internal cement containing barium sulphate. These values were selected by visually limiting the amount of unwanted material selected within the threshold and maximising the wanted material, for example - selecting as much of the end-caps as possible while limiting the selected background and vertebral material to a minimum. This thresholding can be seen in Fig. \ref{fig:fillTheVoid}.
+internal cement containing barium sulphate. These values were selected by visually limiting the amount of unwanted material selected within the threshold and maximising the wanted material, for example - selecting as much of the end-caps as possible while limiting the selected background and vertebral material to a minimum. This thresholding can be seen in \cref{fig:fillTheVoid}.
  It was preferable to avoid
 internal voids within each mask, due to the potential for errors that
 can be thrown once the model is imported into ABAQUS, these were
-removed with the use of the morphological close and cavity fill tools within ScanIP (Fig. \ref{fig:fillTheVoid}).
+removed with the use of the morphological close and cavity fill tools within ScanIP (\cref{fig:fillTheVoid}).
 
 
 
@@ -409,14 +409,14 @@ Contacts were set as placeholders to be edited in Abaqus in the steps following.
 \end{figure}
 
 
-Following this, the FE model was meshed, then exported into an INP file format. The model was then imported into Abaqus where the following configuration was completed by a second python script. An analytical rigid plate was created to represent the upper loading platen of the materials testing machine and was centred at the loading point previously found from the marker, this can be seen in Fig. \ref{fig:abaqus_top_view}. Once aligned any previous placeholder interactions were removed and a tied interaction was created between the rigid plate and the superior end-cap, along with tied interactions between the vertebra and both end-caps and, if appropriate, to the internal cement volume. An encastre boundary condition was created at the bottom surface of the inferior end-cap removing all rotational and translational movement and therefore mimicking the experimental setup. A displacement boundary condition was applied to a reference node at the centre of the rigid plate and therefore loading position, the properties were set such that 1 mm of displacement occurs in the negative Z direction; lateral motion in the X and Y planes was restricted, while rotation about the loading point was allowed - again mimicking the experimental setup.
+Following this, the FE model was meshed, then exported into an INP file format. The model was then imported into Abaqus where the following configuration was completed by a second python script. An analytical rigid plate was created to represent the upper loading platen of the materials testing machine and was centred at the loading point previously found from the marker, this can be seen in \cref{fig:abaqus_top_view}. Once aligned any previous placeholder interactions were removed and a tied interaction was created between the rigid plate and the superior end-cap, along with tied interactions between the vertebra and both end-caps and, if appropriate, to the internal cement volume. An encastre boundary condition was created at the bottom surface of the inferior end-cap removing all rotational and translational movement and therefore mimicking the experimental setup. A displacement boundary condition was applied to a reference node at the centre of the rigid plate and therefore loading position, the properties were set such that 1 mm of displacement occurs in the negative Z direction; lateral motion in the X and Y planes was restricted, while rotation about the loading point was allowed - again mimicking the experimental setup.
 
 The python script was written to set the material properties of the greyscale dependant vertebral elements by setting the Young's modulus to the greyscale value multiplied by a conversion factor (which is discussed in section \ref{material-properties-bov}). The script allowed Abaqus to solve the models and outputs the stiffness for each model. This was calculated by the dividing the reaction force at the reference point by the displacement at 1 mm of displacement.
 
 \subsubsection{Augmented Model Generation}
 
 In order to attempt to capture the detail of interdigitation between the
-vertebrae and the injected cement, the masking process was carried out prior to downsampling, seen in Figure \ref{fig:fullressVPseg}. If masked post-down-sample it became difficult to define the cement boundaries and the masked volume was inaccurate when compared to the full resolution scan.
+vertebrae and the injected cement, the masking process was carried out prior to downsampling, seen in \cref{fig:fullressVPseg}. If masked post-down-sample it became difficult to define the cement boundaries and the masked volume was inaccurate when compared to the full resolution scan.
 
 
 \begin{figure}[hbt]
@@ -473,7 +473,7 @@ experimental errors and the simplification of boundary conditions.
 However, reducing the element size to 1 x 1 x 1 mm allows greater
 resolution when modelling the intricacies of the cement mesh for
 augmented specimens, the difference between the two resolutions can be
-seen in Figure \ref{fig:vertslice}.
+seen in \cref{fig:vertslice}.
 
 \begin{figure}[ht!]
 
@@ -522,7 +522,7 @@ changing the material properties of the internal cement region
 out for four augmented specimens following the same setup within ABAQUS
 as described earlier.
 
-The results can be seen in Table \ref{tab:meshint}, showing a negligible
+The results can be seen in \cref{tab:meshint}, showing a negligible
 difference
 between variations for the four vertebrae models. This difference falls
 well below the difference between experimental and computation,
@@ -563,8 +563,8 @@ T4 CC3 &	 6059 &	 6059 &	 0.0005\\ \hline
 
 \subsection{Results} \label{bov:results}
 
-The optimisation process gave a value for the conversion factor of 0.012529, allowing conversion between greyscale values for elements and their elastic modulus. This value was used for the bone constituents of the intact and augmented vertebrae presented in Fig. \ref{fig:compvexpscatter}, which shows the agreement between the \textit{in vitro} and \textit{in silico} results for the specimen specific models. The agreement of intact vertebrae was considerably better, with a concordance
-correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented vertebrae (Table \ref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
+The optimisation process gave a value for the conversion factor of 0.012529, allowing conversion between greyscale values for elements and their elastic modulus. This value was used for the bone constituents of the intact and augmented vertebrae presented in \cref{fig:compvexpscatter}, which shows the agreement between the \textit{in vitro} and \textit{in silico} results for the specimen specific models. The agreement of intact vertebrae was considerably better, with a concordance
+correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented vertebrae (\cref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
 
 \begin{figure}[ht]
 \centering
@@ -589,9 +589,9 @@ correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented verte
 \end{tabular}
 \end{table}
 
-The effect of changing the modulus of the cement volume in the augmented specimens is presented in Fig. \ref{fig:redEModBar}. There was a linear decreases in the stiffness of vertebrae with the reduction of he elastic modulus for the internal cement volume. The two vertebrae that show more prominent decreases in stiffness were those vertebrae that contained larger volumes of cement following their augmentation.
+The effect of changing the modulus of the cement volume in the augmented specimens is presented in \cref{fig:redEModBar}. There was a linear decreases in the stiffness of vertebrae with the reduction of he elastic modulus for the internal cement volume. The two vertebrae that show more prominent decreases in stiffness were those vertebrae that contained larger volumes of cement following their augmentation.
 
-The effect that this has on the data with regard to the \textit{in vitro} stiffness results can be seen in Fig. \ref{fig:redEModscatter}, where the reduction in \textit{in silico} stiffness moves the data points closer to the $x = y$ line of perfect agreement between the experimental and computational results.
+The effect that this has on the data with regard to the \textit{in vitro} stiffness results can be seen in \cref{fig:redEModscatter}, where the reduction in \textit{in silico} stiffness moves the data points closer to the $x = y$ line of perfect agreement between the experimental and computational results.
 
 
 \begin{figure}[ht!]

@@ -352,7 +352,10 @@ The Spine 1 spine has a much lower bone volume fraction compared to the other sp
 The split between different modelling methods, computational and experimental is not terribly clear, given that computational methods are employed in the scanning and material property analysis described above.
 However, the methods described in this section describe the process used to model non-augmented and augmented vertebrae, with associated sensitivity tests to understand the most appropriate approach to various aspects of the modelling process.
 
-\subsection{Intact Vertebrae Modelling Sensitivity Tests}
+
+
+
+\subsection{Non-augmented Vertebrae Modelling Sensitivity Tests}\label{sec:non_aug_sens}
 
 Given the aims of the project - to include the models generated here into a
 larger set of vertebral models for use in statistical shape modelling, it is
@@ -474,6 +477,42 @@ The remaining settings were set to the default for a generic contact:
 
 Further tuning of these variables to see if an improved agreement could be achieve would be a simple, though time consuming addition to this sensitivity test due to the greyscale conversion factor optimisation process required to test each option.
 
+\subsection{Material Properties}
+
+The general method for getting material properties for the bone elements in the FE models uses the same approach as used in \cref{material-properties-bov} where the Young's modulus of each element is equal to the greyscale value multiplied by a conversion factor.
+The conversion factor is optimised by comparing the computational stiffness against the experimentally acquired stiffness.
+For the optimisation process the vertebrae were split into two groups at random, giving a calibration and validation set, allowing a test of the validity of the greyscale conversion factor.
+The split of the vertebrae for these two sets can be seen in \cref{tab:calib_valid}.
+
+\begin{table}[ht!]
+	\caption{The vertebrae used for the calibration set and the validation set in the optimisation process.}
+	\label{tab:calib_valid}
+	\centering
+	\begin{tabular}{c|c}
+    Calibration Set   & Validation Set  \\ \hline \hline
+    Spine 1 L4 & Spine 1 L1  \\
+    Spine 1 L5 & Spine 1 L2\\
+    Spine 2 L1 & Spine 1 L3 \\
+    Spine 3 L2 & Spine 3 L1\\
+    Spine 4 L1 & Spine 3 L3\\
+    Spine 4 L2 & Spine 4 L3\\
+    Spine 4 L4 & Spine 4 L5 \\
+    \hline
+	\end{tabular}
+\end{table}
+
+
+Results from the initial optimisation process using the calibration and validation processes gave good results, in that the agreement of the validation set had CCC values of above 0.5.
+The validation set for the ``normal" method had a CCC value of 0.591 and the CCC value for the validate set from the ``bone volume fraction" method gave a value of 0.831.
+
+Given the problems associated with calculating the greyscale conversion factor with various sensitivity tests described in \cref{sec:non_aug_sens}, the calibration and validation sets were only used for the initial test, once using the ``normal" method and once using the ``bone volume fraction" method.
+This validated the use of the optimisation process while allowing more accurate greyscale conversion factors for the sensitivity tests and final values given that the input set of human vertebrae was relatively small.
+
+Following the results of the sensitivity tests the final value from the optimisation process for the greyscale conversion factor was 0.0009625.
+This was used for the bone properties for all final non-augmented models and augmented models.
+
+The remaining material properties used for all of the models are a Poisson's ration of 0.3 for the bone and endcaps and a Young's modulus of 2.45~GPa for the endcaps. 
+
 \subsection{Modelling Augmentation}
 
 Given the limited validation of models achieved using bovine tail vertebrae (due to the reasons discussed in Section~\ref{bov:results}), a range of different material properties and approaches to modelling the bone-cement interface were investigated.
@@ -524,6 +563,29 @@ The origin of the masks coming from the two backgrounds can be seen in \cref{fig
   \label{fig:mask_demo}
 \end{figure}
 
+
+\subsubsection{Cement Volume Material Property Tests}
+
+
+
+Following the results of the above tests, the final material properties and boundary conditions for the augmented models are below.
+
+The material properties for the yielding interface are:
+\begin{itemize}
+	\item 1 mm thick layer surrounding the cement volume (ScanIP dilate)
+	\item Young's modulus =  0.01 MPa
+	\item Poisson's ration = 0.4
+	\item Yield stress = 5 Pa, upon which it becomes perfectly plastic
+\end{itemize}
+
+The material properties for the cement volume are:
+\begin{itemize}
+	\item Young's modulus =  1.7 GPa
+	\item Poisson's ration = 0.4
+\end{itemize}
+
+Boundary conditions for the cement region include: tie contacts between the vertebrae and interface, and between the interface and the cement volume.
+The remaining material properties and boundary conditions remain the same as with the non-augmented models.
 
 \subsection{Measuring the Vertebral Body \& Augmentation Volume}
 
