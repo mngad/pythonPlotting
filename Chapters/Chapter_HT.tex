@@ -232,13 +232,31 @@ therefore the potential to damage the region and its load sharing capabilities.
 The oblique approach therefore avoided creating this damage to the pedicle-canal
 region, especially for the vertebrae with narrower pedicles and instead created
 much less damage to the vertebral body.
+An illustration of this approach can be seen in \cref{fig:vp-ill} with an example $\mu$CT scan shown in \cref{fig:vp-ill_scan}.
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/vp_illustration.png}
+  \caption{An illustration showing the approach to needle insertion and cement position.}
+  \label{fig:vp-ill}
+\end{figure}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/vp_illustration_scan.png}
+  \caption{A $\mu$CT scan showing the injected volume of cement at the anterior of the vertebral body with the cement track from the exiting needle to the right. For this specimen cement leaked through the anterior wall, limiting the quantity of cement injected.}
+  \label{fig:vp-ill_scan}
+\end{figure}
 
 A final difference to the needle insertion methods was a change to the needle.
 Here, a side opening needle was used, allowing the cement to be directed into
 the anterior-centre region of the vertebral body as opposed to directly out of
 the needle end.
 
-An attempted 20 \% fill was used for the vertebrae, measuring the volume of the vertebral body from the $\mu$CT scans prior to augmentation.
+It was attempted to inject the largest possible volumes of cement into the vertebrae, mimicking the clinical process.
+Like the clinical procedure the injection was stopped upon cement leakage, which generally occurred through one of the vascular channels at either the posterior or anterior portions of the vertebrae.
 However, despite stopping the injection upon cement leakage through vascular channels leading from the vertebral body surface inwards, cement loss occurred.
 In addition to this, cement was also lost in the needle itself, where as the cement set the amount of cement remaining in the needle became difficult to measure.
 This meant that the cement fill could not be measured though the amount of PMMA leaving the syringe due to leakage and needle losses.
@@ -396,6 +414,14 @@ the mask for the vertebrae and the original stack being used for the end-caps.
 Greyscale material properties for the vertebral mask are taken from the binary
 stack, while the remainder of the methods follow the same process as the
 original method.
+A comparison of the two approaches can be seen in \cref{fig:normal_vs_bv_tv_seg}, where the improved definition of trabecular structure and cortical shell using the bone volume fraction method can be seen in E and F.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/normal_vs_bvtv_seg.png}
+	\caption{A comparison of the normal method (A, B and C) and the bone volume fraction method (D, E and F). A shows the full (82 $\mu$m) resolution scan, B shows the same image downsampled to 1 mm resolution and C shows the segmented scan. D shows the segmented bone at 82 $\mu$m, E shows this image downsampled to 1 mm and F shows this image after segmentation.}
+\label{fig:normal_vs_bv_tv_seg}
+\end{figure}
 
 %\begin{figure}[ht!]
 %  \centering
@@ -840,7 +866,15 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 Sensitivity tests
 
 
+The results of modelling the non-augmented vertebrae can be seen in \cref{fig:intact_norm_bvtv}, comparing the initial normal method (the method used with the bovine tail vertebra in the previous chapter) with the best case using the bone volume fraction method and the results of the sensitivity test described previously.
+The results show a large improvement using the results of the sensitivity tests and the bone volume fraction method, with a concordance correlation coefficient improving from 0.55 to 0.86.
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/intact_norm_bvtv}
+	\caption{The results of using the normal method and the bone volume fraction method to model non-augmented human lumbar vertebrae. Red shows the agreement using the normal method and blue shows the agreement using the bone volume fraction method, with the orange dotted line showing perfect agreement.}
+	\label{fig:intact_norm_bvtv}
+\end{figure}
 
 
 
@@ -918,12 +952,22 @@ Therefore the state of the vertebrae was relatively unknown pre-augmentation and
 
 
 
+
+\subsection{Computational Results}
+
+The improvement in the agreement between computational stiffness and the experimental stiffness results using the bone volume fraction method and the results of the sensitivity tests is significant and provides a good foundation for modelling the more challenging augmented models.
+The improvement using the bone volume fraction method in isolation (without the results of the other sensitivity tests) showed a large improvement over the normal method.
+The normal method performed similarly on the bovine tail vertebrae as with the human lumbar vertebrae, with a CCC = 0.49 for bovine tail vertebrae and CCC = 0.55 for the human vertebrae.
+The improvement using the bone volume fraction method is most likely due to the added definition of the trabecular bone and cortical shell, especially given how important the correct representation of load sharing is for accurate models \cite{eswaran2006cortical}.
+Having greater definition of the cortical shell and trabecular bone alignment allows much more accurate descriptions of the load transfer through the vertebrae, rather than the more simple description with the more homogenised material properties of the normal method.
+
+This method also removed any effect that the bone marrow, where, given the freeze/thaw cycles the marrow leaks from the vertebrae giving vertebral scans with portions of the bone marrow missing and therefore changing the greyscale background and material properties.
+Due to the initial segmentation at 82 $\mu$m using the BV/TV method the bone marrow is not present in the segmented full resolution or downsampled scans and therefore has no impact on the material properties of the models.
+Conversely, using the normal method, areas lacking bone marrow would have a lower Young's modulus and areas with bone marrow would have higher Young's moduli, not corresponding to the actual properties of these regions and changing the load distribution.
+
 \subsubsection{Sensitivity Test Significance}
 
 \subsubsection{Computational Method Significance}
-
-\subsection{Augmented Modelling}
-
 
 \section{Conclusion}
 
