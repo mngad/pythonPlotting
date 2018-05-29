@@ -471,10 +471,18 @@ The maximum 5 \% change to the stiffness when posterior or anterior may describe
 
 \subsubsection{End-cap Depth \& Contact sensitivity}
 
-The stress distribution at the surface of the vertebral body shows high stress at the edges of the cement endcaps, at both the top and bottom of these regions.
+The stress distribution at the surface of the vertebral body shows high stress at the edges of the cement endcaps, at both the top and bottom of these regions, shown in \cref{fig:stress_lines}.
 Experimentally the endcaps are merely moulded to the shape of the top and bottom of the vertebral body, however, previous work and other studies have used tied contact between the bone and endcaps, removing any motion between the two and locking neighbouring nodes together.
 Additionally, the depth of these endcaps varies between 5 mm and 20 mm depending on the shape of the vertebral endplates.
 The more concave the vertebral endcap was the more cement was required to fill the space forming a flat cement surface.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/stress_lines.pdf}
+\caption{The effect of having tied contacts between the endcaps and the bone, with the increases in stress indcated.}
+\label{fig:stress_lines}
+\end{figure}
+
 
 Given this variation, tests identifying the effect of changing the endcap depth were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and $\pm$ 3 mm for the top and bottom endcaps independently and together.
 Additionally, different interactions between the bone and cement endcaps were tested.
@@ -800,7 +808,7 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 
 
 
-\begin{figure}[h!]
+\begin{figure}[ph!]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G17-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the Spine 1 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes of cement.}
@@ -821,7 +829,7 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
   \label{fig:Spine 3_projection}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[ph!]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G41-11_projections}
 	\caption{Transverse and sagittal 3D projection views of the Spine 4 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1, L2 and L5 vertebrae are defined as having a dispersed volume of cement while the remaining L3 and L4 vertebrae have concentrated volumes of cement.}
@@ -930,7 +938,7 @@ To summarise the change in stiffness following augmentation based on the materia
     \item Concentrated volumes of cement are more likely if the bone volume fraction of the vertebra is smaller.
 \end{enumerate}
 
-The effects of vertebral geometry and material properties on the response to augmentation will be investigated further using statistical shape modelling in \cref{PCA_CHAP}
+The effects of vertebral geometry and material properties on the response to augmentation will be investigated further using statistical shape modelling in \cref{PCA_CHAP}, giving a more detailed story of the suggested approaches to vertebroplasty based on the tests carried out in this study.
 
 \subsection{Limitations Regarding Specimen Numbers \& Vertebral Features}
 
@@ -964,6 +972,15 @@ Having greater definition of the cortical shell and trabecular bone alignment al
 This method also removed any effect that the bone marrow, where, given the freeze/thaw cycles the marrow leaks from the vertebrae giving vertebral scans with portions of the bone marrow missing and therefore changing the greyscale background and material properties.
 Due to the initial segmentation at 82 $\mu$m using the BV/TV method the bone marrow is not present in the segmented full resolution or downsampled scans and therefore has no impact on the material properties of the models.
 Conversely, using the normal method, areas lacking bone marrow would have a lower Young's modulus and areas with bone marrow would have higher Young's moduli, not corresponding to the actual properties of these regions and changing the load distribution.
+
+One of the limitations of the bone volume fraction method is that is relies on having trabecular resolution scans of the vertebrae to apply the trabecular bone thresholds to.
+This limits the origin of the scans to \textit{in vitro} scans rather than \textit{in vivo} scans where the resolution is limited to approximately 1 mm and larger.
+Given the intention to generate larger populations of vertebra models for use in statistical shape modelling this limit to scan origin is an unwanted consequence.
+A possible solution to this problem would be to use 16 bit images rather than the currently used 8 bit images.
+This change gives an increase in the number of greyscale values available from the 256 of 8-bit images to over 65,000 for 16-bit images.
+The main benefit of the bone volume fraction method is the increased definition of bone structure and a greater contrast between the brighter, denser cortical bone, the trabecular bone and the empty, non-bone areas.
+Using 16-bit images along with image manipulation to change the contrast of the scans may allow the added detail and contrast to be captured with relatively low ($\geq$ 1 mm) resolution scans, therefore greatly increasing the number of vertebral specimens available for use.
+
 
 \subsubsection{Sensitivity Test Significance}
 
