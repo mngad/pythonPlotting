@@ -1000,12 +1000,15 @@ An additional experimental challenge is the unknown level of damage caused to th
 Given that after clear fractures (based on load-displacement curves) could not be seen on 82 $\mu$m scans of bovine tail vertebrae, it is unlikely that micro-fractures caused through needle insertion will be captured in the $\mu$CT scans of the human vertebrae.
 
 Despite the reduced agreement of the augmented models, there was a large improvement compared to the initial method, which was the method used for modelling augmentation in the bovine tail vertebrae.
-As with the non-augmented models the CCC using the initial method was very similar to the CCC using the similar method on the bovine tail vertebrae, the CCC = 0.18 and 0.15 for the human and bovine models respectively.
+As with the non-augmented models the CCC using the initial method was very similar to the CCC using the similar method on the bovine tail vertebrae, CCC = 0.18 and 0.15 for the human and bovine models respectively.
 This makes the improvement using the registration significant and a beneficial step in making the models.
 
 Achieving improved agreement between the computation and experimental models is an obvious next step for the project and despite the range of approaches used and attempted to improve the agreement, there are some next steps.
 Given the difficulty capturing the detail between the cement and trabecular bone, using a higher resolution is a clear next step.
-However, it comes with a number of difficulties.. %TODO 
+However, it comes with a number of difficulties which have been shown in the study by Zhao et al. \cite{Zhao2012}, where the increase in resolution presents many other unknowns that need to be modelled.
+For example modelling the specific interaction between the bone and the cement including the  coefficient of friction between them.
+This would require difficult experimental investigations, given the unique environment inside the vertebrae filled with bone marrow.
+Along with modelling properties that are not applicable in continuum level models, there is the problem with computational cost, where the increased time to solve models would become problematic given the investigatory nature of the study and the fact that the behaviour in simplified bone plug models is different to what is seen in whole vertebrae \cite{Sikora2013}.
 
 \subsubsection{Sensitivity Test Significance}
 
