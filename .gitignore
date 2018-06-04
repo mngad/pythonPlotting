@@ -16,3 +16,6 @@
 *.lof
 *.lot
 *.toc
+*.xdv
+_minted_main
+*.pytxcode
