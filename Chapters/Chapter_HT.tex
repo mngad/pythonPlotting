@@ -146,7 +146,7 @@ initial load, for which there are a few possible reasons. One possibility for
 the reduction in stiffness is that it is a consequence of the freeze thaw cycle
 that occurred between these tests. The second possibility is that the vertebrae
 were still partially frozen while the testing took place. Finally, it could be
-due to damage being caused during the initial load to 2000 N, shown in \cref{fig:Spine 2_L1,fig:Spine 3_L3} it is possible to see slight failure
+due to damage being caused during the initial load to 2000 N, shown in \cref{fig:Spine2_L1,fig:Spine3_L3} it is possible to see slight failure
 in the three Spine 3 vertebrae, although failure cannot be seen in the Spine 2 L1
 vertebrae. The frozen bar in \cref{fig:exp_repeats} shows how the
 stiffness increases when the vertebrae are completely frozen, potentially
@@ -156,11 +156,11 @@ to attempt to answer this.
 
 The iterative reduction in stiffness for the Spine 3 L2 vertebrae can be
 explained as damage being caused after each iteration. This can be seen in
-\cref{fig:Spine 3_L2}, with the three repeats each showing a yielding
+\cref{fig:Spine3_L2}, with the three repeats each showing a yielding
 before the 1600 N limit and a smaller maximum load and stiffness after each
 repeat.
 
-Figures~\ref{fig:Spine 2_L1} through~\ref{fig:Spine 3_L3} show the data for the
+Figures~\ref{fig:Spine2_L1} through~\ref{fig:Spine3_L3} show the data for the
 loading, from which the maximum stiffness values are found. This excludes the
 initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
@@ -181,7 +181,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
   \caption{The load - displacement results for the Spine 2 L1 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:Spine 2_L1}
+  \label{fig:Spine2_L1}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -190,7 +190,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
   \caption{The load - displacement results for the Spine 3 L1 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:Spine 3_L1}
+  \label{fig:Spine3_L1}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -199,7 +199,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
   \caption{The load - displacement results for the Spine 3 L2 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:Spine 3_L2}
+  \label{fig:Spine3_L2}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -208,7 +208,7 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
   \caption{The load - displacement results for the Spine 3 L3 vertebra. Showing
     results of the intact load and post augmentation load up to 2000 N and the
     repeats and frozen load up to 1600 N.}
-  \label{fig:Spine 3_L3}
+  \label{fig:Spine3_L3}
 \end{figure}
 
 
@@ -792,7 +792,7 @@ This relationship can be seen in \cref{fig:cmt_fill_vs_bvtv}.
 
 There was not a clear relationship found between the cement fill of the total vertebral volume and the resulting change in stiffness following augmentation for the set of vertebrae on the whole.
 However, trends could be seen when splitting vertebrae into groups with: \textit{a)} dispersed volumes of injected cement and \textit{b)} concentrated volumes of cement.
-This can be seen in \cref{fig:cmt_fill_vs_ch_stiff} where a trend ($r=0.83$) can be seen between the percentage fill of the total vertebral volume and the percentage change in stiffness for those vertebrae with concentrated volumes of cement.
+This can be seen in \cref{fig:aug_cmt_fill_vs_ch_stiff} where a trend ($r=0.83$) can be seen between the percentage fill of the total vertebral volume and the percentage change in stiffness for those vertebrae with concentrated volumes of cement.
 
 \begin{figure}[h!]
   \centering
@@ -888,7 +888,15 @@ The results show a large improvement using the results of the sensitivity tests 
 
 \subsubsection{Augmented Model Results}
 
+The optimum results using the image registration and outcomes of the sensitivity tests can be seen in \cref{fig:aug_init_vs_best} with the blue triangles.
+This registration method achieved a CCC = 0.46, while the initial method used (similar to the method used with the bovine tail vertebrae) achieved a CCC of 0.18.
 
+\begin{figure}[h!]
+  \centering
+	\includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/aug_init_vs_best}
+	\caption{The results of using the initial method (red circles) and the registration method (blue triangles), showing the agreement to the perfect x=y line in orange.}
+	\label{fig:aug_init_vs_best}
+\end{figure}
 
 
 
@@ -981,6 +989,26 @@ This change gives an increase in the number of greyscale values available from t
 The main benefit of the bone volume fraction method is the increased definition of bone structure and a greater contrast between the brighter, denser cortical bone, the trabecular bone and the empty, non-bone areas.
 Using 16-bit images along with image manipulation to change the contrast of the scans may allow the added detail and contrast to be captured with relatively low ($\geq$ 1 mm) resolution scans, therefore greatly increasing the number of vertebral specimens available for use.
 
+
+
+The results of modelling augmented vertebrae showed a reduction in the agreement when compared to the non-augmented vertebral models.
+Reasons for this are centred around modelling the internal cement volume, given the good agreement seen between the non-augmented vertebrae and their models.
+More specifically the problems in modelling the cement region within models may be due to experimental and modelling techniques.
+Issues surrounding the experimental work are the difficulty in capturing the extent of the augmentation volume, often due to clumping of the barium sulphate and separation of the barium sulphate from the other components of the PMMA cement.
+While this problem is minimised through segmentation of the cement region at higher resolutions before the downsampling, a problem still lies in capturing the intricate interdigitation between the cement and the trabecular bone at a resolution of 1 mm.
+An additional experimental challenge is the unknown level of damage caused to the vertebrae when the needle is inserted.
+Given that after clear fractures (based on load-displacement curves) could not be seen on 82 $\mu$m scans of bovine tail vertebrae, it is unlikely that micro-fractures caused through needle insertion will be captured in the $\mu$CT scans of the human vertebrae.
+
+Despite the reduced agreement of the augmented models, there was a large improvement compared to the initial method, which was the method used for modelling augmentation in the bovine tail vertebrae.
+As with the non-augmented models the CCC using the initial method was very similar to the CCC using the similar method on the bovine tail vertebrae, CCC = 0.18 and 0.15 for the human and bovine models respectively.
+This makes the improvement using the registration significant and a beneficial step in making the models.
+
+Achieving improved agreement between the computation and experimental models is an obvious next step for the project and despite the range of approaches used and attempted to improve the agreement, there are some next steps.
+Given the difficulty capturing the detail between the cement and trabecular bone, using a higher resolution is a clear next step.
+However, it comes with a number of difficulties which have been shown in the study by Zhao et al. \cite{Zhao2012}, where the increase in resolution presents many other unknowns that need to be modelled.
+For example modelling the specific interaction between the bone and the cement including the  coefficient of friction between them.
+This would require difficult experimental investigations, given the unique environment inside the vertebrae filled with bone marrow.
+Along with modelling properties that are not applicable in continuum level models, there is the problem with computational cost, where the increased time to solve models would become problematic given the investigatory nature of the study and the fact that the behaviour in simplified bone plug models is different to what is seen in whole vertebrae \cite{Sikora2013}.
 
 \subsubsection{Sensitivity Test Significance}
 
