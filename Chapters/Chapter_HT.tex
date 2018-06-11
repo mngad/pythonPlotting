@@ -604,9 +604,10 @@ Based on the results of the tests carried out on the bovine tail vertebrae in \c
 These were mainly changing the material properties of the interface layer between the bone and the cement, along with the material properties of the cement volume itself.
 
 A different approach to modelling the cement region was also attempted.
-This used an inverse greyscale material property for the cement region, rather than a homogeneous material property for the region.
+This used an inverse greyscale material property for the cement region, rather than a homogeneous material property for the region, based on the greyscale background of the non-augmented vertebral scans with the mask from the augmented models overlaid.
 This meant that darker regions of greyscale (within the cement volume) would be given a Young's modulus of PMMA cement (2.4 GPa) which would decrease linearly to the Young's modulus of the bone when entering into the brighter regions of the greyscale background.
-Representing the cement regions using this method meant that the underlying bone present inside the cement volumes is not ignored.
+Representing the cement regions using this method meant that the underlying bone present inside the cement volumes is not ignored, instead the interdigitation between bone and cement in represented.
+While this representation is potentially inaccurate, it provides more detail that using a homogeneous material property and more detail than van be seen on the augmented vertebral scans.
 
 The relationship for the cement volume using this method was therefore:
 \begin{equation}
