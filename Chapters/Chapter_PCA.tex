@@ -10,7 +10,11 @@
 Generally SSAMs start with a rigid registration, where rotations and translations are applied to all meshes or models that form the input data set so that they share a common coordinate system.
 Methods of performing the rigid registration often use an automated approach where certain degrees of freedom are restricted to ensure registration is achieved.
 
-\section{Measuring Vertebral Geometry}
+
+
+\section{Methods}
+
+\subsection{Measuring Vertebral Geometry}
 
 Vertebral volume or the vertebral body volume may be the easiest and most obvious measure of geometric change within a set of vertebra.
 It has been shown in Chapter \ref{Chapter_HT} that there is a strong correlation between vertebral size and stiffness and so this may be enough for a range of comparisons between spines and individual vertebrae.
@@ -80,7 +84,6 @@ This includes identifying wedge shaped vertebrae, recorded as reduced anterior h
 	\hline
 	\end{tabular}
 \end{table}
-\section{PCA in ScanIP}
 
 The plugin for ScanIP that allows principal component analysis and the generation of models described by the principal components consists of five main steps.
 
@@ -129,6 +132,92 @@ The load is then applied through a plate which is tied to the superior endcap.
 
 
 
+
+\subsection{Results}
+\subsection{Measuring \& Interrogating Vertebral Variation}
+
+\subsubsection{Geometry Variation}
+
+The geometric variation found in the first three principal components has been identified using the images of the surface point clouds of the mean and +3 and -3 standard deviations away from the mean, along with the measurements of the 18 variables described previously.
+The images of the point clouds can be seen in \cref{fig:PC1_2_3_Axial, fig:PC1_2_3_Sagital, fig:PC1_2_3_Coronal}, showing the view of the vertebral models from the three anatomical planes with a three-dimensional view in \cref{fig:PC1_2_3_3D}.
+More simplified figures can be seen in \cref{fig:PC1_2_3_AxialSlice, fig:PC1_2_3_SagitalSlice, fig:PC1_2_3_CoronalSlice}, showing the mid-slice through each of the anatomical planes, while information is lost here, it allows an clear visualisation of the modes of variation found in the main parts of the vertebral body.
+Here, only the +3, mean and -3 standard deviations of the principal components are shown, this simplifies and allows clear visualisations of the main mode of variation present in each principal component.
+
+Principal component one contains the least geometric variation of the first three principal components.
+The mid slice axially shows an almost identical shape and size between the +3, mean and -3 standard deviations, while the coronal and sagittal planes show minor changes in the overall size and volume of the vertebrae.
+
+Principal component two shows the most interesting geometric variation with many of the different shapes and some of the degeneration of the input set clearly visible.
+The large changes to the axial mid slice (\cref{fig:PC1_2_3_AxialSlice}) of the second principal component appear to represent the different levels of the lumbar spine that made up the input set.
+Positive standard deviations away from the mean, especially the +3 SD slice has the much wider posterior portion aligning with that of the L5 lumbar vertebrae.
+Conversely the much narrower -3 SD model appears similar to the L1 lumbar vertebrae.
+This change in width between the +3 and -3 SD is especially evident in the coronal views in \cref{fig:PC1_2_3_CoronalSlice}.
+This change from vertebra reminiscent of L5 vertebrae at +3 SD to L1 vertebra at -3 SD (and therefore L3 vertebrae in the mean model) is also reflected in the sagittal views (\cref{fig:PC1_2_3_SagitalSlice}) where anterior and posterior wedge shapes can be seen in the +3 and -3 SD models respectively.
+
+Finally, principal component three also contains a considerable quantity of the geometric variation, although much more simple.
+Here, the mode of geometric variation is the size of the vertebrae with the -3 SD model being considerably larger than the mean vertebral model and vice versa with the +3 SD model, where its volume is much smaller than the mean vertebra.
+
+%TODO add the tables of pca variation
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Axial.pdf}
+  \caption{Axial views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_Axial}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Sagital.pdf}
+  \caption{Sagittal views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_Sagital}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Coronal.pdf}
+  \caption{Coronal views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_Coronal}
+\end{figure}
+
+
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_3D.pdf}
+  \caption{Three dimensional views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_3D}
+\end{figure}
+
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_AxialSlice.pdf}
+  \caption{Axial views of the mid slice of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_AxialSlice}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_SagitalSlice.pdf}
+  \caption{Sagittal views of the mid slice of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_SagitalSlice}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_CoronalSlice.pdf}
+  \caption{Coronal views of the mid slice of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+  \label{fig:PC1_2_3_CoronalSlice}
+\end{figure}
+
+\pagebreak
+
+
+
+\subsubsection{Greyscale \& Material Property Variation}
+
+\subsubsection{Resulting Stiffness Variation}
+
 \subsection{Validating Generated Vertebrae}
 
 \subsubsection{Geometry Validation}
@@ -140,19 +229,11 @@ Measuring the vertebral geometry 18 measurements
 \subsubsection{Resulting Stiffness Validation}
 
 
-\subsection{Measuring \& Interigating Vertebral Variation}
-
-\subsubsection{Geometry Variation}
-
-\subsubsection{Greyscale \& Material Property Variation}
-
-\subsubsection{Resulting Stiffness Variation}
-
-\section{Effect of Injected Cement Volume, Shape \& Position}
+\subsection{Effect of Injected Cement Volume, Shape \& Position}
 
 
 
-\section{Effect of Injected Cement on Vertebral Variation}
+\subsection{Effect of Vertebral Variation on Augmentation}
 
 \section{Discussion}
 \label{pca_disc}
