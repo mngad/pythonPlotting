@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{initialClearance}\PYG{o}{=}\PYG{n}{OMIT}\PYG{p}{,}
+	\PYG{n}{adjustMethod}\PYG{o}{=}\PYG{n+nb+bp}{None}\PYG{p}{,}
+	\PYG{n}{sliding}\PYG{o}{=}\PYG{n}{SMALL}\PYG{p}{,}
+	\PYG{n}{enforcement}\PYG{o}{=}\PYG{n}{NODE\PYGZus{}TO\PYGZus{}SURFACE}\PYG{p}{,}
+	\PYG{n}{thickness}\PYG{o}{=}\PYG{n}{ON}\PYG{p}{,}
+	\PYG{n}{supplementaryContact}\PYG{o}{=}\PYG{n}{SELECTIVE}\PYG{p}{,}
+	\PYG{n}{interactionProperty}\PYG{o}{=}\PYG{n}{contactName}\PYG{p}{,}
+	\PYG{n}{smooth}\PYG{o}{=}\PYG{l+m+mf}{0.2}\PYG{p}{,}
+	\PYG{n}{bondingSet}\PYG{o}{=}\PYG{n+nb+bp}{None}
+\end{Verbatim}
