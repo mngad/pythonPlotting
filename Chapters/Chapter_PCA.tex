@@ -133,18 +133,20 @@ The load is then applied through a plate which is tied to the superior endcap.
 
 
 
-\subsection{Results}
+\section{Results}
 \subsection{Measuring \& Interrogating Vertebral Variation}
 
 \subsubsection{Geometry Variation}
 
 The geometric variation found in the first three principal components has been identified using the images of the surface point clouds of the mean and +3 and -3 standard deviations away from the mean, along with the measurements of the 18 variables described previously.
-The images of the point clouds can be seen in \cref{fig:PC1_2_3_Axial, fig:PC1_2_3_Sagital, fig:PC1_2_3_Coronal}, showing the view of the vertebral models from the three anatomical planes with a three-dimensional view in \cref{fig:PC1_2_3_3D}.
-More simplified figures can be seen in \cref{fig:PC1_2_3_AxialSlice, fig:PC1_2_3_SagitalSlice, fig:PC1_2_3_CoronalSlice}, showing the mid-slice through each of the anatomical planes, while information is lost here, it allows an clear visualisation of the modes of variation found in the main parts of the vertebral body.
+The images of the point clouds can be seen in \cref{fig:PC1_2_3_Axial,fig:PC1_2_3_Sagital,fig:PC1_2_3_Coronal}, showing the view of the vertebral models from the three anatomical planes with a three-dimensional view in \cref{fig:PC1_2_3_3D}.
+More simplified figures can be seen in \cref{fig:PC1_2_3_AxialSlice,fig:PC1_2_3_SagitalSlice,fig:PC1_2_3_CoronalSlice}, showing the mid-slice through each of the anatomical planes, while information is lost here, it allows an clear visualisation of the modes of variation found in the main parts of the vertebral body.
 Here, only the +3, mean and -3 standard deviations of the principal components are shown, this simplifies and allows clear visualisations of the main mode of variation present in each principal component.
+A quantification of the change in volume can be seen in \cref{tab:pca_geo_tab} for the mean and $\pm$ 1, 2 \& 3 standard deviations away from the mean.
 
 Principal component one contains the least geometric variation of the first three principal components.
 The mid slice axially shows an almost identical shape and size between the +3, mean and -3 standard deviations, while the coronal and sagittal planes show minor changes in the overall size and volume of the vertebrae.
+The changes in total vertebral volume is limited to 17 \% larger and 15 \% smaller than the mean model, shown in \cref{tab:pca_geo_tab}.
 
 Principal component two shows the most interesting geometric variation with many of the different shapes and some of the degeneration of the input set clearly visible.
 The large changes to the axial mid slice (\cref{fig:PC1_2_3_AxialSlice}) of the second principal component appear to represent the different levels of the lumbar spine that made up the input set.
@@ -154,9 +156,14 @@ This change in width between the +3 and -3 SD is especially evident in the coron
 This change from vertebra reminiscent of L5 vertebrae at +3 SD to L1 vertebra at -3 SD (and therefore L3 vertebrae in the mean model) is also reflected in the sagittal views (\cref{fig:PC1_2_3_SagitalSlice}) where anterior and posterior wedge shapes can be seen in the +3 and -3 SD models respectively.
 
 Finally, principal component three also contains a considerable quantity of the geometric variation, although much more simple.
-Here, the mode of geometric variation is the size of the vertebrae with the -3 SD model being considerably larger than the mean vertebral model and vice versa with the +3 SD model, where its volume is much smaller than the mean vertebra.
+Here, the mode of geometric variation is the size of the vertebrae with the -3 SD model being considerably larger than the mean vertebral model (54 \% larger) and vice versa with the +3 SD model, where its volume is much smaller than the mean vertebra (40 \% smaller).
 
-%TODO add the tables of pca variation
+Quantification of all of the measurements taken on the generated models can be seen in \cref{tab:pca_geo_tab} with the acronyms for the measurements given in \cref{tab:measurements}.
+The colouration in the table allows easy identification of the changes to the vertebral geometry compared to the mean generated model, for example, while the changes to the measurements are near uniform in PC 1 \& 3, the non-uniform nature of PC 2 shows the different shapes that are present and described above.
+Additionally it allows quantification of the shapes seen in the models, for example the anterior and posterior wedge shapes in PC 2, described with the Coronal Anterior Height and the Coronal Posterior Height having an antagonistic relationship.
+However, the main benefit of the table and its measurements is for the validation of the PC models against the input set, ensuring that the shapes measured in the input set are represented in the models.
+This is described in \cref{sec:pca_val}.
+
 
 \begin{figure}[p]
   \centering
@@ -210,6 +217,49 @@ Here, the mode of geometric variation is the size of the vertebrae with the -3 S
   \label{fig:PC1_2_3_CoronalSlice}
 \end{figure}
 
+\begin{table}[p]
+\centering
+\caption{The volume of the principal component models as a fraction of the mean model's volume, showing how much of the volumetric variation is captured in each of the principal components. }
+\label{tab:pc_vol}
+\begin{tabular}{c|c}
+Principal Component & Voxel Count Fraction       \\ \hline \hline
+PC1 +3               & 1.171 \\
+PC1 +2               & 1.108 \\
+PC1 +1               & 1.055 \\
+Mean                 & 1.000 \\
+PC1 -1               & 0.947 \\
+PC1 -2               & 0.897 \\
+PC1 -3               & 0.847 \\ \hline
+
+PC2 +3               & 1.228 \\
+PC2 +2               & 1.152 \\
+PC2 +1               & 1.081 \\
+Mean                 & 1.000 \\
+PC2 -1               & 0.937 \\
+PC2 -2               & 0.869 \\
+PC2 -3               & 0.802 \\ \hline
+
+PC3 +3               & 0.600 \\
+PC3 +2               & 0.720 \\
+PC3 +1               & 0.854 \\
+Mean                 & 1.000 \\
+PC3 -1               & 1.163 \\
+PC3 -2               & 1.344 \\
+PC3 -3               & 1.538 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{landscape}
+
+\begin{table}[p]
+  \centering
+  \caption{The measurements of the 18 variables (abbreviations in \cref{tab:measurements}), shown as a fraction of the mean models measurements. Colouration shows the reduced measurements in red and larger measurements in green showing the geometric variation quantitatively.}
+  \includegraphics[width=1.7\textwidth]{Chapters/Chapter_PCA_images/pca_geo_table.png}
+  \label{tab:pca_geo_tab}
+\end{table}
+
+\end{landscape}
+
 \pagebreak
 
 
@@ -218,7 +268,7 @@ Here, the mode of geometric variation is the size of the vertebrae with the -3 S
 
 \subsubsection{Resulting Stiffness Variation}
 
-\subsection{Validating Generated Vertebrae}
+\subsection{Validating Generated Vertebrae} \label{sec:pca_val}
 
 \subsubsection{Geometry Validation}
 
