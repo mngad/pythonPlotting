@@ -266,6 +266,29 @@ PC3 -3               & 1.538 \\ \hline
 
 \subsubsection{Greyscale \& Material Property Variation}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca1_histo.pdf}
+  \caption{Histogram of the models generated from principal component 1, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
+  \label{fig:pca1_histo}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca2_histo.pdf}
+  \caption{Histogram of the models generated from principal component 2, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
+  \label{fig:pca2_histo}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca3_histo.pdf}
+  \caption{Histogram of the models generated from principal component 3, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
+  \label{fig:pca3_histo}
+\end{figure}
+
+%TODO add image comparing the pca model background and the input model background
+
 \subsubsection{Resulting Stiffness Variation}
 
 \subsection{Validating Generated Vertebrae} \label{sec:pca_val}
@@ -292,8 +315,7 @@ Validation
 
 Modes of variation and how they represent the clinical problems (wedge shapes and fractures, small large, weak/stiff, etc.)
 
-Response to augmentation.
-
+	
 The response to small quantities of cement injected into the vertebrae is small. This is shown when comparing 20 \% fill volumes to 35 and 50 \% fill, where an increase in the stiffness is barely seen and only in the least dense vertebrae.
 Attempts to understand the effect that the position of small volumes of cement (12 \% fill) has on the stiffness of the vertebrae shows sensible effects although a small percentage change to the stiffness of the vertebra compared to central positions of the cement volume.
 
@@ -311,7 +333,7 @@ Away from the extremes, the stiffness rose to the anterior of the vertebra, wher
 While this would suggest that vertebroplasty injections should always aim to the anterior of the vertebra (for purely stiffness increasing reasons, not just safety), the percentage change in stiffness from the least stiff - most posterior to the stiffest position is a mere 3 \%.
 Given that the most stiff position still had a reduction of 13 \% compared to the non-augmented vertebrae, it suggests other factors may be more important and that the cement position, at least for small quantities of cement have little effect.
 
-Compounding these results with the effect of cement position when varying the loading position...
+Compounding these results with the effect of cement position when varying the loading position... %TODO finish sentance
 
 The effect of increasing the volume of the internal cement volume of the first three principal components affected the different models differently depending on what type of variation was found within that principal component.
 As described previously small volumes of cement had little effect on the stiffness behaviour of the vertebral models, this extended to the 20 \% models where little to no increase in the stiffness was seen.
