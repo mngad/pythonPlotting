@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     plt.tight_layout()
     #plt.show()
-    plt.savefig('pca_percent_fill_pc3.png', dpi=320, facecolor='w', edgecolor='w',
+    plt.savefig('pca_percent_fill_pc3.pdf', dpi=320, facecolor='w', edgecolor='w',
         orientation='landscape', papertype=None, format=None,
         transparent=False, bbox_inches=None, pad_inches=1,
         frameon=None)
