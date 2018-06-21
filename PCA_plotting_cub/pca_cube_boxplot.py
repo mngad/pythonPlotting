@@ -13,10 +13,10 @@ def set_box_color(bp, color):
 
 if __name__ == "__main__":
 
-    fig, ax = plt.subplots(1, 1)
+    fig, ax = plt.subplots(figsize=(12, 6.75))
 
     #matplotlib.style.use("ggplot")
-    matplotlib.rcParams.update({'font.size': 14})
+    matplotlib.rcParams.update({'font.size': 34})
     df = pd.read_csv(
         'input.csv',
         header=0,
@@ -32,25 +32,25 @@ if __name__ == "__main__":
     print(df)
     dfdata=[df['SLD'], df['SLH'], df['SMD'], df['SMH'], df['SRD'], df['SRH'], df['CAH'], df['CAW'], df['CMH'], df['CMW'], df['CPH'], df['CPW'], df['AID'], df['AIW'], df['AMD'], df['AMW'], df['ASD'], df['ASW']]
     df2data=[df2['SLD'], df2['SLH'], df2['SMD'], df2['SMH'], df2['SRD'], df2['SRH'], df2['CAH'], df2['CAW'], df2['CMH'], df2['CMW'], df2['CPH'], df2['CPW'], df2['AID'], df2['AIW'], df2['AMD'], df2['AMW'], df2['ASD'], df2['ASW']]
-    bpl = plt.boxplot(dfdata,positions=np.array(range(len(dfdata)))*2.0-0.4, widths=0.6, patch_artist=True)
-    bpr = plt.boxplot(df2data,positions=np.array(range(len(df2data)))*2.0+0.4, sym='', widths=0.6, patch_artist=True)
+    bpl = plt.boxplot(dfdata,positions=np.array(range(len(dfdata)))*2.0+1, widths=0.6, patch_artist=True)
+    bpr = plt.boxplot(df2data,positions=np.array(range(len(df2data)))*2.0+2, sym='', widths=0.6, patch_artist=True)
 
     set_box_color(bpl, '#D7191C') # colors are from http://colorbrewer2.org/
     set_box_color(bpr, '#2C7BB6')
     plt.ylabel('Length of Measurement (mm)')
     #plt.xlabel('Cement Fill (%)')
-    ticks = ['SLD', 'SLH', 'SMD', 'SMH', 'SRD', 'SRH', 'CAH', 'CAW', 'CMH', 'CMW', 'CPH', 'CPW', 'AID', 'AIW', 'AMD', 'AMW', 'ASD', 'ASW']
-    plt.xticks(range(0, len(ticks) * 2, 2), ticks)
-    # plt.legend()
-    # plt.plot(ax)
-    #ax.grid()
-    #ax.set_axisbelow(True)
-    #plt.legend(fontsize=10)
-
-    #plt.tight_layout()
+    ticks = [' ', 'SLD', 'SLH', 'SMD', 'SMH', 'SRD', 'SRH', 'CAH', 'CAW', 'CMH', 'CMW', 'CPH', 'CPW', 'AID', 'AIW', 'AMD', 'AMW', 'ASD', 'ASW']
+    for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
+                         ax.get_xticklabels() + ax.get_yticklabels()):
+            item.set_fontsize(18)
+    plt.xticks(range(-1, len(ticks) * 2, 2), ticks, fontsize=16)
+    plt.plot([], c='#D7191C', label='Input Models')
+    plt.plot([], c='#2C7BB6', label='Generated Models')
+    plt.legend(fontsize=18)
+    plt.tight_layout()
     #plt.show()
-    plt.savefig('pca_cube.pdf', dpi=320, facecolor='w', edgecolor='w',
-        orientation='landscape', papertype='a4', format=None,
+    plt.savefig('pca_cube.pdf', dpi=320, facecolor='w', edgecolor='w',figsize=(16, 9),
+        orientation='landscape', format=None,
         transparent=False, bbox_inches=None, pad_inches=1,
         frameon=None)
 
