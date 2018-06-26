@@ -311,7 +311,7 @@ Differences in the range of generated vertebrae compared to the range of measure
 Volume differences between the input set and generated vertebrae were also small, with the difference between the mean of the input set volume and the mean generated model volume being 10 \%, the means being 39500 mm$^3$ and 38245 mm$^3$ respectively.
 The range of vertebral volumes is also comparable: the input set range is 31189 to 56003 mm$^3$ while the generated vertebrae for $\pm$1 SD with all possible combinations of PC 1, 2 and 3, have a range of 28152 to 50462 mm$^3$.
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Chapters/Chapter_PCA_images/pca_cube.pdf}
 	\caption{The variation in the 18 geometric measures of the input set models compared to the variation in the generated models for the first three principal components including all combinations of the +1, mean and -1 standard deviations.}
@@ -321,10 +321,18 @@ The range of vertebral volumes is also comparable: the input set range is 31189 
 \subsubsection{Material Property (Greyscale) Validation}
 
 
-The variation seen in the histograms representing the greyscale differences between generated models and the input can be seen in \cref{fig:pc1_histo, fig;pc2_histo, fig:pc3_histo}, with the range of histograms from the input set shown as the grey range and the coloured lines showing the histogram for each of the generated models.
+The variation seen in the histograms representing the greyscale differences between generated models and the input can be seen in \cref{fig:pca1_histo,fig:pca2_histo,fig:pca3_histo}, with the range of histograms from the input set shown as the grey range and the coloured lines showing the histogram for each of the generated models.
 This normalised data shows a general agreement with the shape of the curves and relative quantities being very similar.
 Deviations from the similarity are, for the most part, at the high and low greyscale values, where in general there are less voxels in this range for the generated models.
-Comparing these results to a
+Comparing these results to an example background in \cref{fig:input_gen_background}, comparing an input background slice with the mean generated model mid-slice, shows that the lack of voxel counts in the high and low greyscale regions correlates with having less contrast between the densest bone in the cortical shell and the empty parts.
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\textwidth]{Chapters/Chapter_PCA_images/INPUT_GEN_BACKGROUND.png}
+	\caption{Greyscale backgrounds for the axial mid-slice from, A, the Spine 1 L1 input vertebra and B, the mean generated model.}
+  \label{fig:input_gen_background}
+\end{figure}
 \subsubsection{Resulting Stiffness Validation}
 
 
