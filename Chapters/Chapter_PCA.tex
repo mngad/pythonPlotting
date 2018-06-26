@@ -266,21 +266,21 @@ PC3 -3               & 1.538 \\ \hline
 
 \subsubsection{Greyscale \& Material Property Variation}
 
-\begin{figure}[p]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca1_histo.pdf}
   \caption{Histogram of the models generated from principal component 1, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
   \label{fig:pca1_histo}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca2_histo.pdf}
   \caption{Histogram of the models generated from principal component 2, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
   \label{fig:pca2_histo}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca3_histo.pdf}
   \caption{Histogram of the models generated from principal component 3, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
@@ -325,7 +325,12 @@ The variation seen in the histograms representing the greyscale differences betw
 This normalised data shows a general agreement with the shape of the curves and relative quantities being very similar.
 Deviations from the similarity are, for the most part, at the high and low greyscale values, where in general there are less voxels in this range for the generated models.
 Comparing these results to an example background in \cref{fig:input_gen_background}, comparing an input background slice with the mean generated model mid-slice, shows that the lack of voxel counts in the high and low greyscale regions correlates with having less contrast between the densest bone in the cortical shell and the empty parts.
+Additionally, \cref{fig:input_gen_background} shows that the important feature for load transfer, the cortical shell, is preserved and accurately described in the background of the mean generated model.
+While the cortical shell's presence is clear, it's definition and contrast between it and the trabecular bone or empty spaces is not as well preserved.
+Other features such as the posterior vascular channel is also preserved, albeit not as clearly as the features on the input set.
 
+Differences in the mean greyscale between the input set and the generated models of all combinations of $\pm$1 SD are 108 and 97 respectively.
+The ranges are 78 to 164 for the input set and 72 to 122 for the generated models for all combinations of $\pm$1 SD.
 
 \begin{figure}[h!]
   \centering
@@ -334,6 +339,9 @@ Comparing these results to an example background in \cref{fig:input_gen_backgrou
   \label{fig:input_gen_background}
 \end{figure}
 \subsubsection{Resulting Stiffness Validation}
+
+
+
 
 
 \subsection{Effect of Injected Cement Volume, Shape \& Position}
