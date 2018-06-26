@@ -266,21 +266,21 @@ PC3 -3               & 1.538 \\ \hline
 
 \subsubsection{Greyscale \& Material Property Variation}
 
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca1_histo.pdf}
   \caption{Histogram of the models generated from principal component 1, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
   \label{fig:pca1_histo}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca2_histo.pdf}
   \caption{Histogram of the models generated from principal component 2, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
   \label{fig:pca2_histo}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/pca3_histo.pdf}
   \caption{Histogram of the models generated from principal component 3, with $\pm$ 3, 2 \& 1 standard deviations away from the mean. The values are normalised with respect to the total volume of the vertebrae, allowing comparisons with different sized model. The grey background represents the range of histograms seen in the input set.}
@@ -293,12 +293,38 @@ PC3 -3               & 1.538 \\ \hline
 
 \subsection{Validating Generated Vertebrae} \label{sec:pca_val}
 
+Validation of the generated vertebrae from the PCA plugin for scanIP is vital for ensuring any results are sensible, for example when artificially augmenting the vertebrae, and to ensure that the modes of variation previously described are genuine descriptions of the variation found within the input set.
+To achieve this validation, aspects important to the generated models need to be compared to the variables found in the input set.
+The variables compared will be the geometry and volume of the vertebrae, the greyscale background and therefore the material properties of the models and finally the resulting stiffness when loads are simulated on the generated FE model.
+While identifying the modes of variation in isolation are important to characterise how such variation affects the outcomes of augmentation or understanding the content and main modes of variation, combinations of the principal components generate different models that may describe different ranges of variation.
+Therefore, the variation found within one standard deviation of the mean for the first three principal components, including all of the combinations of standard deviations within $\pm$ 1 SD, including the mean.
+For example, PC 1 +1, PC 2 +1, PC 3 -1, would be one model with a combination of the first three principal components.
+
 \subsubsection{Geometry Validation}
 
-Measuring the vertebral geometry 18 measurements
+Identifying the variation in geometry for combinations of the first three principal components, with all possible combinations within $\pm$1 SD of the mean is presented here.
+The 18 geometric measures found within the $\pm$1 SD models are presented in \cref{fig:pca_cube}. 
+The results presented here show a strong agreement between the input and the generated models, with the means of the two sets agreeing closely, along with the range of the measurements.
+Outliers in the input set originate from the bone spurs and other features of the degenerated vertebrae. %TODO add image of G19 L1
+Differences in the range of generated vertebrae compared to the range of measurements seen in the input set are due to the input set describing only one standard deviation of variation.
+
+Volume differences between the input set and generated vertebrae were also small, with the difference between the mean of the input set volume and the mean generated model volume being 10 \%, the means being 39500 mm$^3$ and 38245 mm$^3$ respectively.
+The range of vertebral volumes is also comparable: the input set range is 31189 to 56003 mm$^3$ while the generated vertebrae for $\pm$1 SD with all possible combinations of PC 1, 2 and 3, have a range of 28152 to 50462 mm$^3$.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{Chapters/Chapter_PCA_images/pca_cube.pdf}
+	\caption{The variation in the 18 geometric measures of the input set models compared to the variation in the generated models for the first three principal components including all combinations of the +1, mean and -1 standard deviations.}
+  \label{fig:pca_cube}
+\end{figure}
 
 \subsubsection{Material Property (Greyscale) Validation}
 
+
+The variation seen in the histograms representing the greyscale differences between generated models and the input can be seen in \cref{fig:pc1_histo, fig;pc2_histo, fig:pc3_histo}, with the range of histograms from the input set shown as the grey range and the coloured lines showing the histogram for each of the generated models.
+This normalised data shows a general agreement with the shape of the curves and relative quantities being very similar.
+Deviations from the similarity are, for the most part, at the high and low greyscale values, where in general there are less voxels in this range for the generated models.
+Comparing these results to a
 \subsubsection{Resulting Stiffness Validation}
 
 
