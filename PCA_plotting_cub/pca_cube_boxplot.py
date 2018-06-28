@@ -49,7 +49,7 @@ if __name__ == "__main__":
     plt.legend(fontsize=18)
     plt.tight_layout()
     #plt.show()
-    plt.savefig('pca_cube.pdf', dpi=320, facecolor='w', edgecolor='w',figsize=(16, 9),
+    plt.savefig('pca_cube.png', dpi=320, facecolor='w', edgecolor='w',figsize=(16, 9),
         orientation='landscape', format=None,
         transparent=False, bbox_inches=None, pad_inches=1,
         frameon=None)
