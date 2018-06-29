@@ -497,17 +497,19 @@ The $allowSeperation$ variable determines whether separation is permitted once c
 However, when experimenting with the effect of loading position, especially with loads applied far from the vertebral centre, the solver struggled to converge.
 Disallowing separation after contact was shown to have a small effect on the results (the outputted stiffness) and allowed the models to run to the completion of the job.
 The remaining settings were set to the default for a generic contact: 
-\begin{minted}{python}
-	initialClearance=OMIT, 
-	adjustMethod=None, 
-	sliding=SMALL, 
-	enforcement=NODE_TO_SURFACE, 
-	thickness=ON, 
-	supplementaryContact=SELECTIVE, 
-	interactionProperty=contactName, 
-	smooth=0.2, 
-	bondingSet=None
-\end{minted}
+
+$
+	initialClearance=OMIT \\
+	adjustMethod=None \\
+	sliding=SMALL \\
+	enforcement=NODE\_TO\_SURFACE \\
+	thickness=ON \\
+	supplementaryContact=SELECTIVE \\
+	interactionProperty=contactName \\
+	smooth=0.2 \\
+	bondingSet=None \\
+$
+
 
 Further tuning of these variables to see if an improved agreement could be achieve would be a simple, though time consuming addition to this sensitivity test due to the greyscale conversion factor optimisation process required to test each option.
 
