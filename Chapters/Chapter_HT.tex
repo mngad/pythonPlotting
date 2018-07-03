@@ -586,7 +586,7 @@ This resolution provided enough detail to capture the detail of the injected cem
 
 To segment the three regions (background, bone and endcaps, and injected cement) it was found that the most reproducible and accurate method was to use the Otsu thresholding process \cite{sezgin2004survey}, a filter that is built in to ScanIP\@.
 It was used to find three masks in the scan and works on a threshold clustering method.
-In this case searching for three clusters or masks separated by different thresholds and returning a mask that described the background, the bone and endcaps and the cement region.
+In this case searching for four clusters or masks separated by different thresholds and returning a mask that described the background, the bone and endcaps and the cement region.
 From this only the cement mask was retained and underwent a flood fill filter, removing empty voxels found within the description of the mask.
 The mask and background were then downsampled to 1 mm resolution and cropped to the same dimensions as the non-augmented model.
 From the non-augmented model, the masked describing the vertebra, the endcaps and the background of the vertebra where imported.

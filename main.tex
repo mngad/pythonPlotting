@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper,twoside]{report}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{pythontex}
 \usepackage{minted}
 \usepackage{amsmath}
@@ -15,7 +15,8 @@
 \usepackage{float}
 \usepackage{verbatim}
 \usepackage{microtype}
-\usepackage{cite}
+\usepackage{csquotes}
+\usepackage[sorting=none,style=numeric,url=false,doi=false,isbn=false,firstinits=true,backend=biber]{biblatex}
 \usepackage[parfill]{parskip} % REMOVE INDENTS
 \usepackage{wrapfig}
 \usepackage{textcomp}
@@ -37,7 +38,7 @@
 \counterwithin{table}{section}
 \counterwithin{figure}{section}
 \usepackage[inner=4cm,outer=2cm,top=2cm,bottom=2cm]{geometry}
-
+\addbibresource{library.bib}
 \title{Thesis}
 \author{Gavin Day}
 \date{July 2016}
@@ -69,9 +70,7 @@
 \pagebreak
 
 
-\bibliographystyle{unsrt}
-\bibliography{library}
-
+\printbibliography
 
 
 
