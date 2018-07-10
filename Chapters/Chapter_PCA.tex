@@ -158,7 +158,7 @@ The range of vertebral volumes is also comparable: the input set range is 31189 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{Chapters/Chapter_PCA_images/pca_cube.pdf}
-	\caption{The variation in the 18 geometric measures of the input set models compared to the variation in the generated models for the first three principal components including all combinations of the +1, mean and -1 standard deviations.}
+	\caption[Geometric variation in the generated vertebrae.]{The variation in the 18 geometric measures of the input set models compared to the variation in the generated models for the first three principal components including all combinations of the +1, mean and -1 standard deviations.}
   \label{fig:pca_cube}
 \end{figure}
 
@@ -318,37 +318,7 @@ This is described in \cref{sec:pca_val}.
   \label{fig:PC1_2_3_CoronalSlice}
 \end{figure}
 
-\begin{table}[p]
-\centering
-\caption{The volume of the principal component models as a fraction of the mean model's volume, showing how much of the volumetric variation is captured in each of the principal components. }
-\label{tab:pc_vol}
-\begin{tabular}{c|c}
-Principal Component & Voxel Count Fraction       \\ \hline \hline
-PC1 +3               & 1.171 \\
-PC1 +2               & 1.108 \\
-PC1 +1               & 1.055 \\
-Mean                 & 1.000 \\
-PC1 -1               & 0.947 \\
-PC1 -2               & 0.897 \\
-PC1 -3               & 0.847 \\ \hline
 
-PC2 +3               & 1.228 \\
-PC2 +2               & 1.152 \\
-PC2 +1               & 1.081 \\
-Mean                 & 1.000 \\
-PC2 -1               & 0.937 \\
-PC2 -2               & 0.869 \\
-PC2 -3               & 0.802 \\ \hline
-
-PC3 +3               & 0.600 \\
-PC3 +2               & 0.720 \\
-PC3 +1               & 0.854 \\
-Mean                 & 1.000 \\
-PC3 -1               & 1.163 \\
-PC3 -2               & 1.344 \\
-PC3 -3               & 1.538 \\ \hline
-\end{tabular}
-\end{table}
 
 \begin{landscape}
 
@@ -361,13 +331,25 @@ PC3 -3               & 1.538 \\ \hline
 
 \end{landscape}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_vol.pdf}
+  \caption{The vertebral body volume variation for the first three principal components, including the variation at $\pm$1, 2 \& 3 standard deviations away from the mean and including the mean.}
+  \label{fig:pca_vol}
+\end{figure}
+
 \pagebreak
 
 
 
 \subsubsection{Greyscale \& Material Property Variation}
 
-
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_gs.pdf}
+  \caption{The mean greyscale variation for the first three principal components, including the variation at $\pm$1, 2 \& 3 standard deviations away from the mean and including the mean.}
+  \label{fig:pca_gs}
+\end{figure}
 
 %TODO add image comparing the pca model background and the input model background
 
@@ -375,7 +357,12 @@ PC3 -3               & 1.538 \\ \hline
 
 
 
-
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_stiff.pdf}
+  \caption{The stiffness variation for the first three principal components, including the variation at $\pm$1, 2 \& 3 standard deviations away from the mean and including the mean.}
+  \label{fig:pca_stiff}
+\end{figure}
 
 \subsection{Augmentation in Generated Models}
 \subsection{Effect of Injected Cement Volume, Shape \& Position}

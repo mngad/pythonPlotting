@@ -2240,7 +2240,7 @@
 @Article{Wijayathunga2008,
   author       = {Wijayathunga, V N and Jones, A C and Oakland, R J and Furtado, N R and Hall, R M and Wilcox, R K},
   title        = {Development of specimen-specific finite element models of human vertebrae for the analysis of vertebroplasty.},
-  journaltitle = {Proc. Inst. Mech. Eng. H.},
+  journaltitle = {Proceedings of the Institution of Mechanical Engineers, Part H: Journal of Engineering in Medicine},
   date         = {2008-02},
   volume       = {222},
   number       = {2},
@@ -3299,6 +3299,14 @@ CONCLUSIONS: The problem with stating definitely that vertebroplasty and kyphopl
   issn         = {0090-6964},
   doi          = {10.1007/s10439-017-1883-8},
   publisher    = {Springer},
+}
+
+@PhdThesis{Sikora2013,
+  author        = {Sikora, Sebastien},
+  title         = {Experimental and computational study of the behaviour of trabecular bone-cement interfaces.},
+  year          = {2013},
+  __markedentry = {[fraun:6]},
+  school        = {University of Leeds},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
