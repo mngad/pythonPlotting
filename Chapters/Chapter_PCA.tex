@@ -331,6 +331,10 @@ This is described in \cref{sec:pca_val}.
 
 \end{landscape}
 
+General changes to the volume of the generated vertebral models can be seen in \cref{fig:pca_vol}.
+This shows a small and similar change to the volume of the vertebrae in both PC1 and PC2, corresponding to general size changes and shape changes repectively.
+The majority of the volume changes are isolated to PC3, which again captures size variation, with little change to the shape as seen above.
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_vol.pdf}
@@ -344,6 +348,10 @@ This is described in \cref{sec:pca_val}.
 
 \subsubsection{Greyscale \& Material Property Variation}
 
+Variation in the greyscale background or material properties of the vertebrae was the primary mode of variation, hence most greyscale variation being captured in principal component 1.
+Unlike the other modes of variation where changes exist in the other two principal components, greyscale variation is almost completely isolated to PC1, which can be seen in both the comparison of the mean greyscale value for each model in \cref{fig:pca_gs} and the plots of histograms in \cref{fig:pca1_histo,fig:pca2_histo,fig:pca3_histo}.
+The range of the mean greyscale values for PC1 are from the least dense at -3 SD away from the mean with a mean greyscale value of 42, to a maximum of 162 at +3 SD away from the mean.
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_gs.pdf}
@@ -355,7 +363,7 @@ This is described in \cref{sec:pca_val}.
 
 \subsubsection{Resulting Stiffness Variation}
 
-
+The variation in the resulting stiffness of the generated model for principal component 1, matches very closely to the variation seen in the mean greyscale variation, which can be seen in \cref{fig:pca_gs,fig:pca_stiff} for mean greyscale and stiffness variation respectively.
 
 \begin{figure}[h]
   \centering
