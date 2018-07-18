@@ -55,7 +55,7 @@ blue_line5 = mlines.Line2D([], [],label='-2',color='C5')
 blue_line6 = mlines.Line2D([], [],label='-3',color='C6')
 
 
-fig.legend(handles=[blue_line,blue_line1,blue_line2,blue_line3,blue_line4,blue_line5,blue_line6], bbox_to_anchor=(1.1,0.97))
+fig.legend(handles=[blue_line,blue_line1,blue_line2,blue_line3,blue_line4,blue_line5,blue_line6], bbox_to_anchor=(1.13,0.97))
 
 #plt.show()
 
