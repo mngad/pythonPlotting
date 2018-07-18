@@ -373,11 +373,61 @@ The variation in the resulting stiffness of the generated model for principal co
 \end{figure}
 
 \subsection{Augmentation in Generated Models}
-\subsection{Effect of Injected Cement Volume, Shape \& Position}
 
 
+The general effect of augmentation in the generated vertebrae can be seen in \cref{fig:pca_percent_fill_pc1,fig:pca_percent_fill_pc2,fig:pca_percent_fill_pc3}, with the effect on stiffness variation isolated to the variation seen in each principal component.
+The vertebrae described by PC1 show an increase in stiffness with increasing cement fill volume, except for the negative standard deviations away from the mean, where a reduction in stiffness is seen for all cement fill volumes.
+A bimodal relationship is also seen in the vertebrae generated from PC2 when augmentation is simulated.
+Here, positive standard deviations from the mean show a more pronounced increase in the stiffness at the larger fill volumes when compared to the negative standard deviations.
+The bimodal distribution continues in PC3 where the increasingly negative standard deviations have a more noticeable increase in the stiffness at higher cement fill volumes, correlating with the vertebrae with larger vertebral body volumes.
 
-\subsection{Effect of Vertebral Variation on Augmentation}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_percent_fill_pc1.pdf}
+  \caption[Effect of augmentation in principal component 1.]{The effect of augmentation on vertebral stiffness in the vertebrae generated vertebrae from principal component 1, for 20, 35 and 50 percent fill volume. Shows the change from the non-augmented stiffness increasing with fill volume, with a more pronounced effect seen in the less dense vertebrae (-1, -2 \& -3 S.D. from the mean).}
+  \label{fig:pca_percent_fill_pc1}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_percent_fill_pc2.pdf}
+  \caption[Effect of augmentation in principal component 2.]{The effect of augmentation on vertebral stiffness in the vertebrae generated vertebrae from principal component 2, for 20, 35 and 50 percent fill volume. Shows the change from the non-augmented stiffness increasing with fill volume, with a more pronounced effect seen in the positive standard deviations away from the mean.}
+  \label{fig:pca_percent_fill_pc2}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_percent_fill_pc3.pdf}
+  \caption[Effect of augmentation in principal component 3.]{The effect of augmentation on vertebral stiffness in the vertebrae generated vertebrae from principal component 3, for 20, 35 and 50 percent fill volume. Shows the change from the non-augmented stiffness increasing with fill volume, with a more pronounced effect seen in the negative standard deviations away from the mean (larger volume).}
+  \label{fig:pca_percent_fill_pc3}
+\end{figure}
+
+
+\subsubsection{Loading Position Effect on Augmentation }
+
+
+The effect of loading position on the generated vertebral stiffness for non-augmented vertebrae is similar to the effect seen with human vertebral models seen in \cref{Chapter_HT} and is shown in \cref{fig:AP_LP_non_aug}.
+Broadly, the stiffness is greatest when the vertebral models are loaded centrally, reducing as loads are applied at greater distances from the centre.
+Posterior to anterior loads in PC1 show large reductions furthest from centre loading points, with the effect greatest for the densest vertebrae (+3 S.D.) and least for the least dense vertebrae (-3 S.D.).
+This reduction in stiffness at 20 mm away from the centre, posteriorly or anteriorly is proportional to the stiffness when loaded centrally, with reductions of approximately 70 \% for all standard deviations from the mean.
+Principle component two shows a very similar response to loading for all of the standard deviations away from the mean.
+Finally, principal component three is mostly uniform, except at the posterior loading points, where the negative standard deviation models (larger vertebral body size) have a reduced effect of posterior loading.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.9\textheight, angle=90]{Chapters/Chapter_PCA_images/AP_LP_non_aug.pdf}
+  \caption[Effect of loading position on the vertebral stiffness.]{Effect of loading position on the vertebral stiffness for PC1, PC2 and PC3 from posterior to anterior loading points. Loading point 1 and 2 are 20 mm and 10 mm posterior of the central loading point respectively, loading point 3 is the central position and load points 4 and 5 are 10 mm and 20 mm anterior, respectively. }
+  \label{fig:AP_LP_non_aug}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.9\textheight, angle=90]{Chapters/Chapter_PCA_images/AP_change_from_non_aug.pdf}
+  \caption[Effect of loading position on the augmented vertebral stiffness.]{Effect of loading position on the augmented vertebral stiffness for PC1, PC2 and PC3, and 20, 35 and 50 \% fill from posterior to anterior loading points. Loading point 1 and 2 are 20 mm and 10 mm posterior of the central loading point respectively, loading point 3 is the central position and load points 4 and 5 are 10 mm and 20 mm anterior, respectively. }
+  \label{fig:AP_change_from_non_aug}
+\end{figure}
+	
+\subsubsection{Effect of Injected Cement Volume, Shape \& Position}		
 
 \section{Discussion}
 \label{pca_disc}
