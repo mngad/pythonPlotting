@@ -33,6 +33,12 @@
 \usepackage{epstopdf} %eps to pdf conversion
 \epstopdfsetup{outdir=./conv_pics/}
 \usepackage{cleveref}
+\raggedbottom
+
+\makeatletter
+     \renewcommand*\l@figure{\@dottedtocline{1}{1em}{3.2em}}
+\makeatother
+
 \setstretch{1.5}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \counterwithin{table}{section}
