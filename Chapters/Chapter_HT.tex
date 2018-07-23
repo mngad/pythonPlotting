@@ -510,8 +510,45 @@ $
 	bondingSet=None \\
 $
 
+The results shown in \cref{fig:with,fig:without} show that regardless of the contact, increasing the depth of the endcaps significantly increases the stiffness of the vertebrae, while reducing the depth reduces the measured stiffness.
+The effect this extra or reduced constraint caused by the changing endcap depth broadly follows the same trends for the two vertebrae tested.
+However, the response does differ most notably at the extremes of endcap depths ($\pm$3 mm), where the spine 4 L5 vertebrae experiences the greater reduction in stiffness when reducing the endcap depth, while the spine 1 L2 vertebrae sees the greater increase following depth increases.
+This difference is a consequence of the differences in the density of the vertebrae (where spine 4 is, on average, much denser than spine 1 in terms of mean greyscale value) and the differences in the shape (the L5 vertebrae being much wider with greater protruding bone spurs at the bottom of the vertebrae and the narrower L2 vertebrae having the bone spurs at the top of the vertebrae.
+These shape differences can be seen in \cref{fig:Spine 1_projection,fig:Spine 4_projection}.
 
-Further tuning of these variables to see if an improved agreement could be achieve would be a simple, though time consuming addition to this sensitivity test due to the greyscale conversion factor optimisation process required to test each option.
+The variation in the change to the stiffness within $\pm$ 1mm change in depth was up to 5 \%, for both cases.
+Given that the maximum error in masking the cement endcaps is 0.5 mm due to the resolution that is used for the segmentation, it suggests that this error has a minimal effect on the end results.
+
+The effect of changing the contact from tied to frictionless can be seen by comparing \cref{fig:with,fig:without}.
+Excluding the very large change in stiffness seen in the L5 vertebra when reducing the depth of the inferior endcap, the adoption of the frictionless contact between endcap and vertebrae means that the effect of endcap depth on measured stiffness is reduced.
+This is due to a reduction in the constraining nature of the frictionless contact.
+The anomalous L5 vertebrae here is a function of having less support and the slipping that this allowed, resulting in the reduced measured stiffness.
+Optimising the greyscale conversion factor for the set of models with a tied constraint and a frictionless contact gave concordance correlation coefficients of 0.848 and 0.865 respectively.
+Therefore the frictionless contact providing a small improvement in the agreement between the computational and experimental results.
+
+
+
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/with.pdf}
+\caption{The percentage change in stiffness following a change to the endcap thickness. Inf and Sup show changes of $\pm$ 1, 2 and 3 mm to the inferior and superior endcap depth respectively. The endcaps have a tied contact to the vertebrae.}
+\label{fig:with}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/without.pdf}
+\caption{The percentage change in stiffness following a change to the endcap thickness. Inf and Sup show changes of $\pm$ 1, 2 and 3 mm to the inferior and superior endcap depth respectively. The endcaps have a frictionless contact to the vertebrae.}
+\label{fig:without}
+\end{figure}
+
+Further tuning of the specifics of the frictionless contact could be carried out to see if an improved agreement could be achieved would be a simple addition to this sensitivity test.
+However, due to the greyscale conversion factor optimisation process required to test each option this would be a timely operation, which, given the minimal effect of changing to the frictionless contact, could yield negligible results.
+
+
+
 
 \subsection{Material Properties}
 
