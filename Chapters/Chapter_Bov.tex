@@ -163,7 +163,7 @@ data in overlapping increments of 0.1 mm and the range of interest was set to 0 
 \end{figure}
 
 If the load-displacement curves were perfectly linear within the ``linear region" the stiffness in the three ranges of interest in \cref{fig:barchartcompgrads} would give an equal value for the stiffness or maximum gradient. However, given that these values were found to differ for the three ranges it suggested non-linear behaviour.
- As shown in \cref{fig:barchartcompgrads} the recorded maximum stiffness varies greatly depending on what portion of the load displacement graph was being examined. The average difference between the 0 - 5000 N section and the 0 - 9500 N section was much smaller compared to the 0 - 1500 N section, hence 5000 N was used as the limit on the already fractured vertebrae tests. Due to the slight convergence towards 5000 N, this value was seen as a compromise between the risk of further damage whilst still obtaining a genuine value for the stiffness.
+As shown in \cref{fig:barchartcompgrads} the recorded maximum stiffness varies greatly depending on what portion of the load displacement graph was being examined. The average difference between the 0 - 5000 N section and the 0 - 9500 N section was much smaller compared to the 0 - 1500 N section, hence 5000 N was used as the limit on the already fractured vertebrae tests. Due to the slight convergence towards 5000 N, this value was seen as a compromise between the risk of further damage whilst still obtaining a genuine value for the stiffness.
 
 
 \begin{figure}[ht!]
@@ -413,7 +413,7 @@ Contacts were set as placeholders to be edited in Abaqus in the steps following.
 
 Following this, the FE model was meshed, then exported into an INP file format. The model was then imported into Abaqus where the following configuration was completed by a second python script. An analytical rigid plate was created to represent the upper loading platen of the materials testing machine and was centred at the loading point previously found from the marker, this can be seen in \cref{fig:abaqus_top_view}. Once aligned any previous placeholder interactions were removed and a tied interaction was created between the rigid plate and the superior end-cap, along with tied interactions between the vertebra and both end-caps and, if appropriate, to the internal cement volume. An encastre boundary condition was created at the bottom surface of the inferior end-cap removing all rotational and translational movement and therefore mimicking the experimental setup. A displacement boundary condition was applied to a reference node at the centre of the rigid plate and therefore loading position, the properties were set such that 1 mm of displacement occurs in the negative Z direction; lateral motion in the X and Y planes was restricted, while rotation about the loading point was allowed - again mimicking the experimental setup.
 
-The python script was written to set the material properties of the greyscale dependant vertebral elements by setting the Young's modulus to the greyscale value multiplied by a conversion factor (which is discussed in section \ref{material-properties-bov}). The script allowed Abaqus to solve the models and outputs the stiffness for each model. This was calculated by the dividing the reaction force at the reference point by the displacement at 1 mm of displacement.
+The python script was written to set the material properties of the greyscale dependant vertebral elements by setting the Young's modulus to the greyscale value multiplied by a conversion factor (which is discussed in section \ref{material-properties-bov}). The script allowed Abaqus to solve the models and outputs the stiffness for each model. This was calculated by the dividing the axial reaction force (axis of load application) at the reference point by the displacement at 1 mm of displacement.
 
 \subsubsection{Augmented Model Generation}
 
@@ -487,9 +487,8 @@ cement. A, element size of 1 x 1 x 1 mm. B, element size of 2 x 2 x
 \label{fig:vertslice}
 \end{figure}
 
-\subsubsection{Addition of Cement}\label{addition-of-cement}
 
-\paragraph{Sensitivity to an Additional
+\subsubsection{Sensitivity to an Additional
 Mask}\label{sensitivity-to-an-additional-mask}
 
 The addition of cement into the vertebral body created an extra mesh boundary
@@ -514,7 +513,7 @@ There was no difference between the two models, with and without the
 internal cement mesh, meaning that any changes to the augmented model
 stiffness was due to the material properties of the cement.
 
-\paragraph{Mesh Interactions}\label{mesh-interactions}
+\subsubsection{Mesh Interactions}\label{mesh-interactions}
 
 The effect of mesh interaction between the vertebral body and the
 internal cement mesh were tested by comparing a) tied interactions
@@ -560,6 +559,32 @@ T4 CC3 &	 6059 &	 6059 &	 0.0005\\ \hline
 
 
 
+\subsection{Result Analysis}
+
+The statistical approach to quantifying the agreement between the computational results and the experimental results for the measured stiffness uses the concordance correlation coefficient (CCC).
+CCC measures the agreement between two variables and is described by Lin \cite{lawrence1989concordance} as a method to evaluate reproducibility.
+The CCC is calculated as:
+\begin{equation*}
+  CCC = \dfrac{2 \rho \sigma_x \sigma_y}{\sigma_x^2 + \sigma_y^2 + (\mu_x - \mu_y)^2}
+ \end{equation*}
+Where $\mu_x$ and $\mu_y$ are the means for the two variables and $\sigma_x^2$ and $\sigma_y^2$ are the corresponding population variances.
+$\rho$ is the Pearson correlation coefficient between the two variables.
+For $n$ independent pairs of samples:
+\begin{equation*}
+	CCC = \dfrac{2S_{12}}{S_1^2 + S_2^2 + (\bar{Y_1}-\bar{Y_2})^2}
+\end{equation*}
+Where,
+\begin{equation*}
+	\bar{Y_j} = \dfrac{1}{n} \sum_{i=1}^{n} Y_{ij},\ S_j^2 = \dfrac{1}{n} \sum_{i=1}^{n} (Y_{ij} - \bar{Y_j})^2,\ j = 1, 2;
+\end{equation*}
+and
+\begin{equation*}
+S_{12} = \dfrac{1}{n} \sum_{i=1}^{n} (Y_{i1} - \bar{Y_1})(Y_{i2} - \bar{Y_2})
+\end{equation*}
+
+Specifically, this quantifies the degree to which pairs sit on the $x=y$ line.
+Departures from this perfect agreement line result in a $CCC < 1$ even in cases where the Pearson correlation coefficient would equal 1.
+$CCC = 0$ corresponds to no agreement and a value of $-1$ would be perfect negative agreement.
 
 
 
