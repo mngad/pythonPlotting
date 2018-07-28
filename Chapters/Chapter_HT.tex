@@ -309,10 +309,11 @@ shell, for example Spine 2 L1.
 
 The full resolution scan is imported into imageJ where the threshold optimisation is carried out.
 The BoneJ plugin for imageJ is used for all of the trabecular structure metrics, with the optimise threshold tool being the focus here.
+The threshold optimisation feature works by optimising the connectivity (Conn.D) against threshold value \autocite{Doubea2010}.
 This tool is run on the region of interest using the default settings for the connectivity options seen in \cref{tab:bonej}.
 This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
 These values can be seen in \cref{tab:optTH}, showing considerable across the range of vertebrae.
-However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has an range between 18 to 20.
+However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has a range between 18 to 20.
 This promotes the idea that these differences are due to the bone mineralisation of the bone, especially given that the G17 spine is from a Female and G41 from a male.
 
 However, given that the chosen value for the threshold will directly impact the reported metrics, a consistent value was chosen of 18. Using lower or higher values for the threshold usually results in the trabeculae being described as thicker or thinner respectively.
