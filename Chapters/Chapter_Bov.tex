@@ -433,6 +433,8 @@ the cement mask in red.}
 
 \subsection{Material Properties}\label{material-properties-bov}
 
+\subsubsection{Bone Material Properties}
+
 Material properties for the bone tissue were modelled elastically using a
 bone element-specific elastic modulus (\(E_{\text{ele}})\) that is
 dependent on the average greyscale value for the element in question
@@ -461,6 +463,13 @@ Properties}\label{augmented-specimen-material-properties}
 
 For convenience the values for the Young's modulus for the interior cement volume were initially set to that of the inferior and superior end-caps. However, due to the rule of mixtures and the results found in the literature \cite{Kinzl2012a,Race2007}, the effect of reducing the Young's modulus was investigated. This was carried out by reducing the Young's modulus in 10 percent increments from a value of 2.45 GPa to 1.225 GPa.
 
+Additionally, a preliminary investigation was carried out, identifying the effect of a yielding material interface between the bone and the cement, following the work by Sikora \cite{Sikora2013a}.
+Here, a small interface layer (1 mm in thickness due to the model resolution) represents buckling that occurs in the trabeculae partially captured in the cement volume.
+This investigation identified the effect of different yield stress values in combination with different Young's moduli for both the interface and the main cement volume.
+
+The yielding region was created through the duplication and then erosion of the cement mask within Simpleware ScanIP.
+This gave two masks, where one acts as the internal cement volume and the other as an interface layer.
+Generic material properties were set to the region within ScanIP, allowing the values of the yield stress and Young's moduli values to be changed within the python setup script.
 
 \subsection{Sensitivity Tests}\label{sensitivity-tests}
 
