@@ -589,7 +589,7 @@ This was also carried out in the sagittal plane.
 
 \centering
 \includegraphics[width=4in]{images/xaxis_mv_cmt.pdf}
-\caption{The effect of moving the cement volumes from the most anterior position to the most posterior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement }
+\caption{The effect of moving the cement volumes from the most anterior position to the most posterior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement. }
 	\label{fig:xaxis_mv_cmt}
 \end{figure}
 
@@ -597,15 +597,29 @@ This was also carried out in the sagittal plane.
 
 \centering
 \includegraphics[width=4in]{images/yaxis_mv_cmt.pdf}
-\caption{The effect of moving the cement volumes from the most superior position to the most inferior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement }
+\caption{The effect of moving the cement volumes from the most superior position to the most inferior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement. }
 	\label{fig:yaxis_mv_cmt}
+\end{figure}
+
+\begin{figure}[ht!]
+
+\centering
+\includegraphics[width=3in]{images/mv_cmt_image.png}
+	\caption{A density map of the T12 CC2 vertebra. Yellow/orange elements are the most dense, while blue elements are the least. }
+	\label{fig:mv_cmt_image}
 \end{figure}
 
 The results of moving the cement volumes through the T12 CC2 vertebra are shown in \cref{fig:yaxis_mv_cmt,fig:xaxis_mv_cmt}.
 For the sagital plane a reduced stiffness is seen when the volume of cement is positioned most anterially, where the yielding interface of the cement volume encroaches on the denser bone of the cortical shell.
-Centrally the stiffness is greatest, where the cement volume replaces the least dense bone
+Centrally the stiffness is greatest, where the cement volume replaces the least dense bone, which can be seen in \cref{fig:mv_cmt_image}, where the least dense (blue) parts are ``hidden" by the cement volume in certain positions.
+Little change to the stiffness at the posterior side of the vertebra is seen due to the additional support from the posterior elements.
 
+Axial movements of the cement volumes show that the most inferior and most superior positions resulted in the greatest stiffness and central positions resulted in the least stiff models.
+This is potentially due to the greater quantitiy of bone surrounding the cement volumes at top and bottom where the vertebral body is wider.
+The peak in the central loading positions is likely due to the ``hiding" of the weaker bone in the centre of the vertebra.
 
+Finally, despite the changes to the stiffness when moving the cement volume, these changes are smaller than five percent between the most and least stiff result, suggesting cement volume movement at these small volumes is not significant.
+It may also suggest that cement shape may play a more important role, where endcap to endcap distributions show much larger effects - this is investigated in \cref{PCA_CHAP}.
 \subsection{Result Analysis}
 
 The statistical approach to quantifying the agreement between the computational results and the experimental results for the measured stiffness uses the concordance correlation coefficient (CCC).
@@ -638,7 +652,7 @@ $CCC = 0$ corresponds to no agreement and a value of $-1$ would be perfect negat
 \subsection{Results} \label{bov:results}
 
 The optimisation process gave a value for the conversion factor of 0.012529, allowing conversion between greyscale values for elements and their elastic modulus. This value was used for the bone constituents of the intact and augmented vertebrae presented in \cref{fig:compvexpscatter}, which shows the agreement between the \textit{in vitro} and \textit{in silico} results for the specimen specific models. The agreement of intact vertebrae was considerably better, with a concordance
-correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented vertebrae (\cref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
+correlation coefficient (CCC) of 0.49 compared with 0.14 for the augmented vertebrae (simple tied interaction) (\cref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
 
 \begin{figure}[ht]
 \centering
@@ -649,7 +663,7 @@ correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented verte
 
 \begin{table}[ht]
 \centering
-\caption{The mean, standard deviation and concordance correlation coefficient (CCC) of the intact and augmented vertebrae for \textit{in vitro} and \textit{in silico results}.}
+	\caption{The mean, standard deviation and concordance correlation coefficient (CCC) of the intact and augmented vertebrae (simple tied interaction) for \textit{in vitro} and \textit{in silico results}.}
 \label{tab:int}
 \begin{tabular}{l|c|c|c}
      Intact Specimens     & Mean Stiffness & Standard Deviation & CCC                     \\ \hline \hline
@@ -658,7 +672,7 @@ correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented verte
 \hline
  Augmented Specimens
  \\ \hline \hline
-\textit{in vitro}  & 4246 & 1371               & \multirow{2}{*}{0.1548} \\
+\textit{in vitro}  & 4246 & 1371               & \multirow{2}{*}{0.14} \\
 \textit{in silico} & 6507 & 1298               &                      \\ \hline
 \end{tabular}
 \end{table}
@@ -667,7 +681,10 @@ The effect of changing the modulus of the cement volume in the augmented specime
 
 The effect that this has on the data with regard to the \textit{in vitro} stiffness results can be seen in \cref{fig:redEModscatter}, where the reduction in \textit{in silico} stiffness moves the data points closer to the $x = y$ line of perfect agreement between the experimental and computational results.
 
-
+The increasing agreement (in terms of CCC) with increasing sophistication of modelling the augmentation can be seen n \cref{fig:exp_50_yield_tied}, comparing the simple tied interaction, the reduced modulus approach and the combination of this and the yielding material interface.
+The CCC improves when using the reduced modulus at 50 \% (1.225 GPa) from the simple tied interaction with an improvement to 0.18 from 0.14.
+Another improvement is seen when combining the reduced modulus for the cement with the yielding interface (Young's modulus 1.225 GPa, yield stress 0.005 MPa), with the CCC improving to 0.23.
+The effect of changing these interactions and properties is not uniform, also shown in \cref{fig:redEModBar}, the vertebral models respond differently to differnent interactions, with increases and decreases seen when changing the same interaction.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=\textwidth]{images/reductionOfEMod_Bar.png}
@@ -682,7 +699,12 @@ The effect that this has on the data with regard to the \textit{in vitro} stiffn
 \label{fig:redEModscatter}
 \end{figure}
 
-\pagebreak
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=5.3in]{images/exp_50_yield_tied.pdf}
+	\caption[A comparrison of the different approaches to modelling augmentation in the bovine tail vertebrae.]{A comparrison of the different approaches to modelling augmentation in the bovine tail vertebrae. Comparing a simple tie between the bone and cement, a reduced modulus for the cement region and a reduced modulus in combination with a yielding interface layer between the bone and cement.}
+	\label{fig:exp_50_yield_tied}
+\end{figure}
 
 \subsection{Discussion}
 
