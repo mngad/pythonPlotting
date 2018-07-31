@@ -572,9 +572,9 @@ T4 CC3 &	 6059 &	 6059 &	 0.0005\\ \hline
 
 
 
-\subsubsection{Augmentation Volume \& Location Sensitivity}
+\subsubsection{Augmentation Location Sensitivity}
 
-Another preliminary study was carried out into the sensitivity of the models to the position of the cement volume.
+Another preliminary study (preliminary given the limited nature of the agreement between computational and experimental results and aims to improve this with the use of human tissue) was carried out into the sensitivity of the models to the position of the cement volume.
 Tests were carried out to identify the effect of moving a 12 \% fill cement volume axially and sagittally in 2 mm increments.
 This utilised the yielding interface described in \cref{augmented-specimen-material-properties} along with the +CAD tools built into Simpleware ScanIP to move a surface based description of the cement volume in the two anatomical planes.
 A sphere surface of volume equivalent to 12 \% fill volume for the T12 CC2 vertebra was created within the +CAD software and imported into the project file for the vertebra, where it was positioned in it's first position.
@@ -583,6 +583,27 @@ It was then converted into a mask, duplicated and eroded in the same method desc
 Following this the mesh was generated and the abaqus input file was exported.
 The sphere surface was then moved 2 mm in the inferior direction, the previous masks deactivated and the process repeated through the use of a python script to carry out the operations until the bottom of the vertebra had been reached.
 This was also carried out in the sagittal plane. 
+
+
+\begin{figure}[ht!]
+
+\centering
+\includegraphics[width=4in]{images/xaxis_mv_cmt.pdf}
+\caption{The effect of moving the cement volumes from the most anterior position to the most posterior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement }
+	\label{fig:xaxis_mv_cmt}
+\end{figure}
+
+\begin{figure}[ht!]
+
+\centering
+\includegraphics[width=4in]{images/yaxis_mv_cmt.pdf}
+\caption{The effect of moving the cement volumes from the most superior position to the most inferior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement }
+	\label{fig:yaxis_mv_cmt}
+\end{figure}
+
+The results of moving the cement volumes through the T12 CC2 vertebra are shown in \cref{fig:yaxis_mv_cmt,fig:xaxis_mv_cmt}.
+For the sagital plane a reduced stiffness is seen when the volume of cement is positioned most anterially, where the yielding interface of the cement volume encroaches on the denser bone of the cortical shell.
+Centrally the stiffness is greatest, where the cement volume replaces the least dense bone
 
 
 \subsection{Result Analysis}
