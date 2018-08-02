@@ -351,6 +351,8 @@ Variation in the greyscale background or material properties of the vertebrae wa
 Unlike the other modes of variation where changes exist in the other two principal components, greyscale variation is almost completely isolated to PC1, which can be seen in both the comparison of the mean greyscale value for each model in \cref{fig:pca_gs} and the plots of histograms in \cref{fig:pca1_histo,fig:pca2_histo,fig:pca3_histo}.
 The range of the mean greyscale values for PC1 are from the least dense at -3 SD away from the mean with a mean greyscale value of 42, to a maximum of 162 at +3 SD away from the mean.
 
+However, despite the similarity in the mean of the greyscale variation for PC2 and PC3, the distribution %TODO
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_gs.pdf}
@@ -358,7 +360,14 @@ The range of the mean greyscale values for PC1 are from the least dense at -3 SD
   \label{fig:pca_gs}
 \end{figure}
 
-%TODO add image comparing the pca model background and the input model background
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.9\textheight,angle=90]{Chapters/Chapter_PCA_images/all_pc3_slice.png}
+	\caption[The variation in the greyscale distribution across the mid-slice of the vertebrae generated from PC3.]{The variation in the greyscale distribution across the mid-slice of the vertebrae generated from PC3.
+Showing how the posterior becomes denser with growing vertebral body size.
+Red colours indicate denser bone and blue colours indicate the least dense bone.}
+  \label{fig:pca_gs}
+\end{figure}
 
 \subsubsection{Resulting Stiffness Variation}
 
