@@ -455,12 +455,14 @@ This investigation identified the effect of different yield stress values in com
 The yielding region was created through the duplication and then erosion of the cement mask within Simpleware ScanIP, shown in \cref{fig:interfacecreation}.
 This gave two masks, where one acts as the internal cement volume and the other as an interface layer.
 Generic material properties were set to the region within ScanIP, allowing the values of the yield stress and Young's moduli values to be changed within the python setup script.
+The properties tested included changing the yield stress and Young's modulus of the region, whilst maintaining the properties of the internal cement volume at 1.225~GPa.
+Values for the yield stress in the interface region were varied between 1 MPa and 0.001~MPa, with the material become perfectly plastic beyond this.
+Young's modulus values for the interface region were varied between 1.225~GPa and 0.1~GPa.
 
 \begin{figure}[ht!]
 \centering
-
-	\includegraphics[width=10cm]{images/interface_creation.png}
-  \caption{Creation of the interface layer: A, showing the initial description of the cement region in pink and B, showing the interface in pink and cement region in red, following the duplication and erosion.}
+\includegraphics[width=10cm]{images/interface_creation.png}
+\caption[Depiction of the yielding material interface creation]{Creation of the interface layer: A, showing the initial description of the cement region in pink and B, showing the interface in pink and cement region in red, following the duplication and erosion.}
 \label{fig:interfacecreation}
 \end{figure}
 
