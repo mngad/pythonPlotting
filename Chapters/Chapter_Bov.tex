@@ -297,34 +297,19 @@ The two plots in \cref{fig:deltaStiffness_Vs_intact} show a lack of correlation 
 \label{fig:deltaStiffness_Vs_intact}
 \end{figure}
 
-\subsection{Discussion}\label{discussion-bov}
-
-The experimental work carried out so far provides a good basis for both the continued modelling of vertebroplasty (especially modelling the cement - trabecular interface which is discussed in later sections) and to continue the experimental work using human tissue. Understanding the challenges of vertebroplasty (those discussed above), will be invaluable when transitioning onto the much more limited sou nrce of human vertebrae.
-
-%^ reiterate aims of exp work
-
-Regarding the results of stiffness at the intact, fractured and augmented stages, the expected trends were not always clear. Most commonly the intact vertebrae have the greatest stiffness with the fractured stiffness showing a reduced value following the damage created with the initial load to failure. The variation of the decrease (and increase) in stiffness for the fractured vertebrae may have a variety of reasons, although the most likely cause is level of damage caused in the initial ``load
-to failure''. These tests varied between the typical load displacement that includes a failure (\cref{fig:failure_non_failure}:A) and those that show no sign of failure up to the limit of the load cell (\cref{fig:failure_non_failure}:B). It is difficult to observe any correlation between these vertebra that showed clear failure (T2-CC1 and T2-CC2), those that reached 9500 N and a reduction in the fractured stiffness. It is not to say that the vertebra that reached 9500 N experienced no damage, with the gradient of the load displacement curve often reducing and plateauing as the 9500 N limit approached. The interesting increase in the fractured stiffness for T1-CC1 compared to the intact stiffness may be explained if it is assumed that the compacted trabeculae following the first load to 9500 N result in a stiffer material for the following tests.
-
-The cement fill volume information shows that a small percentage of cement is injected into the vertebrae on average, with only two vertebrae approaching the clinically relevant 20\% fill. Unexpectedly, only one of these two vertebrae showed an increase in augmented stiffness over the fractured stiffness. A possible explanation is that it is not only the fill volume that is important in restoring the vertebral stiffness but the placement too. This is shown when comparing the segmented scans of the the two vertebrae with the greatest fill volume with the T2-CC2 specimen showing cement extending to the anterior wall of the vertebral body, while the cement is limited to the posterior and centre of the vertebral body for T8-CC2. This may help to explain why the stiffness of T8-CC2 did not increase following augmentation. The reduction in stiffness following augmentation for seven of the twelve vertebrae may be due to damage caused by the insertion of vertebroplasty needles. Clinically this damage left behind from the needle channels would heal, most likely restoring the stiffness of the vertebrae back to its intact properties.
-
-Another possible area of inconsistency is the temperature at which the vertebra were mechanically tested, while it is ensured that the specimens were fully defrosted they were tested at both fridge temperature (4$^\circ$C) and room temperature (20$^\circ$C). The effect of this variation in temperature needs to be identified and depending on the results more closely monitored.
-
-Despite encouraging results regarding the vertebroplasty methodologies it was difficult to achieve the desired quantity of the cement in the vertebral body. This was mainly due to the difficulty injecting the cement in a smooth manner, which may have been caused by either the tip of the needle becoming blocked following its reinsertion into the needle track, more viscous marrow stopping the displacement of less viscous marrow by the cement or compacted trabeculae around the needle channel that limit the flow of cement past them. One option to test in future work would be side opening needles, which would help guide the cement more accurately to the regions required while circumventing issue with the needle becoming blocked.
-
-The experimental methods currently developed will be of great value when starting experimental work using human tissue albeit many will require adaption due to the differences between the tissue types. These include the density of the bone and methods of inserting the needles, where with the available human tissue being from the elderly, the bones will be most likely be osteoporotic. These bones will require more care to reach the correct region of the vertebral body with the needle and to ensure a clinically relevant volume of cement is used.
 
 
-%Talk about extra plots in results - deltaStiffness and cement fill.
+\section{Finite Element Modelling}\label{finite-element-modelling-methods}
 
-\pagebreak
+\subsection{Introduction}
 
-\section{Finite Element Modelling
-Methods}\label{finite-element-modelling-methods}
+The finite element modelling of the bovine tail vertebrae, once validated, allows investigations into various properties of the vertebrae and augmentation process.
+Such investigations include identification of geometric and material property features, which through the use of FE models can be changed programmatically to pinpoint their effects of certain physical scenarios.
+Scenarios such as vertebroplasty, where the variation can be extended to augmentation procedure variations, which can lead to suggestions of best practice depending on the properties of the vertebra in question.
 
-The aims of the finite element section of work were to develop methods that enable the creation of specimen specific models of vertebrae (both bovine tail and human). Initially the focus was on the generation of models that accurately describe the mechanical behaviour of intact bovine specimens, once this was achieved an attempt to model augmented specimens was made. In addition to these larger goals, certain sensitivity tests were carried out, including those to understand the effects that additional meshes have on model stiffness.
-
-%^ introduction paragraph
+Here, the main aim was to develop methods that enable the creation of specimen specific models of bovine tail vertebrae, allowing creation and generation of the much more clinically relevant human lumbar vertebrae.
+Initially the focus was on the generation of models that accurately describe the mechanical behaviour of intact bovine specimens, once this was achieved an attempt to model augmented specimens was made. In addition to these larger goals, certain sensitivity tests were carried out, including those to understand the effects that additional meshes have on model stiffness.
+Finally some preliminary investigations were made into the effect of changing augmented region positions, however the majority of this investigation will be reserved for \cref{PCA_CHAP}.
 
 \subsection{Model Creation}\label{model-creation}
 
@@ -433,6 +418,8 @@ the cement mask in red.}
 
 \subsection{Material Properties}\label{material-properties-bov}
 
+\subsubsection{Bone Material Properties}
+
 Material properties for the bone tissue were modelled elastically using a
 bone element-specific elastic modulus (\(E_{\text{ele}})\) that is
 dependent on the average greyscale value for the element in question
@@ -461,6 +448,23 @@ Properties}\label{augmented-specimen-material-properties}
 
 For convenience the values for the Young's modulus for the interior cement volume were initially set to that of the inferior and superior end-caps. However, due to the rule of mixtures and the results found in the literature \cite{Kinzl2012a,Race2007}, the effect of reducing the Young's modulus was investigated. This was carried out by reducing the Young's modulus in 10 percent increments from a value of 2.45 GPa to 1.225 GPa.
 
+Additionally, a preliminary investigation was carried out, identifying the effect of a yielding material interface between the bone and the cement, following the work by Sikora \cite{Sikora2013a}.
+Here, a small interface layer (1 mm in thickness due to the model resolution) represents buckling that occurs in the trabeculae partially captured in the cement volume.
+This investigation identified the effect of different yield stress values in combination with different Young's moduli for both the interface and the main cement volume.
+
+The yielding region was created through the duplication and then erosion of the cement mask within Simpleware ScanIP, shown in \cref{fig:interfacecreation}.
+This gave two masks, where one acts as the internal cement volume and the other as an interface layer.
+Generic material properties were set to the region within ScanIP, allowing the values of the yield stress and Young's moduli values to be changed within the python setup script.
+The properties tested included changing the yield stress and Young's modulus of the region, whilst maintaining the properties of the internal cement volume at 1.225~GPa.
+Values for the yield stress in the interface region were varied between 1 MPa and 0.001~MPa, with the material become perfectly plastic beyond this.
+Young's modulus values for the interface region were varied between 1.225~GPa and 0.1~GPa.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=10cm]{images/interface_creation.png}
+\caption[Depiction of the yielding material interface creation]{Creation of the interface layer: A, showing the initial description of the cement region in pink and B, showing the interface in pink and cement region in red, following the duplication and erosion.}
+\label{fig:interfacecreation}
+\end{figure}
 
 \subsection{Sensitivity Tests}\label{sensitivity-tests}
 
@@ -555,10 +559,54 @@ T4 CC3 &	 6059 &	 6059 &	 0.0005\\ \hline
 
 
 
-\subsubsection{Augmentation Volume \& Location Sensitivity}
+\subsubsection{Augmentation Location Sensitivity}
+
+Another preliminary study (preliminary given the limited nature of the agreement between computational and experimental results and aims to improve this with the use of human tissue) was carried out into the sensitivity of the models to the position of the cement volume.
+Tests were carried out to identify the effect of moving a 12 \% fill cement volume axially and sagittally in 2 mm increments.
+This utilised the yielding interface described in \cref{augmented-specimen-material-properties} along with the +CAD tools built into Simpleware ScanIP to move a surface based description of the cement volume in the two anatomical planes.
+A sphere surface of volume equivalent to 12 \% fill volume for the T12 CC2 vertebra was created within the +CAD software and imported into the project file for the vertebra, where it was positioned in it's first position.
+This first position was 1 mm from the top of the vertebral body, ensuring 1 mm of bone surrounded the sphere.
+It was then converted into a mask, duplicated and eroded in the same method described in \cref{augmented-specimen-material-properties}, with appropriate material properties.
+Following this the mesh was generated and the abaqus input file was exported.
+The sphere surface was then moved 2 mm in the inferior direction, the previous masks deactivated and the process repeated through the use of a python script to carry out the operations until the bottom of the vertebra had been reached.
+This was also carried out in the sagittal plane. 
 
 
+\begin{figure}[ht!]
 
+\centering
+\includegraphics[width=4in]{images/xaxis_mv_cmt.pdf}
+\caption{The effect of moving the cement volumes from the most anterior position to the most posterior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement. }
+	\label{fig:xaxis_mv_cmt}
+\end{figure}
+
+\begin{figure}[ht!]
+
+\centering
+\includegraphics[width=4in]{images/yaxis_mv_cmt.pdf}
+\caption{The effect of moving the cement volumes from the most superior position to the most inferior position on the recorded stiffness of the vertebra, when using uniform 12 \% fill volume of cement. }
+	\label{fig:yaxis_mv_cmt}
+\end{figure}
+
+\begin{figure}[ht!]
+
+\centering
+\includegraphics[width=3in]{images/mv_cmt_image.png}
+	\caption{A density map of the T12 CC2 vertebra. Yellow/orange elements are the most dense, while blue elements are the least. }
+	\label{fig:mv_cmt_image}
+\end{figure}
+
+The results of moving the cement volumes through the T12 CC2 vertebra are shown in \cref{fig:yaxis_mv_cmt,fig:xaxis_mv_cmt}.
+For the sagital plane a reduced stiffness is seen when the volume of cement is positioned most anterially, where the yielding interface of the cement volume encroaches on the denser bone of the cortical shell.
+Centrally the stiffness is greatest, where the cement volume replaces the least dense bone, which can be seen in \cref{fig:mv_cmt_image}, where the least dense (blue) parts are ``hidden" by the cement volume in certain positions.
+Little change to the stiffness at the posterior side of the vertebra is seen due to the additional support from the posterior elements.
+
+Axial movements of the cement volumes show that the most inferior and most superior positions resulted in the greatest stiffness and central positions resulted in the least stiff models.
+This is potentially due to the greater quantitiy of bone surrounding the cement volumes at top and bottom where the vertebral body is wider.
+The peak in the central loading positions is likely due to the ``hiding" of the weaker bone in the centre of the vertebra.
+
+Finally, despite the changes to the stiffness when moving the cement volume, these changes are smaller than five percent between the most and least stiff result, suggesting cement volume movement at these small volumes is not significant.
+It may also suggest that cement shape may play a more important role, where endcap to endcap distributions show much larger effects - this is investigated in \cref{PCA_CHAP}.
 \subsection{Result Analysis}
 
 The statistical approach to quantifying the agreement between the computational results and the experimental results for the measured stiffness uses the concordance correlation coefficient (CCC).
@@ -591,7 +639,7 @@ $CCC = 0$ corresponds to no agreement and a value of $-1$ would be perfect negat
 \subsection{Results} \label{bov:results}
 
 The optimisation process gave a value for the conversion factor of 0.012529, allowing conversion between greyscale values for elements and their elastic modulus. This value was used for the bone constituents of the intact and augmented vertebrae presented in \cref{fig:compvexpscatter}, which shows the agreement between the \textit{in vitro} and \textit{in silico} results for the specimen specific models. The agreement of intact vertebrae was considerably better, with a concordance
-correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented vertebrae (\cref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
+correlation coefficient (CCC) of 0.49 compared with 0.14 for the augmented vertebrae (simple tied interaction) (\cref{tab:int}), with the value increasing to 0.60 if the uncharacteristically stiff T8-CC2 was removed.
 
 \begin{figure}[ht]
 \centering
@@ -602,7 +650,7 @@ correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented verte
 
 \begin{table}[ht]
 \centering
-\caption{The mean, standard deviation and concordance correlation coefficient (CCC) of the intact and augmented vertebrae for \textit{in vitro} and \textit{in silico results}.}
+	\caption{The mean, standard deviation and concordance correlation coefficient (CCC) of the intact and augmented vertebrae (simple tied interaction) for \textit{in vitro} and \textit{in silico results}.}
 \label{tab:int}
 \begin{tabular}{l|c|c|c}
      Intact Specimens     & Mean Stiffness & Standard Deviation & CCC                     \\ \hline \hline
@@ -611,7 +659,7 @@ correlation coefficient (CCC) of 0.49 compared with 0.16 for the augmented verte
 \hline
  Augmented Specimens
  \\ \hline \hline
-\textit{in vitro}  & 4246 & 1371               & \multirow{2}{*}{0.1548} \\
+\textit{in vitro}  & 4246 & 1371               & \multirow{2}{*}{0.14} \\
 \textit{in silico} & 6507 & 1298               &                      \\ \hline
 \end{tabular}
 \end{table}
@@ -620,7 +668,10 @@ The effect of changing the modulus of the cement volume in the augmented specime
 
 The effect that this has on the data with regard to the \textit{in vitro} stiffness results can be seen in \cref{fig:redEModscatter}, where the reduction in \textit{in silico} stiffness moves the data points closer to the $x = y$ line of perfect agreement between the experimental and computational results.
 
-
+The increasing agreement (in terms of CCC) with increasing sophistication of modelling the augmentation can be seen n \cref{fig:exp_50_yield_tied}, comparing the simple tied interaction, the reduced modulus approach and the combination of this and the yielding material interface.
+The CCC improves when using the reduced modulus at 50 \% (1.225 GPa) from the simple tied interaction with an improvement to 0.18 from 0.14.
+Another improvement is seen when combining the reduced modulus for the cement with the yielding interface (Young's modulus 1.225 GPa, yield stress 0.005 MPa), with the CCC improving to 0.23.
+The effect of changing these interactions and properties is not uniform, also shown in \cref{fig:redEModBar}, the vertebral models respond differently to differnent interactions, with increases and decreases seen when changing the same interaction.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=\textwidth]{images/reductionOfEMod_Bar.png}
@@ -635,13 +686,79 @@ The effect that this has on the data with regard to the \textit{in vitro} stiffn
 \label{fig:redEModscatter}
 \end{figure}
 
-\pagebreak
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=5.3in]{images/exp_50_yield_tied.pdf}
+	\caption[A comparrison of the different approaches to modelling augmentation in the bovine tail vertebrae.]{A comparrison of the different approaches to modelling augmentation in the bovine tail vertebrae. Comparing a simple tie between the bone and cement, a reduced modulus for the cement region and a reduced modulus in combination with a yielding interface layer between the bone and cement.}
+	\label{fig:exp_50_yield_tied}
+\end{figure}
 
-\subsection{Discussion}
+\section{Discussion}
+
+\subsection{Experimental Discussion}
+
+The experimental section aimed to develop the various aspects of the experimental methodology on a set of bovine tail vertebrae, allowing for an easy transition into using human lumbar vertebrae.
+Previously developed methods of $\mu$CT scanning has been verified for the bovine tail vertebrae.
+Methods of performing vertebroplasty and dealing with the unique challenges arising from the bovine vertebrae have been created.
+The experimental part of this chapter provides a good basis for both the continued modelling of vertebroplasty (especially modelling the cement - trabecular interface which is discussed in later sections) and to continue the experimental work using human tissue.
+Understanding the challenges of vertebroplasty (those discussed above), will be invaluable when transitioning onto the much more limited sou nrce of human vertebrae.
+
+%^ reiterate aims of exp work
+
+Regarding the results of stiffness at the intact, fractured and augmented stages, the expected trends were not always clear.
+Most commonly the intact vertebrae have the greatest stiffness with the fractured stiffness showing a reduced value following the damage created with the initial load to failure.
+The variation of the decrease (and increase) in stiffness for the fractured vertebrae may have a variety of reasons, although the most likely cause is level of damage caused in the initial ``load to failure''.
+These tests varied between the typical load displacement that includes a failure (\cref{fig:failure_non_failure}:A) and those that show no sign of failure up to the limit of the load cell (\cref{fig:failure_non_failure}:B).
+It is difficult to observe any correlation between these vertebra that showed clear failure (T2-CC1 and T2-CC2), those that reached 9500 N and a reduction in the fractured stiffness.
+It is not to say that the vertebra that reached 9500 N experienced no damage, with the gradient of the load displacement curve often reducing and plateauing as the 9500 N limit approached.
+The interesting increase in the fractured stiffness for T1-CC1 compared to the intact stiffness may be explained if it is assumed that the compacted trabeculae following the first load to 9500 N result in a stiffer material for the following tests.
+
+The cement fill volume information shows that a small percentage of cement is injected into the vertebrae on average, with only two vertebrae approaching the clinically relevant 20\% fill.
+Unexpectedly, only one of these two vertebrae showed an increase in augmented stiffness over the fractured stiffness.
+A possible explanation is that it is not only the fill volume that is important in restoring the vertebral stiffness but the placement or shape of the cement fill volumes.
+This is shown when comparing the segmented scans of the the two vertebrae with the greatest fill volume with the T2-CC2 specimen showing cement extending to the anterior wall of the vertebral body, while the cement is limited to the posterior and centre of the vertebral body for T8-CC2.
+This may help to explain why the stiffness of T8-CC2 did not increase following augmentation.
+The reduction in stiffness following augmentation for seven of the twelve vertebrae may be due to damage caused by the insertion of vertebroplasty needles.
+Clinically this damage left behind from the needle channels would heal, most likely restoring the stiffness of the vertebrae back to its intact properties.
+
+Another possible area of inconsistency is the temperature at which the vertebra were mechanically tested, while it is ensured that the specimens were fully defrosted they were tested at both fridge temperature (4$^\circ$C) and room temperature (20$^\circ$C).
+The effect of this variation in temperature needs to be identified and depending on the results more closely monitored.
+
+Despite encouraging results regarding the vertebroplasty methodologies it was difficult to achieve the desired quantity of the cement in the vertebral body.
+This was mainly due to the difficulty injecting the cement in a smooth manner, which may have been caused by either the tip of the needle becoming blocked following its reinsertion into the needle track, more viscous marrow stopping the displacement of less viscous marrow by the cement or compacted trabeculae around the needle channel that limit the flow of cement past them.
+One option to test in future work would be side opening needles, which would help guide the cement more accurately to the regions required while circumventing issue with the needle becoming blocked.
+Additionally, the shape of the vertebrae adds to the difficulty of performing vertebroplasty, with the narrow cylindrical shape of the vertebrae meaning the cement has to travel large distances axially through the trabecular bone to achieve clinically relevant cement fill volumes.
+In contrast the much wider human lumbar vertebrae used in latter chapters give much more space to inject larger volumes of cement.
+This, multiplied with a greatly reduced average trabecular density for the osteoporotic human vertebrae should allow for greater volumes of cement to be injected. 
+
+When attempting to identify trends between the pre and post augmented and pre and post fractured vertebrae no relationships were found.
+It was expected that initially weaker vertebra would show a larger change in stiffness between the fractured state and the augmented state and similarly between the intact and augmented states.
+However, no such trends were found, suggesting that properties other than the stiffness or bulk material properties are the cause of the variation.
+Properties such as the vertebral geometry and trabecular structure, which are investigated through the use of statistical shape models in \cref{PCA_CHAP}.
+
+The experimental methods currently developed will be of great value when starting experimental work using human tissue albeit many will require adaption due to the differences between the tissue types.
+These include the density of the bone and methods of inserting the needles, where with the available human tissue being from the elderly, the bones will be most likely be osteoporotic.
+These bones will require more care to reach the correct region of the vertebral body with the needle and to ensure a clinically relevant volume of cement is used.
+
+
+
+\subsection{Computational Results Discussion}
+
+The aims of the computational part of this chapter was to 
+
 
 The computational methods developed and results acquired, as with the experimental results, provide a good base for using human vertebrae and for the continued development of augmented vertebra modelling. The methods and automation of the creation of models both greatly reduce the time spent on model generation and reduce human error. This allows a relatively easy translation to human vertebrae, with only minor adjustments to the thresholds that define materials.
 
 The current methods of masking and meshing the internal volumes of cement in the augmented models provides a good method of creating augmented models. The sensitivity tests carried out on the additional mask inside the vertebrae shows that any effects seen are due to the volume of cement and not a simulation problem. Similarly the inclusion of a tied interaction between the two meshes failed to affect the result, something especially useful when considering alternative mesh interaction to model the cement - trabeculae interaction.
+
+Augmented volume location sensitivity tests suggests little influence of the position of the cement volume on the reported stiffness when loaded.
+It does highlight a potential source of error, where anteriorly placed volumes of cement would be expected to increase the stiffness of the vertebrae, given the reduced support on the anterior side.
+However, due to the yielding interface replacing the dense cortical shell, the result is a reduced stiffness.
+Therefore care needs to be taken when investigating cement volume movement as to not create unnatural simulations.
+When modelling experimentally augmented models this is not a problem as the cement does not replace the bone experimentally and therefore the cortical shell is preserved when modelling the vertebra.
+Additionally, moving the cement volumes highlights the importance of filling or replacing the weakest, least dense parts of the vertebrae with cement.
+Although in this can the change of replacing the central ``void" in the vertebra is small compared to placing the cement volume elsewhere, as cement volume size increases (and modelling accuracy improves) the effect may become more pronounced.
+This is investigated further in \cref{PCA_CHAP}, where cement volumes are moved within statistical shape models of osteoporotic human lumbar vertebrae, which exhibit similarities to the voids found in the bovine tail vertebrae.
 
 The intact models agree well with experimental results, with very similar results for the mean and, excluding anomalous results, a good CCC value,  showing that the previously validated conversion factor works well with this set of data and that segmentation and model setup works correctly. The poor agreement with the augmented specimen models and their experimental counterparts was an expected result that agrees with similar studies in the literature - \cite{Wijayathunga2008}. In an attempt to
 produce a better agreement, the elastic modulus of the cement volume was reduced in accordance with the experimental results of Race et al. \cite{Race2007} and similar methods employed by Wijayathunga et al. \cite{Wijayathunga2008}, where the reduction in modulus is expected due to the greater ratio of monomer to powder used, gaps between the bone and cement and pores within the cement. The reduction in stiffness forms a linear pattern as the elastic modulus is reduced, with those vertebrae that

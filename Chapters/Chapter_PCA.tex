@@ -351,6 +351,15 @@ Variation in the greyscale background or material properties of the vertebrae wa
 Unlike the other modes of variation where changes exist in the other two principal components, greyscale variation is almost completely isolated to PC1, which can be seen in both the comparison of the mean greyscale value for each model in \cref{fig:pca_gs} and the plots of histograms in \cref{fig:pca1_histo,fig:pca2_histo,fig:pca3_histo}.
 The range of the mean greyscale values for PC1 are from the least dense at -3 SD away from the mean with a mean greyscale value of 42, to a maximum of 162 at +3 SD away from the mean.
 
+However, despite the similarity in the mean of the greyscale variation for PC2 and PC3, the distribution varies significantly, seen in \cref{fig:all_pc1_2_3_slice_gs_density}.
+In PC2 and PC3 (although more clearly noticeable in PC3) the density distribution shifts from the posterior to the anterior of the vertebral body.
+In PC2 this shift of dnesest material is from anterior to posterior in the models from -3 SD to +3 SD, as the vertebrae change in shape from L1-like to L5-like.
+In PC3 the shift of the densest part is form posterior to anterior with reducing vertebral body volume (from -3 to +3 SD).
+Meaning that the larger vertebrae have a much denser posterior portion and less dense anterior, while the smaller vertebrae have a much denser anterior portion with a less dense posterior/pedicle region
+The density distribution in PC1's models in more uniform, with more general changes to the density as described earlier, with the -3 SD vertebrae having the least dense properties and +3 SD having the most dense. 
+At the more dense end of PC1 (+3) the thickness of the cortical shell increases significantly compared to that of the least dense (-3).
+However, the contrast between the shell and the cancellous regions remain similar, while the mean model's cortical shell is less clearly defined.
+
 \begin{figure}[h]
   \centering
   \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/pca_gs.pdf}
@@ -358,7 +367,14 @@ The range of the mean greyscale values for PC1 are from the least dense at -3 SD
   \label{fig:pca_gs}
 \end{figure}
 
-%TODO add image comparing the pca model background and the input model background
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=.9\textwidth]{Chapters/Chapter_PCA_images/all_pc1_2_3_slice_gs_density.png}
+	\caption[The variation in the greyscale distribution across the mid-slice of the vertebrae generated from the first three principal components.]{The variation in the greyscale distribution across the mid-slice of the vertebrae generated from PC1, PC2 and PC3, for each of the $\pm$1, 2 and 3 standard deviations from the mean.
+Showing how the changing distribution of the greyscale, even for PC2 and PC3 where the mean greyscale variation is minimal.
+Red colours indicate denser bone and blue colours indicate the least dense bone.}
+  \label{fig:all_pc1_2_3_slice_gs_density}
+\end{figure}
 
 \subsubsection{Resulting Stiffness Variation}
 
@@ -453,11 +469,14 @@ Augmentation increased the stiffness most when loaded anteriorly for the negativ
 \section{Discussion}
 \label{pca_disc}
 
-Validation
+\subsection{Validation}
 
 Modes of variation and how they represent the clinical problems (wedge shapes and fractures, small large, weak/stiff, etc.)
 
-	
+\subsection{Variation}
+
+\subsection{Response to Augmentation}
+
 The response to small quantities of cement injected into the vertebrae is small. This is shown when comparing 20 \% fill volumes to 35 and 50 \% fill, where an increase in the stiffness is barely seen and only in the least dense vertebrae.
 Attempts to understand the effect that the position of small volumes of cement (12 \% fill) has on the stiffness of the vertebrae shows sensible effects although a small percentage change to the stiffness of the vertebra compared to central positions of the cement volume.
 
@@ -492,4 +511,18 @@ Experimentally, this reduction in stiffness could be due to the greater level of
 %TODO add papers - back up what i'm saying below.
 Despite some studies suggesting that small quantities of cement (less that 20 \%) are enough to increase or restore the stiffness or properties of fractured vertebrae to that of the intact or natural vertebrae, the results presented here suggest otherwise.
 Additionally, these studies lack any validation of experimental 
+
+
+\subsection{Load Position Effect}
+
+The effect of load position was investigated for the human tissue, where the possible error in choosing the loading point of the model was $\pm$~1~mm given the resolution.
+The effect of moving the loading position within the 2~mm range gave changes to the stiffness of approximately 5 \% (a small contribution to the total possible error).
+Here, the changes to the loading points are $\pm$~10~mm and $\pm$~20~mm, giving loading points at approximately the posterior boundary, the midpoint between the posterior boundary and the central loading position and similar points on the anterior side.
+This gave a reasonable understanding of the effect of anterior and posterior loading for the generated models, both with and without augmentation and more importantly a more detailed understanding of the effect of augmentation on different types of vertebra.
+
+The response to loading for the different non-augmented vertebrae in PC1 followed the expectations given the incremental change in the density distribution.
+In PC2 near identical response from nearly all generated models is explained by their similar volumes and similar mean greyscale values.
+The -1, -2 and -3 SD models that do not fit the same trends show a reduced posterior density and hence show a reduced stiffness when loaded posteriorly.
+A similar effect is seen in the PC3 vertebrae where the increased posterior stiffness compared to the other models and the central loading position of -2 and -3 SD models is explained through a large increase in the posterior density.The increased anterior density for the +3 and +2 models in PC3 seem to have little effect on anterior loading.
+
 
