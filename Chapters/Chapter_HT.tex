@@ -445,17 +445,22 @@ A comparison of the two approaches can be seen in \cref{fig:normal_vs_bv_tv_seg}
 
 \subsubsection{Load Position Sensitivity}
 
-In order to understand how the vertebrae respond to different loading positions, eight different positions were tested, shown in \cref{fig:loading_pos}. The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
+In order to understand how the vertebrae respond to different loading positions, 16 different positions were tested, shown in \cref{fig:loading_pos}.
+These positions included 1~mm and 2~mm aways from the centre in the posterior, anterior, left and right directions along with larger deviations of 10~mm and 20~mm from the centre in the same directions.
+The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=6cm]{Chapters/Chapter_HT_images/Loading_positions.png}
-\caption{The loading positions used for the load variation tests. Position 0 is the original, central loading position, with 1 - 4 being 1 mm away from the centre and 5 - 8 being 2 mm away from the centre.}
+\includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/Loading_positions_Human.png}
+\caption{The loading positions used for the load variation tests. Position X is the original central loading position for ap and lr loading, other loading positions are 1~mm, 2~mm, 10~mm and 20~mm away from the centre.}
 \label{fig:loading_pos}
 \end{figure}
 
 
-The results of the load position sensitivity tests (\cref{fig:hum_load}) show that more posterior loads (above denser bone) result in higher stiffness's while anterior loads result in a reduced stiffness. Loads lateral to the central loading point resulted in smaller reductions in the stiffness of models.
+The results of the load position sensitivity tests (\cref{fig:hum_load_ap}) show that on average, small posterior loads (above denser bone) result in higher stiffness's while all anterior loads result in a reduced stiffness. Loads lateral to the central loading point (\cref{fig:hum_load_lr}) resulted in little mean change to the stiffness of the models for the 1 and 2~mm positions.
+Larger movements away from the central loading position (10~mm and 20~mm) result in almost all vertebrae presenting a reduction in stiffness.
+Loading positions at 20~mm left and right present the largest reductions, where in the body the expected loads are less compared to anterior/posterior loading.
+Additionally, larger anterior loads resulted in larger reductions in the stiffness, given the less dense nature of anterior portions of the vertebral body
 
 It also shows that the effect of movements of 1 mm away from the experimental loading position only changes the stiffness by approximately 5 \%.
 Given the resolution of the models is limited to 1 mm, the accuracy of the selection of the experimental loading positions is also limited to 1 mm.
@@ -463,9 +468,16 @@ The maximum 5 \% change to the stiffness when posterior or anterior may describe
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/human_fossil_loading.png}
-\caption{The effect of the loading position for the human lumbar vertebrae, shown as a percentage change compared to a central loading position.}
-\label{fig:hum_load}
+\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/hum_ap.png}
+\caption{The effect of the loading position for the human lumbar vertebrae, shown as a percentage change compared to a central loading position, for load positions from the posterior to anterior according to \cref{fig:loading_pos}}
+\label{fig:hum_load_ap}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/hum_lr.png}
+\caption{The effect of the loading position for the human lumbar vertebrae, shown as a percentage change compared to a central loading position, for load positions from the left to the right according to \cref{fig:loading_pos}}
+\label{fig:hum_load_lr}
 \end{figure}
 
 
@@ -1072,6 +1084,8 @@ BV/TV Method
 Load position
 
 EC depth / contact
+
+Sources of error.
 
 \subsubsection{Computational Method Significance}
 
