@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper,twoside,openright]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{pythontex}
+%\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tabularx, booktabs}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage{subfig}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage{csquotes}
+\usepackage[sortcites=true,sorting=none,style=numeric,url=false,doi=false,isbn=false,firstinits=true,backend=biber]{biblatex}
+\usepackage[parfill]{parskip} % REMOVE INDENTS
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\setcounter{secnumdepth}{5}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{lscape}
+%\usepackage{chngcntr}%per section figure numbers
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{fancyhdr} % header
+\usepackage{epstopdf} %eps to pdf conversion
+\epstopdfsetup{outdir=./conv_pics/}
+\usepackage{cleveref}
+\usepackage[section]{placeins} %stop figures from drifting down into sections where they're not welcome
+\usepackage{siunitx}
+\raggedbottom
+\setlength{\headheight}{13.6pt}%
+
+\setstretch{1.5}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+%\counterwithin{table}{chapter}
+%\counterwithin{figure}{chapter}
+\usepackage[inner=4cm,outer=2cm,top=2cm,bottom=2cm]{geometry}
+\addbibresource{library.bib}
+\title{Thesis}
+\author{Gavin Day}
+\date{July 2016}
+
+
+\begin{document}
+
+
+%\include{Title}
+
+
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+%\renewcommand{\chaptermark}[1]{ \markright{#1} }
+
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO,RE]{\chaptermark }
+%\include{Chapters/Chapter_Lit}
+\include{Chapters/Chapter_Bov}
+%\include{Chapters/Chapter_HT}
+%\include{Chapters/Chapter_PCA}
+%\include{Chapters/Chapter_Disc}
+
+
+\pagebreak
+
+
+\printbibliography
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
