@@ -1152,11 +1152,11 @@ tissue being from the elderly, the bones will be most likely be osteoporotic.
 \subsection{Computational Results Discussion}
 
 The aims of the computational part of this chapter were to develop methods to
-build models of vertebrae, using automated approaches and carrying out
-sensitivity tests to identify the best methods to use when carrying out similar
-model creation on the set of human lumbar vertebrae in \cref{Chapter_HT}. This
+build models of vertebrae using automated approaches and to carry out
+sensitivity tests. These sensitivity tests were to identify the best methods to use when carrying out similar
+model creation and simulation of the set of human lumbar vertebrae in \cref{Chapter_HT}. This
 was achieved, with automation of the segmentation process within ScanIP and
-automation of the model setup within Abaqus achieved using a series of python
+automation of the model setup within Abaqus carried out using a series of python
 scripts. These scripts require no conversion to be used with the modelling of
 human lumbar vertebrae, with the exception of the thresholding carried out in
 scanIP. The preliminary sensitivity tests give a first idea of what variations
@@ -1173,32 +1173,35 @@ translation to human vertebrae, with only minor adjustments to the thresholds
 that define materials.
 
 The current methods of masking and meshing the internal volumes of cement in
-the augmented models provides a good method of creating augmented models. The
+the augmented models provide a good method of creating augmented models. The
 sensitivity tests carried out on the additional mask inside the vertebrae shows
 that any effects seen are due to the volume of cement and not a simulation
 problem. Similarly the inclusion of a tied interaction between the two meshes
 failed to affect the result, something especially useful when considering
-alternative mesh interaction to model the cement - trabeculae interaction.
+alternative mesh interaction to model the cement - trabeculae interaction. This
+may be explored further with an expanded sensitivity test identifying whether
+alternative contacts are more appropriate to model the bone-cement interface.
 
 Augmented volume location sensitivity tests suggests little influence of the
 position of the cement volume on the reported stiffness when loaded.  It does
 highlight a potential source of error, where anteriorly placed volumes of
 cement would be expected to increase the stiffness of the vertebrae, given the
-reduced support on the anterior side.  However, due to the yielding interface
+reduced support and density on the anterior side.  However, due to the yielding interface
 replacing the dense cortical shell, the result is a reduced stiffness.
 Therefore care needs to be taken when investigating cement volume movement as
 to not create unnatural simulations.  When modelling experimentally augmented
 models this is not a problem as the cement does not replace the bone
-experimentally and therefore the cortical shell is preserved when modelling the
-vertebra.  Additionally, moving the cement volumes highlights the importance of
+when injected, therefore preserving the cortical shell in the
+vertebral model. Additionally, moving the cement volumes highlights the importance of
 filling or replacing the weakest, least dense parts of the vertebrae with
-cement.  Although in this can the change of replacing the central ``void" in
+cement.  Although in this case the change of replacing the central ``void" in
 the vertebra is small compared to placing the cement volume elsewhere, as
 cement volume size increases (and modelling accuracy improves) the effect may
 become more pronounced.  This is investigated further in \cref{PCA_CHAP}, where
 cement volumes are moved within statistical shape models of osteoporotic human
 lumbar vertebrae, which exhibit similarities to the voids found in the bovine
-tail vertebrae.
+tail vertebrae, with much less dense bone in the central portions of the
+vertebral body.
 
 The intact models agree well with experimental results, with very similar
 results for the mean and, excluding anomalous results, a good CCC value,
@@ -1217,7 +1220,14 @@ reduced, with those vertebrae that show the greatest reduction being those
 containing the largest volume of cement. While these results do show a
 reduction in the stiffness, closer to that of the experimental values, it does
 not explain the disagreement fully. This suggests that a combination of
-improvements to the augmented models is required.
+improvements to the augmented models are required. The final increase in the
+agreement between experiment and model was seen with the addition of the
+yielding interface. This reduced the stiffness of the set on the whole and also
+increased the CCC value. Interestingly this was not a uniform or predictable
+effect with no correlation between yielding interface surface area or volume
+and the change in stiffness. Suggesting the effect was influenced by the
+density of the surrounding bone on various regions and therefore was not a bulk
+effect.
 
 Future work will utilise the results acquired, especially those relating to the
 cement modulus and the cement - bone interactions, to understand how to model
