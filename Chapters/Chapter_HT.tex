@@ -2,9 +2,15 @@
 
 \section{Introduction}
 
-Previous studies and earlier chapters have used a range of vertebrae, including bovine, ovine and porcine among others. While all of these vertebrae have important uses for developing methodology and understanding certain characteristics, none share the trabecular structure, thickness of cortical shell, axial strength of stiffness. Hence, in order to understand the mechanical effects of vertebroplasty, human tissue is required.
+Previous studies and earlier chapters have used a range of vertebrae, including
+bovine, ovine and porcine among others. While all of these vertebrae have
+important uses for developing methodology and understanding certain
+characteristics, none share the trabecular structure, thickness of cortical
+shell, axial strength of stiffness. Hence, in order to understand the
+mechanical effects of vertebroplasty, human tissue is required.
 
-Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the details shown in \cref{tab:vertebrae}.
+Here, 14 lumbar vertebrae from four cadaveric spines have been used, with the
+details shown in \cref{tab:vertebrae}.
 
 \begin{table}[ht!]
 \centering
@@ -1098,14 +1104,36 @@ bone volume fraction method in isolation (without the results of the other
 sensitivity tests) showed a large improvement over the normal method.  The
 normal method performed similarly on the bovine tail vertebrae as with the
 human lumbar vertebrae, with a CCC = 0.49 for bovine tail vertebrae and CCC =
-0.55 for the human vertebrae.  The improvement using the bone volume fraction
-method is most likely due to the added definition of the trabecular bone and
-cortical shell, especially given how important the correct representation of
-load sharing is for accurate models \cite{eswaran2006cortical}.  Having greater
-definition of the cortical shell and trabecular bone alignment allows much more
-accurate descriptions of the load transfer through the vertebrae, rather than
-the more simple description with the more homogenised material properties of
-the normal method.
+0.55 for the human vertebrae. 
+
+The improved agreement of modelling the human vertebrae over the bovine
+vertebrae when using the same ``normal" method suggests that either the human
+vertebrae are more receptive to the modelling method used, or that the
+experimental procedure was more repeatable and therefore provided more accurate
+results. One possibility is that the less narrow human vertebrae provided an
+easier material to load axially, with slight off axis loads causing the
+vertebrae to not be seated in the endcaps correctly in the case of the bovine
+tail vertebrae. This sensitivity to endcap contact properties was shown earlier
+and potentially given the tendency of the bovine vertebrae to be loaded
+non-axially they may be more sensitive to such endcap contact properties. So,
+while experimentally the bovine vertebrae were able to slip in the endcaps,
+computationally the two materials were tied, restricting this ability and
+reducing the agreement with the experiment. Conversely, the wider human
+vertebrae had less of a tendency to slip and were less sensitive to the endcap
+contact.
+
+The improvement using the bone volume fraction method is most likely due to the
+added definition of the trabecular bone and cortical shell, especially given
+how important the correct representation of load sharing is for accurate models
+\cite{eswaran2006cortical}. This agreement is much stronger than the agreement
+found in similar studies that used a comparable methodology to the ``normal"
+method \cite{Wijayathunga2008, zapata2017methodology, RobsonBrown2014} and
+comparable to methods that used more complex though individual material
+properties for each model \cite{Kinzl2012,kinzl2013experimentally}.  Having
+greater definition of the cortical shell and trabecular bone alignment allows
+much more accurate descriptions of the load transfer through the vertebrae,
+rather than the more simple description with the more homogenised material
+properties of the normal method.
 
 This method also removed any effect that the bone marrow, where, given the
 freeze/thaw cycles the marrow leaks from the vertebrae giving vertebral scans
@@ -1184,8 +1212,7 @@ vertebrae \cite{Sikora2013}.
 
 \subsubsection{Sensitivity Test Significance}
 
-BV/TV Method
-
+The use of the bone volume fraction method provided the most important increase in the agreement between computational and experimental results of stiffness for non-augmented models.
 Load position
 
 EC depth / contact
