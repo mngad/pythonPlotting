@@ -1280,8 +1280,26 @@ Changing the endcap depths when the frictionless contact was used resulted in
 (for the most part) much less sensitivity to changing the endcap depth, when
 compared to the tied endcap models. The exception is the spine 4 L5 vertebra,
 where when the endcap depth is reduced a very large decrease in the stiffness
-is seen.
+is seen. This is caused by slipping that occurs between the vertebrae and the
+endcap, given the lack of both physical constraint and constraint in the form
+of a boundary condition. An illustration of this can be seen in
+\cref{fig:EC-3slip}, showing how with such little constraint the anterior
+inferior of the vertebral body move further anterior. This results in the
+reduced stiffness recorded. However, such small endcaps where not created
+experimentally and therefore create no additional errors to the models.
+Importantly, the use of frictionless contact with the no separation after
+contact option set results in smaller sensitivity to endcap depth modelling
+errors and resulted in increased agreement between experiment and model for the
+set.
 
+
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/EC-3slip.png}
+\caption{An illustration of the slipping that occurs in Spine 4 L5 when the
+endcap depth is reduced by 3 mm on the superior and inferior endcaps}
+	\label{fig:EC-3slip}
+\end{figure}
 \subsubsection{Computational Method Significance}
 
 \section{Conclusion}
