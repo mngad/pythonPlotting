@@ -950,14 +950,32 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 The results of modelling the non-augmented vertebrae can be seen in \cref{fig:intact_norm_bvtv}, comparing the initial normal method (the method used with the bovine tail vertebra in the previous chapter) with the best case using the bone volume fraction method and the results of the sensitivity test described previously.
 The results show a large improvement using the results of the sensitivity tests and the bone volume fraction method, with a concordance correlation coefficient improving from 0.55 to 0.86.
 
+The effect of using the bone volume fraction method on the greyscale background
+and colour map of the bone density can be seen in \cref{fig:compX4}, where the
+much more clearly defined cortical shell and trabecular structure is evident.
+
 \begin{figure}[h!]
   \centering
   \includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/intact_norm_bvtv}
-	\caption{The results of using the normal method and the bone volume fraction method to model non-augmented human lumbar vertebrae. Red shows the agreement using the normal method and blue shows the agreement using the bone volume fraction method, with the orange dotted line showing perfect agreement.}
+	\caption{The results of using the normal method and the bone volume
+	fraction method to model non-augmented human lumbar vertebrae. Red
+shows the agreement using the normal method and blue shows the agreement using
+the bone volume fraction method, with the orange dotted line showing perfect
+agreement.}
 	\label{fig:intact_norm_bvtv}
 \end{figure}
 
 
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/compX4MethodAvsB.png}
+\caption{A and B: The resultant 1 mm$^3$ greyscale background from the normal
+and bone volume fraction method respectively, where the brightness in A has
+been increased for visibility. C and D: a heat map of the greyscale values
+through the mid slice of models from the normal and bone volume fraction method
+respectively.}
+	\label{fig:compX4}
+\end{figure}
 
 \subsubsection{Augmented Model Results}
 
@@ -1162,8 +1180,21 @@ bone, the trabecular bone and the empty, non-bone areas.  Using 16-bit images
 along with image manipulation to change the contrast of the scans may allow the
 added detail and contrast to be captured with relatively low ($\geq$ 1 mm)
 resolution scans, therefore greatly increasing the number of vertebral
-specimens available for use.
+specimens available for use. An example of how this could be achieved is shown
+in \cref{fig:adding_contrast} where the background from the normal method has
+been edited through adjusting the contrast to give a similar background to that
+achieved using the bone volume fraction method. The detail in the centre of the
+vertebral body is less clear in this example, however, it was achieved through
+simple contrast manipulation meaning that more trabecular detail could be
+preserved using a curves (remapping of the image tonality) or as already
+proposed 16 bit images.
 
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/adding_contrast.png}
+\caption{An example showing the ability to create a greyscale background similar to that achieved using the BV/TV method, but instead adjusting the contrast of the background from the normal method.}
+	\label{fig:adding_contrast}
+\end{figure}
 
 
 The results of modelling augmented vertebrae showed a reduction in the
@@ -1210,12 +1241,7 @@ problematic given the investigatory nature of the study and the fact that the
 behaviour in simplified bone plug models is different to what is seen in whole
 vertebrae \cite{Sikora2013}.
 
-\subsubsection{Sensitivity Test Significance}
-
-The use of the bone volume fraction method provided the most important increase in the agreement between computational and experimental results of stiffness for non-augmented models.
-Load position
-
-EC depth / contact
+\subsubsection{Sensitivity Test Significance and Influence on Errors}
 
 Sources of error from the modelling side come from discrepancies between the
 experimental setup and specimen geometry. Sensitivity tests carried out
@@ -1234,6 +1260,27 @@ achieved consistently higher or lower stiffness' compared to their peers.
 Hence, a 14 \% error within a single users segmentation process is both
 unlikely and further reduced through the use of the python script carrying out
 the thresholding and morphological filters to segment the model.
+
+Changing the endcap depth presents an interesting study into the effects of
+over constraining the models. For the models with the tied constraints changing
+the endcap depth had a different effect for the two vertebrae (although the
+same overall trend, where thicker endcaps led to more constraint and therefore
+higher stiffness values). The spine 1 L2 vertebrae was equally sensitive to
+changing the superior and inferior depth, although gave a smaller effect when
+the depth was reduced (exposing more bone). The spine 4 L5 vertebrae was much
+more sensitive to changing the inferior endcap, especially when reducing the
+depth of the endcap. This large reduction in the stiffness when removing 3 mm
+of endcap material from the inferior endcap of approximately 20 \% is caused by
+exposing a less dense area of bone, which, when no longer supported by the tied
+endcap resulted in the reduced stiffness. Other than this specific effect the
+general trend was an increased sensitivity to increasing the cement depth, with
+a much smaller sensitivity to exposing more bone.
+
+Changing the endcap depths when the frictionless contact was used resulted in
+(for the most part) much less sensitivity to changing the endcap depth, when
+compared to the tied endcap models. The exception is the spine 4 L5 vertebra,
+where when the endcap depth is reduced a very large decrease in the stiffness
+is seen.
 
 \subsubsection{Computational Method Significance}
 
