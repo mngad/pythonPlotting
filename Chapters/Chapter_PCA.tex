@@ -308,9 +308,11 @@ for all combinations of $\pm$1 SD.
 \end{figure}
 \subsubsection{Resulting Stiffness Validation}
 
-\begin{table}[]
+The range of stiffness values from the generated models from all possible combinations of the first three principal components within 1 standard deviation matched closely with the range of stiffness' from the input set. These were 2791 - 6039 N/mm and 2887 - 6172 N/mm for the input and generated models respectively. Additionally the means of the sets also agreed well with the mean computational stiffness of the input set being 4508 N/mm and 4134 N/mm for the mean generated model.
+
+\begin{table}[h]
 \centering
-\caption{My caption}
+\caption{The stiffness of the generated models from PC1, 2 and 3, showing the fractional change to the mean model in each case.}
 \label{tab:stiffness_gen_models}
 \begin{tabular}{c|c|c}
 Model  & Stiffness (N/mm) & Fractional Change from the Mean \\ \hline \hline
@@ -405,26 +407,26 @@ models against the input set, ensuring that the shapes measured in the input
 set are represented in the models.  This is described in \cref{sec:pca_val}.
 
 
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Axial.pdf}
-  \caption{Axial views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
-  \label{fig:PC1_2_3_Axial}
-\end{figure}
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Sagital.pdf}
-  \caption{Sagittal views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
-  \label{fig:PC1_2_3_Sagital}
-\end{figure}
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Coronal.pdf}
-  \caption{Coronal views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
-  \label{fig:PC1_2_3_Coronal}
-\end{figure}
+%\begin{figure}[p]
+%  \centering
+%  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Axial.pdf}
+%  \caption{Axial views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+%  \label{fig:PC1_2_3_Axial}
+%\end{figure}
+%
+%\begin{figure}[p]
+%  \centering
+%  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Sagital.pdf}
+%  \caption{Sagittal views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+%  \label{fig:PC1_2_3_Sagital}
+%\end{figure}
+%
+%\begin{figure}[p]
+%  \centering
+%  \includegraphics[width=.65\textwidth]{Chapters/Chapter_PCA_images/PC1_2_3_Coronal.pdf}
+%  \caption{Coronal views of the surface point clouds of the vertebral models from the first three principal components, showing the mean, +3 and -3 standard deviations away from the mean. Showing how the geometry is captured in the first three principal components.}
+%  \label{fig:PC1_2_3_Coronal}
+%\end{figure}
 
 
 
@@ -545,9 +547,12 @@ less clearly defined.
 \subsubsection{Resulting Stiffness Variation}
 
 The variation in the resulting stiffness of the generated model for principal
-component 1, matches very closely to the variation seen in the mean greyscale
-variation, which can be seen in \cref{fig:pca_gs,fig:pca_stiff} for mean
-greyscale and stiffness variation respectively.
+component 1 can be seen in \cref{fig:pca_stiff,tab:stiffness_gen_models}. The
+trends within the different principal components  match closely with the
+variation seen in the mean greyscale which can be seen in \cref{fig:pca_gs}.
+This suggests a stronger relationship between the greyscale background and the
+resulting stiffness of the models than any of the other variations in the
+generated models when loaded centrally and without augmentation.
 
 \begin{figure}[h]
   \centering
@@ -557,6 +562,36 @@ greyscale and stiffness variation respectively.
 	the mean and including the mean.}
   \label{fig:pca_stiff}
 \end{figure}
+
+\begin{table}[h]
+\centering
+\caption{The stiffness of the generated models from PC1, 2 and 3, showing the fractional change to the mean model in each case.}
+\label{tab:stiffness_gen_models}
+\begin{tabular}{c|c|c}
+Model  & Stiffness (N/mm) & Fractional Change from the Mean \\ \hline \hline
+PC1 +3 & 6543.38          & 1.582                           \\
+PC1 +2 & 5887.75          & 1.424                           \\
+PC1 +1 & 5059.89          & 1.224                           \\
+Mean   & 4134.88          & 1.000                           \\
+PC1 -1 & 2962.82          & 0.717                           \\
+PC1 -2 & 1696.47          & 0.410                           \\
+PC1 -3 & 1131.86          & 0.274                           \\ \hline
+PC2 +3 & 4159.29          & 0.980                           \\
+PC2 +2 & 4291.53          & 0.831                           \\
+PC2 +1 & 4355.98          & 0.770                           \\
+Mean   & 4134.88          & 1.000                           \\
+PC2 -1 & 4051.57          & 1.006                           \\
+PC2 -2 & 3434.91          & 1.038                           \\
+PC2 -3 & 3182.81          & 1.053                           \\ \hline
+PC3 +3 & 2930.69          & 0.709                           \\
+PC3 +2 & 3420.55          & 0.827                           \\
+PC3 +1 & 3846.57          & 0.930                           \\
+Mean   & 4134.88          & 1.000                           \\
+PC3 -1 & 4409.05          & 1.066                           \\
+PC3 -2 & 4240.58          & 1.026                           \\ \hline
+PC3 -3 & 4141.31          & 1.002                          
+\end{tabular}
+\end{table}
 
 \subsection{Augmentation in Generated Models}
 
@@ -706,8 +741,30 @@ representing the largest vertebral body volumes.
 
 \subsection{Validation}
 
-Modes of variation and how they represent the clinical problems (wedge shapes
-and fractures, small large, weak/stiff, etc.)
+The models generated using the statistical shape modelling approach represent
+the input set well with the range of measurements taken matching closely to the
+range of measurements taken from the input set. The 18 measures of the geometry
+describe the geometry well, with the most important measurements being ones
+describing wedge shapes (with wedge fractures being the subject of many
+vertebroplasty procedures) and the general shape changes between L1-like and
+L5-like vertebrae. The range of variation within 1 standard deviation (all
+possible combinations of the PC1, 2 and 3) captures most of the variation seen
+in the input set, with an expectation that the remaining variation not captured
+in 1 SD would be captured in the other two standard deviations. In a few cases
+models produced variation that was not seen in the experimental input set; a
+possibility here is that the combinations of principal components used to make
+that model were unnatural, with another possibility being that with a larger
+and therefore more varied input set such variation would be seen. However, the
+models used in the remaining investigations were from principal components in
+isolation, which all fell within the range of the input set. Finally, in
+addition to the range being well represented, the measurements of the mean
+generated model align closely with the mean of the input set measurements,
+suggesting that the models are not skewed to one end of the variation
+spectrum
+
+
+
+in between ones
 
 \subsection{Variation}
 
