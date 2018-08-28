@@ -374,10 +374,52 @@ The Spine 1 spine has a much lower bone volume fraction compared to the other sp
 
 \section{Computational Methods}
 
-The split between different modelling methods, computational and experimental is not terribly clear, given that computational methods are employed in the scanning and material property analysis described above.
-However, the methods described in this section describe the process used to model non-augmented and augmented vertebrae, with associated sensitivity tests to understand the most appropriate approach to various aspects of the modelling process.
+The methods described in this section describe the process used to model
+non-augmented and augmented vertebrae, with associated sensitivity tests to
+understand the most appropriate approach to various aspects of the modelling
+process.
 
 
+The methods used in this section broadly follow those used in the previous
+chapter, with a general process including the segmentation and FE model
+generation in Simpleware ScanIP, and solving the models in Abaqus using setup
+scripts written in python. One difference in this chapter is that the models
+were run on ARC2, part of the High Performance Computing facilities at the
+University of Leeds. Here, the submission of jobs (simple shell scripts
+describing the process to be carried out) onto the cluster is carried out using the Sun Grid
+Engine, a first come first served scheduler for the cluster. By running the FE
+simulation on the HPC cluster with resources: 10 cores, 1000 MB of memory per
+core, the time to solve each model was reduced to 5 - 10 minutes compared to 20
+- 40 minutes on a desktop PC. In addition to the time saving benifits this
+allowed off loading of large (5 - 10 GB per model) Abaqus output files and
+through the submission system it allowed the iterative testing of material
+properties, where models could be re-solved using different material properties
+read from a simple text file.
+
+The methodology of using ARC2, one of the HPC clustered remained much the same
+as when using a desktop PC. Here, abaqus input files were copied over to a user
+directory on one of the cluster nodes, along with files detailing the loading
+positions for the vertebrae, three python scripts and a shell script. The first
+python script set up the model, importing each abaqus input file, applying
+boundary conditions, loading position (according to the load position csv
+file), creation of the  loading platen and application of the material
+properties to the greyscale based material properties of the bone. Settings and
+values applied in the setup script are read from another file containing: the
+conversion factor, the displacement and for the augmented models the cement and
+interface region material properties. The second python script runs the models
+with values of the number of cores and memory to use matching those of the
+requested HPC resources. The models are run with an initial increment of 0.1 a
+minimum increment of 0.0001 and a maximum increment of 1. The final python
+script runs the post processing; the abaqus output file is read and the axial
+reaction force ($RF3$) is recorded. The results (reaction force divided by the
+displacement to give a stiffness) from each model are written to a results file
+which can be copied to the desktop PC and analysed. Finally, the shell script
+describes the resources to be requested from the HPC cluster including a
+maximum amount of time and then gives the command to be run: \texttt{abaqus cae
+nogui=setup.py \&\& abaqus cae nogui=run.py \&\& abaqus cae nogui=post.py}. For new
+tests with potentially unexpected outcomes the abaqus output files were copied
+to the desktop PC to be viewed, while if incremental material property chanes
+were being made only the stiffness results were copied.
 
 
 \subsection{Non-augmented Vertebrae Modelling Sensitivity Tests}\label{sec:non_aug_sens}
@@ -392,36 +434,52 @@ greyscale value proportional to the BV/TV value for the region captured by that
 voxel. Areas that contain more bone will therefore have a higher greyscale
 value. This method is purely dependant on the threshold selected defining the
 bone and hence, given that threshold values can be repeatedly and correctly
-selected with the methods shown in Section~\ref{th_opt}, it is scanner independent.
+selected with the methods shown in Section~\ref{th_opt}, it is scanner
+independent.
 
-Other sensitivity studies present difficulties due to the models reliance on the underlying greyscale background.
-This is due to the greyscale optimisation process required to obtain a new conversion factor between the greyscale values and the Young's modulus for every change made to the material properties or boundary conditions of the models.
-This is in order to understand the effect the change has on the agreement between experimental and computational results, and because a change to the material properties or boundary conditions may not have a systematic or uniform effect on the results.
-Due to this, simple sensitivity tests become difficult, including common convergence studies.
+Other sensitivity studies present difficulties due to the models reliance on
+the underlying greyscale background.  This is due to the greyscale optimisation
+process required to obtain a new conversion factor between the greyscale values
+and the Young's modulus for every change made to the material properties or
+boundary conditions of the models.  This is in order to understand the effect
+the change has on the agreement between experimental and computational results,
+and because a change to the material properties or boundary conditions may not
+have a systematic or uniform effect on the results.  Due to this, simple
+sensitivity tests become difficult, including common convergence studies.
 
 \subsubsection{BV/TV Modelling Method}\label{bvtv_method}
 
-This method gives the opportunity to keep much of the detail that is often lost when downsampling image data.
-Specifically, the method described gives the vertebral models much more definition of the cortical shell and internal trabecular structure while maintaining the 1 mm cubed resolution and the computational cost benefits associated with that.
-The method follows that found in a study by Robson Brown et al.
-\cite{RobsonBrown2014} with a few minor changes. The scans are converted from the ScanCo proprietary ISQ format into a stack of TIFF files using an in house Matlab script, which in additionally reduces reduces the 16 bit data to 8 bit images.
+This method gives the opportunity to keep much of the detail that is often lost
+when downsampling image data.  Specifically, the method described gives the
+vertebral models much more definition of the cortical shell and internal
+trabecular structure while maintaining the 1 mm cubed resolution and the
+computational cost benefits associated with that.  The method follows that
+found in a study by Robson Brown et al.  \cite{RobsonBrown2014} with a few
+minor changes. The scans are converted from the ScanCo proprietary ISQ format
+into a stack of TIFF files using an in house Matlab script, which in
+additionally reduces reduces the 16 bit data to 8 bit images.
 
 The set of vertebral specimens were split at this stage into two sets, allowing
-an understanding of how the bone volume fraction method affects the results compared to the method described in Section~\ref{finite-element-modelling-methods}.
-To the set using the bone volume fraction method a threshold was applied at the full 82 $\mu$m resolution.
-This threshold was chosen to be a greyscale value of 18, the mean of the values described in section Section~\ref{th_opt} and was applied to the scan stacks in imageJ.
-Once the binary stack was created a Gaussian filter was applied, also within imageJ, with $
-\sigma_{x,y,z} = 1 $.
-This was applied in order to remove speckling found surrounding the end-caps and some of the other noise visible in the scans.
-The two stacks of images are then imported into ScanIP; carried
-out by opening one stack of images (the original stack) and then importing a
-second background (the binary image stack). Both backgrounds are downsampled to
-voxel sizes of 1 mm$^3$, with the (originally) binary stack being used to create
-the mask for the vertebrae and the original stack being used for the end-caps.
-Greyscale material properties for the vertebral mask are taken from the binary
-stack, while the remainder of the methods follow the same process as the
-original method.
-A comparison of the two approaches can be seen in \cref{fig:normal_vs_bv_tv_seg}, where the improved definition of trabecular structure and cortical shell using the bone volume fraction method can be seen in E and F.
+an understanding of how the bone volume fraction method affects the results
+compared to the method described in
+Section~\ref{finite-element-modelling-methods}.  To the set using the bone
+volume fraction method a threshold was applied at the full 82 $\mu$m
+resolution.  This threshold was chosen to be a greyscale value of 18, the mean
+of the values described in section Section~\ref{th_opt} and was applied to the
+scan stacks in imageJ.  Once the binary stack was created a Gaussian filter was
+applied, also within imageJ, with $ \sigma_{x,y,z} = 1 $.  This was applied in
+order to remove speckling found surrounding the end-caps and some of the other
+noise visible in the scans.  The two stacks of images are then imported into
+ScanIP; carried out by opening one stack of images (the original stack) and
+then importing a second background (the binary image stack). Both backgrounds
+are downsampled to voxel sizes of 1 mm$^3$, with the (originally) binary stack
+being used to create the mask for the vertebrae and the original stack being
+used for the end-caps.  Greyscale material properties for the vertebral mask
+are taken from the binary stack, while the remainder of the methods follow the
+same process as the original method.  A comparison of the two approaches can be
+seen in \cref{fig:normal_vs_bv_tv_seg}, where the improved definition of
+trabecular structure and cortical shell using the bone volume fraction method
+can be seen in E and F.
 
 \begin{figure}[ht!]
 \centering
@@ -658,25 +716,15 @@ The origin of the masks coming from the two backgrounds can be seen in \cref{fig
 
 \subsubsection{Cement Volume Material Property Tests}
 
-Based on the results of the tests carried out on the bovine tail vertebrae in \cref{chap_bov}, different material properties and approaches were attempted to further the agreement between the experimental and computational results of augmented vertebrae.
-These were mainly changing the material properties of the interface layer between the bone and the cement, along with the material properties of the cement volume itself.
+Based on the results of the tests carried out on the bovine tail vertebrae in
+\cref{chap_bov}, different material properties and approaches were attempted to
+further the agreement between the experimental and computational results of
+augmented vertebrae.  These were mainly changing the material properties of the
+interface layer between the bone and the cement, along with the material
+properties of the cement volume itself.
 
-A different approach to modelling the cement region was also attempted.
-This used an inverse greyscale material property for the cement region, rather than a homogeneous material property for the region, based on the greyscale background of the non-augmented vertebral scans with the mask from the augmented models overlaid.
-This meant that darker regions of greyscale (within the cement volume) would be given a Young's modulus of PMMA cement (2.4 GPa) which would decrease linearly to the Young's modulus of the bone when entering into the brighter regions of the greyscale background.
-Representing the cement regions using this method meant that the underlying bone present inside the cement volumes is not ignored, instead the interdigitation between bone and cement in represented.
-While this representation is potentially inaccurate, it provides more detail that using a homogeneous material property and more detail than van be seen on the augmented vertebral scans.
-
-The relationship for the cement volume using this method was therefore:
-\begin{equation}
-	E(\rho) = \alpha \rho + c
-\end{equation}
-\begin{equation}
-	E(\rho) = -0.00842 \rho + 2.4
-\end{equation}
-
-Where $\rho$ is the greyscale value of each voxel and $E$ is the Young's modulus of each element within the cement region.
-This ensured that the Young's modulus of the regions containing no bone (greyscale = 0)  was equal to that of the cement and regions containing bone (greyscale = 255) had a Young's modulus equal to 250 MPa, an approximate value for trabecular bone, with a linear relationship between.
+These material properties were tested in an iterative fashion changing the
+properties in the python setup script
 
 Following the results of the above tests, the final material properties and boundary conditions for the augmented models are below.
 
@@ -993,13 +1041,18 @@ shifting density distributions are visible.}
 \end{figure}
 \subsubsection{Augmented Model Results}
 
-The optimum results using the image registration and outcomes of the sensitivity tests can be seen in \cref{fig:aug_init_vs_best} with the blue triangles.
-This registration method achieved a CCC = 0.46, while the initial method used (similar to the method used with the bovine tail vertebrae) achieved a CCC of 0.18.
+The optimum results using the image registration and outcomes of the
+sensitivity tests, including the explicitly defined needle tracks can be seen
+in \cref{fig:aug_init_vs_best} with the green triangles.  This registration
+method with the defined needle tracks achieved a CCC = 0.62, the registration
+method not using the needle tracks achieved a CCC = 0.46, while the initial
+method used (similar to the method used with the bovine tail vertebrae)
+achieved a CCC of 0.18.
 
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/aug_init_vs_best}
-	\caption{The results of using the initial method (red circles) and the registration method (blue triangles), showing the agreement to the perfect x=y line in orange.}
+	\includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/aug_init_vs_best_vs_ndl_trcks}
+	\caption{The results of using the initial method (red circles), the registration method (blue triangles) and using the defined needle tracks (green triangles), showing the agreement to the perfect x=y line in orange.}
 	\label{fig:aug_init_vs_best}
 \end{figure}
 
