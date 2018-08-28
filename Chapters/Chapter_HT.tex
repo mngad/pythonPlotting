@@ -724,23 +724,31 @@ interface layer between the bone and the cement, along with the material
 properties of the cement volume itself.
 
 These material properties were tested in an iterative fashion changing the
-properties in the python setup script
+properties in the file read by the python setup script.
+Following the results of the above tests, the final material properties for the
+cement and interface regions are in \cref{tab:matprops4cmt}.
 
-Following the results of the above tests, the final material properties and boundary conditions for the augmented models are below.
-
-The material properties for the yielding interface are:
-\begin{itemize}
-	\item 1 mm thick layer surrounding the cement volume (ScanIP dilate)
-	\item Young's modulus =  0.01 MPa
-	\item Poisson's ration = 0.4
-	\item Yield stress = 5 Pa, upon which it becomes perfectly plastic
-\end{itemize}
-
-The material properties for the cement volume are:
-\begin{itemize}
-	\item Young's modulus =  1.7 GPa
-	\item Poisson's ration = 0.4
-\end{itemize}
+\begin{table}[h]
+\centering
+\caption{The material properties for the injected cement volumes and it's
+	surrounding interface region for the three main modelling methods
+used. P.P., indicates perfectly plastic}
+\label{tab:matprops4cmt}
+\begin{tabular}{c|c|c|c}
+               & \multicolumn{3}{c}{Modelling Method}				\\
+	\hline 
+	Property	       & Non-registered & Registered & Registered  \\ 
+			       &		&	     & With Needle
+	Tracks \\ \hline
+Cement Young's Modulus    &1.7 GPa            & 1.5 GPa       & 1.5 GPa \\
+Cement Poisson's Ratio    &0.4                & 0.4           &0.4  \\ \hline
+Interface Young's Modulus & 0.05 GPa          & 0.01 GPa      &0.01 GPa \\ 
+Interface Poisson's Ratio & 0.4               & 0.4           & 0.4\\ 
+Interface Yield Stress	  & 50 Pa $\rightarrow$ P.P.      & 5 Pa $\rightarrow$
+P.P.  & 5 Pa $\rightarrow$ P.P.
+\\ \hline
+\end{tabular}
+\end{table}
 
 Boundary conditions for the cement region include: tie contacts between the vertebrae and interface, and between the interface and the cement volume.
 The remaining material properties and boundary conditions remain the same as with the non-augmented models.
