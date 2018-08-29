@@ -32,7 +32,8 @@ details shown in \cref{tab:vertebrae}.
 
 \subsection{Dissection \& Potting}
 
-The geometry of human lumbar vertebrae varies considerably to that of the bovine
+The geometry of human lumbar vertebrae varies considerably to that of the
+bovine
 tail vertebrae from which this methodology is based. This is characterised by
 much larger posterior elements with the facets extending much lower, below the
 bottom of the vertebral body. Hence, to correctly pot the human vertebrae much
@@ -56,13 +57,15 @@ pedicles at the narrowest part, limiting damage to the region.
 To pot the specimens that now lack a spinal canal, a retort stand was used to
 hold the vertebra, ensuring that both endplates were level on average. The
 specimen was then lowered down into the potting container leaving 5 mm between
-the bottom of the vertebra and the container. PMMA was poured into the container
+the bottom of the vertebra and the container. PMMA was poured into the
+container
 until the entire of the endplate was touching cement, with the edges of the
 vertebral body covered. Care needed to be taken to ensure all of the endplate
 was in contact with cement, given the extent of osteophytes creating non-flat
 surfaces in some of the more degenerated specimens. The other side of the
 vertebra was potted in a similar manner, however, due to the constraints of the
-potting container a measured quantity of cement was poured prior to lowering the
+potting container a measured quantity of cement was poured prior to lowering
+the
 vertebra into it. A spirit level ensured parallel end-caps.
 
 \subsection{Loading}
@@ -79,9 +82,11 @@ loading.
 
 The maximum stiffness of the vertebra was found in the same fashion as with the
 bovine tail vertebrae - measuring the stiffness of segments at increments over
-the length of the curve. Given that damage, especially for the intact specimens,
+the length of the curve. Given that damage, especially for the intact
+specimens,
 needs to be avoided the maximum loads used are on the conservative side. This
-can mean that the maximum stiffness is potentially at the end of the data set or
+can mean that the maximum stiffness is potentially at the end of the data set
+or
 that the stiffness is still increasing at the load cut off. The solution to the
 latter would require a prediction of the yield point prior to experimental
 loading (discussed in Section~\ref{predYield}), while the former could
@@ -100,8 +105,10 @@ increment size is computational cost, which is negligible here.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_1incr.png}
-  \caption{The effect of reducing the segment size on the maximum stiffness
+ 
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_1incr.png}
+
+ \caption{The effect of reducing the segment size on the maximum stiffness
     reported from four human vertebrae loaded to 2000 N pre and post
     augmentation. Using an increment size of 1 data point (0.0017 mm) and
     segment sizes of 100 to 1 data point (0.17 mm to 0.0017 mm).}
@@ -110,7 +117,8 @@ increment size is computational cost, which is negligible here.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_20incr.png}
+ 
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/findStiffness_20incr.png}
   \caption{The effect of reducing the segment size on the maximum stiffness
     reported from four human vertebrae loaded to 2000 N pre and post
     augmentation. Using an increment size of 20 data points (0.0037 mm) and
@@ -118,16 +126,21 @@ increment size is computational cost, which is negligible here.
   \label{fig:findStiffness_20incr}
 \end{figure}
 
-Using an increment size of 1 data points width, as shown in \cref{fig:findStiffness_1incr} shows a smaller variation across the range of
-segment sizes compared to using 20 points in \cref{fig:findStiffness_20incr}. The effect of both segment size and increment
-size is especially evident for the two Spine 2 L1 vertebrae both intact and post
-augmentation where the stiffness continues to increase until the end of the test
+Using an increment size of 1 data points width, as shown in
+\cref{fig:findStiffness_1incr} shows a smaller variation across the range of
+segment sizes compared to using 20 points in \cref{fig:findStiffness_20incr}.
+The effect of both segment size and increment
+size is especially evident for the two Spine 2 L1 vertebrae both intact and
+post
+augmentation where the stiffness continues to increase until the end of the
+test
 at 2000 N. Meaning that there is a much smaller linear region for these two
 specimens, hence requiring a smaller segment size to measure the largest
 gradient.
 
 Choosing values for the segment size to use moving forwards becomes difficult
-given the large effect it can have on the measured maximum stiffness (a range of
+given the large effect it can have on the measured maximum stiffness (a range
+of
 over 1000 N/mm in the case the two Spine 2 L1 tests). The segment size needs to
 be small enough to capture the maximum stiffness while avoiding the noise when
 using a segment size below 18 data points. Hence, a value of 20 data points was
@@ -142,9 +155,9 @@ becomes difficult especially from a single load. To attempt to understand this
 error four vertebrae having undergone augmentation were tested three more times
 in an iterative fashion, removing each from the load testing machine, testing
 the next specimen in the set and repeating. Removing the vertebrae from their
-steel housing (instead of three tests while seated in the steel housing) allowed
-the error in loading position and setup to be tested along with repeated loading
-of the vertebrae to be tested.
+steel housing (instead of three tests while seated in the steel housing)
+allowedthe error in loading position and setup to be tested along with repeated
+loading of the vertebrae to be tested.
 
 The results of repeated loading can be seen in \cref{fig:exp_repeats}. All
 four specimens show a reduced stiffness for the repeated loads following the
@@ -152,9 +165,10 @@ initial load, for which there are a few possible reasons. One possibility for
 the reduction in stiffness is that it is a consequence of the freeze thaw cycle
 that occurred between these tests. The second possibility is that the vertebrae
 were still partially frozen while the testing took place. Finally, it could be
-due to damage being caused during the initial load to 2000 N, shown in \cref{fig:Spine2_L1,fig:Spine3_L3} it is possible to see slight failure
-in the three Spine 3 vertebrae, although failure cannot be seen in the Spine 2 L1
-vertebrae. The frozen bar in \cref{fig:exp_repeats} shows how the
+due to damage being caused during the initial load to 2000 N, shown in
+\cref{fig:Spine2_L1,fig:Spine3_L3} it is possible to see slight failure
+in the three Spine 3 vertebrae, although failure cannot be seen in the Spine 2
+L1 vertebrae. The frozen bar in \cref{fig:exp_repeats} shows how the
 stiffness increases when the vertebrae are completely frozen, potentially
 helping to explain the drop in stiffness found in the repeats. Further tests
 will be carried out with three more repeats following another freeze thaw cycle
@@ -172,11 +186,12 @@ initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=6in]{Chapters/Chapter_HT_images/experimental_repeats.png}
+ 
+\includegraphics[width=6in]{Chapters/Chapter_HT_images/experimental_repeats.png}
   \caption{The stiffness of four augmented vertebral specimens over the course
-    of an initial load, three repeated loads and a load while frozen. The intact
-    specimen was loaded until 2000 N while the remaining four were loaded until
-    1600 N.}
+    of an initial load, three repeated loads and a load while frozen. The
+intact specimen was loaded until 2000 N while the remaining four were loaded
+until 1600 N.}
   \label{fig:exp_repeats}
 \end{figure}
 
@@ -235,24 +250,31 @@ An additional difference was the approach with the needle, instead of entering
 the vertebrae through their pedicles an oblique approach was adopted. This was
 due to variation in pedicle diameter between the L1 - L5 lumbar levels and
 therefore the potential to damage the region and its load sharing capabilities.
-The oblique approach therefore avoided creating this damage to the pedicle-canal
+The oblique approach therefore avoided creating this damage to the
+pedicle-canal
 region, especially for the vertebrae with narrower pedicles and instead created
 much less damage to the vertebral body.
-An illustration of this approach can be seen in \cref{fig:vp-ill} with an example $\mu$CT scan shown in \cref{fig:vp-ill_scan}.
+An illustration of this approach can be seen in \cref{fig:vp-ill} with an
+example $\mu$CT scan shown in \cref{fig:vp-ill_scan}.
 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=4in]{Chapters/Chapter_HT_images/vp_illustration.png}
-  \caption{An illustration showing the approach to needle insertion and cement position.}
+  \caption{An illustration showing the approach to needle insertion and cement
+position.}
   \label{fig:vp-ill}
 \end{figure}
 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/vp_illustration_scan.png}
-  \caption{A $\mu$CT scan showing the injected volume of cement at the anterior of the vertebral body with the cement track from the exiting needle to the right. For this specimen cement leaked through the anterior wall, limiting the quantity of cement injected.}
+ 
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/vp_illustration_scan.png}
+  \caption{A $\mu$CT scan showing the injected volume of cement at the anterior
+of the vertebral body with the cement track from the exiting needle to the
+right. For this specimen cement leaked through the anterior wall, limiting the
+quantity of cement injected.}
   \label{fig:vp-ill_scan}
 \end{figure}
 
@@ -261,12 +283,21 @@ Here, a side opening needle was used, allowing the cement to be directed into
 the anterior-centre region of the vertebral body as opposed to directly out of
 the needle end.
 
-It was attempted to inject the largest possible volumes of cement into the vertebrae, mimicking the clinical process.
-Like the clinical procedure the injection was stopped upon cement leakage, which generally occurred through one of the vascular channels at either the posterior or anterior portions of the vertebrae.
-However, despite stopping the injection upon cement leakage through vascular channels leading from the vertebral body surface inwards, cement loss occurred.
-In addition to this, cement was also lost in the needle itself, where as the cement set the amount of cement remaining in the needle became difficult to measure.
-This meant that the cement fill could not be measured though the amount of PMMA leaving the syringe due to leakage and needle losses.
-Hence cement fill volume was measured using segmented $\mu$CT scans, the methodology of which is described below.
+It was attempted to inject the largest possible volumes of cement into the
+vertebrae, mimicking the clinical process.
+Like the clinical procedure the injection was stopped upon cement leakage,
+which generally occurred through one of the vascular channels at either the
+posterior or anterior portions of the vertebrae.
+However, despite stopping the injection upon cement leakage through vascular
+channels leading from the vertebral body surface inwards, cement loss
+occurred.
+In addition to this, cement was also lost in the needle itself, where as the
+cement set the amount of cement remaining in the needle became difficult to
+measure.
+This meant that the cement fill could not be measured though the amount of PMMA
+leaving the syringe due to leakage and needle losses.
+Hence cement fill volume was measured using segmented $\mu$CT scans, the
+methodology of which is described below.
 
 \subsection{Vertebrae Characteristics}
 
@@ -275,7 +306,8 @@ importance in understanding trends and relationships between the experimental
 and computational results. For example a larger degree of anisotropy and hence
 more directionality aligned trabeculae would potentially give a more
 experimentally stiff vertebra, despite otherwise similar characteristics. Given
-that much of the vertebral characteristics depend on the trabecular structure it
+that much of the vertebral characteristics depend on the trabecular structure
+it
 is important to understand how this varies between specimens. Furthermore, any
 calculations originating from a description of the trabecular structure require
 a correct threshold to be applied to the $\mu$CT scan. This threshold describes
@@ -284,7 +316,8 @@ space. To enable a fair comparison between vertebrae a region of interest was
 selected from the vertebral body. Given the large variation in cortical shell
 thickness, along with certain vertebrae containing large osteophytes and other
 extra bone growth, the region of interest (ROI) was selected to be the largest
-cylinder that could fit within the vertebral body while not capturing any of the
+cylinder that could fit within the vertebral body while not capturing any of
+the
 cortical shell.
 
 \subsubsection{Histograms}
@@ -294,8 +327,10 @@ histograms of the ROIs were plotted (\cref{fig:normalisedhistogram}).
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/Normalised_Histogram.png}
-  \caption{The normalised (with respect to the volume of the ROI) histogram data
+ 
+\includegraphics[width=4in]{Chapters/Chapter_HT_images/Normalised_Histogram.png}
+  \caption{The normalised (with respect to the volume of the ROI) histogram
+data
     for the 14 lumbar vertebrae.}
   \label{fig:normalisedhistogram}
 \end{figure}
@@ -313,21 +348,40 @@ shell, for example Spine 2 L1.
 \subsubsection{Threshold Optimisation}\label{th_opt}
 
 
-The full resolution scan is imported into imageJ where the threshold optimisation is carried out.
-The BoneJ plugin for imageJ is used for all of the trabecular structure metrics, with the optimise threshold tool being the focus here.
-The threshold optimisation feature works by optimising the connectivity (Conn.D) against threshold value \autocite{Doubea2010}.
-This tool is run on the region of interest using the default settings for the connectivity options seen in \cref{tab:bonej}.
-This chooses a threshold based on the peak in a connectivity against threshold plot and reports that value.
-These values can be seen in \cref{tab:optTH}, showing considerable across the range of vertebrae.
-However, the differences in these suggested thresholds can grouped with the spine, for example: the G17 spine has a range between 15 to 17, while the G41 spine has a range between 18 to 20.
-This promotes the idea that these differences are due to the bone mineralisation of the bone, especially given that the G17 spine is from a Female and G41 from a male.
+The full resolution scan is imported into imageJ where the threshold
+optimisation is carried out.
+The BoneJ plugin for imageJ is used for all of the trabecular structure
+metrics, with the optimise threshold tool being the focus here.
+The threshold optimisation feature works by optimising the connectivity
+(Conn.D) against threshold value \autocite{Doubea2010}.
+This tool is run on the region of interest using the default settings for the
+connectivity options seen in \cref{tab:bonej}.
+This chooses a threshold based on the peak in a connectivity against threshold
+plot and reports that value.
+These values can be seen in \cref{tab:optTH}, showing considerable across the
+range of vertebrae.
+However, the differences in these suggested thresholds can grouped with the
+spine, for example: the G17 spine has a range between 15 to 17, while the G41
+spine has a range between 18 to 20.
+This promotes the idea that these differences are due to the bone
+mineralisation of the bone, especially given that the G17 spine is from a
+Female and G41 from a male.
 
-However, given that the chosen value for the threshold will directly impact the reported metrics, a consistent value was chosen of 18. Using lower or higher values for the threshold usually results in the trabeculae being described as thicker or thinner respectively.
-Hence, the difference in the mineralisation between specimens will still be captured when using a fixed threshold, given that the binary image will be down sampled before material properties are acquired.
-The results in \cref{tab:bv_tv_anis} show the BV / TV data and degree of anisotropy values for the 14 specimens using the fixed threshold of 18.
-Similar trends to what could be seen from the optimise threshold results can be seen in the BV/TV data, with grouping between the
+However, given that the chosen value for the threshold will directly impact the
+reported metrics, a consistent value was chosen of 18. Using lower or higher
+values for the threshold usually results in the trabeculae being described as
+thicker or thinner respectively.
+Hence, the difference in the mineralisation between specimens will still be
+captured when using a fixed threshold, given that the binary image will be down
+sampled before material properties are acquired.
+The results in \cref{tab:bv_tv_anis} show the BV / TV data and degree of
+anisotropy values for the 14 specimens using the fixed threshold of 18.
+Similar trends to what could be seen from the optimise threshold results can be
+seen in the BV/TV data, with grouping between the
 spines evident.
-The Spine 1 spine has a much lower bone volume fraction compared to the other spines, which suggests a more osteoporotic spine, most likely resulting in less stiff vertebra.
+The Spine 1 spine has a much lower bone volume fraction compared to the other
+spines, which suggests a more osteoporotic spine, most likely resulting in less
+stiff vertebra.
 
 \begin{table}[ht!]
 	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
@@ -347,7 +401,8 @@ The Spine 1 spine has a much lower bone volume fraction compared to the other sp
 \end{table}
 
 \begin{table}[ht!]
-	\caption{The suggested threshold from the optimise threshold BoneJ tool for the 14 lumbar vertebrae in the set.}
+	\caption{The suggested threshold from the optimise threshold BoneJ tool for
+the 14 lumbar vertebrae in the set.}
 	\label{tab:optTH}
 	\centering
 	\begin{tabular}{c|c}
@@ -386,7 +441,8 @@ generation in Simpleware ScanIP, and solving the models in Abaqus using setup
 scripts written in python. One difference in this chapter is that the models
 were run on ARC2, part of the High Performance Computing facilities at the
 University of Leeds. Here, the submission of jobs (simple shell scripts
-describing the process to be carried out) onto the cluster is carried out using the Sun Grid
+describing the process to be carried out) onto the cluster is carried out using
+the Sun Grid
 Engine, a first come first served scheduler for the cluster. By running the FE
 simulation on the HPC cluster with resources: 10 cores, 1000 MB of memory per
 core, the time to solve each model was reduced to 5 - 10 minutes compared to 20
@@ -416,19 +472,22 @@ displacement to give a stiffness) from each model are written to a results file
 which can be copied to the desktop PC and analysed. Finally, the shell script
 describes the resources to be requested from the HPC cluster including a
 maximum amount of time and then gives the command to be run: \texttt{abaqus cae
-nogui=setup.py \&\& abaqus cae nogui=run.py \&\& abaqus cae nogui=post.py}. For new
+nogui=setup.py \&\& abaqus cae nogui=run.py \&\& abaqus cae nogui=post.py}. For
+new
 tests with potentially unexpected outcomes the abaqus output files were copied
 to the desktop PC to be viewed, while if incremental material property chanes
 were being made only the stiffness results were copied.
 
 
-\subsection{Non-augmented Vertebrae Modelling Sensitivity Tests}\label{sec:non_aug_sens}
+\subsection{Non-augmented Vertebrae Modelling Sensitivity
+Tests}\label{sec:non_aug_sens}
 
 Given the aims of the project - to include the models generated here into a
 larger set of vertebral models for use in statistical shape modelling, it is
 useful to model the vertebrae in a scanner independent method. A method for
 doing this (BV/TV modelling method) uses a full resolution scan with the bone
-regions segmented using a threshold. This full resolution segmented scan is then
+regions segmented using a threshold. This full resolution segmented scan is
+then
 downsampled to voxels with edge length of 1 mm, meaning that each voxel has a
 greyscale value proportional to the BV/TV value for the region captured by that
 voxel. Areas that contain more bone will therefore have a higher greyscale
@@ -484,19 +543,23 @@ can be seen in E and F.
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/normal_vs_bvtv_seg.png}
-	\caption{A comparison of the normal method (A, B and C) and the bone volume fraction method (D, E and F). A shows the full (82 $\mu$m) resolution scan, B shows the same image downsampled to 1 mm resolution and C shows the segmented scan. D shows the segmented bone at 82 $\mu$m, E shows this image downsampled to 1 mm and F shows this image after segmentation.}
+	\caption{A comparison of the normal method (A, B and C) and the bone volume
+fraction method (D, E and F). A shows the full (82 $\mu$m) resolution scan, B
+shows the same image downsampled to 1 mm resolution and C shows the segmented
+scan. D shows the segmented bone at 82 $\mu$m, E shows this image downsampled
+to 1 mm and F shows this image after segmentation.}
 \label{fig:normal_vs_bv_tv_seg}
 \end{figure}
 
 %\begin{figure}[ht!]
 %  \centering
-%  \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
+% \includegraphics[width=6in]{Chapters/Chapter_HT_images/diffModellingMethods.png}
 %  \caption{The stiffness results of three different FE methods for four intact
 %    human vertebrae compared to the experimental stiffness results. Interest
-%    should be drawn to the ratio between specimen models rather than the values
+%    should be drawn to the ratio between specimen models rather than thevalues
 %    themselves, given that the conversion factors between greyscale values and
 %    Young's modulus have not been optimised at this stage. Results show the
-%    difference between the currently used method of modelling the vertebrae and
+%    difference between the currently used method of modelling the vertebraeand
 %    the BV/TV based methods (both with uniform thresholds and different
 %    thresholds for each specimen).}
 %  \label{fig:diffModellingMethods}
@@ -509,38 +572,64 @@ can be seen in E and F.
 
 \subsubsection{Load Position Sensitivity}
 
-In order to understand how the vertebrae respond to different loading positions, 16 different positions were tested, shown in \cref{fig:loading_pos}.
-These positions included 1~mm and 2~mm aways from the centre in the posterior, anterior, left and right directions along with larger deviations of 10~mm and 20~mm from the centre in the same directions.
-The same boundary conditions, along with the 1 mm of displacement described above were applied to the different loading positions and the change in stiffness was recorded.
+In order to understand how the vertebrae respond to different loading
+positions, 16 different positions were tested, shown in
+\cref{fig:loading_pos}.
+These positions included 1~mm and 2~mm aways from the centre in the posterior,
+anterior, left and right directions along with larger deviations of 10~mm and
+20~mm from the centre in the same directions.
+The same boundary conditions, along with the 1 mm of displacement described
+above were applied to the different loading positions and the change in
+stiffness was recorded.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/Loading_positions_Human.png}
-\caption{The loading positions used for the load variation tests. Position X is the original central loading position for ap and lr loading, other loading positions are 1~mm, 2~mm, 10~mm and 20~mm away from the centre.}
+\caption{The loading positions used for the load variation tests. Position X is
+the original central loading position for ap and lr loading, other loading
+positions are 1~mm, 2~mm, 10~mm and 20~mm away from the centre.}
 \label{fig:loading_pos}
 \end{figure}
 
 
-The results of the load position sensitivity tests (\cref{fig:hum_load_ap}) show that on average, small posterior loads (above denser bone) result in higher stiffness's while all anterior loads result in a reduced stiffness. Loads lateral to the central loading point (\cref{fig:hum_load_lr}) resulted in little mean change to the stiffness of the models for the 1 and 2~mm positions.
-Larger movements away from the central loading position (10~mm and 20~mm) result in almost all vertebrae presenting a reduction in stiffness.
-Loading positions at 20~mm left and right present the largest reductions, where in the body the expected loads are less compared to anterior/posterior loading.
-Additionally, larger anterior loads resulted in larger reductions in the stiffness, given the less dense nature of anterior portions of the vertebral body
+The results of the load position sensitivity tests (\cref{fig:hum_load_ap})
+show that on average, small posterior loads (above denser bone) result in
+higher stiffness's while all anterior loads result in a reduced stiffness.
+Loads lateral to the central loading point (\cref{fig:hum_load_lr}) resulted in
+little mean change to the stiffness of the models for the 1 and 2~mm
+positions.
+Larger movements away from the central loading position (10~mm and 20~mm)
+result in almost all vertebrae presenting a reduction in stiffness.
+Loading positions at 20~mm left and right present the largest reductions, where
+in the body the expected loads are less compared to anterior/posterior
+loading.
+Additionally, larger anterior loads resulted in larger reductions in the
+stiffness, given the less dense nature of anterior portions of the vertebral
+body
 
-It also shows that the effect of movements of 1 mm away from the experimental loading position only changes the stiffness by approximately 5 \%.
-Given the resolution of the models is limited to 1 mm, the accuracy of the selection of the experimental loading positions is also limited to 1 mm.
-The maximum 5 \% change to the stiffness when posterior or anterior may describe some of the error seen when comparing the experimental and computational results.
+It also shows that the effect of movements of 1 mm away from the experimental
+loading position only changes the stiffness by approximately 5 \%.
+Given the resolution of the models is limited to 1 mm, the accuracy of the
+selection of the experimental loading positions is also limited to 1 mm.
+The maximum 5 \% change to the stiffness when posterior or anterior may
+describe some of the error seen when comparing the experimental and
+computational results.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/hum_ap.png}
-\caption{The effect of the loading position for the human lumbar vertebrae, shown as a percentage change compared to a central loading position, for load positions from the posterior to anterior according to \cref{fig:loading_pos}}
+\caption{The effect of the loading position for the human lumbar vertebrae,
+shown as a percentage change compared to a central loading position, for load
+positions from the posterior to anterior according to \cref{fig:loading_pos}}
 \label{fig:hum_load_ap}
 \end{figure}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/hum_lr.png}
-\caption{The effect of the loading position for the human lumbar vertebrae, shown as a percentage change compared to a central loading position, for load positions from the left to the right according to \cref{fig:loading_pos}}
+\caption{The effect of the loading position for the human lumbar vertebrae,
+shown as a percentage change compared to a central loading position, for load
+positions from the left to the right according to \cref{fig:loading_pos}}
 \label{fig:hum_load_lr}
 \end{figure}
 
@@ -548,31 +637,59 @@ The maximum 5 \% change to the stiffness when posterior or anterior may describe
 
 \subsubsection{End-cap Depth \& Contact sensitivity}
 
-The stress distribution at the surface of the vertebral body shows high stress at the edges of the cement endcaps, at both the top and bottom of these regions, shown in \cref{fig:stress_lines}.
-Experimentally the endcaps are merely moulded to the shape of the top and bottom of the vertebral body, however, previous work and other studies have used tied contact between the bone and endcaps, removing any motion between the two and locking neighbouring nodes together.
-Additionally, the depth of these endcaps varies between 5 mm and 20 mm depending on the shape of the vertebral endplates.
-The more concave the vertebral endcap was the more cement was required to fill the space forming a flat cement surface.
+The stress distribution at the surface of the vertebral body shows high stress
+at the edges of the cement endcaps, at both the top and bottom of these
+regions, shown in \cref{fig:stress_lines}.
+Experimentally the endcaps are merely moulded to the shape of the top and
+bottom of the vertebral body, however, previous work and other studies have
+used tied contact between the bone and endcaps, removing any motion between the
+two and locking neighbouring nodes together.
+Additionally, the depth of these endcaps varies between 5 mm and 20 mm
+depending on the shape of the vertebral endplates.
+The more concave the vertebral endcap was the more cement was required to fill
+the space forming a flat cement surface.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/stress_lines.pdf}
-\caption{The effect of having tied contacts between the endcaps and the bone, with the increases in Von Mices stress indicated.}
+\caption{The effect of having tied contacts between the endcaps and the bone,
+with the increases in Von Mices stress indicated.}
 \label{fig:stress_lines}
 \end{figure}
 
 
-Given this variation, tests identifying the effect of changing the endcap depth were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and $\pm$ 3 mm for the top and bottom endcaps independently and together.
-Additionally, different interactions between the bone and cement endcaps were tested.
-This included the current standard method of a tied interaction and replacing this with a frictionless contact between the two materials.
-Finally, the effect of changing the cement endcap depth with the frictionless contact was also investigated, along with variations to the properties of the frictionless contacts.
-This was carried out given that, experimentally, there is no tied contact between the PMMA and the bone due to the lack of adhesive properties for the PMMA.
+Given this variation, tests identifying the effect of changing the endcap depth
+were carried out using FEA models with different depths of $\pm$ 1, $\pm$ 2 and
+$\pm$ 3 mm for the top and bottom endcaps independently and together.
+Additionally, different interactions between the bone and cement endcaps were
+tested.
+This included the current standard method of a tied interaction and replacing
+this with a frictionless contact between the two materials.
+Finally, the effect of changing the cement endcap depth with the frictionless
+contact was also investigated, along with variations to the properties of the
+frictionless contacts.
+This was carried out given that, experimentally, there is no tied contact
+between the PMMA and the bone due to the lack of adhesive properties for the
+PMMA.
 
-The endcap depth was altered by adding and removing layers within the model file in ScanIP, re-meshing the model and running the files using the same Abaqus python scripts.
-Endcap contacts were changed within the Abaqus python scripts, by firstly removing the ties between the endcap and the vertebra.
-An interaction property was created with tangential behaviour set to frictionless and normal behavior with properties: $pressureOverclosure=HARD,  constraintEnforcementMethod=Default$ and the final option was experimented with, $allowSeperation=ON/OFF$.
-The $allowSeperation$ variable determines whether separation is permitted once contact is established and models ran correctly with it set to its default of $ON$.
-However, when experimenting with the effect of loading position, especially with loads applied far from the vertebral centre, the solver struggled to converge.
-Disallowing separation after contact was shown to have a small effect on the results (the outputted stiffness) and allowed the models to run to the completion of the job.
+The endcap depth was altered by adding and removing layers within the model
+file in ScanIP, re-meshing the model and running the files using the same
+Abaqus python scripts.
+Endcap contacts were changed within the Abaqus python scripts, by firstly
+removing the ties between the endcap and the vertebra.
+An interaction property was created with tangential behaviour set to
+frictionless and normal behavior with properties: $pressureOverclosure=HARD, 
+constraintEnforcementMethod=Default$ and the final option was experimented
+with, $allowSeperation=ON/OFF$.
+The $allowSeperation$ variable determines whether separation is permitted once
+contact is established and models ran correctly with it set to its default of
+$ON$.
+However, when experimenting with the effect of loading position, especially
+with loads applied far from the vertebral centre, the solver struggled to
+converge.
+Disallowing separation after contact was shown to have a small effect on the
+results (the outputted stiffness) and allowed the models to run to the
+completion of the job.
 The remaining settings were set to the default for a generic contact: 
 
 $
@@ -587,21 +704,46 @@ $
 	bondingSet=None \\
 $
 
-The results shown in \cref{fig:with,fig:without} show that regardless of the contact, increasing the depth of the endcaps significantly increases the stiffness of the vertebrae, while reducing the depth reduces the measured stiffness.
-The effect this extra or reduced constraint caused by the changing endcap depth broadly follows the same trends for the two vertebrae tested.
-However, the response does differ most notably at the extremes of endcap depths ($\pm$3 mm), where the spine 4 L5 vertebrae experiences the greater reduction in stiffness when reducing the endcap depth, while the spine 1 L2 vertebrae sees the greater increase following depth increases.
-This difference is a consequence of the differences in the density of the vertebrae (where spine 4 is, on average, much denser than spine 1 in terms of mean greyscale value) and the differences in the shape (the L5 vertebrae being much wider with greater protruding bone spurs at the bottom of the vertebrae and the narrower L2 vertebrae having the bone spurs at the top of the vertebrae.
-These shape differences can be seen in \cref{fig:Spine 1_projection,fig:Spine 4_projection}.
+The results shown in \cref{fig:with,fig:without} show that regardless of the
+contact, increasing the depth of the endcaps significantly increases the
+stiffness of the vertebrae, while reducing the depth reduces the measured
+stiffness.
+The effect this extra or reduced constraint caused by the changing endcap depth
+broadly follows the same trends for the two vertebrae tested.
+However, the response does differ most notably at the extremes of endcap depths
+($\pm$3 mm), where the spine 4 L5 vertebrae experiences the greater reduction
+in stiffness when reducing the endcap depth, while the spine 1 L2 vertebrae
+sees the greater increase following depth increases.
+This difference is a consequence of the differences in the density of the
+vertebrae (where spine 4 is, on average, much denser than spine 1 in terms of
+mean greyscale value) and the differences in the shape (the L5 vertebrae being
+much wider with greater protruding bone spurs at the bottom of the vertebrae
+and the narrower L2 vertebrae having the bone spurs at the top of the
+vertebrae.
+These shape differences can be seen in \cref{fig:Spine 1_projection,fig:Spine
+4_projection}.
 
-The variation in the change to the stiffness within $\pm$ 1mm change in depth was up to 5 \%, for both cases.
-Given that the maximum error in masking the cement endcaps is 0.5 mm due to the resolution that is used for the segmentation, it suggests that this error has a minimal effect on the end results.
+The variation in the change to the stiffness within $\pm$ 1mm change in depth
+was up to 5 \%, for both cases.
+Given that the maximum error in masking the cement endcaps is 0.5 mm due to the
+resolution that is used for the segmentation, it suggests that this error has a
+minimal effect on the end results.
 
-The effect of changing the contact from tied to frictionless can be seen by comparing \cref{fig:with,fig:without}.
-Excluding the very large change in stiffness seen in the L5 vertebra when reducing the depth of the inferior endcap, the adoption of the frictionless contact between endcap and vertebrae means that the effect of endcap depth on measured stiffness is reduced.
-This is due to a reduction in the constraining nature of the frictionless contact.
-The anomalous L5 vertebrae here is a function of having less support and the slipping that this allowed, resulting in the reduced measured stiffness.
-Optimising the greyscale conversion factor for the set of models with a tied constraint and a frictionless contact gave concordance correlation coefficients of 0.848 and 0.865 respectively.
-Therefore the frictionless contact providing a small improvement in the agreement between the computational and experimental results.
+The effect of changing the contact from tied to frictionless can be seen by
+comparing \cref{fig:with,fig:without}.
+Excluding the very large change in stiffness seen in the L5 vertebra when
+reducing the depth of the inferior endcap, the adoption of the frictionless
+contact between endcap and vertebrae means that the effect of endcap depth on
+measured stiffness is reduced.
+This is due to a reduction in the constraining nature of the frictionless
+contact.
+The anomalous L5 vertebrae here is a function of having less support and the
+slipping that this allowed, resulting in the reduced measured stiffness.
+Optimising the greyscale conversion factor for the set of models with a tied
+constraint and a frictionless contact gave concordance correlation coefficients
+of 0.848 and 0.865 respectively.
+Therefore the frictionless contact providing a small improvement in the
+agreement between the computational and experimental results.
 
 
 
@@ -610,32 +752,51 @@ Therefore the frictionless contact providing a small improvement in the agreemen
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/with.pdf}
-\caption{The percentage change in stiffness following a change to the endcap thickness. Inf and Sup show changes of $\pm$ 1, 2 and 3 mm to the inferior and superior endcap depth respectively. The endcaps have a tied contact to the vertebrae.}
+\caption{The percentage change in stiffness following a change to the endcap
+thickness. Inf and Sup show changes of $\pm$ 1, 2 and 3 mm to the inferior and
+superior endcap depth respectively. The endcaps have a tied contact to the
+vertebrae.}
 \label{fig:with}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/without.pdf}
-\caption{The percentage change in stiffness following a change to the endcap thickness. Inf and Sup show changes of $\pm$ 1, 2 and 3 mm to the inferior and superior endcap depth respectively. The endcaps have a frictionless contact to the vertebrae.}
+\caption{The percentage change in stiffness following a change to the endcap
+thickness. Inf and Sup show changes of $\pm$ 1, 2 and 3 mm to the inferior and
+superior endcap depth respectively. The endcaps have a frictionless contact to
+the vertebrae.}
 \label{fig:without}
 \end{figure}
 
-Further tuning of the specifics of the frictionless contact could be carried out to see if an improved agreement could be achieved would be a simple addition to this sensitivity test.
-However, due to the greyscale conversion factor optimisation process required to test each option this would be a timely operation, which, given the minimal effect of changing to the frictionless contact, could yield negligible results.
+Further tuning of the specifics of the frictionless contact could be carried
+out to see if an improved agreement could be achieved would be a simple
+addition to this sensitivity test.
+However, due to the greyscale conversion factor optimisation process required
+to test each option this would be a timely operation, which, given the minimal
+effect of changing to the frictionless contact, could yield negligible
+results.
 
 
 
 
 \subsection{Material Properties}
 
-The general method for getting material properties for the bone elements in the FE models uses the same approach as used in \cref{material-properties-bov} where the Young's modulus of each element is equal to the greyscale value multiplied by a conversion factor.
-The conversion factor is optimised by comparing the computational stiffness against the experimentally acquired stiffness.
-For the optimisation process the vertebrae were split into two groups at random, giving a calibration and validation set, allowing a test of the validity of the greyscale conversion factor.
-The split of the vertebrae for these two sets can be seen in \cref{tab:calib_valid}.
+The general method for getting material properties for the bone elements in the
+FE models uses the same approach as used in \cref{material-properties-bov}
+where the Young's modulus of each element is equal to the greyscale value
+multiplied by a conversion factor.
+The conversion factor is optimised by comparing the computational stiffness
+against the experimentally acquired stiffness.
+For the optimisation process the vertebrae were split into two groups at
+random, giving a calibration and validation set, allowing a test of the
+validity of the greyscale conversion factor.
+The split of the vertebrae for these two sets can be seen in
+\cref{tab:calib_valid}.
 
 \begin{table}[ht!]
-	\caption{The vertebrae used for the calibration set and the validation set in the optimisation process.}
+	\caption{The vertebrae used for the calibration set and the validation set in
+the optimisation process.}
 	\label{tab:calib_valid}
 	\centering
 	\begin{tabular}{c|c}
@@ -652,69 +813,154 @@ The split of the vertebrae for these two sets can be seen in \cref{tab:calib_val
 \end{table}
 
 
-Results from the initial optimisation process using the calibration and validation processes gave good results, in that the agreement of the validation set had CCC values of above 0.5.
-The validation set for the ``normal" method had a CCC value of 0.591 and the CCC value for the validate set from the ``bone volume fraction" method gave a value of 0.831.
+Results from the initial optimisation process using the calibration and
+validation processes gave good results, in that the agreement of the validation
+set had CCC values of above 0.5.
+The validation set for the ``normal" method had a CCC value of 0.591 and the
+CCC value for the validate set from the ``bone volume fraction" method gave a
+value of 0.831.
 
-Given the problems associated with calculating the greyscale conversion factor with various sensitivity tests described in \cref{sec:non_aug_sens}, the calibration and validation sets were only used for the initial test, once using the ``normal" method and once using the ``bone volume fraction" method.
-This validated the use of the optimisation process while allowing more accurate greyscale conversion factors for the sensitivity tests and final values given that the input set of human vertebrae was relatively small.
+Given the problems associated with calculating the greyscale conversion factor
+with various sensitivity tests described in \cref{sec:non_aug_sens}, the
+calibration and validation sets were only used for the initial test, once using
+the ``normal" method and once using the ``bone volume fraction" method.
+This validated the use of the optimisation process while allowing more accurate
+greyscale conversion factors for the sensitivity tests and final values given
+that the input set of human vertebrae was relatively small.
 
-Following the results of the sensitivity tests the final value from the optimisation process for the greyscale conversion factor was 0.0009625.
-This was used for the bone properties for all final non-augmented models and augmented models.
+Following the results of the sensitivity tests the final value from the
+optimisation process for the greyscale conversion factor was 0.0009625.
+This was used for the bone properties for all final non-augmented models and
+augmented models.
 
-The remaining material properties used for all of the models are a Poisson's ration of 0.3 for the bone and endcaps and a Young's modulus of 2.45~GPa for the endcaps. 
+The remaining material properties used for all of the models are a Poisson's
+ration of 0.3 for the bone and endcaps and a Young's modulus of 2.45~GPa for
+the endcaps. 
 
 \subsection{Modelling Augmentation}
 
-Given the limited validation of models achieved using bovine tail vertebrae (due to the reasons discussed in Section~\ref{bov:results}), a range of different material properties and approaches to modelling the bone-cement interface were investigated.
-In addition to varying the material properties of the injected volumes of cement, the effect of using a combination of scans from before and after augmentation has been experimented with.
+Given the limited validation of models achieved using bovine tail vertebrae
+(due to the reasons discussed in Section~\ref{bov:results}), a range of
+different material properties and approaches to modelling the bone-cement
+interface were investigated.
+In addition to varying the material properties of the injected volumes of
+cement, the effect of using a combination of scans from before and after
+augmentation has been experimented with.
 To achieve this scans of pre/post augmentation were registered.
-This method utilised the BV/TV method described earlier, where the non-augmented full resolution thresholded scan is registered to the full resolution augmented scan.
+This method utilised the BV/TV method described earlier, where the
+non-augmented full resolution thresholded scan is registered to the full
+resolution augmented scan.
 
 \subsubsection{Registration of $\mu$CT Scans}
 
-Artificial brightening of regions surrounding the internal cement (specifically the concentrated volumes of barium sulphate and the artefacts associated) affect the material properties that are applied to the material, seen in the right-hand image in \cref{fig:reg_demo}.
-To bypass this effect the two models, intact and post-augmentation models can be registered - translating them into the same spacial location.
-This allows the cement to be defined, masked and modelled based on the post-augmentation scan and the remaining vertebra to be defined from the intact scan, the same background used for the intact models.
-While the shape of the vertebra may have been changed over the course of its two loads, this change is less than what can be seen at 1 mm resolution and is not apparent during the registration process carried out at 82 $\mu$m resolution.
-Additionally regions that have experienced damage through the insertion of the needle, yet do not contain cement, will also be neglected using this method.
-However, the same justification can be made, where this is unlikely to have any affect at 1 mm resolution.
+Artificial brightening of regions surrounding the internal cement (specifically
+the concentrated volumes of barium sulphate and the artefacts associated)
+affect the material properties that are applied to the material, seen in the
+right-hand image in \cref{fig:reg_demo}.
+To bypass this effect the two models, intact and post-augmentation models can
+be registered - translating them into the same spacial location.
+This allows the cement to be defined, masked and modelled based on the
+post-augmentation scan and the remaining vertebra to be defined from the intact
+scan, the same background used for the intact models.
+While the shape of the vertebra may have been changed over the course of its
+two loads, this change is less than what can be seen at 1 mm resolution and is
+not apparent during the registration process carried out at 82 $\mu$m
+resolution.
+Additionally regions that have experienced damage through the insertion of the
+needle, yet do not contain cement, will also be neglected using this method.
+However, the same justification can be made, where this is unlikely to have any
+affect at 1 mm resolution.
 
-Registration of the images was carried out in 3D Slicer, using scans of the segmented, full-resolution, non-augmented vertebrae and the full-resolution augmented vertebral scans.
-The method of registration was a landmark based approach using three landmarks for each vertebra, translating the scan of the augmented vertebrae.
-These points were selected at superior of one pedicle, the inferior of the other pedicle and the inferior anterior of the vertebral body.
-The selection of these points proved to provide a repeatable registration of the vertebrae, without selecting superfluous landmarks.
-Once registered the resulting translated augmented vertebrae scan was cropped with respect to the non-augmented scan to provide an aligned and registered pair of scans.
+Registration of the images was carried out in 3D Slicer, using scans of the
+segmented, full-resolution, non-augmented vertebrae and the full-resolution
+augmented vertebral scans.
+The method of registration was a landmark based approach using three landmarks
+for each vertebra, translating the scan of the augmented vertebrae.
+These points were selected at superior of one pedicle, the inferior of the
+other pedicle and the inferior anterior of the vertebral body.
+The selection of these points proved to provide a repeatable registration of
+the vertebrae, without selecting superfluous landmarks.
+Once registered the resulting translated augmented vertebrae scan was cropped
+with respect to the non-augmented scan to provide an aligned and registered
+pair of scans.
 
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=4in]{Chapters/Chapter_HT_images/reg_demo.png}
-  \caption{An illustration of the registration process, registering the non-augmented scan (left) with the augmented scan (right). The images are at 1 mm resolution, showing the artifacts created by the barium sulphate when viewed at this resolution, while to increase accuracy the registration carried out in Slicer 3D was at the full 82 $\mu$m resolution.}
+  \caption{An illustration of the registration process, registering the
+non-augmented scan (left) with the augmented scan (right). The images are at 1
+mm resolution, showing the artifacts created by the barium sulphate when viewed
+at this resolution, while to increase accuracy the registration carried out in
+Slicer 3D was at the full 82 $\mu$m resolution.}
   \label{fig:reg_demo}
 \end{figure}
 
 \subsubsection{Registered Scan Model Generation}
 
-The augmented models using the registered scans were created in ScanIP, following similar methods to the bone volume fraction method described in Section~\ref{bvtv_method}.
-The initial step was to import the registered augmented scans and apply an initial downsample to a resolution of 0.5 mm$^3$.
-This resolution provided enough detail to capture the detail of the injected cement volume without increasing the computational difficulty and therefore time to segment the scans.
+The augmented models using the registered scans were created in ScanIP,
+following similar methods to the bone volume fraction method described in
+Section~\ref{bvtv_method}.
+The initial step was to import the registered augmented scans and apply an
+initial downsample to a resolution of 0.5 mm$^3$.
+This resolution provided enough detail to capture the detail of the injected
+cement volume without increasing the computational difficulty and therefore
+time to segment the scans.
 
-To segment the three regions (background, bone and endcaps, and injected cement) it was found that the most reproducible and accurate method was to use the Otsu thresholding process \cite{sezgin2004survey}, a filter that is built in to ScanIP\@.
-It was used to find three masks in the scan and works on a threshold clustering method.
-In this case searching for four clusters or masks separated by different thresholds and returning a mask that described the background, the bone and endcaps and the cement region.
-From this only the cement mask was retained and underwent a flood fill filter, removing empty voxels found within the description of the mask.
-The mask and background were then downsampled to 1 mm resolution and cropped to the same dimensions as the non-augmented model.
-From the non-augmented model, the masked describing the vertebra, the endcaps and the background of the vertebra where imported.
-The origin of the masks coming from the two backgrounds can be seen in \cref{fig:mask_demo}.
+To segment the three regions (background, bone and endcaps, and injected
+cement) it was found that the most reproducible and accurate method was to use
+the Otsu thresholding process \cite{sezgin2004survey}, a filter that is built
+in to ScanIP\@.
+It was used to find three masks in the scan and works on a threshold clustering
+method.
+In this case searching for four clusters or masks separated by different
+thresholds and returning a mask that described the background, the bone and
+endcaps and the cement region.
+From this only the cement mask was retained and underwent a flood fill filter,
+removing empty voxels found within the description of the mask.
+The mask and background were then downsampled to 1 mm resolution and cropped to
+the same dimensions as the non-augmented model.
+From the non-augmented model, the masked describing the vertebra, the endcaps
+and the background of the vertebra where imported.
+The origin of the masks coming from the two backgrounds can be seen in
+\cref{fig:mask_demo}.
 
 \begin{figure}[ht!]
   \centering
   \includegraphics[width=4in]{Chapters/Chapter_HT_images/mask_demo.png}
-  \caption{An illustration showing the origin of the masks from the non-augmented scan (left) and the augmented scan (right).}
+  \caption{An illustration showing the origin of the masks from the
+non-augmented scan (left) and the augmented scan (right).}
   \label{fig:mask_demo}
 \end{figure}
 
+Finally, given that the non-augmented $\mu$CT scan is used for the material
+properties of the augmented models when using the method outlined above, damage
+caused to the vertebrae during the augmentation process is not captured in the
+model. Specifically the track left behind by the vertebroplasty needle is shown
+clearly on the post-augmentation $\mu$CT scan, and while it was attempted to
+fill this space when cement when removing the needle in some cases this was not
+possible or the needle track was only partially filled. An example of the track
+left behind can be seen in \cref{fig:needle_track}:B, with comparisons to the
+BV/TV background in A, and the correction, through removal of the mask in C.
+Removal of the vertebral mask in the regions where the needle track was clear
+in the post-augmentation scan was carried out using the (un)paint line tool in
+Simpleware ScanIP. This change to the models required changes to the material
+properties of the cement and interface regions as described in
+\cref{sec:cemmatprop}.
 
-\subsubsection{Cement Volume Material Property Tests}
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=4in]{Chapters/Chapter_HT_images/needle_track.png}
+  \caption[Adding the needle track to registered models.]{Adding the needle
+track to registered models. A, shows the masks
+overlaid onto the BV/TV greyscale background, B shows the masks overlaid onto
+the augmented scan background and C shows the removal of the mask where the
+cement track is visible. The pink mask shows the cement region, yellow shows
+the
+interface and red is the vertebral mask.}
+  \label{fig:needle_track}
+\end{figure}
+
+\subsubsection{Cement Volume Material Property Tests} \label{sec:cemmatprop}
 
 Based on the results of the tests carried out on the bovine tail vertebrae in
 \cref{chap_bov}, different material properties and approaches were attempted to
@@ -740,9 +986,9 @@ used. P.P., indicates perfectly plastic}
 	Property	       & Non-registered & Registered & Registered  \\ 
 			       &		&	     & With Needle
 	Tracks \\ \hline
-Cement Young's Modulus    &1.7 GPa            & 1.5 GPa       & 1.5 GPa \\
+Cement Young's Modulus    &1.7 GPa            & 1.2 GPa       & 1.5 GPa \\
 Cement Poisson's Ratio    &0.4                & 0.4           &0.4  \\ \hline
-Interface Young's Modulus & 0.05 GPa          & 0.01 GPa      &0.01 GPa \\ 
+Interface Young's Modulus & 0.005 GPa          & 0.008 GPa      &0.01 GPa \\ 
 Interface Poisson's Ratio & 0.4               & 0.4           & 0.4\\ 
 Interface Yield Stress	  & 50 Pa $\rightarrow$ P.P.      & 5 Pa $\rightarrow$
 P.P.  & 5 Pa $\rightarrow$ P.P.
@@ -750,53 +996,89 @@ P.P.  & 5 Pa $\rightarrow$ P.P.
 \end{tabular}
 \end{table}
 
-Boundary conditions for the cement region include: tie contacts between the vertebrae and interface, and between the interface and the cement volume.
-The remaining material properties and boundary conditions remain the same as with the non-augmented models.
+Boundary conditions for the cement region include: tie contacts between the
+vertebrae and interface, and between the interface and the cement volume.
+The remaining material properties and boundary conditions remain the same as
+with the non-augmented models.
 
 \subsection{Measuring the Vertebral Body \& Augmentation Volume}
 
-While the volume of the vertebral mask can be measured directly within ScanIP or Abaqus, this volume includes the remainder of the pedicles.
-The size of the pedicles that remain after their removal during dissection varies between level and spine and is especially different with the level five vertebra, where the shape and size varies dramatically.
-To account for this variation and to get a more accurate cement fill percentage for the augmented models elliptic cylinders were fitted to the vertebral body as shown in \cref{fig:cyl_fit}.
+While the volume of the vertebral mask can be measured directly within ScanIP
+or Abaqus, this volume includes the remainder of the pedicles.
+The size of the pedicles that remain after their removal during dissection
+varies between level and spine and is especially different with the level five
+vertebra, where the shape and size varies dramatically.
+To account for this variation and to get a more accurate cement fill percentage
+for the augmented models elliptic cylinders were fitted to the vertebral body
+as shown in \cref{fig:cyl_fit}.
 
 
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=5in]{Chapters/Chapter_HT_images/cyl_fit_ful_iso_both.png}
-  \caption{A diagram showing the fitting of the cylinders to the vertebral body, where the point cloud describing the vertebra comes from an STL file, the red ring shows the points included in the mid-slice and the central red dot indicates the center of the mid-slice.}
+ 
+\includegraphics[width=5in]{Chapters/Chapter_HT_images/cyl_fit_ful_iso_both.png}
+  \caption{A diagram showing the fitting of the cylinders to the vertebral
+body, where the point cloud describing the vertebra comes from an STL file, the
+red ring shows the points included in the mid-slice and the central red dot
+indicates the center of the mid-slice.}
   \label{fig:cyl_fit}
 \end{figure}
 
-Vertebrae that contained a vascular channel, seen in \cref{fig:cyl_channel}, had the channel removed by filling the space in ScanIP.
-This was carried out for two main reasons: the first was to allow accurate fitting of the cylinder into the vertebral (to avoid the problems shown in \cref{fig:cyl_channel}) and to remove problems with the cement being exposed when modelling augmentation and the extra contacts / interfaces that are created.
-Models with the vascular channel removed were compared to the original models and it was found that there was less than 0.5 \% difference for the set.
-This was due to the elements used to fill the channel having material properties based on the greyscale, which had values of approximately zero, given the nature of the channel.
-Due to the lack of any effect in removing the channel the vertebra models of augmentation did not include the vascular channel.
+Vertebrae that contained a vascular channel, seen in \cref{fig:cyl_channel},
+had the channel removed by filling the space in ScanIP.
+This was carried out for two main reasons: the first was to allow accurate
+fitting of the cylinder into the vertebral (to avoid the problems shown in
+\cref{fig:cyl_channel}) and to remove problems with the cement being exposed
+when modelling augmentation and the extra contacts / interfaces that are
+created.
+Models with the vascular channel removed were compared to the original models
+and it was found that there was less than 0.5 \% difference for the set.
+This was due to the elements used to fill the channel having material
+properties based on the greyscale, which had values of approximately zero,
+given the nature of the channel.
+Due to the lack of any effect in removing the channel the vertebra models of
+augmentation did not include the vascular channel.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=5in]{Chapters/Chapter_HT_images/cyl_fit_channel_both.png}
-  \caption{An illustration showing the problems that occur with vertebrae that have a distinctive vascular channel and the false cylinder fit that occurs.}
+ 
+\includegraphics[width=5in]{Chapters/Chapter_HT_images/cyl_fit_channel_both.png}
+  \caption{An illustration showing the problems that occur with vertebrae that
+have a distinctive vascular channel and the false cylinder fit that occurs.}
   \label{fig:cyl_channel}
 \end{figure}
 
-This was carried out using a set of scripts written in python and rely of having stl files describing the vertebral geometry.
-The scripts work by finding the middle slice of a set of nodes that describe the vertebra.
+This was carried out using a set of scripts written in python and rely of
+having stl files describing the vertebral geometry.
+The scripts work by finding the middle slice of a set of nodes that describe
+the vertebra.
 From the middle slice the shape of the ellipse is formed.
-Given that the alignment of the vertebrae is uniform, the mid point on the $y$ axis is found by searching for the node furthest away from the weighted center, $\pm$ 2 mm of the weighted centre.
+Given that the alignment of the vertebrae is uniform, the mid point on the $y$
+axis is found by searching for the node furthest away from the weighted center,
+$\pm$ 2 mm of the weighted centre.
 This gives the $a$ measure of the ellipse description.
-The $b$ measure is found by using a similar process - searching for the node furthest away from the centre on the $x$ axis, within $\pm$ 2 mm.
-The $a$ and $b$ measures gave the shape of the ellipse and the height of the elliptic cylinder was found by raising and lowering the ellipse until a node in the middle $\pm$ 5 mm intersected the ellipse.
+The $b$ measure is found by using a similar process - searching for the node
+furthest away from the centre on the $x$ axis, within $\pm$ 2 mm.
+The $a$ and $b$ measures gave the shape of the ellipse and the height of the
+elliptic cylinder was found by raising and lowering the ellipse until a node in
+the middle $\pm$ 5 mm intersected the ellipse.
 This defined the height of the ellipse.
-The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have been described and $h$ is the height) and compared to that of the total vertebral volume, shown in \cref{tab:vertebrae_vol_cyl}.
-The percentage reduction in vertebral body volume, from total vertebral body volume to the fitted cylinder volume, varies significantly and is due to changes to the vertebral shape outside of the main vertebral body portion.
-For example, Spine 2 L1 was a degenerate vertebrae with extra bone growth at the anterior limits of the vertebral body.
-Other large changes were due to the size of the pedicles, where larger vertebrae (Spine 4) had proportionally larger pedicles.
+The volume of the ellipse was found (V = $\pi a b h$, where $a$ and $b$ have
+been described and $h$ is the height) and compared to that of the total
+vertebral volume, shown in \cref{tab:vertebrae_vol_cyl}.
+The percentage reduction in vertebral body volume, from total vertebral body
+volume to the fitted cylinder volume, varies significantly and is due to
+changes to the vertebral shape outside of the main vertebral body portion.
+For example, Spine 2 L1 was a degenerate vertebrae with extra bone growth at
+the anterior limits of the vertebral body.
+Other large changes were due to the size of the pedicles, where larger
+vertebrae (Spine 4) had proportionally larger pedicles.
 
 \begin{table}[ht!]
 \centering
-  \caption{Vertebral body volume compared to the volume of the fitted cylinder.}
+  \caption{Vertebral body volume compared to the volume of the fitted
+cylinder.}
 	\label{tab:vertebrae_vol_cyl}
   \begin{tabular}{c |c|c|c}
 	  Specimen & Total Vertebral  & Fitted Cylinder & Change in Volume\\ 
@@ -820,13 +1102,23 @@ Other large changes were due to the size of the pedicles, where larger vertebrae
 
 \end{table}
 
-The effect of this change on the relationship between cement fill and change in augmentation stiffness was identified and is shown in \cref{fig:cyl_fit_comparison}.
-While there was a change in the relationship, a clear trend between the cement fill percentage and change in stiffness for the majority of the vertebrae is still not evident without including other factors (described in \cref{sec:aug_stiffness_res}).
+The effect of this change on the relationship between cement fill and change in
+augmentation stiffness was identified and is shown in
+\cref{fig:cyl_fit_comparison}.
+While there was a change in the relationship, a clear trend between the cement
+fill percentage and change in stiffness for the majority of the vertebrae is
+still not evident without including other factors (described in
+\cref{sec:aug_stiffness_res}).
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/cyl_fit_comparison.png}
-  \caption{The effect of using the fitted cylinder as a measure of vertebral body volume, on the relationship between augmentation fill volume and change in stiffness following augmentation. The red points show the relationship using the total vertebral volume, with the relationship using the fitted cylinder shown in blue.}
+ 
+\includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/cyl_fit_comparison.png}
+  \caption{The effect of using the fitted cylinder as a measure of vertebral
+body volume, on the relationship between augmentation fill volume and change in
+stiffness following augmentation. The red points show the relationship using
+the total vertebral volume, with the relationship using the fitted cylinder
+shown in blue.}
   \label{fig:cyl_fit_comparison}
 \end{figure}
 
@@ -837,21 +1129,25 @@ While there was a change in the relationship, a clear trend between the cement f
 %TODO Other Methods - imageJ for images and 3d projections
 
 
-
-
-
-
 \section{Results}
 
 
 \subsection{Experimental Properties}\label{sec:aug_stiffness_res}
 
-Material properties for the vertebrae can be seen in \cref{tab:bv_tv_anis}, with grouping evident for the bone volume fraction measurements.
-For example the mean BV/TV value for Spine 1 was $0.159 \pm 0.026$, while the mean for Spine 4 was $0.248 \pm 0.022$ with similar results for the other two spines (although with less vertebra).
+Material properties for the vertebrae can be seen in \cref{tab:bv_tv_anis},
+with grouping evident for the bone volume fraction measurements.
+For example the mean BV/TV value for Spine 1 was $0.159 \pm 0.026$, while the
+mean for Spine 4 was $0.248 \pm 0.022$ with similar results for the other two
+spines (although with less vertebra).
 Less grouping could be seen between the degree of anisotropy for the vertebrae.
 
-The vertebral stiffness following experimental loading can be seen in \cref{tab:aug_non_aug_stiff} for the non-augmented vertebrae and following vertebral augmentation.
-The change in stiffness can be seen in \cref{fig:aug_non_aug_stiffness} where an increase in stiffness was seen Spine 1 L2-L5 and Spine 2 L1, while the remaining vertebrae presented a reduction in stiffness following augmentation.
+The vertebral stiffness following experimental loading can be seen in
+\cref{tab:aug_non_aug_stiff} for the non-augmented vertebrae and following
+vertebral augmentation.
+The change in stiffness can be seen in \cref{fig:aug_non_aug_stiffness} where
+an increase in stiffness was seen Spine 1 L2-L5 and Spine 2 L1, while the
+remaining vertebrae presented a reduction in stiffness following
+augmentation.
 
 
 \begin{table}[ht!]
@@ -885,7 +1181,8 @@ The change in stiffness can be seen in \cref{fig:aug_non_aug_stiffness} where an
 \caption{The experimental stiffness results for pre and post augmentation.}
 \label{tab:aug_non_aug_stiff}
 \begin{tabular}{c|c|c|c}
-    Specimen  & Non-augmented Stiffness & Augmented Stiffness & Change in stiffness \\
+    Specimen  & Non-augmented Stiffness & Augmented Stiffness & Change in
+stiffness \\
               & (N/mm) & (N/mm) & (N/mm) \\ \hline \hline 
 Spine 1 L1 & 2991          & 2339      & -652  \\
 Spine 1 L2 & 3456          & 3980      & 523   \\
@@ -907,70 +1204,116 @@ Spine 4 L5 & 7185          & 4403      & -2782 \\ \hline
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.7\textwidth,angle=270]{Chapters/Chapter_HT_images/aug_non_aug_stiffness}
-	\caption{The experimental stiffness of the vertebrae pre and post augmentation. Showing that 5 of the 14 vertebrae showed an increase in stiffness following augmentation.}
+ 
+\includegraphics[width=.7\textwidth,angle=270]{Chapters/Chapter_HT_images/aug_non_aug_stiffness}
+	\caption{The experimental stiffness of the vertebrae pre and post
+augmentation. Showing that 5 of the 14 vertebrae showed an increase in
+stiffness following augmentation.}
   \label{fig:aug_non_aug_stiffness}
 \end{figure}
 
-A strong relationship was found between the percentage fill achieved and the bone volume fraction of the vertebra, where a reduced density of bone resulted in larger quantities of cement being injected into the vertebra before cement leakage occurred.
+A strong relationship was found between the percentage fill achieved and the
+bone volume fraction of the vertebra, where a reduced density of bone resulted
+in larger quantities of cement being injected into the vertebra before cement
+leakage occurred.
 This relationship can be seen in \cref{fig:cmt_fill_vs_bvtv}.
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/cmt_fill_vs_bvtv.png}
-	\caption{The relationship between the percentage cement fill of the total vertebral volume  achieved through the augmentation procedure and the bone volume fraction value for each vertebra. }
+ 
+\includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/cmt_fill_vs_bvtv.png}
+	\caption{The relationship between the percentage cement fill of the total
+vertebral volume  achieved through the augmentation procedure and the bone
+volume fraction value for each vertebra. }
   \label{fig:cmt_fill_vs_bvtv}
 \end{figure}
 
-There was not a clear relationship found between the cement fill of the total vertebral volume and the resulting change in stiffness following augmentation for the set of vertebrae on the whole.
-However, trends could be seen when splitting vertebrae into groups with: \textit{a)} dispersed volumes of injected cement and \textit{b)} concentrated volumes of cement.
-This can be seen in \cref{fig:aug_cmt_fill_vs_ch_stiff} where a trend ($r=0.83$) can be seen between the percentage fill of the total vertebral volume and the percentage change in stiffness for those vertebrae with concentrated volumes of cement.
+There was not a clear relationship found between the cement fill of the total
+vertebral volume and the resulting change in stiffness following augmentation
+for the set of vertebrae on the whole.
+However, trends could be seen when splitting vertebrae into groups with:
+\textit{a)} dispersed volumes of injected cement and \textit{b)} concentrated
+volumes of cement.
+This can be seen in \cref{fig:aug_cmt_fill_vs_ch_stiff} where a trend
+($r=0.83$) can be seen between the percentage fill of the total vertebral
+volume and the percentage change in stiffness for those vertebrae with
+concentrated volumes of cement.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/Aug_cmt_fill_vs_ch_stiff.png}
-	\caption{The relationship between the percentage fill of the total vertebral volume and the percentage change in the vertebral stiffness following augmentation. The line and \textit{r} value are for the red points where the cement volume was characterised as concentrated. The remaining blue points indicated the vertebra where the cement volume was characterised as dispersed.}
+ 
+\includegraphics[width=.7\textwidth]{Chapters/Chapter_HT_images/Aug_cmt_fill_vs_ch_stiff.png}
+	\caption{The relationship between the percentage fill of the total vertebral
+volume and the percentage change in the vertebral stiffness following
+augmentation. The line and \textit{r} value are for the red points where the
+cement volume was characterised as concentrated. The remaining blue points
+indicated the vertebra where the cement volume was characterised as
+dispersed.}
   \label{fig:aug_cmt_fill_vs_ch_stiff}
 \end{figure}
 
 \subsection{Experimental Augmentation}
 
-The cement distributions following augmentation can be seen in \cref{fig:Spine 1_projection,fig:Spine 2_projection,fig:Spine 3_projection,fig:Spine 4_projection}.
-From the 3D projection images and slices from $\mu$CT stack it was determined which vertebrae contained dispersed and which vertebrae contained concentrated volumes of cement, this characterisation can be seen in \cref{tab:conc_disp}.
+The cement distributions following augmentation can be seen in \cref{fig:Spine
+1_projection,fig:Spine 2_projection,fig:Spine 3_projection,fig:Spine
+4_projection}.
+From the 3D projection images and slices from $\mu$CT stack it was determined
+which vertebrae contained dispersed and which vertebrae contained concentrated
+volumes of cement, this characterisation can be seen in \cref{tab:conc_disp}.
 
 
 
 \begin{figure}[ph!]
-  \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G17-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the Spine 1 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes of cement.}
+ \centering
+ 
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G17-11_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 1 spine
+following augmentation, with the cement region being the brighter material in
+the vertebral body. The L1 vertebra is defined as having a dispersed volume of
+cement while the remaining L2, L3, L4, L5 vertebrae have concentrated volumes
+of cement.}
   \label{fig:Spine 1_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G19-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the Spine 2 spine following augmentation, with the cement region being the brighter material in the vertebral body. The vertebra is defined as having a dispersed volume of cement.}
+ 
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G19-11_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 2 spine
+following augmentation, with the cement region being the brighter material in
+the vertebral body. The vertebra is defined as having a dispersed volume of
+cement.}
   \label{fig:Spine 2_projection}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G21-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the Spine 3 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1 vertebra is defined as having a dispersed volume of cement while the remaining L2 and L3 vertebrae have concentrated volumes of cement.}
+ 
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G21-11_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 3 spine
+following augmentation, with the cement region being the brighter material in
+the vertebral body. The L1 vertebra is defined as having a dispersed volume of
+cement while the remaining L2 and L3 vertebrae have concentrated volumes of
+cement.}
   \label{fig:Spine 3_projection}
 \end{figure}
 
 \begin{figure}[ph!]
   \centering
-  \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G41-11_projections}
-	\caption{Transverse and sagittal 3D projection views of the Spine 4 spine following augmentation, with the cement region being the brighter material in the vertebral body. The L1, L2 and L5 vertebrae are defined as having a dispersed volume of cement while the remaining L3 and L4 vertebrae have concentrated volumes of cement.}
+ 
+\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/G41-11_projections}
+	\caption{Transverse and sagittal 3D projection views of the Spine 4 spine
+following augmentation, with the cement region being the brighter material in
+the vertebral body. The L1, L2 and L5 vertebrae are defined as having a
+dispersed volume of cement while the remaining L3 and L4 vertebrae have
+concentrated volumes of cement.}
   \label{fig:Spine 4_projection}
 \end{figure}
 
 
 \begin{table}[h!]
-	\caption{The characterisation of the augmented vertebrae into vertebrae with dispersed and concentrated volumes of cement.}
+	\caption{The characterisation of the augmented vertebrae into vertebrae with
+dispersed and concentrated volumes of cement.}
 	\label{tab:conc_disp}
 	\centering
 	\begin{tabular}{c|c}
@@ -1003,8 +1346,14 @@ From the 3D projection images and slices from $\mu$CT stack it was determined wh
 
 \subsubsection{Non-augmented Model Results}
 
-The results of modelling the non-augmented vertebrae can be seen in \cref{fig:intact_norm_bvtv}, comparing the initial normal method (the method used with the bovine tail vertebra in the previous chapter) with the best case using the bone volume fraction method and the results of the sensitivity test described previously.
-The results show a large improvement using the results of the sensitivity tests and the bone volume fraction method, with a concordance correlation coefficient improving from 0.55 to 0.86.
+The results of modelling the non-augmented vertebrae can be seen in
+\cref{fig:intact_norm_bvtv}, comparing the initial normal method (the method
+used with the bovine tail vertebra in the previous chapter) with the best case
+using the bone volume fraction method and the results of the sensitivity test
+described previously.
+The results show a large improvement using the results of the sensitivity tests
+and the bone volume fraction method, with a concordance correlation coefficient
+improving from 0.55 to 0.86.
 
 The effect of using the bone volume fraction method on the greyscale background
 and colour map of the bone density can be seen in \cref{fig:compX4}, where the
@@ -1018,7 +1367,7 @@ much more blue heat maps when compared to the denser spine 2, 3 and 4.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/intact_norm_bvtv}
+  \includegraphics[width=.65\textwidth,angle=270]{Chapters/Chapter_HT_images/intact_norm_bvtv}
 	\caption{The results of using the normal method and the bone volume
 	fraction method to model non-augmented human lumbar vertebrae. Red
 shows the agreement using the normal method and blue shows the agreement using
@@ -1055,12 +1404,18 @@ in \cref{fig:aug_init_vs_best} with the green triangles.  This registration
 method with the defined needle tracks achieved a CCC = 0.62, the registration
 method not using the needle tracks achieved a CCC = 0.46, while the initial
 method used (similar to the method used with the bovine tail vertebrae)
-achieved a CCC of 0.18.
+achieved a CCC of 0.18. Comparing the method using the registration method to
+the method using the registration method with defined needle tracks,
+computationally stiffer vertebrae were weakened and computationally weaker
+vertebrae were stiffened due to the higher YOung's modulus for the interface
+and cement regions.
 
 \begin{figure}[h!]
   \centering
-	\includegraphics[width=.65\textwidth, angle=270]{Chapters/Chapter_HT_images/aug_init_vs_best_vs_ndl_trcks}
-	\caption{The results of using the initial method (red circles), the registration method (blue triangles) and using the defined needle tracks (green triangles), showing the agreement to the perfect x=y line in orange.}
+	\includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/aug_init_vs_best_vs_ndl_trcks}
+	\caption{The results of using the initial method (red circles), the
+registration method (blue triangles) and using the defined needle tracks (green
+triangles), showing the agreement to the perfect x=y line in orange.}
 	\label{fig:aug_init_vs_best}
 \end{figure}
 
@@ -1171,10 +1526,12 @@ the possibility that some of the vertebrae were fractured \textit{in vivo}.
 
 \subsection{Computational Results}
 
+\subsubsection{Non-augmented Models}
+
 The improvement in the agreement between computational stiffness and the
 experimental stiffness results using the bone volume fraction method and the
-results of the sensitivity tests is significant and provided a good foundation
-for modelling the more challenging augmented models.  The improvement using the
+results of the sensitivity tests is significant and provides a good foundation
+for modelling the more challenging augmented models. The improvement using the
 bone volume fraction method in isolation (without the results of the other
 sensitivity tests) showed a large improvement over the normal method.  The
 normal method performed similarly on the bovine tail vertebrae as with the
@@ -1247,29 +1604,37 @@ preserved using a curves (remapping of the image tonality) or as already
 proposed 16 bit images.
 
 \begin{figure}[h!]
-  \centering
+\centering
 \includegraphics[width=.65\textwidth]{Chapters/Chapter_HT_images/adding_contrast.png}
-\caption{An example showing the ability to create a greyscale background similar to that achieved using the BV/TV method, but instead adjusting the contrast of the background from the normal method.}
-	\label{fig:adding_contrast}
+\caption{An example showing the ability to create a greyscale background
+similar to that achieved using the BV/TV method, but instead adjusting the
+contrast of the background from the normal method.}
+\label{fig:adding_contrast}
 \end{figure}
 
+\subsubsection{Augmented Models}
 
 The results of modelling augmented vertebrae showed a reduction in the
 agreement when compared to the non-augmented vertebral models.  Reasons for
-this are centred around modelling the internal cement volume, given the good
+this are centred around modelling the internal cement region, given the good
 agreement seen between the non-augmented vertebrae and their models.  More
-specifically the problems in modelling the cement region within models may be
-due to experimental and modelling techniques.  Issues surrounding the
-experimental work are the difficulty in capturing the extent of the
+specifically the problems in modelling the cement region may be
+due to experimental and modelling techniques.  
+
+Issues originating from the
+experimental work come from the difficulty in capturing the extent of the
 augmentation volume, often due to clumping of the barium sulphate and
 separation of the barium sulphate from the other components of the PMMA cement.
 While this problem is minimised through segmentation of the cement region at
 higher resolutions before the downsampling, a problem still lies in capturing
 the intricate interdigitation between the cement and the trabecular bone at a
-resolution of 1 mm.  An additional experimental challenge is the unknown level
+resolution of 1 mm.  One issue overcome through the use of the registration
+method is the removal of the bright halo of the cement region (from clumps of barium sulphate). This allowed more accurate modelling of the material properties of the vertebral bone and additionally better accuracy of modelling the interface, given the removal of the false, dense bone surrounding the yielding interface. The inclusion of the explicitly modelled needle tracks increased the agreement significantly, with the compromise of interrupting an otherwise automated modelling process.
+
+An additional experimental challenge is the unknown level
 of damage caused to the vertebrae when the needle is inserted.  Given that
-after clear fractures (based on load-displacement curves) could not be seen on
-82 $\mu$m scans of bovine tail vertebrae, it is unlikely that micro-fractures
+after clear fractures (based on load-displacement curves), damage could not be
+seen on 82 $\mu$m scans of bovine tail vertebrae, it is unlikely that micro-fractures
 caused through needle insertion will be captured in the $\mu$CT scans of the
 human vertebrae.
 
@@ -1277,8 +1642,8 @@ Despite the reduced agreement of the augmented models, there was a large
 improvement compared to the initial method, which was the method used for
 modelling augmentation in the bovine tail vertebrae.  As with the non-augmented
 models the CCC using the initial method was very similar to the CCC using the
-similar method on the bovine tail vertebrae, CCC = 0.18 and 0.15 for the human
-and bovine models respectively.  This makes the improvement using the
+comparable method on the bovine tail vertebrae, CCC = 0.18 and 0.15 for the
+human and bovine models respectively.  This makes the improvement using the
 registration significant and a beneficial step in making the models.
 
 Achieving improved agreement between the computation and experimental models is
