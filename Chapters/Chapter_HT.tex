@@ -1123,10 +1123,33 @@ shown in blue.}
 \end{figure}
 
 
+\subsection{Visualisation of Vertebrae and Augmentation}
+
+\subsubsection{Vertebral Density Visualisation}
 
 
 
-%TODO Other Methods - imageJ for images and 3d projections
+\subsubsection{Cement Distribution  Visualisation}
+
+Visualisation of the cement distribution in augmented vertebrae become
+difficult due to the 3D nature of the cement distribution and hence determining
+whether cement volumes are distributed or concentrated becomes difficult.
+Given that 2D images of the augmented vertebrae only give an understanding of
+the layer in question and not the 3D structure and the 1 mm resolution of FE
+models makes identifying the nature of the structure from the model difficult.
+The methodology used to visualise the vertebrae and the solution to this
+problem was to use the 3D project feature in imageJ. This creates a 3D
+rendering from the stack of images and rotates the resulting object through a
+range of angles, in this case 360 degrees. Variables of transparency bounds,
+opacity bounds and the projection method can be set, in addtion to the axis of
+rotation. These were left at their default using the brightest point projection
+method and the Y-axis for the rotation axis. This generated a model that could
+be rotated arround the Y-axis, providing a view of the cement distribution
+though the vertebrae and not one limitted to a slice by slice view. Examples of
+this method can be seen in \cref{fig:Spine 1_projection,fig:Spine
+2_projection,fig:Spine 3_projection,fig:Spine 4_projection}, where projections of the
+transverse and saggital planes can be seen. 
+
 
 
 \section{Results}
