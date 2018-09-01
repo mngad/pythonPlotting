@@ -180,30 +180,35 @@ chosen, a value that avoids the noise while being on the plateau of the lines.
 
 \subsubsection{Repeated Loading}
 
-Given the nature of the test (attempting to limit damage to the vertebrae)
-especially during their initial intact load, the ability to derive errors
+Given the nature of the test (attempting to limit damage to the vertebrae
+especially during their initial non-augmented load), the ability to derive errors
 becomes difficult especially from a single load. To attempt to understand this
 error four vertebrae having undergone augmentation were tested three more times
 in an iterative fashion, removing each from the load testing machine, testing
 the next specimen in the set and repeating. Removing the vertebrae from their
 steel housing (instead of three tests while seated in the steel housing)
-allowedthe error in loading position and setup to be tested along with repeated
-loading of the vertebrae to be tested.
+allowed error in loading position and setup to be tested along with repeated
+loading of the vertebrae.
 
-The results of repeated loading can be seen in \cref{fig:exp_repeats}. All
-four specimens show a reduced stiffness for the repeated loads following the
+The results of repeated loading can be seen in \cref{fig:exp_repeats}. The
+majority of specimens show a reduced stiffness for the repeated loads following the
 initial load, for which there are a few possible reasons. One possibility for
 the reduction in stiffness is that it is a consequence of the freeze thaw cycle
-that occurred between these tests. The second possibility is that the vertebrae
-were still partially frozen while the testing took place. Finally, it could be
-due to damage being caused during the initial load to 2000 N, shown in
-\cref{fig:Spine2_L1,fig:Spine3_L3} it is possible to see slight failure
+that occurred between these tests. It could be
+due to damage being caused during the initial load to 2000 N, in
+\cref{fig:allLD} it is possible to see slight failure
 in the three Spine 3 vertebrae, although failure cannot be seen in the Spine 2
-L1 vertebrae. The frozen bar in \cref{fig:exp_repeats} shows how the
-stiffness increases when the vertebrae are completely frozen, potentially
-helping to explain the drop in stiffness found in the repeats. Further tests
-will be carried out with three more repeats following another freeze thaw cycle
-to attempt to answer this.
+L1 vertebrae, which also exhibits a reduction in stiffness in the repeats. An
+option that may explain why for many of the vertebrae the change in stiffness
+for the first repeat with different trends for the following two repeats is
+that the vertebrae were seated differently in their endcaps for the first
+repeat, settling into position for repeats 2 and 3. This trend of a different
+stiffness for repeat 1 compared to 2 and 3 is evident in spine 1 L3 and L4,
+spine 2 L1 and spine 4 L1, L2 and L3. A potential cause is the changing
+temperatures (frozen to room temperature to above room temperature during the
+$\mu$CT scan) causing the vertebrae to expand out of the endcap in some cases,
+given the scan $\rightarrow$ freeze $\rightarrow$ back to room temperature
+process used for the repeated loads presented.
 
 The iterative reduction in stiffness for the Spine 3 L2 vertebrae can be
 explained as damage being caused after each iteration. This can be seen in
@@ -211,58 +216,35 @@ explained as damage being caused after each iteration. This can be seen in
 before the 1600 N limit and a smaller maximum load and stiffness after each
 repeat.
 
-Figures~\ref{fig:Spine2_L1} through~\ref{fig:Spine3_L3} show the data for the
+The figures in \cref{fig:allLD,fig:Spine3_L2} show the data for the
 loading, from which the maximum stiffness values are found. This excludes the
 initial cyclic loading, starts the loading at 50 N and displacement at 0 mm.
 
-\begin{figure}[!h]
+\begin{figure}[ht!]
   \centering
  
-\includegraphics[width=6in]{Chapters/Chapter_HT_images/experimental_repeats.png}
-  \caption{The stiffness of four augmented vertebral specimens over the course
-    of an initial load, three repeated loads and a load while frozen. The
-intact specimen was loaded until 2000 N while the remaining four were loaded
-until 1600 N.}
+\includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/experimental_repeats.png}
+  \caption{The stiffness of the augmented vertebral specimens over the course
+    of an initial load and three repeated loads.}
   \label{fig:exp_repeats}
 \end{figure}
 
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G19-11_L1.pdf}
-  \caption{The load - displacement results for the Spine 2 L1 vertebra. Showing
-    results of the intact load and post augmentation load up to 2000 N and the
-    repeats and frozen load up to 1600 N.}
-  \label{fig:Spine2_L1}
+  \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/All_int_LD.png}
+  \caption{The load - displacement results for the initial load for all used vertebra}
+  \label{fig:allLD}
 \end{figure}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L1.pdf}
-  \caption{The load - displacement results for the Spine 3 L1 vertebra. Showing
-    results of the intact load and post augmentation load up to 2000 N and the
-    repeats and frozen load up to 1600 N.}
-  \label{fig:Spine3_L1}
-\end{figure}
-
-\begin{figure}[ht!]
-  \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L2.pdf}
+  \includegraphics[width=\textwidth]{Chapters/Chapter_HT_images/spine3L2allrep.png}
   \caption{The load - displacement results for the Spine 3 L2 vertebra. Showing
-    results of the intact load and post augmentation load up to 2000 N and the
-    repeats and frozen load up to 1600 N.}
+    results of the intact load and post augmentation load as well as the 6
+    repeats.}
   \label{fig:Spine3_L2}
 \end{figure}
-
-\begin{figure}[ht!]
-  \centering
-  \includegraphics[width=4in]{Chapters/Chapter_HT_images/G21-11_L3.pdf}
-  \caption{The load - displacement results for the Spine 3 L3 vertebra. Showing
-    results of the intact load and post augmentation load up to 2000 N and the
-    repeats and frozen load up to 1600 N.}
-  \label{fig:Spine3_L3}
-\end{figure}
-
 
 
 
@@ -270,21 +252,27 @@ until 1600 N.}
 
 \subsection{Vertebroplasty}
 
+
+
+
 Despite the development of methods for the augmentation of bovine tail
 vertebrae, the methods for augmenting human vertebrae were altered due to the
-different geometry and density. The human vertebrae, being much less dense, did
+different geometry, size and reduced density. 
+
+The first change to the procedure was that the human vertebrae, being much less dense, did
 not require the vertebroplasty needle to be inserted with the aid of a mallet.
 Instead the needle could be pushed by hand through the cortical shell and into
-the vertebral body.
+the vertebral body, with the vertebrae being held in a vice to ensure the
+correct angle and depth was achieved.
 
-An additional difference was the approach with the needle, instead of entering
+A second difference was the approach with the needle, instead of entering
 the vertebrae through their pedicles an oblique approach was adopted. This was
-due to variation in pedicle diameter between the L1 - L5 lumbar levels and
-therefore the potential to damage the region and its load sharing capabilities.
-The oblique approach therefore avoided creating this damage to the
+due to variation in pedicle diameter between the L1 - L5 lumbar levels, where
+the pedicles on the L1 vertebrae were very small and
+therefore there was potential to damage the region and its load sharing capabilities.
+The oblique approach therefore avoided damaging
 pedicle-canal
-region, especially for the vertebrae with narrower pedicles and instead created
-much less damage to the vertebral body.
+region, especially for the L1 and L2 vertebrae with narrower pedicles.
 An illustration of this approach can be seen in \cref{fig:vp-ill} with an
 example $\mu$CT scan shown in \cref{fig:vp-ill_scan}.
 
@@ -312,7 +300,14 @@ quantity of cement injected.}
 A final difference to the needle insertion methods was a change to the needle.
 Here, a side opening needle was used, allowing the cement to be directed into
 the anterior-centre region of the vertebral body as opposed to directly out of
-the needle end.
+the needle end. This meant that larger cement volumes were much more achievable
+given that the injection of cement was not aimed at the anterior wall and
+instead could be rotated aiming both to the inferior and superior. One
+limitation that this caused was increased difficulty backfilling the needle
+tracks when the needle was removed. Future work may utilise a second
+end-opening needle to perform the backfilling, in this case however there was
+not enough time to change needles before the cement set, along with the
+available needles having different gauges.
 
 It was attempted to inject the largest possible volumes of cement into the
 vertebrae, mimicking the clinical process.
@@ -320,36 +315,38 @@ Like the clinical procedure the injection was stopped upon cement leakage,
 which generally occurred through one of the vascular channels at either the
 posterior or anterior portions of the vertebrae.
 However, despite stopping the injection upon cement leakage through vascular
-channels leading from the vertebral body surface inwards, cement loss
-occurred.
+channels, cement loss still occurred after the injection was stopped due to
+pressure build up.
 In addition to this, cement was also lost in the needle itself, where as the
 cement set the amount of cement remaining in the needle became difficult to
 measure.
-This meant that the cement fill could not be measured though the amount of PMMA
-leaving the syringe due to leakage and needle losses.
-Hence cement fill volume was measured using segmented $\mu$CT scans, the
-methodology of which is described below.
+This meant that the cement fill could not be accurately measured though the amount of PMMA
+leaving the syringe due to both leakage and needle losses.
+Hence cement fill volume was measured using segmented $\mu$CT scans, using the
+volumes of the masks created to define the injected cement regions. This
+methodology is described in the computational modelling section
+(\cref{sec:comp_mod}).
 
 \subsection{Vertebrae Characteristics}
 
 Identifying the different characteristics for the set of lumbar vertebrae has
 importance in understanding trends and relationships between the experimental
 and computational results. For example a larger degree of anisotropy and hence
-more directionality aligned trabeculae would potentially give a more
+more directional and aligned trabeculae would potentially give a more
 experimentally stiff vertebra, despite otherwise similar characteristics. Given
 that much of the vertebral characteristics depend on the trabecular structure
 it
 is important to understand how this varies between specimens. Furthermore, any
 calculations originating from a description of the trabecular structure require
 a correct threshold to be applied to the $\mu$CT scan. This threshold describes
-the limit of the trabecular bone and hence the start of either marrow or empty
+the limit of the trabecular bone and the start of either marrow or empty
 space. To enable a fair comparison between vertebrae a region of interest was
 selected from the vertebral body. Given the large variation in cortical shell
 thickness, along with certain vertebrae containing large osteophytes and other
 extra bone growth, the region of interest (ROI) was selected to be the largest
 cylinder that could fit within the vertebral body while not capturing any of
 the
-cortical shell.
+cortical shell. %TODO add image of above (mebs?)
 
 \subsubsection{Histograms}
 
@@ -367,17 +364,24 @@ data
 \end{figure}
 
 The lower greyscale values represent the empty space within the ROI which
-translates to regions where the bone marrow has exited the region, most likely
-during the freeze thaw cycles. The peak in the histogram at an approximate
+translates to regions where the bone marrow has drained from the trabecular
+bone, most likely
+during the unavoidable freeze thaw cycles. The peak in the histogram at an approximate
 greyscale value of 16 is due to the bone marrow. The remaining portion of the
 histogram represents bone, where variation is due to the differences in the
 mineral content of the bone, with more mineralised bone appearing brighter on
 $\mu$CT scans. The specimens ROIs that contain the brighter values are those
-that contain osteophytes that contain more dense bone than the other cortical
-shell, for example Spine 2 L1.
+that exhibit more degeneration for example Spine 2 L1, where the histogram is
+shifted to the right, suggesting many more bright pixels and therefore more
+bone spurs and other degeneration. This is because the extra bone growths on
+the degenerated vertebrae is formed of denser cortical shell material.
 
 \subsubsection{Threshold Optimisation}\label{th_opt}
 
+Threshold optimisation or choosing a threshold that defines the limits of the
+trabecular bone in terms of greyscale values is necessary for various parts of
+the methods, the first being determination of the bone volume fraction (BV/TV)
+and secondly for some of the computational modelling methods employed.
 
 The full resolution scan is imported into imageJ where the threshold
 optimisation is carried out.
@@ -389,11 +393,11 @@ This tool is run on the region of interest using the default settings for the
 connectivity options seen in \cref{tab:bonej}.
 This chooses a threshold based on the peak in a connectivity against threshold
 plot and reports that value.
-These values can be seen in \cref{tab:optTH}, showing considerable across the
+These values can be seen in \cref{tab:optTH}, showing some variation across the
 range of vertebrae.
 However, the differences in these suggested thresholds can grouped with the
-spine, for example: the G17 spine has a range between 15 to 17, while the G41
-spine has a range between 18 to 20.
+spine, for example: Spine 1 has a range between 15 to 17, while Spine 4 has a
+range between 18 to 20.
 This promotes the idea that these differences are due to the bone
 mineralisation of the bone, especially given that the G17 spine is from a
 Female and G41 from a male.
@@ -402,17 +406,21 @@ However, given that the chosen value for the threshold will directly impact the
 reported metrics, a consistent value was chosen of 18. Using lower or higher
 values for the threshold usually results in the trabeculae being described as
 thicker or thinner respectively.
-Hence, the difference in the mineralisation between specimens will still be
+With respect to modelling, the difference in the mineralisation between specimens will still be
 captured when using a fixed threshold, given that the binary image will be down
-sampled before material properties are acquired.
+sampled before material properties are acquired. Here, thicker binarised
+trabeculae correspond to a brighter continuum level voxel.
 The results in \cref{tab:bv_tv_anis} show the BV / TV data and degree of
 anisotropy values for the 14 specimens using the fixed threshold of 18.
 Similar trends to what could be seen from the optimise threshold results can be
 seen in the BV/TV data, with grouping between the
-spines evident.
-The Spine 1 spine has a much lower bone volume fraction compared to the other
+spines evident. This suggests that despite the use of uniform thresholds used
+across the set of vertebrae the differences are still kept, giving some
+additional validation and justification for using the uniform threshold.
+The vertebrae from Spine 1 have a much lower bone volume fraction compared to the other
 spines, which suggests a more osteoporotic spine, most likely resulting in less
-stiff vertebra.
+stiff vertebra. The remaining discussion of these results is in
+\cref{sec:exp_disc}.
 
 \begin{table}[ht!]
 	\caption{Settings used for the ImageJ plugin, BoneJ: Optimise Threshold.}
@@ -458,7 +466,7 @@ the 14 lumbar vertebrae in the set.}
 
 
 
-\section{Computational Methods}
+\section{Computational Methods}\label{sec:comp_mod}
 
 The methods described in this section describe the process used to model
 non-augmented and augmented vertebrae, with associated sensitivity tests to
@@ -475,15 +483,16 @@ University of Leeds. Here, the submission of jobs (simple shell scripts
 describing the process to be carried out) onto the cluster is carried out using
 the Sun Grid
 Engine, a first come first served scheduler for the cluster. By running the FE
-simulation on the HPC cluster with resources: 10 cores, 1000 MB of memory per
+simulation on the HPC cluster with resources: 10 cores, 1024 MB of memory per
 core, the time to solve each model was reduced to 5 - 10 minutes compared to 20
-- 40 minutes on a desktop PC. In addition to the time saving benifits this
-allowed off loading of large (5 - 10 GB per model) Abaqus output files and
-through the submission system it allowed the iterative testing of material
-properties, where models could be re-solved using different material properties
-read from a simple text file.
+- 40 minutes on a desktop PC depending on the model and material properties
+used with models that included plasticity taking considerably longer to solve.
+In addition to the time saving benifits this allowed off loading of large (5 -
+10 GB per model) Abaqus output files and through the submission system it
+allowed the iterative testing of material properties, where models could be
+re-solved using different material properties read from a simple text file.
 
-The methodology of using ARC2, one of the HPC clustered remained much the same
+The methodology of using ARC2, one of the HPC clusters remained much the same
 as when using a desktop PC. Here, abaqus input files were copied over to a user
 directory on one of the cluster nodes, along with files detailing the loading
 positions for the vertebrae, three python scripts and a shell script. The first
@@ -492,26 +501,28 @@ boundary conditions, loading position (according to the load position csv
 file), creation of the  loading platen and application of the material
 properties to the greyscale based material properties of the bone. Settings and
 values applied in the setup script are read from another file containing: the
-conversion factor, the displacement and for the augmented models the cement and
+conversion factor (greyscale to Young's modulus), the displacement and for the augmented models the cement and
 interface region material properties. The second python script runs the models
 with values of the number of cores and memory to use matching those of the
-requested HPC resources. The models are run with an initial increment of 0.1 a
+requested HPC resources. The models are run with an initial increment of 0.1, a
 minimum increment of 0.0001 and a maximum increment of 1. The final python
 script runs the post processing; the abaqus output file is read and the axial
-reaction force ($RF3$) is recorded. The results (reaction force divided by the
-displacement to give a stiffness) from each model are written to a results file
-which can be copied to the desktop PC and analysed. Finally, the shell script
+reaction force ($RF3$) is recorded. The resulting stiffness (reaction force divided by the
+displacement to give a stiffness) from each model was written to a results file
+which could be copied to the desktop PC and analysed. Finally, the shell script
 describes the resources to be requested from the HPC cluster including a
 maximum amount of time and then gives the command to be run: \texttt{abaqus cae
-nogui=setup.py \&\& abaqus cae nogui=run.py \&\& abaqus cae nogui=post.py}. For
+nogui=setup.py \&\& abaqus cae nogui=run.py \&\& abaqus cae nogui=post.py} for
+the three python scripts. For
 new
 tests with potentially unexpected outcomes the abaqus output files were copied
 to the desktop PC to be viewed, while if incremental material property chanes
 were being made only the stiffness results were copied.
 
 
-\subsection{Non-augmented Vertebrae Modelling Sensitivity
-Tests}\label{sec:non_aug_sens}
+\subsection{Non-augmented Vertebrae Modelling Using the BV/TV Method}\label{sec:non_aug_sens}
+
+
 
 Given the aims of the project - to include the models generated here into a
 larger set of vertebral models for use in statistical shape modelling, it is
@@ -1486,7 +1497,7 @@ The outcomes of this human vertebrae study are discussed in the following
 subsection. Split into three, discussing the experimental results, limitations
 of the study and finally the results of the computational aspects of the study.
 
-\subsection{Experimental Results}
+\subsection{Experimental Results} \label{sec:exp_disc}
 
 Experimentally there was large variation seen in the results, in terms of
 material properties (BV/TV values), geometry and response to loading.  The
