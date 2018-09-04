@@ -1,0 +1,34 @@
+\chapter{Alternate Methodologies} 
+
+\section{Inverse Greyscale Material Properties for Augmented Region} \label{sec:invGS}
+
+A different approach to modelling the cement region was also attempted.  This
+used an inverse greyscale material property for the cement region, rather than
+a homogeneous material property for the region, based on the greyscale
+background of the non-augmented vertebral scans with the mask from the
+augmented models overlaid.  This meant that darker regions of greyscale (within
+the cement volume) would be given a Young's modulus of PMMA cement (2.4 GPa)
+which would decrease linearly to the Young's modulus of the bone when entering
+into the brighter regions of the greyscale background.  Representing the cement
+regions using this method meant that the underlying bone present inside the
+cement volumes is not ignored, instead the interdigitation between bone and
+cement in represented.  While this representation is potentially inaccurate, it
+provides more detail that using a homogeneous material property and more detail
+than van be seen on the augmented vertebral scans.  The relationship for the
+cement volume using this method was therefore:
+
+\begin{equation}
+	E(\rho) = \alpha \rho + c
+\end{equation}
+\begin{equation}
+	E(\rho) = -0.00842 \rho + 2.4
+\end{equation}
+
+Where $\rho$ is the greyscale value of each voxel and $E$ is the Young's
+modulus of each element within the cement region.  This ensured that the
+Young's modulus of the regions containing no bone (greyscale = 0)  was equal to
+that of the cement and regions containing bone (greyscale = 255) had a Young's
+modulus equal to 250 MPa, an approximate value for trabecular bone, with a
+linear relationship between.
+
+
