@@ -1,8 +1,37 @@
-\chapter{Principal Component Analysis \& Statistical Shape \& Appearance
-Modelling}\label{PCA_CHAP}
-
+\chapter{Statistical Shape \& Appearance Modelling}\label{PCA_CHAP}
 
 \section{Introduction}
+
+Statistical shape and appearance models give the opportunity to investigate the
+consequences of variation in a dataset that otherwise would be difficult to
+isolate or obtain enough experimental specimens to find trends in the data.
+The effect of the anterior height of the vertebral body on the response to
+loading is a simple example of this. In this example, to understand the effect
+of anterior vertebral height experimentally, or computationally using specimen
+specific models, a large range of vertebrae with varying anterior heights would
+be required which would hopefully represent (without gaps) the range of
+anterior heights in the population. Even if this could be achieved, confounding
+factors and other variation would make the presentation of specific
+relationships difficult. Using statistical shape and appearance models with
+principal component analysis (PCA), the modes of variation can be characterised
+and isolated, allowing an understanding of how specific modes of variation
+affect the chosen measure. A caveat here (similar to specimen specific models,
+but potentially less obvious) is that the modes of variation are specific to
+the input set, the models used to make the statistical shape models. Hence, any
+estimations of the types of variation and the effects these modes of variations
+have is specific to that set of models and not necessarily applicable to the
+population on the whole.
+
+This chapter focusses on using the 14 human lumbar vertebra FE model from the previous
+chapter as the input set to create a statistical shape and appearance model
+based upon them. Specifically, this chapter describes the methods used to
+create the statistical models and aims to find the main modes of variation found within the
+input set. These modes of variation are then validated, ensuring the variation
+found in generated models based on the statistical shape model are within the
+realms of possibility, given the input set they are created from. Finally the
+generated models are artificially augmented, using the results of the previous
+chapter, in order to start to understand how material and geometric properties
+of vertebrae effect the outcomes of vertebroplasty.
 
 \subsection{Aims of Statistical Shape \& Appearance Models}
 
@@ -22,7 +51,7 @@ are restricted to ensure registration is achieved.
 
 Vertebral volume or the vertebral body volume may be the easiest and most
 obvious measure of geometric change within a set of vertebra.  It has been
-shown in Chapter \ref{Chapter_HT} that there is a strong correlation between
+shown in \cref{Chapter_HT} that there is a strong correlation between
 vertebral size and stiffness and so this may be enough for a range of
 comparisons between spines and individual vertebrae.  However, the input set of
 vertebrae contain a wide range of variation which can be seen visually, which
