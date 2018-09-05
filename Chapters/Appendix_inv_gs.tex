@@ -18,7 +18,7 @@ than van be seen on the augmented vertebral scans.  The relationship for the
 cement volume using this method was therefore:
 
 \begin{equation}
-	E(\rho) = \alpha \rho + c
+	E(\rho) = \alpha \rho + c_{cement}
 \end{equation}
 \begin{equation}
 	E(\rho) = -0.00842 \rho + 2.4
@@ -27,8 +27,33 @@ cement volume using this method was therefore:
 Where $\rho$ is the greyscale value of each voxel and $E$ is the Young's
 modulus of each element within the cement region.  This ensured that the
 Young's modulus of the regions containing no bone (greyscale = 0)  was equal to
-that of the cement and regions containing bone (greyscale = 255) had a Young's
+that of the cement (approximately 2.4 GPa) and regions containing bone (greyscale = 255) had a Young's
 modulus equal to 250 MPa, an approximate value for trabecular bone, with a
-linear relationship between.
+linear relationship between. Brief optimisation of the constant using values of
+between 0.5 and 5 with 0.5 increments was also carried out.
 
+The results of using this approach were poor, when using the material
+properties as described above on their own and when incorperating these
+material properties into the yielding interface modelling methods. With the
+new material properties along, a negative CCC was achieved with R$^2$ values of
+$\leq$ 0.1. Using these material properties in combination with the yielding
+interface the best CCC achieved was 0.33.
 
+The reasons for the poor agreement are difficult to determine and potentially
+require further testing and optimisation. The introduction of an intermediate
+later between elements classed as bone and elements classed as cement, would
+potentially describe the shrinkage that occurs when the cement sets and other
+voids that form inside the augmented region. This would create properties
+similar to the approach used by Kinzl et al. \cite{kinzl2013experimentally},
+where random spheres were inserted into the augmented region to represent the
+voids that form. Equations for this approach would be in the form:
+\begin{equation}
+	E(\rho)= 
+	\begin{cases}
+	\alpha \rho + c_{cement}, & \text{for}\ \rho \leq 50\ \text{and}\ \rho \geq 100 \\
+	\beta, & \text{otherwise}
+	\end{cases}
+\end{equation}
+
+Where $\beta$ is the Young's modulus on the intermediate region between the
+bone and the cement, forming through the cement shrinking.
