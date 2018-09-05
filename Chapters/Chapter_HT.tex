@@ -1034,6 +1034,16 @@ vertebrae and interface, and between the interface and the cement volume.
 The remaining material properties and boundary conditions remain the same as
 with the non-augmented models, described in \cref{sec:nonaugmatprop}.
 
+Finally, an alternate way of modelling the augmented region was attempted using
+the greyscale background of the non-augmented specimen to serve as a measure of
+the location of the cement. If the element was bright, suggesting it contained
+mostly bone, it suggests that the element does not contain cement. Conversely
+low greyscale value elements suggests limited bone and therefore more chance of
+containing cement. However, the initial testing using this methodology produced
+a poor agreement with the experimental results and investigation and
+optimisation of the method was stopped. The methodology and limited results are
+described in \cref{sec:invGS}.
+
 \subsection{Measuring the Vertebral Body \& Augmentation Volume}
 
 While the volume of the vertebral mask can be measured directly within ScanIP
