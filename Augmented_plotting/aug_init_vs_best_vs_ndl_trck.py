@@ -19,6 +19,10 @@ if __name__ == "__main__":
         'Aug_best.csv',
         header=0,
         sep=',')
+    df_tracks = pd.read_csv(
+        'Aug_tracks.csv',
+        header=0,
+        sep=',')
     #df2 = pd.read_csv(
     #    'M:\Git_Repos\pythonPlotting\Aug_best.csv',
     #    header=0,
@@ -28,13 +32,17 @@ if __name__ == "__main__":
     y1=df['Computational']
     x2=df_best['Experimental']
     y2=df_best['Computational']
+    x3=df_tracks['Experimental']
+    y3=df_tracks['Computational']
     #x2=df['Disp Percentage Fill']
     #y2=df['Disp Percentage Change in Stiffness']
     dotsize = 50
     plt.scatter(x=x1,y=y1,color='red',s=dotsize, marker='o', label='Initial Method')
     plt.scatter(x=x2,y=y2,color='blue',s=dotsize, marker='^', label='Registation Method')
+    plt.scatter(x=x3,y=y3,color='green',s=dotsize, marker='v', label='Modelled Cement Tracks')
     plt.plot(np.unique(x1), np.poly1d(np.polyfit(x1, y1, 1))(np.unique(x1)),color='red', linestyle=':')
     plt.plot(np.unique(x2), np.poly1d(np.polyfit(x2, y2, 1))(np.unique(x2)),color='blue', linestyle=':')
+    plt.plot(np.unique(x3), np.poly1d(np.polyfit(x3, y3, 1))(np.unique(x3)),color='green', linestyle=':')
     plt.plot([2500,7500],[2500,7500], linestyle=':', c='orange', linewidth=1, label='Perfect Agreement')
     plt.ylabel('Computational Stiffness (N/mm)')
     plt.xlabel('Experimental Stiffness (N/mm))')
@@ -44,12 +52,13 @@ if __name__ == "__main__":
     ax.grid()
     ax.set_axisbelow(True)
     plt.legend(fontsize=10)
-    plt.text(5500,2500,s='CCC=0.18', color='red')
+    plt.text(5500,3200,s='CCC=0.18', color='red')
     
-    plt.text(2500,6200,s='CCC=0.46', color='blue')
+    plt.text(5500,2800,s='CCC=0.46', color='blue')
+    plt.text(5500,2400,s='CCC=0.62', color='green')
     plt.tight_layout()
     #plt.show()
-    plt.savefig('aug_init_vs_best.eps', dpi=320, facecolor='w', edgecolor='w',
+    plt.savefig('aug_init_vs_best_vs_ndl_trcksss.pdf', dpi=320, facecolor='w', edgecolor='w',
         orientation='landscape', format=None,
         transparent=False, bbox_inches=None, pad_inches=1,
         frameon=None)
