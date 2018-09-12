@@ -2357,11 +2357,24 @@
     <bcf:citekey order="241">Zhao2012</bcf:citekey>
     <bcf:citekey order="242">Sikora2013</bcf:citekey>
     <bcf:citekey order="243">kinzl2013experimentally</bcf:citekey>
-    <bcf:citekey order="244">Gilad1986</bcf:citekey>
-    <bcf:citekey order="244">Gilad1985</bcf:citekey>
-    <bcf:citekey order="245">Zhou2000</bcf:citekey>
-    <bcf:citekey order="245">Cheung1994</bcf:citekey>
-    <bcf:citekey order="246">kinzl2013experimentally</bcf:citekey>
+    <bcf:citekey order="244">clogenson2015statistical</bcf:citekey>
+    <bcf:citekey order="245">bredbenner2014development</bcf:citekey>
+    <bcf:citekey order="246">meller2004building</bcf:citekey>
+    <bcf:citekey order="247">nicolella2012development</bcf:citekey>
+    <bcf:citekey order="247">bryan2010statistical</bcf:citekey>
+    <bcf:citekey order="248">ali2012accuracy</bcf:citekey>
+    <bcf:citekey order="248">meakin2009intrinsic</bcf:citekey>
+    <bcf:citekey order="248">boisvert2008geometric</bcf:citekey>
+    <bcf:citekey order="249">hollenbeck2018statistical</bcf:citekey>
+    <bcf:citekey order="249">clogenson2015statistical</bcf:citekey>
+    <bcf:citekey order="250">clogenson2015statistical</bcf:citekey>
+    <bcf:citekey order="251">clogenson2015statistical</bcf:citekey>
+    <bcf:citekey order="252">chan20183</bcf:citekey>
+    <bcf:citekey order="253">Gilad1986</bcf:citekey>
+    <bcf:citekey order="253">Gilad1985</bcf:citekey>
+    <bcf:citekey order="254">Zhou2000</bcf:citekey>
+    <bcf:citekey order="254">Cheung1994</bcf:citekey>
+    <bcf:citekey order="255">kinzl2013experimentally</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

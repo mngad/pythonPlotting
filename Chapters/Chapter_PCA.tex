@@ -26,36 +26,78 @@ population on the whole.
 
 \subsection{Aims of Statistical Shape \& Appearance Models}
 
-The general aims of any statistical shape and appearance model are to describe the geometric and material property variation across a sample population. This is usually carried out by comparing the mean on the sample group to the main modes of variation found within it \cite{clogenson2015statistical}. Such approaches have been used to characterise shape variation in the cervical spine \cite{bredbenner2014development}, pelvis \cite{meller2004building} and femur \cite{nicolella2012development,bryan2010statistical}. Like this study, others have used statistical shape and appearance models to identify the variation in the lumbar spine for both spinal curvature variation \cite{ali2012accuracy,meakin2009intrinsic,boisvert2008geometric} and to identify the variation in single vertebrae \cite{hollenbeck2018statistical,clogenson2015statistical}. Regardless of the bone in question in these studies, the aim is most often to determine the mean, which dependant on the population sample can be described as the population norm and then to understand how variations effect the outcomes of different treatments.
+The general aims of any statistical shape and appearance model are to describe
+the geometric and material property variation across a sample population. This
+is usually carried out by comparing the mean on the sample group to the main
+modes of variation found within it \cite{clogenson2015statistical}. Such
+approaches have been used to characterise shape variation in the cervical spine
+\cite{bredbenner2014development}, pelvis \cite{meller2004building} and femur
+\cite{nicolella2012development,bryan2010statistical}. Like this study, others
+have used statistical shape and appearance models to identify the variation in
+the lumbar spine for both spinal curvature variation
+\cite{ali2012accuracy,meakin2009intrinsic,boisvert2008geometric} and to
+identify the variation in single vertebrae
+\cite{hollenbeck2018statistical,clogenson2015statistical}. Regardless of the
+bone in question in these studies, the aim is most often to determine the mean,
+which dependant on the population sample can be described as the population
+norm and then to understand how variations effect the outcomes of different
+treatments.
 
-This chapter focusses on using the 14 human lumbar vertebra FE model from the previous
-chapter as the input set to create a statistical shape and appearance model
-based upon them. Specifically, this chapter describes the methods used to
-create the statistical models and aims to find the main modes of variation found within the
-input set. These modes of variation are then validated, ensuring the variation
-found in generated models based on the statistical shape model are within the
-realms of possibility, given the input set they are created from. Finally the
-generated models are artificially augmented, using the results of the previous
-chapter, in order to start to understand how material and geometric properties
-of vertebrae effect the outcomes of vertebroplasty.
+This chapter focusses on using the 14 human lumbar vertebra FE model from the
+previous chapter as the input set to create a statistical shape and appearance
+model based upon them. Specifically, this chapter describes the methods used to
+create the statistical models and aims to find the main modes of variation
+found within the input set. These modes of variation are then validated,
+ensuring the variation found in generated models based on the statistical shape
+model are within the realms of possibility, given the input set they are
+created from. Finally the generated models are artificially augmented, using
+the results of the previous chapter, in order to start to understand how
+material and geometric properties of vertebrae effect the outcomes of
+vertebroplasty.
 
 \subsection{General Methodology}
 
-Generally statistical shape and appearance models start with the segmentation and creation of models that form the input set of the statistical model.
-Following this is a rigid registration step, where rotations and
-translations are applied to all meshes or models that form the input data set
-so that they share a common coordinate system. Methods of performing the rigid
-registration often use an automated approach where certain degrees of freedom
-are restricted to ensure registration is achieved. For example with very cylindrical vertebrae, if rotation is allowed around the coronal axis with vertebrae who's volume varies significantly, registration may never be achieved as one vertebrae would fit inside the other and rotate without end. Manual techniques can be used similar to that used in the previous chapter with pre and post augmentation scans, with automated rigid registration techniques also using landmark registration.
+Generally statistical shape and appearance models start with the segmentation
+and creation of models that form the input set of the statistical model.
+Following this is a rigid registration step, where rotations and translations
+are applied to all meshes or models that form the input data set so that they
+share a common coordinate system. Methods of performing the rigid registration
+often use an automated approach where certain degrees of freedom are restricted
+to ensure registration is achieved. For example with very cylindrical
+vertebrae, if rotation is allowed around the coronal axis with vertebrae who's
+volume varies significantly, registration may never be achieved as one
+vertebrae would fit inside the other and rotate without end. Manual techniques
+can be used similar to that used in the previous chapter with pre and post
+augmentation scans, with automated rigid registration techniques also using
+landmark registration.
 
-A mean model is usually generated by first selecting a surface mesh from the input set and registering it to the other models (surface meshes) of the input set using deformable registration, a mean model is calculated from these transformations. Each of the other vertebrae are then selected and registered to the other models from the input set until the change between generated mean vertebrae is no longer significant (described in great detail by Clogenson et al. \cite{clogenson2015statistical}. Once the mean model has been created the transformations required to deform each input model into that mean are recorded as the variation from the mean shape.
+A mean model is usually generated by first selecting a surface mesh from the
+input set and registering it to the other models (surface meshes) of the input
+set using deformable registration, a mean model is calculated from these
+transformations. Each of the other vertebrae are then selected and registered
+to the other models from the input set until the change between generated mean
+vertebrae is no longer significant (described in great detail by Clogenson et
+al. \cite{clogenson2015statistical}. Once the mean model has been created the
+transformations required to deform each input model into that mean are recorded
+as the variation from the mean shape.
 
-Given the range of variation captured in those transformations from the mean to each input specimen a method of dimensional reduction is usually employed, commonly either PCA \cite{clogenson2015statistical} or Single Value Decomposition \cite{chan20183}. This allows the reduction of the number of random variables being identified, allowing a focus on those that contain or describe the largest variations. 
+Given the range of variation captured in those transformations from the mean to
+each input specimen a method of dimensional reduction is usually employed,
+commonly either PCA \cite{clogenson2015statistical} or Single Value
+Decomposition \cite{chan20183}. This allows the reduction of the number of
+random variables being identified, allowing a focus on those that contain or
+describe the largest variations. 
 
 
 \section{Methods}
 
-A plugin for Simpleware ScanIP was developed through a collaboration between the University of Leeds and Simpleware (Synopsis). The tool utilises the Insight Tool Kit (ITK) to generate a SSAM model based on an input set of finite element models created in Simpleware ScanIP. These models are the non-augmented models described in the previous chapter using the bone volume fraction methodology. The process of using the plugin with the 14 human lumbar vertebrae as the input set is described in this section.
+A plugin for Simpleware ScanIP was developed through a collaboration between
+the University of Leeds and Simpleware (Synopsis). The tool utilises the
+Insight Tool Kit (ITK) to generate a SSAM model based on an input set of finite
+element models created in Simpleware ScanIP. These models are the non-augmented
+models described in the previous chapter using the bone volume fraction
+methodology. The process of using the plugin with the 14 human lumbar vertebrae
+as the input set is described in this section.
 
 \subsection{Statistical Shape and Appearance Model Creation}
 
@@ -141,21 +183,69 @@ superior endcap.
 
 \subsubsection{Augmentation in Generated Models}
 
-Augmented models, testing the effect of augmentation on different modes of vertebral variation, were created through the creation off masks within the vertebral body. These consisted of two masks, one for the cement region itself and one for the interface region.
-Two methods of creating and describing these masks were attempted, the first using the mean cement volume from the experimentally augmented vertebrae in the previous chapter and the second using a mask based on an eroded vertebral body mask.
+Augmented models, testing the effect of augmentation on different modes of
+vertebral variation, were created through the creation off masks within the
+vertebral body. These consisted of two masks, one for the cement region itself
+and one for the interface region.  Two methods of creating and describing these
+masks were attempted, the first using the mean cement volume from the
+experimentally augmented vertebrae in the previous chapter and the second using
+a mask based on an eroded vertebral body mask.
 
-The first method utilised the same PCA plugin for ScanIP, however the models used here were those of the augmented region in the post-augmentation models. Using the masks of the augmented regions of the vertebrae as the input for the SSAM generation gave the mean augmented region volume achieved through experimental augmentation. This mean model was then converted into a surface mesh (an STL) where it could be scaled to represent different percentage fill volumes. Fill volume was measured using the approach described in \cref{sec:measure}, to measure the volume of the generated vertebrae.%TODO continue
+The first method utilised the same PCA plugin for ScanIP, however the models
+used here were those of the augmented region in the post-augmentation models.
+Using the masks of the augmented regions of the vertebrae as the input for the
+SSAM generation gave the mean augmented region volume achieved through
+experimental augmentation. This mean model was then converted into a surface
+mesh (an STL) where it could be scaled to represent different percentage fill
+volumes. Fill volume was measured using the approach described in
+\cref{sec:measure}, to measure the volume of the generated vertebrae. Using the
+volume of the mean cement volume, the ``current" percentage fill was calculated
+(dividing the cement region's volume by that of the vertebrae in question). The
+desired augmentation volume was then selected. This was either 20, 35 or 50
+percent fill, given the range of fill volumes achieved experimentally. The
+cement volume was then scaled by $\sqrt[3]{\frac{\text{desired \% fill}}{\text{current \%
+fill}}}$ on each of its axis. This gave three fill volumes for each
+generated model which was positioned in the centre/anterior of the vertebral
+body, then converted to a mask. The mask was then duplicated and eroded by one
+pixel to give the yielding interface layer upon which the correct material
+properties were applied. While a uniform cement volume shape gives the most
+uniform of tests, it is unreasonable to expect such a wide variety of vertebrae
+to have the same shape of augmented region when augmented experimentally or
+clinically. An additional problem is that for vertebrae that were more
+elongated and narrow axially, for example PC1 +3, the mean cement volume when
+scaled to 35 and 50 \% fill would not fit inside the vertebrae.
+
+The solution to this problem was the second approach, where the mask of the
+vertebral body was used as the basis for the cement volume. Here, a copy of the
+vertebral mask for each generated models was made, a recursive Gaussian filter
+5 pixels deep was applied and then it was converted to a surface. The same
+method used in the previous approach was used to scale the surface to the
+correct and desired fill volume (taking the current volume after the recursive
+Gaussian filter). Once the volume had been positioned, the same process of
+creating the interface layer was used and models of 20, 35 and 50 percentage
+fill augmented models were generated.
+
+This isn't the perfect solution as again it is unreasonable to expect that
+every vertebrae receives a volume of cement that matches its own shape, it does
+however remove problems with the cement region extending outside of the
+vertebrae. Perhaps an improved method for fitting the cement volumes would be
+to use the mean cement volume but transform it using the same transforms that
+were applied to each generated vertebrae turning it from the mean vertebrae.
+The current version of the plugin does not allow access to these transforms
+however. Despite this, changing shapes and volumes of the augmented region would be the
+subject of any further parametric analysis, given that an optimum fill
+percentage and shaped would need to be found.
 
 \subsection{Measuring Vertebral Geometry}
 
 Vertebral volume or the vertebral body volume may be the easiest and most
 obvious measure of geometric change within a set of vertebra.  It has been
-shown in \cref{Chapter_HT} that there is a strong correlation between
-vertebral size and stiffness and so this may be enough for a range of
-comparisons between spines and individual vertebrae.  However, the input set of
-vertebrae contain a wide range of variation which can be seen visually, which
-may play an important role in the effect of cement augmentation and is another
-method of validating the outputs from the PCA generated set of models.
+shown in \cref{Chapter_HT} that there is a strong correlation between vertebral
+size and stiffness and so this may be enough for a range of comparisons between
+spines and individual vertebrae.  However, the input set of vertebrae contain a
+wide range of variation which can be seen visually, which may play an important
+role in the effect of cement augmentation and is another method of validating
+the outputs from the PCA generated set of models.
 
 Measuring vertebral geometries in previous studies have either taken the
 measurements from x-ray scans \cite{Gilad1986,Gilad1985} or $\mu$CT scans
@@ -176,7 +266,8 @@ nodes.  Once imported the point cloud was split into thirds in each of the
 three anatomical planes, with the points describing the vertebra within these
 thirds being stored in nine array variables.  Cuboids were then fitted to the
 3D arrays, maintaining the correct alignment and therefore prohibiting rotation
-of the cuboid.  The cuboid fits can be seen in \cref{fig:cuboid_ax,fig:cuboid_sag,fig:cuboid_cor}.
+of the cuboid.  The cuboid fits can be seen in
+\cref{fig:cuboid_ax,fig:cuboid_sag,fig:cuboid_cor}.
 
 
 \begin{figure}[ht!]
